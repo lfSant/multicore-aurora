@@ -1,0 +1,10 @@
+#ignora los node_modules
+node_modules
+
+#ignora los builds
+dist
+build
+out
+
+#ignora los yarn.lock
+yarn.lock
