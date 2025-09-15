@@ -1,10 +1,39 @@
-#ignora los node_modules
+#ignoramos los node_modules
 node_modules
 
-#ignora los builds
+#ignoramos los builds
 dist
 build
 out
 
-#ignora los yarn.lock
+#ignoramos los yarn.lock
 yarn.lock
+
+# ignoramos el node_modules
+node_modules/
+# ignoramos el dist
+dist/
+#ignoramos el node modules del api-connector
+api-connector/node_modules/
+#ignoramos el dist del api-connector
+api-connector/dist/
+# ignoramos el .env
+.env
+# ignoramos el .env de api-connector
+api-connector/.env
+# ignoramos el yarn.lock del api-connector
+api-connector/yarn.lock
+# ignoramos el yarn.lock
+yarn.lock
+# ignoramos el package-lock.json
+package-lock.json
+# ignoramos los node-modules del frontend
+node_modules/
+#ignoramos el api-connector
+api-connector/
+
+# ignoramos el multicore-connector
+multicore-connector/
+
+# ignoramos el .DS_Store
+.DS_Store

@@ -9,12 +9,9 @@ export function toDy23Request(cmd: CheckClientActiveCommand): Dy23ExistsActiveRe
 
 // dy-23 -> canónico (siempre devolvemos array; si nada, [])
 export function fromDy23Response(res: Dy23ExistsActiveResponseParsed): ClientActiveStatus[] {
-  const active =
-    (res as any).activo ?? (res as any).isActive ?? (res as any)?.data?.activo;
-
-  if (typeof active === "boolean") {
-    return [{ active }];
+  const active = (res as any)?.existeActivo;
+  if (typeof active === 'boolean') {
+    return [{ active: active }];
   }
-  // Si no logramos inferir, regresamos array vacío (puedes decidir otra política)
   return [];
 }

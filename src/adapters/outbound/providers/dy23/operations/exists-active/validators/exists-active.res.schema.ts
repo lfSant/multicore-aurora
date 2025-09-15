@@ -4,7 +4,7 @@ import { z } from "zod";
 export const Dy23ExistsActiveResponseSchema = z.union([
   z.object({ activo: z.boolean() }),
   z.object({ data: z.object({ activo: z.boolean() }) }),
-  z.object({ isActive: z.boolean() })
+  z.object({ existeActivo: z.boolean() })
 ]);
 
 export type Dy23ExistsActiveResponseParsed = z.infer<typeof Dy23ExistsActiveResponseSchema>;
