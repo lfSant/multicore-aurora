@@ -3,4 +3,4 @@
  * @module adapters
  */
 export * from './outbound/providers/dy23/Dy23ClientStatusAdapter';
-export * from './outbound/providers/dy23/operations/exists-active/executor';
+export * from './outbound/providers/dy23/Dy23AuthProviderAdapter';
