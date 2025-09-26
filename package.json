@@ -21,6 +21,16 @@
       "types": "./dist/adapters/index.d.ts",
       "import": "./dist/adapters/index.mjs",
       "require": "./dist/adapters/index.cjs"
+    },
+    "./sdk/client": {
+      "types": "./dist/sdk/client/index.d.ts",
+      "import": "./dist/sdk/client/index.mjs",
+      "require": "./dist/sdk/client/index.cjs"
+    },
+    "./sdk/auth": {
+      "types": "./dist/sdk/auth/index.d.ts",
+      "import": "./dist/sdk/auth/index.mjs",
+      "require": "./dist/sdk/auth/index.cjs"
     }
   },
   "scripts": {

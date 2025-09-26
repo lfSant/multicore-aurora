@@ -2,6 +2,7 @@
 export * from './shared/envelope';
 export * from './shared/http';
 export * from './shared/errors';
+export * from './shared/provider';
 
 // Auth User Active
 export * from './application/dto/commands/AuthCoreActive.command';

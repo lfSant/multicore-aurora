@@ -1,59 +1,61 @@
 export interface CanonicalMessages {
-  client: string; // mensaje para el cliente/UX
-  server: string; // detalle técnico opcional
+  client: string;
+  server: string;
+}
+
+export interface CanonicalRaw {
+  headersCore?: Record<string, unknown>;
+  dataCore?: unknown;
+  // opcional: requestCore?: { url: string; method: string; headers?: any; params?: any; body?: any }
 }
 
 export interface CanonicalResponse<TItem> {
   success: boolean;
-  code: string; // SRV-S200 para OK
+  code: string; // SRV-S2000 ok / SRV-S5000 error (puedes sobreescribirlo)
   messages: CanonicalMessages;
-  data: TItem[]; // SIEMPRE array; si nada, []
-  timestamp: string; // ISO
-  status: number; // 200 para OK
+  data: TItem[]; // siempre array
+  timestamp: string;
+  status: number; // 200 en ok; status del core en error
   aditionalData: Record<string, any>;
+  raw?: CanonicalRaw[]; // <-- NUEVO
 }
 
-// Builder estándar de éxito
+function now() { return new Date().toISOString(); }
+
 export function successResponse<TItem>(
   data: TItem[],
-  messages: Partial<CanonicalMessages> = {}
+  messages: Partial<CanonicalMessages> = {},
+  opts?: { code?: string; status?: number; aditionalData?: Record<string, any>; raw?: CanonicalRaw[] }
 ): CanonicalResponse<TItem> {
   return {
     success: true,
-    code: "SRV-S200",
+    code: opts?.code ?? "SRV-S2000",
     messages: {
-      client: messages.client ?? "Servicio ejecutado correctamente",
-      server: messages.server ?? ""
+      client: messages.client ?? "Parámetros del usuario obtenidos correctamente",
+      server: messages.server ?? "Operación completada correctamente.",
     },
     data: data ?? [],
-    timestamp: new Date().toISOString(),
-    status: 200,
-    aditionalData: {}
+    timestamp: now(),
+    status: opts?.status ?? 200,
+    aditionalData: opts?.aditionalData ?? {},
+    raw: opts?.raw,
   };
 }
 
-// Mapea status HTTP a código interno
-function statusToCode(status?: number) {
-  if (!status) return 'SRV-E500';
-  if (status >= 400 && status < 500) return `SRV-E4${status}`;
-  if (status >= 500) return `SRV-E5${status}`;
-  return 'SRV-E500';
-}
-
-// Builder estándar de error
 export function errorResponse<TItem>(
   status: number,
   clientMsg = "Servicio temporalmente no disponible",
   serverMsg = "",
-  extra: Record<string, any> = {}
+  opts?: { code?: string; aditionalData?: Record<string, any>; raw?: CanonicalRaw[] }
 ): CanonicalResponse<TItem> {
   return {
     success: false,
-    code: statusToCode(status),
+    code: opts?.code ?? "SRV-S5000",
     messages: { client: clientMsg, server: serverMsg },
     data: [],
-    timestamp: new Date().toISOString(),
+    timestamp: now(),
     status,
-    aditionalData: extra
+    aditionalData: opts?.aditionalData ?? {},
+    raw: opts?.raw,
   };
 }

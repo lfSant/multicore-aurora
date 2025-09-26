@@ -23,13 +23,13 @@ export class Dy23AuthLoginAdapter implements AuthLoginProviderPort {
             const { items, businessError } = fromDy23AuthLoginResponse(parsed);
 
             // Si el proveedor retornó error de negocio, lo propagamos como ProviderHttpError 400
-            if (businessError) {
-                throw new ProviderHttpError(
-                    businessError.serverMsg || businessError.clientMsg,
-                    400,
-                    { nextStep: businessError.nextStep, messages: businessError.rawMessages }
-                );
-            }
+            // if (businessError) {
+            //     throw new ProviderHttpError(
+            //         businessError.serverMsg || businessError.clientMsg,
+            //         400,
+            //         { nextStep: businessError.nextStep, messages: businessError.rawMessages }
+            //     );
+            // }
 
             return items;
 
