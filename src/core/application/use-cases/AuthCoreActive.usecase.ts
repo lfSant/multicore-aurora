@@ -16,20 +16,21 @@ export class AuthCoreActiveUseCase {
       const parsed = AuthCoreActiveCommandSchema.parse(cmd);
       const items = await this.provider.authUserActive(parsed, http);
       return successResponse<AuthCoreActiveStatus>(items, {
-        client: "Parámetros del usuario obtenidos correctamente"
+        client: "Verificación de usuario realizada correctamente"
       });
-    } catch (e: any) {
-      if (e instanceof ProviderHttpError) {
+    } catch (error: any) {
+      console.error(`Error en AuthCoreActiveUseCase: ${error?.message || error}`);
+      if (error instanceof ProviderHttpError) {
         return errorResponse<AuthCoreActiveStatus>(
-          e.status || 502,
+          error.status || 502,
           "No se pudo completar la operación",
-          e.message
+          error.message
         );
       }
       return errorResponse<AuthCoreActiveStatus>(
         400,
         "Solicitud inválida",
-        e?.message ?? "Error de validación"
+        error?.message ?? "Error de validación"
       );
     }
   }

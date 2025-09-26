@@ -25,6 +25,7 @@ export class Dy23ClientStatusAdapter implements ClientStatusProviderPort {
         timeout,
         validateStatus: () => true
       });
+      console.log('Dy23ClientStatusAdapter: respuesta recibida', { status: res.status, data: res.data });
 
       // errores HTTP
       if (res.status < 200 || res.status >= 300) {

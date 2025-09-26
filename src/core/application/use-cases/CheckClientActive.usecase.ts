@@ -17,21 +17,20 @@ export class CheckClientActiveUseCase {
       const parsed = CheckClientActiveCommandSchema.parse(cmd);
       const items = await this.provider.existsActive(parsed, http);
       return successResponse<ClientActiveStatus>(items, {
-        client: "Parámetros del usuario obtenidos correctamente"
+        client: "Verificación de cliente realizada correctamente"
       });
-    } catch (e: any) {
-      if (e instanceof ProviderHttpError) {
+    } catch (error: any) {
+      if (error instanceof ProviderHttpError) {
         return errorResponse<ClientActiveStatus>(
-          e.status || 502,
+          error.status || 502,
           "No se pudo completar la operación",
-          e.message
+          error.message
         );
       }
-      // Zod u otros errores inesperados
       return errorResponse<ClientActiveStatus>(
         400,
         "Solicitud inválida",
-        e?.message ?? "Error de validación"
+        error?.message ?? "Error de validación"
       );
     }
   }
