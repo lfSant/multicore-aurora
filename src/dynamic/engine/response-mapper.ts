@@ -10,21 +10,30 @@ const asBool = (v: any) => {
 function evalExpr(e: MapExpr, src: any): any {
   if (e == null) return undefined;
 
-  // Soporta regla como string => ruta directa "a.b[0].c"
+  // string => ruta "a.b[0].c"
   if (typeof e === 'string') {
     return dotGet(src, e);
   }
 
-  // from/default
+  // { from, default }
   if ('from' in e) {
-    const v = dotGet(src, e.from as string);
+    const v = dotGet(src, (e as any).from as string);
     return v === undefined ? (e as any).default : v;
   }
 
-  // const
+  // { const }
   if ('const' in e) return (e as any).const;
 
-  // coalesce: primer valor no nulo/no undefined de una lista de rutas
+  // { template: "Hola {{user.name}}" }
+  if ('template' in e) {
+    const tpl = (e as any).template as string;
+    return tpl.replace(/\{\{([^}]+)\}\}/g, (_m, p1) => {
+      const val = dotGet(src, String(p1).trim(), '');
+      return val == null ? '' : String(val);
+    });
+  }
+
+  // { coalesce: ["p1","p2"], default? }
   if ('coalesce' in e) {
     for (const p of (e as any).coalesce as string[]) {
       const v = dotGet(src, p);
@@ -33,18 +42,17 @@ function evalExpr(e: MapExpr, src: any): any {
     return (e as any).default;
   }
 
-  // pickAnyBoolean: busca la primera ruta que pueda convertirse a booleano
+  // { pickAnyBoolean: [...], optional?, default? }
   if ('pickAnyBoolean' in e) {
     for (const p of (e as any).pickAnyBoolean as string[]) {
       const b = asBool(dotGet(src, p));
       if (typeof b === 'boolean') return b;
     }
-    // si es opcional, permite undefined; si no, aplica default o false
     if ((e as any).optional) return undefined;
     return (e as any).default ?? false;
   }
 
-  // pick: construye un objeto con pares ruta->valor (solo las rutas encontradas)
+  // { pick: [...] } -> objeto de extras
   if ('pick' in e) {
     const out: Record<string, any> = {};
     for (const p of (e as any).pick as string[]) {
@@ -54,7 +62,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return out;
   }
 
-  // toNumber: Number(value) con default si no es finito
+  // { toNumber: { from, default? } }
   if ('toNumber' in e) {
     const spec = (e as any).toNumber as { from: string; default?: number };
     const v = dotGet(src, spec.from);
@@ -62,36 +70,36 @@ function evalExpr(e: MapExpr, src: any): any {
     return Number.isFinite(n) ? n : spec.default;
   }
 
-  // toBoolean: usa asBool
+  // { toBoolean: { from } }
   if ('toBoolean' in e) {
     const spec = (e as any).toBoolean as { from: string };
     return asBool(dotGet(src, spec.from));
   }
 
-  // toDateMs: 'iso' | 'epochMs' | 'epochSec'
+  // { toDateMs: { from, format?: 'iso'|'epochMs'|'epochSec', default? } }
   if ('toDateMs' in e) {
-    const spec = (e as any).toDateMs as { from: string; format?: 'iso'|'epochMs'|'epochSec' };
+    const spec = (e as any).toDateMs as { from: string; format?: 'iso'|'epochMs'|'epochSec'; default?: number };
     const v = dotGet(src, spec.from);
-    if (v == null) return undefined;
+    if (v == null) return spec.default;
     const f = spec.format || 'iso';
     if (f === 'iso') {
       const t = Date.parse(String(v));
-      return Number.isFinite(t) ? t : undefined;
+      return Number.isFinite(t) ? t : spec.default;
     }
     if (f === 'epochMs') return Number(v);
     if (f === 'epochSec') return Number(v) * 1000;
   }
 
-  // join: concatena partes (rutas) con separador
+  // { join: { of: [...], sep, default? } }
   if ('join' in e) {
-    const spec = (e as any).join as { of: string[]; sep: string };
+    const spec = (e as any).join as { of: string[]; sep: string; default?: string };
     const parts = spec.of
       .map((p) => dotGet(src, p))
       .filter((x) => x != null && String(x).trim() !== '');
-    return parts.join(spec.sep);
+    return parts.length ? parts.join(spec.sep) : (spec.default ?? '');
   }
 
-  // mapValue: diccionario de equivalencias
+  // { mapValue: { from, dict, default? } }
   if ('mapValue' in e) {
     const spec = (e as any).mapValue as { from: string; dict?: Record<string, any>; default?: any };
     const v = dotGet(src, spec.from);
@@ -106,14 +114,13 @@ export function mapResponse(providerBody: any, cfg: MappingConfig) {
   const items: any[] = [];
 
   for (const shape of cfg.response_items_map || []) {
-    const item: any = {};
+    const item: Record<string, any> = {};
     let extras: Record<string, any> | undefined;
 
     for (const [field, rule] of Object.entries(shape)) {
       const val = evalExpr(rule as MapExpr, providerBody);
       if (val === undefined) continue;
 
-      // Si la regla es 'pick', el valor es un objeto con rutas->valores. Va en extras.
       if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {
         if (Object.keys(val).length) extras = { ...(extras || {}), ...val };
       } else {
@@ -122,7 +129,9 @@ export function mapResponse(providerBody: any, cfg: MappingConfig) {
     }
 
     if (extras) item.extras = extras;
-    items.push(item);
+
+    // Evitar empujar un item vacío si nada mapeó
+    if (Object.keys(item).length > 0) items.push(item);
   }
 
   return { items };

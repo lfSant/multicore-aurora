@@ -1,37 +1,31 @@
-// src/dynamic/engine/evaluate-error-rules.ts
 import { dotGet } from './path-get';
 
-interface ErrorRule {
-  // Puedes poner "status" y/o rutas JSON (ej: "body.code", "error.tipo"):
-  when?: { status?: number; [jsonPath: string]: any };
-  // Búsqueda por "contiene" en la ruta dada (string o any:[]):
+export interface ErrorRule {
+  when?: { status?: number;[jsonPath: string]: any };
   whenContains?: { [jsonPath: string]: string | { any: string[] } };
   client: string;
   server: string;
-  status: number;      // HTTP que devolveremos en el envelope de error
-  codeHint?: string;   // opcional, para trazabilidad interna
+  status: number;
+  codeHint?: string;
 }
 
 function readPath(body: any, path: string): any {
-  // Soporta tanto "body.xxx" como rutas directas sobre el body ("xxx", "data.msg", etc.)
   if (path.startsWith('body.') || path.startsWith('body[')) {
     return dotGet({ body }, path);
   }
-  // Intento directo sobre el body:
   const v = dotGet(body, path);
   if (v !== undefined) return v;
-  // Fallback por compatibilidad con reglas existentes que usan "body.":
   return dotGet({ body }, `body.${path}`);
 }
 
-function matchesWhen(status: number, body: any, when?: { status?: number; [jsonPath: string]: any }): boolean {
+function matchesWhen(status: number, body: any, when?: { status?: number;[jsonPath: string]: any }): boolean {
   if (!when) return true;
   if (when.status !== undefined && when.status !== status) return false;
 
   for (const [path, expected] of Object.entries(when)) {
     if (path === 'status') continue;
     const got = readPath(body, path);
-    if (got !== expected) return false;
+    if (got !== expected) return false; // igualdad estricta
   }
   return true;
 }
@@ -43,7 +37,10 @@ function normalizeToLowerText(value: any): string {
   return String(value).toLowerCase();
 }
 
-function matchesWhenContains(body: any, whenContains?: { [jsonPath: string]: string | { any: string[] } }): boolean {
+function matchesWhenContains(
+  body: any,
+  whenContains?: { [jsonPath: string]: string | { any: string[] } }
+): boolean {
   if (!whenContains) return true;
 
   for (const [path, cond] of Object.entries(whenContains)) {
@@ -53,12 +50,14 @@ function matchesWhenContains(body: any, whenContains?: { [jsonPath: string]: str
     const txt = normalizeToLowerText(got);
     if (typeof cond === 'string') {
       if (!txt.includes(cond.toLowerCase())) return false;
-    } else if (Array.isArray(cond.any)) {
-      const anyLower = cond.any.map((s) => String(s).toLowerCase());
-      if (!anyLower.some((needle) => txt.includes(needle))) return false;
+    } else if (cond && typeof cond === 'object' && Array.isArray(cond.any)) {
+      const needles = cond.any.map((s) => String(s).toLowerCase());
+      if (!needles.some((needle) => txt.includes(needle))) return false;
+    } else {
+      return false; // formato de regla inválido
     }
   }
-  return true;
+  return true; // todas las condiciones se cumplen
 }
 
 export function evaluateBusinessError(

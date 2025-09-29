@@ -1,11 +1,15 @@
 export class ProviderHttpError extends Error {
   constructor(
-    public message: string,
-    public status: number,
-    public provider: string,
-    public raw?: { headersCore: any; dataCore: any },
-    public codeHint?: string
-  ) { super(message); }
+    message: string,
+    public readonly status: number,
+    public readonly provider?: string,
+    public readonly raw?: { headersCore: any; dataCore: any; timeResponseMs?: number },
+    public readonly codeHint?: string,
+    public readonly clientMessage?: string
+  ) {
+    super(message);
+    this.name = 'ProviderHttpError';
+  }
 }
 
 export class MappingConfigError extends Error {

@@ -25,7 +25,7 @@ export class GetClientProfileUseCase {
     } catch (e: any) {
       if (e instanceof ProviderHttpError) {
         return errorResponse<ClientProfile>(
-          "Parámetros del usuario temporalmente no disponibles",
+          e.clientMessage || "Parámetros del usuario temporalmente no disponibles",
           e.message,
           e.status,
           e.raw ? [e.raw] : undefined

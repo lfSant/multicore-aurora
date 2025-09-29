@@ -1,7 +1,7 @@
 import { MappingConfigRepo } from "../../dynamic/repo/MappingConfigRepo";
 import { KVCache } from "../../dynamic/cache/KVCache";
 import { MappingConfig } from "../../dynamic/mapping-config";
-import { mapRequest, mapResponse, evaluateBusinessError } from "../../dynamic/engine";
+import { mapResponse, evaluateBusinessError, mapRequest } from "../../dynamic/engine/index";
 import { ProviderCallConfig } from "../../core/shared/http";
 import { executeHttp } from "../http/axios-executor";
 import { ProviderHttpError } from "../../core/shared/errors";
@@ -44,18 +44,19 @@ export class BaseDynamicAdapter<TItem> {
         `Proveedor ${this.providerKey} (${this.operationKey}) HTTP ${res.status}`,
         res.status,
         this.providerKey,
-        { headersCore: res.headers, dataCore: res.data }
+        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs }
       );
     }
 
-    const biz = evaluateBusinessError(200, res.data, (cfg as any).error_rules_json || []);
+    const biz = evaluateBusinessError(res.status, res.data, (cfg as any).error_rules_json || []);
     if (biz) {
       throw new ProviderHttpError(
         biz.server,
         biz.status,
         this.providerKey,
-        { headersCore: res.headers, dataCore: res.data },
-        biz.codeHint
+        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs },
+        biz.codeHint,
+        biz.client
       );
     }
 
@@ -64,7 +65,7 @@ export class BaseDynamicAdapter<TItem> {
       items: (mapped.items as TItem[]) ?? [],
       status: res.status,
       provider: this.providerKey,
-      raw: cfg.response_raw ? { headersCore: res.headers, dataCore: res.data } : undefined
+      raw: cfg.response_raw ? { headersCore: res.headers, dataCore: res.data, timeResponseCore: res.timeResponseMs } : undefined
     };
   }
 }
