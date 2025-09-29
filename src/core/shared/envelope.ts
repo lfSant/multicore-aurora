@@ -1,61 +1,38 @@
-export interface CanonicalMessages {
-  client: string;
-  server: string;
-}
+import { CanonicalResponse } from "./types";
 
-export interface CanonicalRaw {
-  headersCore?: Record<string, unknown>;
-  dataCore?: unknown;
-  // opcional: requestCore?: { url: string; method: string; headers?: any; params?: any; body?: any }
-}
-
-export interface CanonicalResponse<TItem> {
-  success: boolean;
-  code: string; // SRV-S2000 ok / SRV-S5000 error (puedes sobreescribirlo)
-  messages: CanonicalMessages;
-  data: TItem[]; // siempre array
-  timestamp: string;
-  status: number; // 200 en ok; status del core en error
-  aditionalData: Record<string, any>;
-  raw?: CanonicalRaw[]; // <-- NUEVO
-}
-
-function now() { return new Date().toISOString(); }
-
-export function successResponse<TItem>(
-  data: TItem[],
-  messages: Partial<CanonicalMessages> = {},
-  opts?: { code?: string; status?: number; aditionalData?: Record<string, any>; raw?: CanonicalRaw[] }
-): CanonicalResponse<TItem> {
+export function successResponse<T>(
+  items: T[],
+  opts?: { client?: string; server?: string; status?: number; raw?: Array<{headersCore:any; dataCore:any}> }
+): CanonicalResponse<T> {
   return {
     success: true,
-    code: opts?.code ?? "SRV-S2000",
+    code: "SRV-S2000",
     messages: {
-      client: messages.client ?? "Parámetros del usuario obtenidos correctamente",
-      server: messages.server ?? "Operación completada correctamente.",
+      client: opts?.client ?? "Parámetros del usuario obtenidos correctamente",
+      server: opts?.server ?? "Servicio ejecutado correctamente.",
     },
-    data: data ?? [],
-    timestamp: now(),
+    data: items ?? [],
+    timestamp: new Date().toISOString(),
     status: opts?.status ?? 200,
-    aditionalData: opts?.aditionalData ?? {},
-    raw: opts?.raw,
+    aditionalData: {},
+    ...(opts?.raw ? { raw: opts.raw } : {}),
   };
 }
 
-export function errorResponse<TItem>(
+export function errorResponse<T=never>(
+  clientMsg: string,
+  serverMsg: string,
   status: number,
-  clientMsg = "Servicio temporalmente no disponible",
-  serverMsg = "",
-  opts?: { code?: string; aditionalData?: Record<string, any>; raw?: CanonicalRaw[] }
-): CanonicalResponse<TItem> {
+  raw?: Array<{headersCore:any; dataCore:any}>
+): CanonicalResponse<T> {
   return {
     success: false,
-    code: opts?.code ?? "SRV-S5000",
+    code: "SRV-S5000",
     messages: { client: clientMsg, server: serverMsg },
     data: [],
-    timestamp: now(),
+    timestamp: new Date().toISOString(),
     status,
-    aditionalData: opts?.aditionalData ?? {},
-    raw: opts?.raw,
+    aditionalData: {},
+    ...(raw ? { raw } : {}),
   };
 }

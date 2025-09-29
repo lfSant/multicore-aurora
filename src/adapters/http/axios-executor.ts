@@ -1,39 +1,36 @@
 import axios from "axios";
-import { HttpMethod } from "../../core/shared/http";
+import { ProviderCallConfig,  } from "../../core/shared/http";
 
-export interface ExecRequest {
+export interface HttpExecutionResult {
   url: string;
-  method: HttpMethod;
-  headers?: Record<string, string>;
-  params?: Record<string, unknown>;
-  timeoutMs?: number;
-  data?: any;
-}
-
-export interface ExecResponse {
+  method: string;
+  params?: Record<string, any>;
   status: number;
-  headers: Record<string, unknown>;
+  headers: Record<string, any>;
   data: any;
+  timeResponseMs: number;
 }
 
-export async function executeHttp(req: ExecRequest): Promise<ExecResponse> {
+export async function executeHttp(cfg: ProviderCallConfig): Promise<HttpExecutionResult> {
+  let timeStart = Date.now();
   const res = await axios.request({
-    url: req.url,
-    method: req.method,
-    headers: req.headers,
-    params: req.params as any,
-    timeout: req.timeoutMs ?? 8000,
-    data: req.data,
+    url: cfg.url,
+    method: cfg.method ?? 'POST',
+    headers: cfg.headers,
+    params: cfg.params,
+    timeout: cfg.timeoutMs ?? 8000,
+    data: (cfg as any).data,
     validateStatus: () => true,
-  }).catch(err => {
-    console.error('executeHttp - error técnico en conexión:', err);
-    // Error de red / timeout / axios interno
-    return {
-      status: err.response?.status ?? 503,
-      headers: err.response?.headers ?? {},
-      data: err.response?.data ?? { message: err.message, code: 'E-CONN' },
-    };
   });
-
-  return { status: res.status, headers: res.headers as any, data: res.data };
+  let timeEnd = Date.now();
+  
+  return { 
+    url: cfg.url,
+    method: cfg.method ?? 'POST',
+    status: res.status, 
+    headers: res.headers as Record<string, any>, 
+    data: res.data,
+    params: cfg.params,
+    timeResponseMs: timeEnd - timeStart
+  };
 }

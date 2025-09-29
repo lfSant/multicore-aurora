@@ -1,13 +1,13 @@
-import { CanonicalRaw } from "./envelope";
-
 export class ProviderHttpError extends Error {
   constructor(
-    message: string,
-    public readonly status: number,
-    public readonly provider?: string,
-    public readonly raw?: CanonicalRaw,
-    public readonly codeHint?: string,
-  ) {
-    super(message);
-  }
+    public message: string,
+    public status: number,
+    public provider: string,
+    public raw?: { headersCore: any; dataCore: any },
+    public codeHint?: string
+  ) { super(message); }
+}
+
+export class MappingConfigError extends Error {
+  constructor(public details: string) { super(`MappingConfigError: ${details}`); }
 }
