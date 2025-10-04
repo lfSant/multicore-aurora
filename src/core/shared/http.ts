@@ -1,5 +1,6 @@
 export interface ProviderCallConfig {
-  url: string;
+  baseUrl?: string;
+  url?: string;
   method?: 'GET'|'POST'|'PUT'|'DELETE'|'PATCH';
   headers?: Record<string,string>;
   params?: Record<string, any>;

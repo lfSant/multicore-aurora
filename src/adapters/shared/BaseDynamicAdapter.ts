@@ -13,7 +13,7 @@ export class BaseDynamicAdapter<TItem> {
     private readonly providerKey: string,
     private readonly operationKey: string,
     private readonly cacheTTL = 60
-  ) {}
+  ) { }
 
   private cacheKey(tenant?: string, env?: string) {
     return `${tenant || '_'}/${env || '_'}/${this.providerKey}/${this.operationKey}`;
@@ -28,14 +28,32 @@ export class BaseDynamicAdapter<TItem> {
       if (!cfg) throw new ProviderHttpError("Config de mapeo no disponible", 500, this.providerKey);
       await this.cache.set(ck, cfg, this.cacheTTL);
     }
-
     const req = mapRequest(stdInput, cfg);
+
+    const base = http.baseUrl ?? '';
+    const path = cfg.request_path || '';
+    const finalUrl = http.url ?? `${base}${path}`;
+
+    const method = (http.method ?? cfg.request_method ?? 'POST') as 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+    const timeoutMs = http.timeoutMs ?? cfg.request_timeout_ms ?? 8000;
+
+    const headers = {
+      ...(cfg.default_headers_json || {}),
+      ...(http.headers || {}),
+      ...(req.headers || {}),
+    };
+    const params = {
+      ...(cfg.default_params_json || {}),
+      ...(http.params || {}),
+      ...(req.params || {}),
+    };
+
     const res = await executeHttp({
-      url: http.url,
-      method: http.method ?? 'POST',
-      headers: { ...(http.headers || {}), ...(req.headers || {}) },
-      params: { ...(http.params || {}), ...(req.params || {}) },
-      timeoutMs: http.timeoutMs,
+      url: finalUrl,
+      method,
+      headers,
+      params,
+      timeoutMs,
       data: req.body,
     });
 

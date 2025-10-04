@@ -3,7 +3,11 @@ import { z } from "zod";
 const Obj = <T extends z.ZodRawShape>(shape: T) =>
   z.object(shape).passthrough();
 
+/**
+ * Regla de mapeo de un campo
+ */
 export const MapExprSchema = z.union([
+  z.string(), // << NUEVO: ruta directa tipo lodash.get
   Obj({ from: z.string(), default: z.any().optional() }),
   Obj({ const: z.any() }),
   Obj({ template: z.string() }),
@@ -15,6 +19,7 @@ export const MapExprSchema = z.union([
   }),
   Obj({ pick: z.array(z.string()) }),
 
+  // Extensiones
   Obj({ toNumber: z.object({ from: z.string(), default: z.number().optional() }).passthrough() }),
   Obj({ toBoolean: z.object({ from: z.string() }).passthrough() }),
   Obj({
@@ -39,22 +44,34 @@ export const MapExprSchema = z.union([
   }),
 ]);
 
+/**
+ * Config de mapeo entre request/response y la API externa
+ */
 export const MappingConfigSchema = z.object({
   provider_key: z.string(),
   operation_key: z.string(),
   version: z.number().int(),
   is_active: z.boolean(),
 
-  request_body_map: z.record(MapExprSchema).default({}),
+  // Config de request
+  request_path: z.string().optional(),
+  request_method: z.enum(['GET','POST','PUT','DELETE','PATCH']).optional(),
+  request_timeout_ms: z.number().int().optional(),
+  default_headers_json: z.record(z.any()).optional().default({}),
+  default_params_json: z.record(z.any()).optional().default({}),
+
+  // Mapeos de request
+  request_body_map: z.record(MapExprSchema).optional().default({}),
   request_headers_map: z.record(MapExprSchema).optional().default({}),
   request_params_map: z.record(MapExprSchema).optional().default({}),
 
-  response_items_map: z.array(z.record(MapExprSchema)).default([]),
+  // Mapeos de response
+  response_items_map: z.array(z.record(MapExprSchema)).optional().default([]),
   response_raw: z.boolean().optional().default(false),
 
+  // Reglas de error (por ahora, solo se guardan; no se usan)
   error_rules_json: z.array(z.any()).optional().default([]),
 }).passthrough();
-
 
 export type MappingConfig = z.infer<typeof MappingConfigSchema>;
 export type MapExpr = z.infer<typeof MapExprSchema>;

@@ -2,7 +2,7 @@ import axios from "axios";
 import { ProviderCallConfig,  } from "../../core/shared/http";
 
 export interface HttpExecutionResult {
-  url: string;
+  url?: string;
   method: string;
   params?: Record<string, any>;
   status: number;
