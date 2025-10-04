@@ -3,7 +3,7 @@ export class ProviderHttpError extends Error {
     message: string,
     public readonly status: number,
     public readonly provider?: string,
-    public readonly raw?: { headersCore: any; dataCore: any; timeResponseMs?: number },
+    public readonly raw?: { headersCore: any; dataCore: any; timeResponseMs?: number, urlRequest?: string, bodyRequest?: any },
     public readonly codeHint?: string,
     public readonly clientMessage?: string
   ) {

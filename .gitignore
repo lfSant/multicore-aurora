@@ -37,3 +37,6 @@ multicore-connector/
 
 # ignoramos el .DS_Store
 .DS_Store
+
+#ignoramos los querys
+queries/

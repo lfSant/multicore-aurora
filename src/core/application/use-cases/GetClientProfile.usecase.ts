@@ -8,7 +8,7 @@ import { successResponse, errorResponse } from "../../shared/envelope";
 import { ProviderHttpError } from "../../shared/errors";
 
 export class GetClientProfileUseCase {
-  constructor(private readonly provider: ClientProfileProviderPort) {}
+  constructor(private readonly provider: ClientProfileProviderPort) { }
 
   async execute(
     cmd: GetClientProfileCommand,
