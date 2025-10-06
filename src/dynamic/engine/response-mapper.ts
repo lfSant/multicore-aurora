@@ -27,21 +27,21 @@ function readPathFlexible(src: any, path: string): any {
 function evalExpr(e: MapExpr, src: any): any {
   if (e == null) return undefined;
 
-  // string => ruta "a.b[0].c"
+  //* string => ruta "a.b[0].c"
   if (typeof e === 'string') {
     return readPathFlexible(src, e);
   }
 
-  // { from, default }
+  //* { from, default }
   if ('from' in e) {
     const v = readPathFlexible(src, (e as any).from as string);
     return v === undefined ? (e as any).default : v;
   }
 
-  // { const }
+  //* { const }
   if ('const' in e) return (e as any).const;
 
-  // { template: "Hola {{user.name}}" }
+  //* { template: "Hola {{user.name}}" }
   if ('template' in e) {
     const tpl = (e as any).template as string;
     return tpl.replace(/\{\{([^}]+)\}\}/g, (_m, p1) => {
@@ -50,7 +50,7 @@ function evalExpr(e: MapExpr, src: any): any {
     });
   }
 
-  // { coalesce: ["p1","p2"], default? }
+  //* { coalesce: ["p1","p2"], default? }
   if ('coalesce' in e) {
     for (const p of (e as any).coalesce as string[]) {
       const v = readPathFlexible(src, p);
@@ -59,7 +59,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return (e as any).default;
   }
 
-  // { pickAnyBoolean: [...], optional?, default? }
+  //* { pickAnyBoolean: [...], optional?, default? }
   if ('pickAnyBoolean' in e) {
     for (const p of (e as any).pickAnyBoolean as string[]) {
       const b = asBool(readPathFlexible(src, p));
@@ -69,7 +69,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return (e as any).default ?? false;
   }
 
-  // { pick: [...] } -> objeto de extras (con mapKeys y append)
+  //* { pick: [...] } -> objeto de extras (con mapKeys y append)
   if ('pick' in e) {
     const out: Record<string, any> = {};
     const list = (e as any).pick as string[];
@@ -87,7 +87,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return out;
   }
 
-  // { toNumber: { from, default? } }
+  //* { toNumber: { from, default? } }
   if ('toNumber' in e) {
     const spec = (e as any).toNumber as { from: string; default?: any };
     const v = readPathFlexible(src, spec.from);
@@ -95,13 +95,13 @@ function evalExpr(e: MapExpr, src: any): any {
     return Number.isFinite(n) ? n : spec.default;
   }
 
-  // { toBoolean: { from } }
+  //* { toBoolean: { from } }
   if ('toBoolean' in e) {
     const spec = (e as any).toBoolean as { from: string };
     return asBool(readPathFlexible(src, spec.from));
   }
 
-  // { toDateMs: { from, format?: 'iso'|'epochMs'|'epochSec', default? } }
+  //* { toDateMs: { from, format?: 'iso'|'epochMs'|'epochSec', default? } }
   if ('toDateMs' in e) {
     const spec = (e as any).toDateMs as { from: string; format?: 'iso'|'epochMs'|'epochSec'; default?: any };
     const v = readPathFlexible(src, spec.from);
@@ -115,7 +115,7 @@ function evalExpr(e: MapExpr, src: any): any {
     if (f === 'epochSec') return Number(v) * 1000;
   }
 
-  // { join: { of: [...], sep, default? } }
+  //* { join: { of: [...], sep, default? } }
   if ('join' in e) {
     const spec = (e as any).join as { of: string[]; sep: string; default?: string };
     const parts = spec.of
@@ -124,7 +124,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return parts.length ? parts.join(spec.sep) : (spec.default ?? '');
   }
 
-  // { mapValue: { from, dict, default? } }
+  //* { mapValue: { from, dict, default? } }
   if ('mapValue' in e) {
     const spec = (e as any).mapValue as { from: string; dict?: Record<string, any>; default?: any };
     const v = readPathFlexible(src, spec.from);
@@ -132,7 +132,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return Object.prototype.hasOwnProperty.call(dict, v) ? dict[v] : spec.default;
   }
 
-  // { stripPrefix: { from, prefix } }
+  //* { stripPrefix: { from, prefix } }
   if ('stripPrefix' in e) {
     const spec = (e as any).stripPrefix as { from: string; prefix: string };
     const raw = readPathFlexible(src, spec.from);
@@ -141,7 +141,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return s.startsWith(spec.prefix) ? s.slice(spec.prefix.length) : s;
   }
 
-  // { nowMs: true } | { nowMs: { offsetMs } }
+  //* { nowMs: true } | { nowMs: { offsetMs } }
   if ('nowMs' in e) {
     if ((e as any).nowMs === true) return Date.now();
     const off = (e as any).nowMs?.offsetMs ?? 0;
@@ -152,7 +152,10 @@ function evalExpr(e: MapExpr, src: any): any {
 }
 
 /**
- * Ahora acepta el wrapper { status, headers, body }
+ * Mapea la respuesta del proveedor a la configuración dada.
+ * @param provider 
+ * @param cfg 
+ * @returns 
  */
 export function mapResponse(provider: { status: number; headers: any; body: any }, cfg: MappingConfig) {
   const items: any[] = [];
