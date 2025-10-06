@@ -1,37 +1,37 @@
-import { GetClientProfileCommand } from "../dto/commands/GetClientProfile.command";
-import { ClientProfile } from "../dto/results/ClientProfile.result";
-import { ClientProfileProviderPort } from "../ports/outbound/ClientProfileProviderPort";
-import { GetClientProfileCommandSchema } from "../validation/get-client-profile.schema";
+import { GetClientProfileByNumberCommand } from "../dto/commands/GetClientProfileByNumber.command";
+import { ClientProfileByNumber } from "../dto/results/ClientProfileByNumber.result";
+import { ClientProfileByNumberProviderPort } from "../ports/outbound/ClientProfileByNumberProviderPort";
+import { GetClientProfileByNumberCommandSchema } from "../validation/get-client-profile-by-number.schema";
 import { ProviderCallConfig } from "../../shared/http";
 import { CanonicalResponse } from "../../shared/types";
 import { successResponse, errorResponse } from "../../shared/envelope";
 import { ProviderHttpError } from "../../shared/errors";
 
-export class GetClientProfileUseCase {
-  constructor(private readonly provider: ClientProfileProviderPort) { }
+export class GetClientProfileByNumberUseCase {
+  constructor(private readonly provider: ClientProfileByNumberProviderPort) { }
 
   async execute(
-    cmd: GetClientProfileCommand,
+    cmd: GetClientProfileByNumberCommand,
     http: ProviderCallConfig,
-  ): Promise<CanonicalResponse<ClientProfile>> {
-    const parsed = GetClientProfileCommandSchema.parse(cmd);
+  ): Promise<CanonicalResponse<ClientProfileByNumber>> {
+    const parsed = GetClientProfileByNumberCommandSchema.parse(cmd);
     try {
       const result = await this.provider.getProfile(parsed, http);
-      return successResponse<ClientProfile>(result.items, {
+      return successResponse<ClientProfileByNumber>(result.items, {
         server: `Servicio de ${result.provider} ejecutado correctamente.`,
         status: 200,
         raw: result.raw ? [result.raw] : undefined,
       });
     } catch (e: any) {
       if (e instanceof ProviderHttpError) {
-        return errorResponse<ClientProfile>(
+        return errorResponse<ClientProfileByNumber>(
           e.clientMessage || "Datos del usuario temporalmente no disponibles",
           e.message,
           e.status,
           e.raw ? [e.raw] : undefined
         );
       }
-      return errorResponse<ClientProfile>(
+      return errorResponse<ClientProfileByNumber>(
         "Servicio temporalmente no disponible",
         e?.message ?? "Error desconocido",
         500

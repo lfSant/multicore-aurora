@@ -31,3 +31,10 @@ export * from './application/dto/results/AuthLogin.result';
 export * from './application/ports/outbound/AuthLoginProviderPort';
 export * from './application/use-cases/AuthLogin.usecase';
 export * from './application/validation/auth-login.schema';
+
+// Get Profile By Number
+export * from './application/dto/commands/GetClientProfileByNumber.command';
+export * from './application/dto/results/ClientProfileByNumber.result';
+export * from './application/ports/outbound/ClientProfileByNumberProviderPort';
+export * from './application/use-cases/GetClientProfileByNumber.usecase';
+export * from './application/validation/get-client-profile-by-number.schema';

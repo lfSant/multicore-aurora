@@ -92,6 +92,8 @@ export class BaseDynamicAdapter<TItem> {
           timeResponseMs: res.timeResponseMs,
           urlRequest: finalUrl,
           bodyRequest: req.body,
+          headersRequest: headers,
+          paramsRequest: params,
         }
       );
     }
@@ -112,6 +114,8 @@ export class BaseDynamicAdapter<TItem> {
           timeResponseMs: res.timeResponseMs,
           urlRequest: finalUrl,
           bodyRequest: req.body,
+          headersRequest: headers,
+          paramsRequest: params,
         },
         biz.codeHint,
         biz.client
@@ -137,6 +141,8 @@ export class BaseDynamicAdapter<TItem> {
           timeResponseCoreMs: res.timeResponseMs,
           urlRequest: finalUrl,
           bodyRequest: req.body,
+          headersRequest: headers,
+          paramsRequest: params,
         }
         : undefined,
     };
