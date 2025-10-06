@@ -24,3 +24,10 @@ export * from './application/dto/results/AuthPrecheck.result';
 export * from './application/ports/outbound/AuthPrecheckProviderPort';
 export * from './application/use-cases/AuthPrecheck.usecase';
 export * from './application/validation/auth-precheck.schema';
+
+//Auth Login
+export * from './application/dto/commands/AuthLogin.command';
+export * from './application/dto/results/AuthLogin.result';
+export * from './application/ports/outbound/AuthLoginProviderPort';
+export * from './application/use-cases/AuthLogin.usecase';
+export * from './application/validation/auth-login.schema';

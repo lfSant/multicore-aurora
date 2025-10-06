@@ -1,7 +1,4 @@
-// core shared
-export * from "./core/index";
-
-// client profile DTOs + port + usecase
+// DTOs + port + usecase
 export * from "./core/index";
 
 // provider adapter

@@ -45,6 +45,8 @@ export const MapExprSchema = z.union([
       default: z.any().optional()
     }).passthrough()
   }),
+  Obj({ stripPrefix: z.object({ from: z.string(), prefix: z.string() }) }),
+  Obj({ nowMs: z.union([z.literal(true), z.object({ offsetMs: z.number() })]) }),
 ]);
 
 /**
@@ -72,7 +74,7 @@ export const MappingConfigSchema = z.object({
   response_items_map: z.array(z.record(MapExprSchema)).optional().default([]),
   response_raw: z.boolean().optional().default(false),
 
-  // Reglas de error (por ahora, solo se guardan; no se usan)
+  // Reglas de error
   error_rules_json: z.array(z.any()).optional().default([]),
 }).passthrough();
 
