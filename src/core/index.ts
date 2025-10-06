@@ -17,3 +17,10 @@ export * from './application/dto/results/ClientActiveStatus.result';
 export * from './application/ports/outbound/ClientStatusProviderPort';
 export * from './application/use-cases/CheckClientActive.usecase';
 export * from './application/validation/check-client-active.schema';
+
+//Auth Precheck
+export * from './application/dto/commands/AuthPrecheck.command';
+export * from './application/dto/results/AuthPrecheck.result';
+export * from './application/ports/outbound/AuthPrecheckProviderPort';
+export * from './application/use-cases/AuthPrecheck.usecase';
+export * from './application/validation/auth-precheck.schema';

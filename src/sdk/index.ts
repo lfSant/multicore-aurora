@@ -4,3 +4,6 @@ export * from "./client/index";
 
 //Client exports
 export * from "./client/index";
+
+//Auth exports
+export * from "./auth/index";

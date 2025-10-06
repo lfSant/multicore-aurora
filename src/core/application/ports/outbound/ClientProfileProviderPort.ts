@@ -6,6 +6,7 @@ import { ClientProfile } from "../../dto/results/ClientProfile.result";
 export interface ClientProfileProviderPort {
   getProfile(
     cmd: GetClientProfileCommand,
-    http: ProviderCallConfig
+    http: ProviderCallConfig,
+    options?: { tenant?: string; environment?: string }
   ): Promise<ProviderResult<ClientProfile>>;
 }
