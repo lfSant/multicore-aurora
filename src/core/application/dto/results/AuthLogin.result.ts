@@ -1,6 +1,6 @@
 export interface AuthLogin {
     authenticated: boolean;
-    bearerToken: string;
+    accessToken: string;
     createdAt: Date;
     expiresAt?: Date;
     refreshToken?: string;
