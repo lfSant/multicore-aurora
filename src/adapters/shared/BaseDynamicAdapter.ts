@@ -62,7 +62,7 @@ export class BaseDynamicAdapter<TItem> {
         `Proveedor ${this.providerKey} (${this.operationKey}) HTTP ${res.status}`,
         res.status,
         this.providerKey,
-        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs, urlRequest: http.url, bodyRequest: req.body }
+        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs, urlRequest: finalUrl, bodyRequest: req.body }
       );
     }
 
@@ -72,7 +72,7 @@ export class BaseDynamicAdapter<TItem> {
         biz.server,
         biz.status,
         this.providerKey,
-        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs, urlRequest: http.url, bodyRequest: req.body },
+        { headersCore: res.headers, dataCore: res.data, timeResponseMs: res.timeResponseMs, urlRequest: finalUrl, bodyRequest: req.body },
         biz.codeHint,
         biz.client
       );
@@ -83,7 +83,7 @@ export class BaseDynamicAdapter<TItem> {
       items: (mapped.items as TItem[]) ?? [],
       status: res.status,
       provider: this.providerKey,
-      raw: cfg.response_raw ? { headersCore: res.headers, dataCore: res.data, timeResponseCoreMs: res.timeResponseMs, urlRequest: http.url, bodyRequest: req.body } : undefined
+      raw: cfg.response_raw ? { headersCore: res.headers, dataCore: res.data, timeResponseCoreMs: res.timeResponseMs, urlRequest: finalUrl, bodyRequest: req.body } : undefined
     };
   }
 }

@@ -7,7 +7,7 @@ const Obj = <T extends z.ZodRawShape>(shape: T) =>
  * Regla de mapeo de un campo
  */
 export const MapExprSchema = z.union([
-  z.string(), // << NUEVO: ruta directa tipo lodash.get
+  z.string(),
   Obj({ from: z.string(), default: z.any().optional() }),
   Obj({ const: z.any() }),
   Obj({ template: z.string() }),
@@ -17,9 +17,12 @@ export const MapExprSchema = z.union([
     default: z.boolean().optional(),
     optional: z.boolean().optional()
   }),
-  Obj({ pick: z.array(z.string()) }),
+  Obj({
+    pick: z.array(z.string()),
+    mapKeys: z.record(z.string()).optional(),
+    append: z.record(z.any()).optional()
+  }),
 
-  // Extensiones
   Obj({ toNumber: z.object({ from: z.string(), default: z.number().optional() }).passthrough() }),
   Obj({ toBoolean: z.object({ from: z.string() }).passthrough() }),
   Obj({
@@ -55,7 +58,7 @@ export const MappingConfigSchema = z.object({
 
   // Config de request
   request_path: z.string().optional(),
-  request_method: z.enum(['GET','POST','PUT','DELETE','PATCH']).optional(),
+  request_method: z.enum(['GET', 'POST', 'PUT', 'DELETE', 'PATCH']).optional(),
   request_timeout_ms: z.number().int().optional(),
   default_headers_json: z.record(z.any()).optional().default({}),
   default_params_json: z.record(z.any()).optional().default({}),

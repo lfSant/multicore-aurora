@@ -55,9 +55,18 @@ function evalExpr(e: MapExpr, src: any): any {
   // { pick: [...] } -> objeto de extras
   if ('pick' in e) {
     const out: Record<string, any> = {};
-    for (const p of (e as any).pick as string[]) {
+    const list = (e as any).pick as string[];
+    const mapKeys = (e as any).mapKeys as Record<string,string> | undefined;
+    const append = (e as any).append as Record<string,any> | undefined;
+    for (const p of list) {
       const v = dotGet(src, p);
-      if (v !== undefined) out[p] = v;
+      if (v !== undefined) {
+        const key = mapKeys && mapKeys[p] ? mapKeys[p] : p;
+        out[key] = v;
+      }
+    }
+    if (append) {
+      Object.assign(out, append);
     }
     return out;
   }
@@ -122,15 +131,15 @@ export function mapResponse(providerBody: any, cfg: MappingConfig) {
       if (val === undefined) continue;
 
       if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {
-        if (Object.keys(val).length) extras = { ...(extras || {}), ...val };
+        if (Object.keys(val).length) {
+          extras = { ...(extras || {}), ...val };
+        }
       } else {
         item[field] = val;
       }
     }
 
     if (extras) item.extras = extras;
-
-    // Evitar empujar un item vacío si nada mapeó
     if (Object.keys(item).length > 0) items.push(item);
   }
 
