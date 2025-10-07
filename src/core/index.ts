@@ -43,3 +43,8 @@ export * from './application/validation/get-client-profile-by-number.schema';
 export * from './application/dto/results/MaritalStatus.result';
 export * from './application/ports/outbound/MaritalStatusProviderPort';
 export * from './application/use-cases/MaritalStatus.usecase';
+
+// Education Types - Get
+export * from './application/dto/results/EducationTypes.result';
+export * from './application/ports/outbound/EducationTypesProviderPort';
+export * from './application/use-cases/EducationTypes.usecase';
