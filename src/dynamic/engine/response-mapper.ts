@@ -1,4 +1,3 @@
-// src/dynamic/engine/response-mapper.ts
 import { dotGet } from './path-get';
 import type { MapExpr, MappingConfig } from '../mapping-config';
 
@@ -9,25 +8,37 @@ const asBool = (v: any) => {
 };
 
 /**
- * Función de lectura de rutas que intenta leer tanto en el objeto raíz { status, headers, body }
+ * Función de lectura flexible de rutas.
  * @param src 
  * @param path 
  * @returns 
  */
 function readPathFlexible(src: any, path: string): any {
+  // intento directo
   const v = dotGet(src, path);
   if (v !== undefined) return v;
+
+  // intento forzado contra body.*
   if (src && typeof src === 'object' && 'body' in src) {
-    const v2 = dotGet(src.body, path);
-    if (v2 !== undefined) return v2;
+    const viaBody1 = dotGet(src.body, path);
+    if (viaBody1 !== undefined) return viaBody1;
+
+    const viaBody2 = dotGet(src, `body.${path}`);
+    if (viaBody2 !== undefined) return viaBody2;
   }
   return undefined;
 }
 
+/**
+ * Evalúa una regla MapExpr contra el origen dado.
+ * @param e 
+ * @param src 
+ * @returns 
+ */
 function evalExpr(e: MapExpr, src: any): any {
   if (e == null) return undefined;
 
-  //* string => ruta "a.b[0].c"
+  //* string => ruta directa
   if (typeof e === 'string') {
     return readPathFlexible(src, e);
   }
@@ -69,7 +80,7 @@ function evalExpr(e: MapExpr, src: any): any {
     return (e as any).default ?? false;
   }
 
-  //* { pick: [...] } -> objeto de extras (con mapKeys y append)
+  //* { pick: [...] } (con mapKeys y append) -> objeto extras
   if ('pick' in e) {
     const out: Record<string, any> = {};
     const list = (e as any).pick as string[];
@@ -151,34 +162,65 @@ function evalExpr(e: MapExpr, src: any): any {
   return undefined;
 }
 
+//* Type guard para el modo iterador
+function isEachShape(shape: any): shape is { each: string; map: Record<string, MapExpr> } {
+  return !!shape && typeof shape === 'object' && 'each' in shape && 'map' in shape;
+}
+
 /**
- * Mapea la respuesta del proveedor a la configuración dada.
+ * Funcion de mapeo de respuestas según la configuración dada.
  * @param provider 
  * @param cfg 
  * @returns 
  */
-export function mapResponse(provider: { status: number; headers: any; body: any }, cfg: MappingConfig) {
+export function mapResponse(
+  provider: { status: number; headers: any; body: any },
+  cfg: MappingConfig
+) {
   const items: any[] = [];
 
   for (const shape of cfg.response_items_map || []) {
+
+    if (isEachShape(shape)) {
+      const arr = readPathFlexible(provider, shape.each);
+      if (Array.isArray(arr)) {
+        for (const el of arr) {
+          const item: Record<string, any> = {};
+          let extras: Record<string, any> | undefined;
+
+          for (const [field, rule] of Object.entries(shape.map)) {
+            const val = evalExpr(rule as MapExpr, el);
+            if (val === undefined) continue;
+
+            if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {
+              if (Object.keys(val).length) extras = { ...(extras || {}), ...val };
+            } else {
+              item[field] = val;
+            }
+          }
+          if (extras) item.extras = extras;
+          if (Object.keys(item).length) items.push(item);
+        }
+      }
+      continue;
+    }
+
     const item: Record<string, any> = {};
     let extras: Record<string, any> | undefined;
 
-    for (const [field, rule] of Object.entries(shape)) {
+    for (const [field, rule] of Object.entries(shape as Record<string, MapExpr>)) {
       const val = evalExpr(rule as MapExpr, provider);
       if (val === undefined) continue;
 
       if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {
-        if (Object.keys(val).length) {
-          extras = { ...(extras || {}), ...val };
-        }
+        if (Object.keys(val).length) extras = { ...(extras || {}), ...val };
       } else {
         item[field] = val;
       }
     }
 
     if (extras) item.extras = extras;
-    if (Object.keys(item).length > 0) items.push(item);
+    if (Object.keys(item).length) items.push(item);
   }
 
   return { items };

@@ -49,6 +49,9 @@ export const MapExprSchema = z.union([
   Obj({ nowMs: z.union([z.literal(true), z.object({ offsetMs: z.number() })]) }),
 ]);
 
+const ResponseItemShapeSchema = z.record(MapExprSchema);
+const ResponseItemEachSchema  = Obj({ each: z.string(), map: z.record(MapExprSchema) });
+
 /**
  * Config de mapeo entre request/response y la API externa
  */
@@ -71,7 +74,7 @@ export const MappingConfigSchema = z.object({
   request_params_map: z.record(MapExprSchema).optional().default({}),
 
   // Mapeos de response
-  response_items_map: z.array(z.record(MapExprSchema)).optional().default([]),
+  response_items_map: z.array(z.union([ResponseItemShapeSchema, ResponseItemEachSchema])).default([]),
   response_raw: z.boolean().optional().default(false),
 
   // Reglas de error

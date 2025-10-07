@@ -38,3 +38,8 @@ export * from './application/dto/results/ClientProfileByNumber.result';
 export * from './application/ports/outbound/ClientProfileByNumberProviderPort';
 export * from './application/use-cases/GetClientProfileByNumber.usecase';
 export * from './application/validation/get-client-profile-by-number.schema';
+
+// Marital Status - Get
+export * from './application/dto/results/MaritalStatus.result';
+export * from './application/ports/outbound/MaritalStatusProviderPort';
+export * from './application/use-cases/MaritalStatus.usecase';
