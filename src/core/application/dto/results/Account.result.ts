@@ -8,11 +8,12 @@ export interface Account {
   signatureType?: string;
   balance: number;
   availableBalance: number;
-  holdBalance: number;
-  blockedBalance: number;
-  otherBalance: number;
-  pledgedBalance: number;
-  operationalTransactionsAllowed?: boolean;
+  holdBalance?: number;
+  blockedBalance?: number;
+  otherBalance?: number;
+  pledgedBalance?: number;
+  operationalTransactionsAllowed?: boolean | null;
   productCategory: 'ACCOUNT';
+  extras?: Record<string, any>;
 }
 

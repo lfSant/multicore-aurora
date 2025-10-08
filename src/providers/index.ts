@@ -9,3 +9,4 @@ export * from "./catalog/DynamicProfessionalTypesAdapter";
 export * from "./product/DynamicConsolidatedProductsAdapter";
 export * from "./account/DynamicClientAccountsAdapter";
 export * from "./account/DynamicGetClientAccountAdapter";
+export * from "./account/DynamicConsolidatedAccountsAdapter";

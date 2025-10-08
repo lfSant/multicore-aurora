@@ -69,8 +69,15 @@ export * from './application/use-cases/ListAccounts.usecase';
 export * from './application/validation/list-accounts.schema';
 
 // Get Account By Number - Post
-export * from './application/dto/commands/GetAccountByNumberCommand.command';
+export * from './application/dto/commands/GetAccountByNumber.command';
 export * from './application/dto/results/Account.result';
 export * from './application/ports/outbound/ClientAccountByNumberProviderPort';
 export * from './application/use-cases/GetAccountByNumber.usecase';
 export * from './application/validation/get-account-by-number.schema';
+
+// Consolidated Accounts - Post
+export * from './application/dto/commands/GetConsolidatedAccounts.command';
+export * from './application/dto/results/Account.result';
+export * from './application/ports/outbound/ConsolidatedAccountsProviderPort';
+export * from './application/use-cases/ConsolidatedAccounts.usecase';
+export * from './application/validation/get-consolidated-accounts.schema';

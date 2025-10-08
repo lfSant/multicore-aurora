@@ -1,3 +1,3 @@
 export interface GetAccountByNumberCommand {
-  numberAccount: string;
+  accountNumber: string;
 }

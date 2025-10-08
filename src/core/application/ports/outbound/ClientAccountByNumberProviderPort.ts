@@ -1,6 +1,6 @@
 import { ProviderCallConfig } from "../../../shared/http";
 import { ProviderResult } from "../../../shared/types";
-import { GetAccountByNumberCommand } from "../../dto/commands/GetAccountByNumberCommand.command";
+import { GetAccountByNumberCommand } from "../../dto/commands/GetAccountByNumber.command";
 import { Account } from "../../dto/results/Account.result";
 
 export interface ClientAccountByNumberProviderPort {

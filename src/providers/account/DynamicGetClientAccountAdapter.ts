@@ -1,6 +1,6 @@
 import { BaseDynamicAdapter } from "../../adapters/shared/BaseDynamicAdapter";
 import { Account } from "../../core/application/dto/results/Account.result";
-import { GetAccountByNumberCommand } from "../../core/application/dto/commands/GetAccountByNumberCommand.command";
+import { GetAccountByNumberCommand } from "../../core/application/dto/commands/GetAccountByNumber.command";
 import { ClientAccountByNumberProviderPort } from "../../core/application/ports/outbound/ClientAccountByNumberProviderPort";
 import { ProviderCallConfig } from "../../core/shared/http";
 import { ProviderResult } from "../../core/shared/types";

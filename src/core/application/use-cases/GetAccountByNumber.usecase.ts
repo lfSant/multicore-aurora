@@ -1,4 +1,4 @@
-import { GetAccountByNumberCommand } from "../dto/commands/GetAccountByNumberCommand.command";
+import { GetAccountByNumberCommand } from "../dto/commands/GetAccountByNumber.command";
 import { Account } from "../dto/results/Account.result";
 import { ClientAccountByNumberProviderPort } from "../ports/outbound/ClientAccountByNumberProviderPort";
 import { GetAccountByNumberCommandSchema } from "../validation/get-account-by-number.schema";
