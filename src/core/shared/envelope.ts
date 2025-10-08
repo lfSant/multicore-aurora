@@ -8,7 +8,7 @@ export function successResponse<T>(
     success: true,
     code: "SRV-S2000",
     messages: {
-      client: opts?.client ?? "Parámetros del usuario obtenidos correctamente",
+      client: opts?.client ?? "El servicio se ejecutó correctamente.",
       server: opts?.server ?? "Servicio ejecutado correctamente.",
     },
     data: items ?? [],

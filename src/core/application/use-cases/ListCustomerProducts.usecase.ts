@@ -1,5 +1,5 @@
 import { ListCustomerProductsCommand } from "../dto/commands/ListCustomerProducts.command";
-import { ConsolidatedBuckets, ConsolidatedProduct } from "../dto/results/ConsolidatedProduct.result";
+import { ConsolidatedBuckets } from "../dto/results/ConsolidatedProduct.result";
 import { ConsolidatedProductsProviderPort } from "../ports/outbound/ConsolidatedProductsProviderPort";
 import { ListCustomerProductsCommandSchema } from "../validation/list-customer-products.schema";
 import { ProviderCallConfig } from "../../shared/http";
@@ -17,8 +17,9 @@ export class ListCustomerProductsUseCase {
         const parsed = ListCustomerProductsCommandSchema.parse(cmd);
         try {
             const result = await this.provider.listCustomerProducts(parsed, http);
-            const grouped = groupConsolidated((result.items || []) as ConsolidatedProduct[]);
+            const grouped = groupConsolidated(result.items || []);
             return successResponse<ConsolidatedBuckets>([grouped], {
+                client: "Listado de productos del cliente obtenido correctamente.",
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
