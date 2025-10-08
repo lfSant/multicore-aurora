@@ -10,3 +10,6 @@ export * from "./auth/index";
 
 //Catalogs exports
 export * from "./catalogs/index";
+
+//Products exports
+export * from "./products/index";

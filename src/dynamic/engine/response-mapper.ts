@@ -1,3 +1,4 @@
+// src/dynamic/engine/response-mapper.ts
 import { dotGet } from './path-get';
 import type { MapExpr, MappingConfig } from '../mapping-config';
 
@@ -7,18 +8,11 @@ const asBool = (v: any) => {
   return undefined;
 };
 
-/**
- * Función de lectura flexible de rutas.
- * @param src 
- * @param path 
- * @returns 
- */
+/** Lee de raíz o de body.<path> indistintamente */
 function readPathFlexible(src: any, path: string): any {
-  // intento directo
   const v = dotGet(src, path);
   if (v !== undefined) return v;
 
-  // intento forzado contra body.*
   if (src && typeof src === 'object' && 'body' in src) {
     const viaBody1 = dotGet(src.body, path);
     if (viaBody1 !== undefined) return viaBody1;
@@ -29,23 +23,25 @@ function readPathFlexible(src: any, path: string): any {
   return undefined;
 }
 
-/**
- * Evalúa una regla MapExpr contra el origen dado.
- * @param e 
- * @param src 
- * @returns 
- */
-function evalExpr(e: MapExpr, src: any): any {
+/** Primero intenta en el elemento local, luego en el root (status, headers, body…) */
+function readLocalFirst(local: any, root: any, path: string): any {
+  const vLocal = dotGet(local, path);
+  if (vLocal !== undefined) return vLocal;
+  return readPathFlexible(root, path);
+}
+
+/** Evalúa una MapExpr contra (local, root) */
+function evalExprOn(e: MapExpr, local: any, root: any): any {
   if (e == null) return undefined;
 
   //* string => ruta directa
   if (typeof e === 'string') {
-    return readPathFlexible(src, e);
+    return readLocalFirst(local, root, e);
   }
 
   //* { from, default }
   if ('from' in e) {
-    const v = readPathFlexible(src, (e as any).from as string);
+    const v = readLocalFirst(local, root, (e as any).from as string);
     return v === undefined ? (e as any).default : v;
   }
 
@@ -56,7 +52,7 @@ function evalExpr(e: MapExpr, src: any): any {
   if ('template' in e) {
     const tpl = (e as any).template as string;
     return tpl.replace(/\{\{([^}]+)\}\}/g, (_m, p1) => {
-      const val = readPathFlexible(src, String(p1).trim());
+      const val = readLocalFirst(local, root, String(p1).trim());
       return val == null ? '' : String(val);
     });
   }
@@ -64,7 +60,7 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { coalesce: ["p1","p2"], default? }
   if ('coalesce' in e) {
     for (const p of (e as any).coalesce as string[]) {
-      const v = readPathFlexible(src, p);
+      const v = readLocalFirst(local, root, p);
       if (v != null) return v;
     }
     return (e as any).default;
@@ -73,7 +69,7 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { pickAnyBoolean: [...], optional?, default? }
   if ('pickAnyBoolean' in e) {
     for (const p of (e as any).pickAnyBoolean as string[]) {
-      const b = asBool(readPathFlexible(src, p));
+      const b = asBool(readLocalFirst(local, root, p));
       if (typeof b === 'boolean') return b;
     }
     if ((e as any).optional) return undefined;
@@ -88,7 +84,7 @@ function evalExpr(e: MapExpr, src: any): any {
     const append = (e as any).append as Record<string, any> | undefined;
 
     for (const p of list) {
-      const v = readPathFlexible(src, p);
+      const v = readLocalFirst(local, root, p);
       if (v !== undefined) {
         const key = mapKeys && mapKeys[p] ? mapKeys[p] : p;
         out[key] = v;
@@ -101,7 +97,7 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { toNumber: { from, default? } }
   if ('toNumber' in e) {
     const spec = (e as any).toNumber as { from: string; default?: any };
-    const v = readPathFlexible(src, spec.from);
+    const v = readLocalFirst(local, root, spec.from);
     const n = Number(v);
     return Number.isFinite(n) ? n : spec.default;
   }
@@ -109,13 +105,13 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { toBoolean: { from } }
   if ('toBoolean' in e) {
     const spec = (e as any).toBoolean as { from: string };
-    return asBool(readPathFlexible(src, spec.from));
+    return asBool(readLocalFirst(local, root, spec.from));
   }
 
   //* { toDateMs: { from, format?: 'iso'|'epochMs'|'epochSec', default? } }
   if ('toDateMs' in e) {
-    const spec = (e as any).toDateMs as { from: string; format?: 'iso'|'epochMs'|'epochSec'; default?: any };
-    const v = readPathFlexible(src, spec.from);
+    const spec = (e as any).toDateMs as { from: string; format?: 'iso' | 'epochMs' | 'epochSec'; default?: any };
+    const v = readLocalFirst(local, root, spec.from);
     if (v == null) return spec.default;
     const f = spec.format || 'iso';
     if (f === 'iso') {
@@ -130,7 +126,7 @@ function evalExpr(e: MapExpr, src: any): any {
   if ('join' in e) {
     const spec = (e as any).join as { of: string[]; sep: string; default?: string };
     const parts = spec.of
-      .map((p) => readPathFlexible(src, p))
+      .map((p) => readLocalFirst(local, root, p))
       .filter((x) => x != null && String(x).trim() !== '');
     return parts.length ? parts.join(spec.sep) : (spec.default ?? '');
   }
@@ -138,7 +134,7 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { mapValue: { from, dict, default? } }
   if ('mapValue' in e) {
     const spec = (e as any).mapValue as { from: string; dict?: Record<string, any>; default?: any };
-    const v = readPathFlexible(src, spec.from);
+    const v = readLocalFirst(local, root, spec.from);
     const dict = spec.dict || {};
     return Object.prototype.hasOwnProperty.call(dict, v) ? dict[v] : spec.default;
   }
@@ -146,7 +142,7 @@ function evalExpr(e: MapExpr, src: any): any {
   //* { stripPrefix: { from, prefix } }
   if ('stripPrefix' in e) {
     const spec = (e as any).stripPrefix as { from: string; prefix: string };
-    const raw = readPathFlexible(src, spec.from);
+    const raw = readLocalFirst(local, root, spec.from);
     if (raw == null) return undefined;
     const s = String(raw);
     return s.startsWith(spec.prefix) ? s.slice(spec.prefix.length) : s;
@@ -167,12 +163,7 @@ function isEachShape(shape: any): shape is { each: string; map: Record<string, M
   return !!shape && typeof shape === 'object' && 'each' in shape && 'map' in shape;
 }
 
-/**
- * Funcion de mapeo de respuestas según la configuración dada.
- * @param provider 
- * @param cfg 
- * @returns 
- */
+/** Mapea {status, headers, body} según cfg.response_items_map */
 export function mapResponse(
   provider: { status: number; headers: any; body: any },
   cfg: MappingConfig
@@ -180,7 +171,6 @@ export function mapResponse(
   const items: any[] = [];
 
   for (const shape of cfg.response_items_map || []) {
-
     if (isEachShape(shape)) {
       const arr = readPathFlexible(provider, shape.each);
       if (Array.isArray(arr)) {
@@ -189,7 +179,7 @@ export function mapResponse(
           let extras: Record<string, any> | undefined;
 
           for (const [field, rule] of Object.entries(shape.map)) {
-            const val = evalExpr(rule as MapExpr, el);
+            const val = evalExprOn(rule as MapExpr, el, provider);
             if (val === undefined) continue;
 
             if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {
@@ -209,7 +199,7 @@ export function mapResponse(
     let extras: Record<string, any> | undefined;
 
     for (const [field, rule] of Object.entries(shape as Record<string, MapExpr>)) {
-      const val = evalExpr(rule as MapExpr, provider);
+      const val = evalExprOn(rule as MapExpr, provider, provider);
       if (val === undefined) continue;
 
       if (typeof rule === 'object' && rule !== null && 'pick' in (rule as any)) {

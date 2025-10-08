@@ -6,3 +6,4 @@ export * from "./client/DynamicClientProfileByNumberAdapter";
 export * from "./catalogs/DynamicMaritalStatusAdapter";
 export * from "./catalogs/DynamicEducationTypesAdapter";
 export * from "./catalogs/DynamicProfessionalTypesAdapter";
+export * from "./products/DynamicConsolidatedProductsAdapter";

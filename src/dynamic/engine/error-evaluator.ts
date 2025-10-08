@@ -66,6 +66,7 @@ export function evaluateBusinessError(
   rules: ErrorRule[] = []
 ): { client: string; server: string; status: number; codeHint?: string } | null {
   for (const r of rules) {
+    if (!r || typeof r !== 'object') continue;
     if (!matchesWhen(status, body, r.when)) continue;
     if (!matchesWhenContains(body, r.whenContains)) continue;
     return { client: r.client, server: r.server, status: r.status, codeHint: r.codeHint };
