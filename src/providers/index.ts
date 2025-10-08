@@ -8,3 +8,4 @@ export * from "./catalog/DynamicEducationTypesAdapter";
 export * from "./catalog/DynamicProfessionalTypesAdapter";
 export * from "./product/DynamicConsolidatedProductsAdapter";
 export * from "./account/DynamicClientAccountsAdapter";
+export * from "./account/DynamicGetClientAccountAdapter";

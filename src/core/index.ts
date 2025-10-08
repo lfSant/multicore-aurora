@@ -67,3 +67,10 @@ export * from './application/dto/results/Account.result';
 export * from './application/ports/outbound/ClientAccountsProviderPort';
 export * from './application/use-cases/ListAccounts.usecase';
 export * from './application/validation/list-accounts.schema';
+
+// Get Account By Number - Post
+export * from './application/dto/commands/GetAccountByNumberCommand.command';
+export * from './application/dto/results/Account.result';
+export * from './application/ports/outbound/ClientAccountByNumberProviderPort';
+export * from './application/use-cases/GetAccountByNumber.usecase';
+export * from './application/validation/get-account-by-number.schema';

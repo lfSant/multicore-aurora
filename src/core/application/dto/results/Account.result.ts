@@ -15,3 +15,4 @@ export interface Account {
   operationalTransactionsAllowed?: boolean;
   productCategory: 'ACCOUNT';
 }
+
