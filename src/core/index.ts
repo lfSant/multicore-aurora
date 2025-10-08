@@ -48,3 +48,8 @@ export * from './application/use-cases/MaritalStatus.usecase';
 export * from './application/dto/results/EducationTypes.result';
 export * from './application/ports/outbound/EducationTypesProviderPort';
 export * from './application/use-cases/EducationTypes.usecase';
+
+// Profession Type - Get
+export * from './application/dto/results/ProfessionTypes.result';
+export * from './application/ports/outbound/ProfessionTypesProviderPort';
+export * from './application/use-cases/ProfessionTypes.usecase';

@@ -5,3 +5,4 @@ export * from "./auth/DynamicAuthLoginAdapter";
 export * from "./client/DynamicClientProfileByNumberAdapter";
 export * from "./catalogs/DynamicMaritalStatusAdapter";
 export * from "./catalogs/DynamicEducationTypesAdapter";
+export * from "./catalogs/DynamicProfessionalTypesAdapter";
