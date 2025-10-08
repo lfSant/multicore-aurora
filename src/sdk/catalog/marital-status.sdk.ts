@@ -1,5 +1,5 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
-import { MaritalStatusDynamicAdapter } from "../../providers/catalogs/DynamicMaritalStatusAdapter";
+import { MaritalStatusDynamicAdapter } from "../../providers/catalog/DynamicMaritalStatusAdapter";
 import { MaritalStatusUseCase } from "../../core/application/use-cases/MaritalStatus.usecase";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";

@@ -60,3 +60,10 @@ export * from './application/dto/results/ConsolidatedProduct.result';
 export * from './application/ports/outbound/ConsolidatedProductsProviderPort';
 export * from './application/use-cases/ListCustomerProducts.usecase';
 export * from './application/validation/list-customer-products.schema';
+
+// List Accounts - Post
+export * from './application/dto/commands/ListAccountsCommand.command';
+export * from './application/dto/results/Account.result';
+export * from './application/ports/outbound/ClientAccountsProviderPort';
+export * from './application/use-cases/ListAccounts.usecase';
+export * from './application/validation/list-accounts.schema';

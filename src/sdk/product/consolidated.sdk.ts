@@ -1,5 +1,5 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
-import { ConsolidatedProductsDynamicAdapter } from "../../providers/products/DynamicConsolidatedProductsAdapter";
+import { ConsolidatedProductsDynamicAdapter } from "../../providers/product/DynamicConsolidatedProductsAdapter";
 import { ListCustomerProductsUseCase } from "../../core/application/use-cases/ListCustomerProducts.usecase";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { ListCustomerProductsCommand } from "../../core/application/dto/commands/ListCustomerProducts.command";

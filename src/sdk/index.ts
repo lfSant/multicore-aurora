@@ -9,7 +9,10 @@ export * from "./client/index";
 export * from "./auth/index";
 
 //Catalogs exports
-export * from "./catalogs/index";
+export * from "./catalog/index";
 
 //Products exports
-export * from "./products/index";
+export * from "./product/index";
+
+//Accounts exports
+export * from "./account/index";

@@ -1,2 +1,2 @@
-export * from './precheck';
-export * from './login';
+export * from './precheck.sdk';
+export * from './login.sdk';
