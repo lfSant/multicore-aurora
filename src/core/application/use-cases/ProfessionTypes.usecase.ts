@@ -16,6 +16,7 @@ export class ProfessionTypesUseCase {
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
+                aditionalData: result?.aditionalData || {},
             });
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {

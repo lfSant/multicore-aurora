@@ -50,7 +50,7 @@ export const MapExprSchema = z.union([
 ]);
 
 const ResponseItemShapeSchema = z.record(MapExprSchema);
-const ResponseItemEachSchema  = Obj({ each: z.string(), map: z.record(MapExprSchema) });
+const ResponseItemEachSchema = Obj({ each: z.string(), map: z.record(MapExprSchema) });
 
 /**
  * Config de mapeo entre request/response y la API externa
@@ -79,6 +79,14 @@ export const MappingConfigSchema = z.object({
 
   // Reglas de error
   error_rules_json: z.array(z.any()).optional().default([]),
+
+  // Modelo de datos legacy
+  legacy_enabled: z.boolean().optional().default(false),
+  legacy_map_json: z.union([
+    z.null(),
+    z.record(MapExprSchema),
+    z.array(z.union([ResponseItemShapeSchema, ResponseItemEachSchema]))
+  ]).optional().default(null),
 }).passthrough();
 
 export type MappingConfig = z.infer<typeof MappingConfigSchema>;

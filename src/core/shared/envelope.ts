@@ -2,7 +2,7 @@ import { CanonicalResponse } from "./types";
 
 export function successResponse<T>(
   items: T[],
-  opts?: { client?: string; server?: string; status?: number; raw?: Array<{headersCore:any; dataCore:any}> }
+  opts?: { client?: string; server?: string; status?: number; raw?: Array<{headersCore:any; dataCore:any}>, aditionalData?: Record<string, any> }
 ): CanonicalResponse<T> {
   return {
     success: true,
@@ -14,7 +14,7 @@ export function successResponse<T>(
     data: items ?? [],
     timestamp: new Date().toISOString(),
     status: opts?.status ?? 200,
-    aditionalData: {},
+    aditionalData: opts?.aditionalData || {},
     ...(opts?.raw ? { raw: opts.raw } : {}),
   };
 }

@@ -9,7 +9,7 @@ const asBool = (v: any) => {
 };
 
 /** Lee de raíz o de body.<path> indistintamente */
-function readPathFlexible(src: any, path: string): any {
+export function readPathFlexible(src: any, path: string): any {
   const v = dotGet(src, path);
   if (v !== undefined) return v;
 
@@ -31,7 +31,7 @@ function readLocalFirst(local: any, root: any, path: string): any {
 }
 
 /** Evalúa una MapExpr contra (local, root) */
-function evalExprOn(e: MapExpr, local: any, root: any): any {
+export function evalExprOn(e: MapExpr, local: any, root: any): any {
   if (e == null) return undefined;
 
   //* string => ruta directa
@@ -159,7 +159,7 @@ function evalExprOn(e: MapExpr, local: any, root: any): any {
 }
 
 //* Type guard para el modo iterador
-function isEachShape(shape: any): shape is { each: string; map: Record<string, MapExpr> } {
+export function isEachShape(shape: any): shape is { each: string; map: Record<string, MapExpr> } {
   return !!shape && typeof shape === 'object' && 'each' in shape && 'map' in shape;
 }
 

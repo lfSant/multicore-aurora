@@ -3,6 +3,7 @@ export interface ProviderResult<TItem = any> {
   status: number;
   provider: string;
   raw?: { headersCore: any; dataCore: any };
+  aditionalData?: Record<string, any>;
 }
 
 export interface CanonicalResponse<TItem = any> {

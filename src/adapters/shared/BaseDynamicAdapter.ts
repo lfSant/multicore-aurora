@@ -5,6 +5,7 @@ import {
   mapResponse,
   evaluateBusinessError,
   mapRequest,
+  mapLegacy
 } from '../../dynamic/engine/index';
 import { ProviderCallConfig } from '../../core/shared/http';
 import { executeHttp } from '../http/axios-executor';
@@ -122,18 +123,26 @@ export class BaseDynamicAdapter<TItem> {
       );
     }
 
-    const mapped = mapResponse(
-      {
-        status: res.status,
-        headers: res.headers,
-        body: res.data,
-      },
-      cfg
-    );
+    const providerPack = { status: res.status, headers: res.headers, body: res.data };
+    const mapped = mapResponse(providerPack, cfg);
+
+    let aditionalData: Record<string, any> | undefined;
+    if ((cfg as any).legacy_enabled && (cfg as any).legacy_map_json) {
+      try {
+        const legacy = mapLegacy(providerPack, (cfg as any).legacy_map_json);
+        if (legacy != null) {
+          aditionalData = { legacyMap: legacy };
+        }
+      } catch {
+        aditionalData = { legacyMap: { error: 'legacy-map-failed' } };
+      }
+    }
+
     return {
       items: (mapped.items as TItem[]) ?? [],
       status: res.status,
       provider: this.providerKey,
+      aditionalData,
       raw: cfg.response_raw
         ? {
           headersCore: res.headers,

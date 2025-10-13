@@ -12,7 +12,7 @@ function parseMaybe<T>(v: any): T {
 }
 
 export class MySqlMappingConfigRepo implements MappingConfigRepo {
-  constructor(private readonly pool: Pool, private readonly table = "mapping_config") {}
+  constructor(private readonly pool: Pool, private readonly table = "mapping_config") { }
 
   async getActive(provider: string, operation: string): Promise<MappingConfig | null> {
     const [rows]: any = await this.pool.query(
@@ -42,6 +42,8 @@ export class MySqlMappingConfigRepo implements MappingConfigRepo {
       response_items_map: parseMaybe(r.response_items_map) ?? [],
       response_raw: !!r.response_raw,
       error_rules_json: parseMaybe(r.error_rules_json) ?? [],
+      legacy_enabled: !!r.legacy_enabled,
+      legacy_map_json: (r.legacy_map_json === null ? null : parseMaybe(r.legacy_map_json)),
     };
     return MappingConfigSchema.parse(cfg);
   }
