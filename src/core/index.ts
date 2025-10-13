@@ -81,3 +81,10 @@ export * from './application/dto/results/Account.result';
 export * from './application/ports/outbound/ConsolidatedAccountsProviderPort';
 export * from './application/use-cases/ConsolidatedAccounts.usecase';
 export * from './application/validation/get-consolidated-accounts.schema';
+
+// Account Movements - Post
+export * from './application/dto/commands/GetAccountMovements.command';
+export * from './application/dto/results/AccountMovement.result';
+export * from './application/ports/outbound/AccountMovementsProviderPort';
+export * from './application/use-cases/ListAccountMovements.usecase';
+export * from './application/validation/get-account-movements.schema';
