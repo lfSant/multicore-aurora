@@ -1,4 +1,3 @@
-// src/dynamic/engine/response-mapper.ts
 import { dotGet } from './path-get';
 import type { MapExpr, MappingConfig } from '../mapping-config';
 

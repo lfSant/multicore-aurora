@@ -40,3 +40,6 @@ multicore-connector/
 
 #ignoramos los querys
 queries/
+
+# ignoramos los .vscode
+.vscode/
