@@ -23,3 +23,4 @@ export * from "./account/DynamicAccountMovementsAdapter";
 
 //* Transfer
 export * from "./transfer/DynamicTransferInitialChargeAdapter";
+export * from "./transfer/DynamicInternalTransferAdapter";

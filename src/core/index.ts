@@ -93,3 +93,10 @@ export * from './application/validation/get-account-movements.schema';
 export * from './application/dto/results/TransferInitialCharge.result';
 export * from './application/ports/outbound/TransferInitialChargeProviderPort';
 export * from './application/use-cases/ListTransferInitialChargeProducts.usecase';
+
+// Internal Transfer - Post
+export * from './application/dto/commands/InternalTransfer.command';
+export * from './application/dto/results/InternalTransfer.result';
+export * from './application/ports/outbound/InternalTransferProviderPort';
+export * from './application/use-cases/CreateInternalTransfer.usecase';
+export * from './application/validation/internal-transfer.schema';
