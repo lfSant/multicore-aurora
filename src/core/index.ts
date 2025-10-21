@@ -88,3 +88,8 @@ export * from './application/dto/results/AccountMovement.result';
 export * from './application/ports/outbound/AccountMovementsProviderPort';
 export * from './application/use-cases/ListAccountMovements.usecase';
 export * from './application/validation/get-account-movements.schema';
+
+// Transfer Initial Charge Products - Get
+export * from './application/dto/results/TransferInitialCharge.result';
+export * from './application/ports/outbound/TransferInitialChargeProviderPort';
+export * from './application/use-cases/ListTransferInitialChargeProducts.usecase';

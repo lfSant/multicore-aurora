@@ -16,3 +16,6 @@ export * from "./product/index";
 
 //Accounts exports
 export * from "./account/index";
+
+//Transfer exports
+export * from "./transfer/index";
