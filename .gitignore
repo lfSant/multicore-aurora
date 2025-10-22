@@ -43,3 +43,6 @@ queries/
 
 # ignoramos los .vscode
 .vscode/
+
+# ignoramos los archivos de github
+.github/
