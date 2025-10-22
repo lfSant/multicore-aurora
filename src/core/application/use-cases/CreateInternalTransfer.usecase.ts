@@ -26,7 +26,7 @@ export class CreateInternalTransferUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<InternalTransferResult>(
-                    "Transferencia interna fallida",
+                    e.clientMessage || "Transferencia interna fallida",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined
