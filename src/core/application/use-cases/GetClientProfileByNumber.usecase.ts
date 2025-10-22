@@ -14,8 +14,8 @@ export class GetClientProfileByNumberUseCase {
     cmd: GetClientProfileByNumberCommand,
     http: ProviderCallConfig,
   ): Promise<CanonicalResponse<ClientProfileByNumber>> {
-    const parsed = GetClientProfileByNumberCommandSchema.parse(cmd);
     try {
+      const parsed = GetClientProfileByNumberCommandSchema.parse(cmd);
       const result = await this.provider.getProfile(parsed, http);
       return successResponse<ClientProfileByNumber>(result.items, {
         server: `Servicio de ${result.provider} ejecutado correctamente.`,

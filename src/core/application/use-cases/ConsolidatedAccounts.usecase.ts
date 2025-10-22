@@ -13,8 +13,8 @@ export class ConsolidatedAccountsUseCase {
         cmd: GetConsolidatedAccountsCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<Account[]>> {
-        const parsed = GetConsolidatedAccountsCommandSchema.parse(cmd);
         try {
+            const parsed = GetConsolidatedAccountsCommandSchema.parse(cmd);
             const result = await this.provider.getConsolidatedAccounts(parsed, http);
             return successResponse<Account[]>(result.items, {
                 client: `Consulta de cuentas para el cliente ${cmd.clientNumber} realizada correctamente.`,

@@ -13,8 +13,8 @@ export class CreateInternalTransferUseCase {
         cmd: InternalTransferCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<InternalTransferResult>> {
-        const parsed = InternalTransferCommandSchema.parse(cmd);
         try {
+            const parsed = InternalTransferCommandSchema.parse(cmd);
             const result = await this.provider.createInternalTransfer(parsed, http);
             return successResponse<InternalTransferResult>(result.items, {
                 client: `Transferencia interna exitosa`,

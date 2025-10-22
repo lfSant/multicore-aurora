@@ -13,8 +13,8 @@ export class AuthPrecheckUseCase {
         cmd: AuthPrecheckCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<AuthPrecheckStatus>> {
-        const parsed = AuthPrecheckCommandSchema.parse(cmd);
         try {
+            const parsed = AuthPrecheckCommandSchema.parse(cmd);
             const result = await this.provider.preCheck(parsed, http);
             return successResponse<AuthPrecheckStatus>(result.items, {
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,

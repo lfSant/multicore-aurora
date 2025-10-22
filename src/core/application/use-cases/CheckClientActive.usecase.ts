@@ -14,8 +14,8 @@ export class CheckClientActiveUseCase {
         cmd: CheckClientActiveCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<ClientActiveStatus>> {
-        const parsed = CheckClientActiveCommandSchema.parse(cmd);
         try {
+            const parsed = CheckClientActiveCommandSchema.parse(cmd);
             const result = await this.provider.existsActive(parsed, http);
             return successResponse<ClientActiveStatus>(result.items, {
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,

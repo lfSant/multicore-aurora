@@ -14,8 +14,8 @@ export class GetClientProfileUseCase {
     cmd: GetClientProfileCommand,
     http: ProviderCallConfig,
   ): Promise<CanonicalResponse<ClientProfile>> {
-    const parsed = GetClientProfileCommandSchema.parse(cmd);
     try {
+      const parsed = GetClientProfileCommandSchema.parse(cmd);
       const result = await this.provider.getProfile(parsed, http);
       return successResponse<ClientProfile>(result.items, {
         server: `Servicio de ${result.provider} ejecutado correctamente.`,

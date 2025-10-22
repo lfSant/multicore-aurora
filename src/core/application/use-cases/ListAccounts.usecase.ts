@@ -13,8 +13,8 @@ export class ListAccountsUseCase {
         cmd: ListAccountsCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<Account[]>> {
-        const parsed = ListAccountsCommandSchema.parse(cmd);
         try {
+            const parsed = ListAccountsCommandSchema.parse(cmd);
             const result = await this.provider.clientAccounts(parsed, http);
             return successResponse<Account[]>(result.items, {
                 client: `Consulta de cuentas para el cliente ${cmd.clientIdentification} realizada correctamente.`,

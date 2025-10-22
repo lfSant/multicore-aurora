@@ -13,8 +13,8 @@ export class ListAccountMovementsUseCase {
         cmd: GetAccountMovementsCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<AccountMovement[]>> {
-        const parsed = GetAccountMovementsCommandSchema.parse(cmd);
         try {
+            const parsed = GetAccountMovementsCommandSchema.parse(cmd);
             const result = await this.provider.getAccountMovements(parsed, http);
             return successResponse<AccountMovement[]>(result.items, {
                 client: `Consulta de movimientos para la cuenta ${cmd.accountNumber} realizada correctamente.`,

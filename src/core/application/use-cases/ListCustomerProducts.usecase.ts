@@ -14,8 +14,8 @@ export class ListCustomerProductsUseCase {
         cmd: ListCustomerProductsCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<ConsolidatedBuckets>> {
-        const parsed = ListCustomerProductsCommandSchema.parse(cmd);
         try {
+            const parsed = ListCustomerProductsCommandSchema.parse(cmd);
             const result = await this.provider.listCustomerProducts(parsed, http);
             const grouped = groupConsolidated(result.items || []);
             return successResponse<ConsolidatedBuckets>([grouped], {

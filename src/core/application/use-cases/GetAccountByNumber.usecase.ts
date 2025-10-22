@@ -13,8 +13,8 @@ export class GetAccountByNumberUseCase {
         cmd: GetAccountByNumberCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<Account>> {
-        const parsed = GetAccountByNumberCommandSchema.parse(cmd);
         try {
+            const parsed = GetAccountByNumberCommandSchema.parse(cmd);
             const result = await this.provider.getAccountByNumber(parsed, http);
             return successResponse<Account>(result.items, {
                 client: `Consulta de cuenta por número exitosa`,

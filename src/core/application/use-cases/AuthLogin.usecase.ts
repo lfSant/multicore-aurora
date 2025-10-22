@@ -13,8 +13,8 @@ export class AuthLoginUseCase {
         cmd: AuthLoginCommand,
         http: ProviderCallConfig,
     ): Promise<CanonicalResponse<AuthLogin>> {
-        const parsed = AuthLoginCommandSchema.parse(cmd);
         try {
+            const parsed = AuthLoginCommandSchema.parse(cmd);
             const result = await this.provider.login(parsed, http);
             return successResponse<AuthLogin>(result.items, {
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
