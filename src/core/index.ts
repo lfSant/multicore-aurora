@@ -100,3 +100,10 @@ export * from './application/dto/results/InternalTransfer.result';
 export * from './application/ports/outbound/InternalTransferProviderPort';
 export * from './application/use-cases/CreateInternalTransfer.usecase';
 export * from './application/validation/internal-transfer.schema';
+
+// External Transfer - Post
+export * from './application/dto/commands/ExternalTransfer.command';
+export * from './application/dto/results/ExternalTransfer.result';
+export * from './application/ports/outbound/ExternalTransferProviderPort';
+export * from './application/use-cases/CreateExternalTransfer.usecase';
+export * from './application/validation/external-transfer.schema';
