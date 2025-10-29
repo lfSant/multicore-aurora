@@ -5,7 +5,8 @@ import {
   mapResponse,
   evaluateBusinessError,
   mapRequest,
-  mapLegacy
+  mapLegacy,
+  encryptBody
 } from '../../dynamic/engine/index';
 import { ProviderCallConfig } from '../../core/shared/http';
 import { executeHttp } from '../http/axios-executor';
@@ -62,16 +63,38 @@ export class BaseDynamicAdapter<TItem> {
       | 'PATCH';
     const timeoutMs = http.timeoutMs ?? cfg.request_timeout_ms ?? 8000;
 
+    // Prioridad: request mapper > config BD > http config
+    // Los headers de la BD tienen prioridad sobre los del http config
     const headers = {
-      ...(cfg.default_headers_json || {}),
       ...(http.headers || {}),
+      ...(cfg.default_headers_json || {}),
       ...(req.headers || {}),
     };
     const params = {
-      ...(cfg.default_params_json || {}),
       ...(http.params || {}),
+      ...(cfg.default_params_json || {}),
       ...(req.params || {}),
     };
+
+    // Aplicar encriptación si está habilitada
+    let finalBody = req.body;
+    if (cfg.request_encrypt_enabled && cfg.request_encrypt_algorithms && cfg.request_encrypt_keys) {
+      finalBody = encryptBody(
+        req.body,
+        cfg.request_encrypt_algorithms,
+        cfg.request_encrypt_keys,
+        cfg.request_encrypt_wrapper,
+        cfg.request_encrypt_config as any
+      );
+    }
+
+    // Serializar body según Content-Type
+    let bodyToSend: any = finalBody;
+    const contentType = headers['Content-Type'] || headers['content-type'];
+    if (contentType?.includes('application/x-www-form-urlencoded')) {
+      // Convertir objeto a query string: {SessionKey: "...", IV: "...", Data: "..."} → "SessionKey=...&IV=...&Data=..."
+      bodyToSend = new URLSearchParams(finalBody).toString();
+    }
 
     const res = await executeHttp({
       url: finalUrl,
@@ -79,7 +102,7 @@ export class BaseDynamicAdapter<TItem> {
       headers,
       params,
       timeoutMs,
-      data: req.body,
+      data: bodyToSend,
     });
 
     if (res.status < 200 || res.status >= 300) {
@@ -92,7 +115,7 @@ export class BaseDynamicAdapter<TItem> {
           dataCore: res.data,
           timeResponseMs: res.timeResponseMs,
           urlRequest: finalUrl,
-          bodyRequest: req.body,
+          bodyRequest: bodyToSend, // Usar el body serializado, no el original
           headersRequest: headers,
           paramsRequest: params,
         }
@@ -114,7 +137,7 @@ export class BaseDynamicAdapter<TItem> {
           dataCore: res.data,
           timeResponseMs: res.timeResponseMs,
           urlRequest: finalUrl,
-          bodyRequest: req.body,
+          bodyRequest: bodyToSend, // Usar el body serializado, no el original
           headersRequest: headers,
           paramsRequest: params,
         },
@@ -149,7 +172,7 @@ export class BaseDynamicAdapter<TItem> {
           dataCore: res.data,
           timeResponseCoreMs: res.timeResponseMs,
           urlRequest: finalUrl,
-          bodyRequest: req.body,
+          bodyRequest: bodyToSend, // Usar el body serializado, no el original
           headersRequest: headers,
           paramsRequest: params,
         }

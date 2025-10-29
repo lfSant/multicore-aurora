@@ -44,6 +44,11 @@ export class MySqlMappingConfigRepo implements MappingConfigRepo {
       error_rules_json: parseMaybe(r.error_rules_json) ?? [],
       legacy_enabled: !!r.legacy_enabled,
       legacy_map_json: (r.legacy_map_json === null ? null : parseMaybe(r.legacy_map_json)),
+      request_encrypt_enabled: !!r.request_encrypt_enabled,
+      request_encrypt_algorithms: parseMaybe<Array<'RSA' | 'AES'>>(r.request_encrypt_algorithms) ?? [],
+      request_encrypt_keys: parseMaybe<Record<string, any>>(r.request_encrypt_keys) ?? {},
+      request_encrypt_wrapper: parseMaybe<Record<string, any>>(r.request_encrypt_wrapper) ?? {},
+      request_encrypt_config: parseMaybe<Record<string, any>>(r.request_encrypt_config) ?? {},
     };
     return MappingConfigSchema.parse(cfg);
   }

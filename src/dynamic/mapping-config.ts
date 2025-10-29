@@ -87,6 +87,22 @@ export const MappingConfigSchema = z.object({
     z.record(MapExprSchema),
     z.array(z.union([ResponseItemShapeSchema, ResponseItemEachSchema]))
   ]).optional().default(null),
+
+  request_encrypt_enabled: z.boolean().optional().default(false),
+  request_encrypt_algorithms: z.array(z.enum(['RSA', 'AES'])).optional().default([]),
+  request_encrypt_keys: z.record(z.any()).optional(),
+  request_encrypt_wrapper: z.record(z.any()).optional(),
+  request_encrypt_config: z.object({
+    aes: z.object({
+      mode: z.enum(['GCM', 'CBC', 'CTR', 'CFB']).optional().default('GCM'),
+      keySize: z.number().optional().default(256),
+      ivSize: z.number().optional().default(12), // 12 para GCM, 16 para CBC
+    }).optional(),
+    rsa: z.object({
+      padding: z.enum(['OAEP', 'PKCS1']).optional().default('OAEP'),
+      oaepHash: z.enum(['sha256', 'sha384', 'sha512', 'sha1']).optional().default('sha256'),
+    }).optional(),
+  }).optional().default({}),
 }).passthrough();
 
 export type MappingConfig = z.infer<typeof MappingConfigSchema>;
