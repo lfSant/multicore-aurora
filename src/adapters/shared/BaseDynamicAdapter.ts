@@ -83,7 +83,7 @@ export class BaseDynamicAdapter<TItem> {
         req.body,
         cfg.request_encrypt_algorithms,
         cfg.request_encrypt_keys,
-        cfg.request_encrypt_wrapper,
+        cfg.request_encrypt_wrapper ?? undefined,
         cfg.request_encrypt_config as any
       );
     }

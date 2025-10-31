@@ -89,20 +89,44 @@ export const MappingConfigSchema = z.object({
   ]).optional().default(null),
 
   request_encrypt_enabled: z.boolean().optional().default(false),
-  request_encrypt_algorithms: z.array(z.enum(['RSA', 'AES'])).optional().default([]),
-  request_encrypt_keys: z.record(z.any()).optional(),
-  request_encrypt_wrapper: z.record(z.any()).optional(),
-  request_encrypt_config: z.object({
-    aes: z.object({
-      mode: z.enum(['GCM', 'CBC', 'CTR', 'CFB']).optional().default('GCM'),
-      keySize: z.number().optional().default(256),
-      ivSize: z.number().optional().default(12), // 12 para GCM, 16 para CBC
-    }).optional(),
-    rsa: z.object({
-      padding: z.enum(['OAEP', 'PKCS1']).optional().default('OAEP'),
-      oaepHash: z.enum(['sha256', 'sha384', 'sha512', 'sha1']).optional().default('sha256'),
-    }).optional(),
-  }).optional().default({}),
+  request_encrypt_algorithms: z.union([
+    z.array(z.enum(['RSA', 'AES'])),
+    z.record(z.never()),
+    z.null()
+  ]).optional().default([]).transform(val => {
+    if (!val || (typeof val === 'object' && !Array.isArray(val) && Object.keys(val).length === 0)) {
+      return [];
+    }
+    return Array.isArray(val) ? val : [];
+  }),
+  request_encrypt_keys: z.union([
+    z.record(z.any()),
+    z.null()
+  ]).optional().default({}),
+  request_encrypt_wrapper: z.union([
+    z.record(z.any()),
+    z.null()
+  ]).optional().default({}),
+  request_encrypt_config: z.union([
+    z.object({
+      aes: z.object({
+        mode: z.enum(['GCM', 'CBC', 'CTR', 'CFB']).optional().default('GCM'),
+        keySize: z.number().optional().default(256),
+        ivSize: z.number().optional().default(12),
+      }).optional(),
+      rsa: z.object({
+        padding: z.enum(['OAEP', 'PKCS1']).optional().default('OAEP'),
+        oaepHash: z.enum(['sha256', 'sha384', 'sha512', 'sha1']).optional().default('sha256'),
+      }).optional(),
+    }),
+    z.record(z.never()),
+    z.null()
+  ]).optional().default({}).transform(val => {
+    if (!val || (typeof val === 'object' && !Array.isArray(val) && Object.keys(val).length === 0)) {
+      return {};
+    }
+    return val;
+  }),
 }).passthrough();
 
 export type MappingConfig = z.infer<typeof MappingConfigSchema>;

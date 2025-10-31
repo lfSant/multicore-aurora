@@ -110,6 +110,13 @@ export * from './application/ports/outbound/LoanAdditionalInfoProviderPort';
 export * from './application/use-cases/GetLoanAdditionalInfo.usecase';
 export * from './application/validation/get-loan-additional-info.schema';
 
+// Loan Amortization Table - Post
+export * from './application/dto/commands/GetLoanAmortizationTable.command';
+export * from './application/dto/results/LoanAmortizationTable.result';
+export * from './application/ports/outbound/LoanAmortizationTableProviderPort';
+export * from './application/use-cases/GetLoanAmortizationTable.usecase';
+export * from './application/validation/get-loan-amortization-table.schema';
+
 // Transfer Initial Charge Products - Get
 export * from './application/dto/results/TransferInitialCharge.result';
 export * from './application/ports/outbound/TransferInitialChargeProviderPort';
