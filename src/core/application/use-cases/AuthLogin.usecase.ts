@@ -17,6 +17,7 @@ export class AuthLoginUseCase {
             const parsed = AuthLoginCommandSchema.parse(cmd);
             const result = await this.provider.login(parsed, http);
             return successResponse<AuthLogin>(result.items, {
+                client: "Autenticación realizada correctamente.",
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
@@ -25,7 +26,7 @@ export class AuthLoginUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<AuthLogin>(
-                    "Login con el core fallido",
+                    e.clientMessage || "Login con el core fallido",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

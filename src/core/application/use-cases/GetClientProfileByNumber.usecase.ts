@@ -18,6 +18,7 @@ export class GetClientProfileByNumberUseCase {
       const parsed = GetClientProfileByNumberCommandSchema.parse(cmd);
       const result = await this.provider.getProfile(parsed, http);
       return successResponse<ClientProfileByNumber>(result.items, {
+        client: `Perfil de cliente obtenido correctamente.`,
         server: `Servicio de ${result.provider} ejecutado correctamente.`,
         status: 200,
         raw: result.raw ? [result.raw] : undefined,

@@ -13,6 +13,7 @@ export class MaritalStatusUseCase {
         try {
             const result = await this.provider.getMaritalStatus(http);
             return successResponse<MaritalStatus[]>(result.items, {
+                client: "Listado de estados civiles obtenido correctamente.",
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
@@ -21,7 +22,7 @@ export class MaritalStatusUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<MaritalStatus[]>(
-                    "Obtención de estados civiles fallido",
+                    e.clientMessage || "Obtención de estados civiles fallido",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

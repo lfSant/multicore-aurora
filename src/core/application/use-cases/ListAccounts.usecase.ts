@@ -1,4 +1,4 @@
-import { ListAccountsCommand } from "../dto/commands/ListAccountsCommand.command";
+import { ListAccountsCommand } from "../dto/commands/ListAccounts.command";
 import { Account } from "../dto/results/Account.result";
 import { ClientAccountsProviderPort } from "../ports/outbound/ClientAccountsProviderPort";
 import { ListAccountsCommandSchema } from "../validation/list-accounts.schema";
@@ -26,7 +26,7 @@ export class ListAccountsUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<Account[]>(
-                    "Servicio de listado de cuentas no disponible",
+                    e.clientMessage || "Servicio de listado de cuentas no disponible",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

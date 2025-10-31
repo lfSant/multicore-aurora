@@ -18,6 +18,7 @@ export class GetAccountSignersUseCase {
       const parsed = GetAccountSignersCommandSchema.parse(cmd);
       const result = await this.provider.getAccountSigners(parsed, http);
       return successResponse<AccountSignersInfo>(result.items, {
+        client: `Firmantes de cuenta obtenidos correctamente.`,
         server: `Servicio de ${result.provider} ejecutado correctamente.`,
         status: 200,
         raw: result.raw ? [result.raw] : undefined,

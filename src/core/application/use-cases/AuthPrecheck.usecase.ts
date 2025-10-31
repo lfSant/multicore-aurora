@@ -17,6 +17,7 @@ export class AuthPrecheckUseCase {
             const parsed = AuthPrecheckCommandSchema.parse(cmd);
             const result = await this.provider.preCheck(parsed, http);
             return successResponse<AuthPrecheckStatus>(result.items, {
+                client: "Verificación previa de autenticación realizada correctamente.",
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
@@ -25,7 +26,7 @@ export class AuthPrecheckUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<AuthPrecheckStatus>(
-                    "Validación de pre autenticación fallida",
+                    e.clientMessage || "Validación de pre autenticación fallida",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

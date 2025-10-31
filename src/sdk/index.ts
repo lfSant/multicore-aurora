@@ -17,5 +17,8 @@ export * from "./product/index";
 //Accounts exports
 export * from "./account/index";
 
+//Loans exports
+export * from "./loan/index";
+
 //Transfer exports
 export * from "./transfer/index";

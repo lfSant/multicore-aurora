@@ -13,6 +13,7 @@ export class ProfessionTypesUseCase {
         try {
             const result = await this.provider.getProfessionTypes(http);
             return successResponse<ProfessionTypes[]>(result.items, {
+                client: "Listado de tipos de profesión obtenido correctamente.",
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
@@ -21,7 +22,7 @@ export class ProfessionTypesUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<ProfessionTypes[]>(
-                    "Obtención de tipos de profesión fallido",
+                    e.clientMessage || "Obtención de tipos de profesión fallido",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

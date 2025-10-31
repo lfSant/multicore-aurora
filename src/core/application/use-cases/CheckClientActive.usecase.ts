@@ -18,6 +18,7 @@ export class CheckClientActiveUseCase {
             const parsed = CheckClientActiveCommandSchema.parse(cmd);
             const result = await this.provider.existsActive(parsed, http);
             return successResponse<ClientActiveStatus>(result.items, {
+                client: `Verificación de cliente activo realizada correctamente.`,
                 server: `Servicio de ${result.provider} ejecutado correctamente.`,
                 status: 200,
                 raw: result.raw ? [result.raw] : undefined,
@@ -26,7 +27,7 @@ export class CheckClientActiveUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<ClientActiveStatus>(
-                    "Parámetros del usuario temporalmente no disponibles",
+                    e.clientMessage || "Parámetros del usuario temporalmente no disponibles",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

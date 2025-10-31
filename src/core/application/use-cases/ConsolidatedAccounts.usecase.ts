@@ -26,7 +26,7 @@ export class ConsolidatedAccountsUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<Account[]>(
-                    "Servicio de listado de cuentas no disponible",
+                    e.clientMessage || "Servicio de listado de cuentas no disponible",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

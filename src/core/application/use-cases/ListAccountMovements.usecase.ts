@@ -26,7 +26,7 @@ export class ListAccountMovementsUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<AccountMovement[]>(
-                    "Servicio de listado de movimientos no disponible",
+                    e.clientMessage || "Servicio de listado de movimientos no disponible",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

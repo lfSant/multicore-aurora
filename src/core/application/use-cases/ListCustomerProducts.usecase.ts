@@ -28,7 +28,7 @@ export class ListCustomerProductsUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<ConsolidatedBuckets>(
-                    "No se pudo obtener el listado de productos del cliente",
+                    e.clientMessage || "No se pudo obtener el listado de productos del cliente",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

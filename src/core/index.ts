@@ -62,7 +62,7 @@ export * from './application/use-cases/ListCustomerProducts.usecase';
 export * from './application/validation/list-customer-products.schema';
 
 // List Accounts - Post
-export * from './application/dto/commands/ListAccountsCommand.command';
+export * from './application/dto/commands/ListAccounts.command';
 export * from './application/dto/results/Account.result';
 export * from './application/ports/outbound/ClientAccountsProviderPort';
 export * from './application/use-cases/ListAccounts.usecase';
@@ -95,6 +95,13 @@ export * from './application/dto/results/AccountSigner.result';
 export * from './application/ports/outbound/AccountSignersProviderPort';
 export * from './application/use-cases/GetAccountSigners.usecase';
 export * from './application/validation/get-account-signers.schema';
+
+// Client Loans - Post
+export * from './application/dto/commands/GetClientLoans.command';
+export * from './application/dto/results/ClientLoan.result';
+export * from './application/ports/outbound/ClientLoansProviderPort';
+export * from './application/use-cases/GetClientLoans.usecase';
+export * from './application/validation/get-client-loans.schema';
 
 // Transfer Initial Charge Products - Get
 export * from './application/dto/results/TransferInitialCharge.result';

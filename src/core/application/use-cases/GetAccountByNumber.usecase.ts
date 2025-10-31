@@ -26,7 +26,7 @@ export class GetAccountByNumberUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<Account>(
-                    "Consulta de cuenta por número fallida",
+                    e.clientMessage || "Consulta de cuenta por número fallida",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined

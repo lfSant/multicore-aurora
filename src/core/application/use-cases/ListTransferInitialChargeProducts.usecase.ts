@@ -24,7 +24,7 @@ export class ListTransferInitialChargeProductsUseCase {
         } catch (e: any) {
             if (e instanceof ProviderHttpError) {
                 return errorResponse<TransferInitialChargeBuckets>(
-                    "No se pudo obtener el listado de productos de carga inicial para transferencia",
+                    e.clientMessage || "No se pudo obtener el listado de productos de carga inicial para transferencia",
                     e.message,
                     e.status,
                     e.raw ? [e.raw] : undefined
