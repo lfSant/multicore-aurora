@@ -154,12 +154,34 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     return Date.now() + off;
   }
 
+  //* { each: "path", mapShape: {...} } | { each: "path", map: {...} }
+  if ('each' in e && ('mapShape' in e || 'map' in e)) {
+    const srcArr = readPathFlexible(local, (e as any).each);
+    if (!Array.isArray(srcArr)) return undefined;
+    
+    const mapping = (e as any).mapShape || (e as any).map || {};
+    const result: any[] = [];
+    
+    for (const el of srcArr) {
+      const item: Record<string, any> = {};
+      for (const [fk, frule] of Object.entries(mapping as Record<string, MapExpr>)) {
+        const v = evalExprOn(frule, el, local);
+        if (v !== undefined) {
+          item[fk] = v;
+        }
+      }
+      if (Object.keys(item).length) result.push(item);
+    }
+    
+    return result;
+  }
+
   return undefined;
 }
 
 //* Type guard para el modo iterador
-export function isEachShape(shape: any): shape is { each: string; map: Record<string, MapExpr> } {
-  return !!shape && typeof shape === 'object' && 'each' in shape && 'map' in shape;
+export function isEachShape(shape: any): shape is { each: string; map?: Record<string, MapExpr>; mapShape?: Record<string, MapExpr> } {
+  return !!shape && typeof shape === 'object' && 'each' in shape && ('map' in shape || 'mapShape' in shape);
 }
 
 /** Mapea {status, headers, body} según cfg.response_items_map */
@@ -177,7 +199,8 @@ export function mapResponse(
           const item: Record<string, any> = {};
           let extras: Record<string, any> | undefined;
 
-          for (const [field, rule] of Object.entries(shape.map)) {
+          const mapping = shape.mapShape || shape.map || {};
+          for (const [field, rule] of Object.entries(mapping)) {
             const val = evalExprOn(rule as MapExpr, el, provider);
             if (val === undefined) continue;
 

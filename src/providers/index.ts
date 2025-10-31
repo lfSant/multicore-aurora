@@ -20,6 +20,7 @@ export * from "./account/DynamicClientAccountsAdapter";
 export * from "./account/DynamicGetClientAccountAdapter";
 export * from "./account/DynamicConsolidatedAccountsAdapter";
 export * from "./account/DynamicAccountMovementsAdapter";
+export * from "./account/DynamicAccountSignersAdapter";
 
 //* Transfer
 export * from "./transfer/DynamicTransferInitialChargeAdapter";

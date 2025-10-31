@@ -19,14 +19,15 @@ export function mapLegacy(
     const out: Record<string, any> = {};
 
     for (const [k, rule] of Object.entries(legacySpec)) {
-      if (rule && typeof rule === 'object' && 'each' in rule && 'map' in rule) {
+      if (rule && typeof rule === 'object' && 'each' in rule && ('map' in rule || 'mapShape' in rule)) {
         const srcArr = readPathFlexible(provider, (rule as any).each);
         const arr = Array.isArray(srcArr) ? srcArr : [];
         const mappedArr: any[] = [];
 
+        const mapping = (rule as any).mapShape || (rule as any).map || {};
         for (const el of arr) {
           const it: any = {};
-          for (const [fk, frule] of Object.entries((rule as any).map as Record<string, MapExpr>)) {
+          for (const [fk, frule] of Object.entries(mapping as Record<string, MapExpr>)) {
             const v = evalExprOn(frule as MapExpr, el, provider);
             it[fk] = (v === undefined ? "" : v);
           }
@@ -53,7 +54,8 @@ export function mapLegacy(
 
         for (const el of arr) {
           const it: any = {};
-          for (const [k, rule] of Object.entries(shape.map)) {
+          const mapping = shape.mapShape || shape.map || {};
+          for (const [k, rule] of Object.entries(mapping)) {
             const v = evalExprOn(rule as MapExpr, el, provider);
             it[k] = (v === undefined ? "" : v);
           }
