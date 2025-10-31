@@ -3,8 +3,8 @@ import { dotGet } from './path-get';
 export interface ErrorRule {
   when?: { status?: number;[jsonPath: string]: any };
   whenContains?: { [jsonPath: string]: string | { any: string[] } };
-  client: string;
-  server: string;
+  client: string | { template: string };
+  server: string | { template: string };
   status: number;
   codeHint?: string;
 }
@@ -16,6 +16,22 @@ function readPath(body: any, path: string): any {
   const v = dotGet(body, path);
   if (v !== undefined) return v;
   return dotGet({ body }, `body.${path}`);
+}
+
+function processTemplate(template: string, context: { status: number; body: any }): string {
+  return template.replace(/\{\{([^}]+)\}\}/g, (_match, path) => {
+    const trimmedPath = path.trim();
+    const value = readPath(context.body, trimmedPath);
+    return value == null ? '' : String(value);
+  });
+}
+
+function resolveMessage(msg: string | { template: string }, context: { status: number; body: any }): string {
+  if (typeof msg === 'string') return msg;
+  if (msg && typeof msg === 'object' && 'template' in msg) {
+    return processTemplate(msg.template, context);
+  }
+  return String(msg);
 }
 
 function matchesWhen(status: number, body: any, when?: { status?: number;[jsonPath: string]: any }): boolean {
@@ -65,11 +81,19 @@ export function evaluateBusinessError(
   body: any,
   rules: ErrorRule[] = []
 ): { client: string; server: string; status: number; codeHint?: string } | null {
+  const context = { status, body };
+  
   for (const r of rules) {
     if (!r || typeof r !== 'object') continue;
     if (!matchesWhen(status, body, r.when)) continue;
     if (!matchesWhenContains(body, r.whenContains)) continue;
-    return { client: r.client, server: r.server, status: r.status, codeHint: r.codeHint };
+    
+    return {
+      client: resolveMessage(r.client, context),
+      server: resolveMessage(r.server, context),
+      status: r.status,
+      codeHint: r.codeHint
+    };
   }
   return null;
 }
