@@ -7,4 +7,5 @@ export interface AuthLogin {
     refreshExpiresAt?: Date;
     terminalIp?: string;
     attributes?: Record<string, any>;
+    clientCode?: string;
 }
