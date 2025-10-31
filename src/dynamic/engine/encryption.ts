@@ -22,7 +22,7 @@ export interface RSAConfig {
 
 /** ==== Utils ==== */
 function normalizePem(pem: string): string {
-  return pem.replace(/\\n/g, '\n').trim();
+  return pem.replaceAll(/\\n/g, '\n').trim();
 }
 function toB64(buf: Buffer): string {
   return buf.toString('base64');

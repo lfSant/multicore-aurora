@@ -142,7 +142,7 @@ function evalExpr(rule: MapExpr, input: any): any {
   // { template: "Hola {{user.name}}" }
   if ('template' in rule) {
     const tpl = (rule as any).template as string;
-    return tpl.replace(/\{\{([^}]+)\}\}/g, (_m, p1) => {
+    return tpl.replaceAll(/\{\{([^}]+)\}\}/g, (_m, p1) => {
       const val = readPathFlexible(input, String(p1).trim());
       return val == null ? '' : String(val);
     });
@@ -214,7 +214,7 @@ function evalExpr(rule: MapExpr, input: any): any {
     const spec = (rule as any).mapValue as { from: string; dict?: Record<string, any>; default?: any };
     const v = readPathFlexible(input, spec.from);
     const dict = spec.dict || {};
-    return Object.prototype.hasOwnProperty.call(dict, v) ? dict[v] : spec.default;
+    return Object.hasOwn(dict, v) ? dict[v] : spec.default;
   }
 
   // { replace: { from, pattern, template, flags? } }

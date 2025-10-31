@@ -50,7 +50,7 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
   //* { template: "Hola {{user.name}}" }
   if ('template' in e) {
     const tpl = (e as any).template as string;
-    return tpl.replace(/\{\{([^}]+)\}\}/g, (_m, p1) => {
+    return tpl.replaceAll(/\{\{([^}]+)\}\}/g, (_m, p1) => {
       const val = readLocalFirst(local, root, String(p1).trim());
       return val == null ? '' : String(val);
     });
@@ -85,7 +85,7 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     for (const p of list) {
       const v = readLocalFirst(local, root, p);
       if (v !== undefined) {
-        const key = mapKeys && mapKeys[p] ? mapKeys[p] : p;
+        const key = mapKeys?.[p] ?? p;
         out[key] = v;
       }
     }
@@ -135,7 +135,7 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     const spec = (e as any).mapValue as { from: string; dict?: Record<string, any>; default?: any };
     const v = readLocalFirst(local, root, spec.from);
     const dict = spec.dict || {};
-    return Object.prototype.hasOwnProperty.call(dict, v) ? dict[v] : spec.default;
+    return Object.hasOwn(dict, v) ? dict[v] : spec.default;
   }
 
   //* { stripPrefix: { from, prefix } }

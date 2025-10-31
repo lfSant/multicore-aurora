@@ -19,7 +19,7 @@ function readPath(body: any, path: string): any {
 }
 
 function processTemplate(template: string, context: { status: number; body: any }): string {
-  return template.replace(/\{\{([^}]+)\}\}/g, (_match, path) => {
+  return template.replaceAll(/\{\{([^}]+)\}\}/g, (_match, path) => {
     const trimmedPath = path.trim();
     const value = readPath(context.body, trimmedPath);
     return value == null ? '' : String(value);
