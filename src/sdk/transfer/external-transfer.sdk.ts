@@ -4,7 +4,7 @@ import type { CanonicalResponse } from "../../core/shared/types";
 import { CreateExternalTransferUseCase } from "../../core/application/use-cases/CreateExternalTransfer.usecase";
 import { ExternalTransferCommand } from "../../core/application/dto/commands/ExternalTransfer.command";
 import { ExternalTransferResult } from "../../core/application/dto/results/ExternalTransfer.result";
-import { DynamicExternalTransferAdapter } from "../../providers/transfer/DynamicExternalTransferAdapter";
+import { ExternalTransferDynamicAdapter } from "../../providers/transfer/DynamicExternalTransferAdapter";
 
 export function createExternalTransferUseCase(
   providerKey: string,
@@ -12,7 +12,7 @@ export function createExternalTransferUseCase(
   adapterOptions?: AdapterFactoryOptions
 ) {
   const base = createBaseDynamicAdapter<ExternalTransferResult>(providerKey, operationKey, adapterOptions);
-  const port = new DynamicExternalTransferAdapter(base);
+  const port = new ExternalTransferDynamicAdapter(base);
   return new CreateExternalTransferUseCase(port);
 }
 

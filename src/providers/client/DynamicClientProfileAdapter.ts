@@ -1,11 +1,11 @@
 import { BaseDynamicAdapter } from "../../adapters/shared/BaseDynamicAdapter";
-import { ClientProfile } from "../../core/application/dto/results/ClientProfile.result";
-import { GetClientProfileCommand } from "../../core/application/dto/commands/GetClientProfile.command";
 import { ClientProfileProviderPort } from "../../core/application/ports/outbound/ClientProfileProviderPort";
+import { GetClientProfileCommand } from "../../core/application/dto/commands/GetClientProfile.command";
+import { ClientProfile } from "../../core/application/dto/results/ClientProfile.result";
 import { ProviderCallConfig } from "../../core/shared/http";
 import { ProviderResult } from "../../core/shared/types";
 
-export class DynamicClientProfileAdapter implements ClientProfileProviderPort {
+export class ClientProfileDynamicAdapter implements ClientProfileProviderPort {
   constructor(private readonly base: BaseDynamicAdapter<ClientProfile>) {}
 
   getProfile(

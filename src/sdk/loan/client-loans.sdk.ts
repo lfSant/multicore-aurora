@@ -4,7 +4,7 @@ import type { CanonicalResponse } from "../../core/shared/types";
 import { GetClientLoansCommand } from "../../core/application/dto/commands/GetClientLoans.command";
 import { ClientLoan } from "../../core/application/dto/results/ClientLoan.result";
 import { GetClientLoansUseCase } from "../../core/application/use-cases/GetClientLoans.usecase";
-import { DynamicClientLoansAdapter } from "../../providers/loan/DynamicClientLoansAdapter";
+import { ClientLoansDynamicAdapter } from "../../providers/loan/DynamicClientLoansAdapter";
 
 export function createClientLoansUseCase(
   providerKey: string,
@@ -12,7 +12,7 @@ export function createClientLoansUseCase(
   adapterOptions?: AdapterFactoryOptions
 ) {
   const base = createBaseDynamicAdapter<ClientLoan[]>(providerKey, operationKey, adapterOptions);
-  const port = new DynamicClientLoansAdapter(base);
+  const port = new ClientLoansDynamicAdapter(base);
   return new GetClientLoansUseCase(port);
 }
 

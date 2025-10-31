@@ -1,5 +1,5 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
-import { DynamicClientProfileByNumberAdapter } from "../../providers/client/DynamicClientProfileByNumberAdapter";
+import { ClientProfileByNumberDynamicAdapter } from "../../providers/client/DynamicClientProfileByNumberAdapter";
 import { GetClientProfileByNumberUseCase } from "../../core/application/use-cases/GetClientProfileByNumber.usecase";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { GetClientProfileByNumberCommand } from "../../core/application/dto/commands/GetClientProfileByNumber.command";
@@ -12,7 +12,7 @@ export function createClientProfileByNumberUseCase(
   adapterOptions?: AdapterFactoryOptions
 ) {
   const base = createBaseDynamicAdapter<ClientProfileByNumber>(providerKey, operationKey, adapterOptions);
-  const port = new DynamicClientProfileByNumberAdapter(base);
+  const port = new ClientProfileByNumberDynamicAdapter(base);
   return new GetClientProfileByNumberUseCase(port);
 }
 

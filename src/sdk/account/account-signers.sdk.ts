@@ -4,7 +4,7 @@ import type { CanonicalResponse } from "../../core/shared/types";
 import { GetAccountSignersCommand } from "../../core/application/dto/commands/GetAccountSigners.command";
 import { AccountSignersInfo } from "../../core/application/dto/results/AccountSigner.result";
 import { GetAccountSignersUseCase } from "../../core/application/use-cases/GetAccountSigners.usecase";
-import { DynamicAccountSignersAdapter } from "../../providers/account/DynamicAccountSignersAdapter";
+import { AccountSignersDynamicAdapter } from "../../providers/account/DynamicAccountSignersAdapter";
 
 export function createAccountSignersUseCase(
   providerKey: string,
@@ -12,7 +12,7 @@ export function createAccountSignersUseCase(
   adapterOptions?: AdapterFactoryOptions
 ) {
   const base = createBaseDynamicAdapter<AccountSignersInfo>(providerKey, operationKey, adapterOptions);
-  const port = new DynamicAccountSignersAdapter(base);
+  const port = new AccountSignersDynamicAdapter(base);
   return new GetAccountSignersUseCase(port);
 }
 

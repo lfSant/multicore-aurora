@@ -5,7 +5,7 @@ import { ExternalTransferCommand } from "../../core/application/dto/commands/Ext
 import { ExternalTransferProviderPort } from "../../core/application/ports/outbound/ExternalTransferProviderPort";
 import { ExternalTransferResult } from "../../core/application/dto/results/ExternalTransfer.result";
 
-export class DynamicExternalTransferAdapter implements ExternalTransferProviderPort {
+export class ExternalTransferDynamicAdapter implements ExternalTransferProviderPort {
   constructor(private readonly base: BaseDynamicAdapter<ExternalTransferResult>) {}
 
   createExternalTransfer(

@@ -1,11 +1,11 @@
-import { BaseDynamicAdapter } from '../../adapters/shared/BaseDynamicAdapter';
-import type { ClientLoansProviderPort } from '../../core/application/ports/outbound/ClientLoansProviderPort';
-import type { GetClientLoansCommand } from '../../core/application/dto/commands/GetClientLoans.command';
-import type { ClientLoan } from '../../core/application/dto/results/ClientLoan.result';
-import { ProviderCallConfig } from '../../core/shared/http';
-import { ProviderResult } from '../../core/shared/types';
+import { BaseDynamicAdapter } from "../../adapters/shared/BaseDynamicAdapter";
+import { ClientLoansProviderPort } from "../../core/application/ports/outbound/ClientLoansProviderPort";
+import { GetClientLoansCommand } from "../../core/application/dto/commands/GetClientLoans.command";
+import { ClientLoan } from "../../core/application/dto/results/ClientLoan.result";
+import { ProviderCallConfig } from "../../core/shared/http";
+import { ProviderResult } from "../../core/shared/types";
 
-export class DynamicClientLoansAdapter implements ClientLoansProviderPort {
+export class ClientLoansDynamicAdapter implements ClientLoansProviderPort {
   constructor(private readonly base: BaseDynamicAdapter<ClientLoan[]>) {}
 
   getClientLoans(

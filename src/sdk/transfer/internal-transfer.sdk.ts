@@ -1,16 +1,16 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
-import { CreateInternalTransferUseCase, InternalTransferCommand, InternalTransferResult } from "../../core";
-import { DynamicInternalTransferAdapter } from "../..";
+import { InternalTransferCommand, InternalTransferResult, CreateInternalTransferUseCase } from "../../core";
+import { InternalTransferDynamicAdapter } from "../..";
 
 export function createInternalTransferUseCase(
   providerKey: string,
-  operationKey = "createInternalTransfer",
+  operationKey = "internalTransfer",
   adapterOptions?: AdapterFactoryOptions
 ) {
   const base = createBaseDynamicAdapter<InternalTransferResult>(providerKey, operationKey, adapterOptions);
-  const port = new DynamicInternalTransferAdapter(base);
+  const port = new InternalTransferDynamicAdapter(base);
   return new CreateInternalTransferUseCase(port);
 }
 
