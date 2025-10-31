@@ -24,6 +24,7 @@ export * from "./account/DynamicAccountSignersAdapter";
 
 //* Loan
 export * from "./loan/DynamicClientLoansAdapter";
+export * from "./loan/DynamicLoanAdditionalInfoAdapter";
 
 //* Transfer
 export * from "./transfer/DynamicTransferInitialChargeAdapter";

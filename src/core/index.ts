@@ -103,6 +103,13 @@ export * from './application/ports/outbound/ClientLoansProviderPort';
 export * from './application/use-cases/GetClientLoans.usecase';
 export * from './application/validation/get-client-loans.schema';
 
+// Loan Additional Info - Post
+export * from './application/dto/commands/GetLoanAdditionalInfo.command';
+export * from './application/dto/results/LoanAdditionalInfo.result';
+export * from './application/ports/outbound/LoanAdditionalInfoProviderPort';
+export * from './application/use-cases/GetLoanAdditionalInfo.usecase';
+export * from './application/validation/get-loan-additional-info.schema';
+
 // Transfer Initial Charge Products - Get
 export * from './application/dto/results/TransferInitialCharge.result';
 export * from './application/ports/outbound/TransferInitialChargeProviderPort';
