@@ -7,12 +7,12 @@ export interface ConsolidatedProduct {
   accountNumber?: string;
   accountType?: string;
   currency?: string;
-  holdBalance?: number;
-  blockedBalance?: number;
-  otherBalance?: number;
-  pledgedBalance?: number;
-  balance?: number;
-  availableBalance?: number;
+  holdBalance?: string;
+  blockedBalance?: string;
+  otherBalance?: string;
+  pledgedBalance?: string;
+  balance?: string;
+  availableBalance?: string;
   operationalTransactionsAllowed?: boolean;
   status?: string;
   signatureType?: string;
@@ -22,8 +22,8 @@ export interface ConsolidatedProduct {
   code?: string;
   depositType?: string;
   maturityDate?: string;
-  amount?: number;
-  interestCollected?: number;
+  amount?: string;
+  interestCollected?: string;
   frequency?: string | null;
   financialYield?: string;
   rate?: string;
@@ -34,8 +34,8 @@ export interface ConsolidatedProduct {
   // LOAN
   loanCode?: string;
   loanType?: string;
-  currentBalance?: number;
-  payoffAmount?: number;
+  currentBalance?: string;
+  payoffAmount?: string;
   nextDueDate?: string;
   relationshipType?: string;
 }
