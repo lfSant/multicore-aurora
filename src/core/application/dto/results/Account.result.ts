@@ -6,12 +6,12 @@ export interface Account {
   officeName?: string;
   openDate?: string;
   signatureType?: string;
-  balance: number;
-  availableBalance: number;
-  holdBalance?: number;
-  blockedBalance?: number;
-  otherBalance?: number;
-  pledgedBalance?: number;
+  balance: string;
+  availableBalance: string;
+  holdBalance?: string;
+  blockedBalance?: string;
+  otherBalance?: string;
+  pledgedBalance?: string;
   operationalTransactionsAllowed?: boolean | null;
   productCategory: 'ACCOUNT';
   extras?: Record<string, any>;
