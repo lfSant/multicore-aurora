@@ -33,7 +33,7 @@ export interface HttpExecutionResult {
 }
 
 export async function executeHttp(cfg: ProviderCallConfig): Promise<HttpExecutionResult> {
-  let timeStart = Date.now();
+  const timeStart = Date.now();
   const res = await axios.request({
     url: cfg.url,
     method: cfg.method ?? 'POST',
@@ -48,7 +48,7 @@ export async function executeHttp(cfg: ProviderCallConfig): Promise<HttpExecutio
     maxRedirects: 3,
     maxContentLength: 10 * 1024 * 1024,
   });
-  let timeEnd = Date.now();
+  const timeEnd = Date.now();
   
   return { 
     url: cfg.url,

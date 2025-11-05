@@ -175,6 +175,14 @@ function evalExpr(rule: MapExpr, input: any): any {
     return Number.isFinite(n) ? n : spec.default;
   }
 
+  // { toString: { from, default? } }
+  if ('toString' in rule) {
+    const spec = (rule as any).toString as { from: string; default?: string };
+    const v = readPathFlexible(input, spec.from);
+    if (v === null || v === undefined) return spec.default;
+    return String(v);
+  }
+
   // { toBoolean: { from } }
   if ('toBoolean' in rule) {
     const spec = (rule as any).toBoolean as { from: string };

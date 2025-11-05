@@ -135,3 +135,17 @@ export * from './application/dto/results/ExternalTransfer.result';
 export * from './application/ports/outbound/ExternalTransferProviderPort';
 export * from './application/use-cases/CreateExternalTransfer.usecase';
 export * from './application/validation/external-transfer.schema';
+
+// Consolidated Time Deposits - Post
+export * from './application/dto/commands/GetConsolidatedTimeDeposits.command';
+export * from './application/dto/results/TimeDeposit.result';
+export * from './application/ports/outbound/ConsolidatedTimeDepositsProviderPort';
+export * from './application/use-cases/GetConsolidatedTimeDeposits.usecase';
+export * from './application/validation/get-consolidated-time-deposits.schema';
+
+// Deposit Movements - Post
+export * from './application/dto/commands/GetDepositMovements.command';
+export * from './application/dto/results/DepositMovement.result';
+export * from './application/ports/outbound/DepositMovementsProviderPort';
+export * from './application/use-cases/GetDepositMovements.usecase';
+export * from './application/validation/get-deposit-movements.schema';

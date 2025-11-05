@@ -22,3 +22,6 @@ export * from "./loan/index";
 
 //Transfer exports
 export * from "./transfer/index";
+
+//Deposit exports
+export * from "./deposit/index";

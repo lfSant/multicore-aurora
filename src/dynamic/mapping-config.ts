@@ -24,6 +24,7 @@ export const MapExprSchema = z.union([
   }),
 
   Obj({ toNumber: z.object({ from: z.string(), default: z.number().optional() }).passthrough() }),
+  Obj({ toString: z.object({ from: z.string(), default: z.string().optional() }).passthrough() }),
   Obj({ toBoolean: z.object({ from: z.string() }).passthrough() }),
   Obj({
     toDateMs: z.object({

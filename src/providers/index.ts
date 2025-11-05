@@ -31,3 +31,7 @@ export * from "./loan/DynamicLoanAmortizationTableAdapter";
 export * from "./transfer/DynamicTransferInitialChargeAdapter";
 export * from "./transfer/DynamicInternalTransferAdapter";
 export * from "./transfer/DynamicExternalTransferAdapter";
+
+//* Deposit
+export * from "./deposit/DynamicConsolidatedTimeDepositsAdapter";
+export * from "./deposit/DynamicDepositMovementsAdapter";
