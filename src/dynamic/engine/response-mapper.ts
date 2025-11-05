@@ -101,14 +101,6 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     return Number.isFinite(n) ? n : spec.default;
   }
 
-  //* { toString: { from, default? } }
-  if ('toString' in e) {
-    const spec = (e as any).toString as { from: string; default?: string };
-    const v = readLocalFirst(local, root, spec.from);
-    if (v === null || v === undefined) return spec.default;
-    return String(v);
-  }
-
   //* { toBoolean: { from } }
   if ('toBoolean' in e) {
     const spec = (e as any).toBoolean as { from: string };
