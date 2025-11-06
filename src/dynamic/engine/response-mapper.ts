@@ -31,8 +31,10 @@ function readLocalFirst(local: any, root: any, path: string): any {
 
 /** Evalúa una MapExpr contra (local, root) */
 export function evalExprOn(e: MapExpr, local: any, root: any): any {
+  //* Valor nulo */
   if (e == null) return undefined;
 
+  //* { each, mapShape|map } => modo iterador
   if (typeof e === 'object' && e !== null && 'each' in e && ('mapShape' in e || 'map' in e)) {
     const eachPath = (e as any).each;
     const srcArr = readLocalFirst(local, root, eachPath);
