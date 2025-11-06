@@ -305,6 +305,15 @@ function evalExpr(rule: MapExpr, input: any): any {
     return Date.now() + off;
   }
 
+  // { toString: { from, default? } }
+  if ('toString' in rule) {
+    const spec = (rule as any).toString as { from: string; default?: string };
+    const v = readPathFlexible(input, spec.from);
+    if (v === null || v === undefined) return spec.default;
+    if (typeof v === 'object') return spec.default;
+    return String(v);
+  }
+
   return undefined;
 }
 

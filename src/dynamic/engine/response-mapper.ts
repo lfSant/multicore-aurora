@@ -154,6 +154,15 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     return Date.now() + off;
   }
 
+  //* { toString: { from, default? } }
+  if ('toString' in e) {
+    const spec = (e as any).toString as { from: string; default?: string };
+    const v = readLocalFirst(local, root, spec.from);
+    if (v === null || v === undefined) return spec.default;
+    if (typeof v === 'object') return spec.default;
+    return String(v);
+  }
+
   //* { each: "path", mapShape: {...} } | { each: "path", map: {...} }
   if ('each' in e && ('mapShape' in e || 'map' in e)) {
     const srcArr = readPathFlexible(local, (e as any).each);

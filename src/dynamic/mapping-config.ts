@@ -47,6 +47,7 @@ export const MapExprSchema = z.union([
   }),
   Obj({ stripPrefix: z.object({ from: z.string(), prefix: z.string() }) }),
   Obj({ nowMs: z.union([z.literal(true), z.object({ offsetMs: z.number() })]) }),
+  Obj({ toString: z.object({ from: z.string(), default: z.string().optional() }).passthrough() }),
 ]);
 
 const ResponseItemShapeSchema = z.record(MapExprSchema);
