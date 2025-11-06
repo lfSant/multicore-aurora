@@ -33,6 +33,31 @@ function readLocalFirst(local: any, root: any, path: string): any {
 export function evalExprOn(e: MapExpr, local: any, root: any): any {
   if (e == null) return undefined;
 
+  if (typeof e === 'object' && e !== null && 'each' in e && ('mapShape' in e || 'map' in e)) {
+    const eachPath = (e as any).each;
+    const srcArr = readLocalFirst(local, root, eachPath);
+    
+    if (!Array.isArray(srcArr)) {
+      return undefined;
+    }
+    
+    const mapping = (e as any).mapShape || (e as any).map || {};
+    const result: any[] = [];
+    
+    for (const el of srcArr) {
+      const item: Record<string, any> = {};
+      for (const [fk, frule] of Object.entries(mapping as Record<string, MapExpr>)) {
+        const v = evalExprOn(frule, el, root);
+        if (v !== undefined) {
+          item[fk] = v;
+        }
+      }
+      if (Object.keys(item).length) result.push(item);
+    }
+    
+    return result;
+  }
+
   //* string => ruta directa
   if (typeof e === 'string') {
     return readLocalFirst(local, root, e);
@@ -161,28 +186,6 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     if (v === null || v === undefined) return spec.default;
     if (typeof v === 'object') return spec.default;
     return String(v);
-  }
-
-  //* { each: "path", mapShape: {...} } | { each: "path", map: {...} }
-  if ('each' in e && ('mapShape' in e || 'map' in e)) {
-    const srcArr = readPathFlexible(local, (e as any).each);
-    if (!Array.isArray(srcArr)) return undefined;
-    
-    const mapping = (e as any).mapShape || (e as any).map || {};
-    const result: any[] = [];
-    
-    for (const el of srcArr) {
-      const item: Record<string, any> = {};
-      for (const [fk, frule] of Object.entries(mapping as Record<string, MapExpr>)) {
-        const v = evalExprOn(frule, el, local);
-        if (v !== undefined) {
-          item[fk] = v;
-        }
-      }
-      if (Object.keys(item).length) result.push(item);
-    }
-    
-    return result;
   }
 
   return undefined;

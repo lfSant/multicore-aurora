@@ -1,12 +1,12 @@
 export interface LoanAdditionalInfo {
   office: string;
   officer: string;
-  currentBalance: number;
+  currentBalance: string;
   lastPaymentDate: string;
   nextDueDate: string;
-  amountToCancel: number;
+  amountToCancel: string;
   overdueInstallments: number;
   overdueDays: number;
-  totalInstallmentAmount: number;
-  amountUpToCurrentInstallment: number;
+  totalInstallmentAmount: string;
+  amountUpToCurrentInstallment: string;
 }

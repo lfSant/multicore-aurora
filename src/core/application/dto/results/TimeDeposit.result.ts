@@ -5,7 +5,7 @@ export interface TimeDeposit {
   currency: string;
   status: string;
   dueDate: string;
-  amount: number;
-  collectionInterestBalance: number;
-  calculationInterestBalance: number;
+  amount: string;
+  collectionInterestBalance: string;
+  calculationInterestBalance: string;
 }

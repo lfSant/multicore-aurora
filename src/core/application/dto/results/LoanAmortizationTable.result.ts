@@ -3,18 +3,18 @@ export interface LoanInstallment {
   installmentNumber: number;
   dueDate: string;
   termDays: number;
-  principal: number;
-  interest: number;
-  lifeInsurance: number;
-  other: number;
-  loanBalance: number;
-  totalInstallment: number;
+  principal: string;
+  interest: string;
+  lifeInsurance: string;
+  other: string;
+  loanBalance: string;
+  totalInstallment: string;
 }
 
 export interface LoanAmortizationTable {
   clientName: string;
-  initialDebt: number;
-  loanBalance: number;
+  initialDebt: string;
+  loanBalance: string;
   office: string;
   disbursementDate: string;
   creditType: string;
@@ -24,7 +24,7 @@ export interface LoanAmortizationTable {
   applicationNumber: number;
   paymentFrequency: string;
   creditNumber: string;
-  rate: number;
-  tea: number;
+  rate: string;
+  tea: string;
   installments: LoanInstallment[];
 }

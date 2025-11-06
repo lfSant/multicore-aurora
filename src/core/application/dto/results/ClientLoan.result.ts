@@ -2,15 +2,15 @@ export interface ClientLoan {
   sequential: number;
   code: string;
   type: string;
-  initialDebt: number;
-  balance: number;
+  initialDebt: string;
+  balance: string;
   disbursementDate: string;
   dueDate: string;
   status: string;
   installments: number;
   frequency: string;
-  rate: number;
+  rate: string;
   advisor: string;
-  lifeInsurance: number;
+  lifeInsurance: string;
   clientName: string;
 }

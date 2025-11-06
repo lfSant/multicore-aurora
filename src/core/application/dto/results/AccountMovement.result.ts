@@ -1,8 +1,8 @@
 export interface AccountMovement{
   date: string;
   reference: string;
-  amount: number;
-  balance: number;
+  amount: string;
+  balance: string;
   machineDate?: string;
   concept: string;
   cause?: string;
