@@ -35,3 +35,7 @@ export * from "./transfer/DynamicExternalTransferAdapter";
 //* Deposit
 export * from "./deposit/DynamicConsolidatedTimeDepositsAdapter";
 export * from "./deposit/DynamicDepositMovementsAdapter";
+
+//* Notification
+export * from "./notification/DynamicSendSmsByIdentificationAdapter";
+export * from "./notification/DynamicSendSmsByPhoneAdapter";

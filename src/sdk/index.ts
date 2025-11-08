@@ -25,3 +25,6 @@ export * from "./transfer/index";
 
 //Deposit exports
 export * from "./deposit/index";
+
+//Notification exports
+export * from "./notification/index";

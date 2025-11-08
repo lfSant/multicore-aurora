@@ -149,3 +149,16 @@ export * from './application/dto/results/DepositMovement.result';
 export * from './application/ports/outbound/DepositMovementsProviderPort';
 export * from './application/use-cases/GetDepositMovements.usecase';
 export * from './application/validation/get-deposit-movements.schema';
+
+// Send SMS By Identification - Post
+export * from './application/dto/commands/SendSmsByIdentification.command';
+export * from './application/dto/results/SendSmsByIdentification.result';
+export * from './application/ports/outbound/SendSmsByIdentificationProviderPort';
+export * from './application/use-cases/SendSmsByIdentification.usecase';
+export * from './application/validation/send-sms-by-identification.schema';
+
+// Send SMS By Phone - Post
+export * from './application/dto/commands/SendSmsByPhone.command';
+export * from './application/ports/outbound/SendSmsByPhoneProviderPort';
+export * from './application/use-cases/SendSmsByPhone.usecase';
+export * from './application/validation/send-sms-by-phone.schema';
