@@ -1,7 +1,11 @@
-export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN';
+export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN' | 'GUARANTEE' | 'CREDIT_CARD';
 
 export interface ConsolidatedProduct {
   productCategory: ProductCategory;
+
+  errorCodigo?: number;
+  errorTipo?: string;
+  errorDescripcion?: string;
 
   // ACCOUNT
   accountNumber?: string;
@@ -31,17 +35,38 @@ export interface ConsolidatedProduct {
   openDate?: string;
   installments?: number;
 
-  // LOAN
+  // LOAN - AGREGAR CAMPOS  
   loanCode?: string;
   loanType?: string;
   currentBalance?: string;
   payoffAmount?: string;
   nextDueDate?: string;
   relationshipType?: string;
+
+  // CAMPOS PARA GARANTÍAS
+  garantiaDescripcion?: string;
+  garantiaNumero?: string;
+  garantiaValor?: string;
+  garantiaEstado?: string;
+  garantiaFechaVencimiento?: string;
+  garantiaFechaEmision?: string;
+
+  // CAMPOS PARA TARJETAS CRÉDITO
+  tarjetaDescripcion?: string;
+  tarjetaNumero?: string;
+  tarjetaLimite?: string;
+  tarjetaSaldo?: string;
+  tarjetaDisponible?: string;
+  tarjetaMontoMinimo?: string;
+  tarjetaFechaCorte?: string;
+  tarjetaFechaPago?: string;
+  tarjetaEstado?: string;
 }
 
 export interface ConsolidatedBuckets {
   accounts: ConsolidatedProduct[];
   timeDeposits: ConsolidatedProduct[];
   loans: ConsolidatedProduct[];
+  garantias: ConsolidatedProduct[];
+  tarjetasCredito: ConsolidatedProduct[];
 }
