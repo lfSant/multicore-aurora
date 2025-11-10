@@ -1,5 +1,5 @@
 export interface MaritalStatus {
-    codigo: string;
-    nombre: string;
+    code: string;
+    name: string;
     extras?: Record<string, any>;
 }

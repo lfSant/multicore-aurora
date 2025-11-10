@@ -11,6 +11,7 @@ export * from "./client/DynamicClientProfileByNumberAdapter";
 export * from "./catalog/DynamicMaritalStatusAdapter";
 export * from "./catalog/DynamicEducationTypesAdapter";
 export * from "./catalog/DynamicProfessionalTypesAdapter";
+export * from "./catalog/DynamicPaymentServiceConceptsAdapter";
 
 //* Product
 export * from "./product/DynamicConsolidatedProductsAdapter";

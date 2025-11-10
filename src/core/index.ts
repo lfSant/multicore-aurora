@@ -162,3 +162,8 @@ export * from './application/dto/commands/SendSmsByPhone.command';
 export * from './application/ports/outbound/SendSmsByPhoneProviderPort';
 export * from './application/use-cases/SendSmsByPhone.usecase';
 export * from './application/validation/send-sms-by-phone.schema';
+
+// Payment Service Concepts - Get (Catalog)
+export * from './application/dto/results/PaymentServiceConcepts.result';
+export * from './application/ports/outbound/PaymentServiceConceptsProviderPort';
+export * from './application/use-cases/PaymentServiceConcepts.usecase';
