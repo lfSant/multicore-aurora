@@ -11,6 +11,7 @@ export * from "./client/DynamicClientProfileByNumberAdapter";
 export * from "./catalog/DynamicMaritalStatusAdapter";
 export * from "./catalog/DynamicEducationTypesAdapter";
 export * from "./catalog/DynamicProfessionalTypesAdapter";
+export * from "./catalog/DynamicPaymentServiceConceptsAdapter";
 
 //* Product
 export * from "./product/DynamicConsolidatedProductsAdapter";
@@ -35,3 +36,7 @@ export * from "./transfer/DynamicExternalTransferAdapter";
 //* Deposit
 export * from "./deposit/DynamicConsolidatedTimeDepositsAdapter";
 export * from "./deposit/DynamicDepositMovementsAdapter";
+
+//* Notification
+export * from "./notification/DynamicSendSmsByIdentificationAdapter";
+export * from "./notification/DynamicSendSmsByPhoneAdapter";

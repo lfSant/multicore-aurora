@@ -1,5 +1,5 @@
 export interface ProfessionTypes {
-    codigo: string;
-    nombre: string;
+    code: string;
+    name: string;
     extras?: Record<string, any>;
 }
