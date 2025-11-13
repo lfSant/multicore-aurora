@@ -174,3 +174,10 @@ export * from './application/dto/results/PaymentServiceQuery.result';
 export * from './application/ports/outbound/PaymentServiceQueryProviderPort';
 export * from './application/use-cases/GetPaymentServiceQuery.usecase';
 export * from './application/validation/get-payment-service-query.schema';
+
+// Process Payment Service - Post
+export * from './application/dto/commands/ProcessPaymentService.command';
+export * from './application/dto/results/ProcessPaymentService.result';
+export * from './application/ports/outbound/ProcessPaymentServiceProviderPort';
+export * from './application/use-cases/ProcessPaymentService.usecase';
+export * from './application/validation/process-payment-service.schema';

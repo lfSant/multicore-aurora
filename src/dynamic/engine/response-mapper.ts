@@ -1,5 +1,6 @@
 import { dotGet } from './path-get';
 import type { MapExpr, MappingConfig } from '../mapping-config';
+import { parseXmlToLinesRegex } from './xml-parser';
 
 const asBool = (v: any) => {
   if (v === true || v === 'true' || v === 1 || v === '1') return true;
@@ -188,6 +189,30 @@ export function evalExprOn(e: MapExpr, local: any, root: any): any {
     if (v === null || v === undefined) return spec.default;
     if (typeof v === 'object') return spec.default;
     return String(v);
+  }
+
+  //* { parseXml: { from, mode: 'array'|'object', nodePattern?, itemPrefix?, default? } }
+  if ('parseXml' in e) {
+    const spec = (e as any).parseXml as {
+      from: string;
+      mode: 'array' | 'object';
+      nodePattern?: string;
+      itemPrefix?: string;
+      default?: any;
+    };
+    const xmlString = readLocalFirst(local, root, spec.from);
+    
+    if (!xmlString || typeof xmlString !== 'string') {
+      return spec.default;
+    }
+
+    const result = parseXmlToLinesRegex(xmlString, {
+      mode: spec.mode || 'array',
+      nodePattern: spec.nodePattern,
+      itemPrefix: spec.itemPrefix,
+    });
+
+    return result !== undefined ? result : spec.default;
   }
 
   return undefined;
