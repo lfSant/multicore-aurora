@@ -167,3 +167,10 @@ export * from './application/validation/send-sms-by-phone.schema';
 export * from './application/dto/results/PaymentServiceConcepts.result';
 export * from './application/ports/outbound/PaymentServiceConceptsProviderPort';
 export * from './application/use-cases/PaymentServiceConcepts.usecase';
+
+// Payment Service Query - Post
+export * from './application/dto/commands/GetPaymentServiceQuery.command';
+export * from './application/dto/results/PaymentServiceQuery.result';
+export * from './application/ports/outbound/PaymentServiceQueryProviderPort';
+export * from './application/use-cases/GetPaymentServiceQuery.usecase';
+export * from './application/validation/get-payment-service-query.schema';

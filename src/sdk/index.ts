@@ -28,3 +28,5 @@ export * from "./deposit/index";
 
 //Notification exports
 export * from "./notification/index";
+//Payment exports
+export * from "./payment/index";

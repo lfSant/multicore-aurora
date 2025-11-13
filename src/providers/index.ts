@@ -40,3 +40,6 @@ export * from "./deposit/DynamicDepositMovementsAdapter";
 //* Notification
 export * from "./notification/DynamicSendSmsByIdentificationAdapter";
 export * from "./notification/DynamicSendSmsByPhoneAdapter";
+
+//* Payment
+export * from "./payment/DynamicPaymentServiceQueryAdapter";
