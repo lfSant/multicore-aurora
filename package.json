@@ -52,9 +52,14 @@
     }
   },
   "scripts": {
-    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json",
-    "clean": "rimraf dist"
+    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "clean": "rimraf dist",
+    "prepublishOnly": "yarn clean && yarn build"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "tsup": {
     "tsconfig": "tsconfig.lib.json"
   },
@@ -69,6 +74,7 @@
     "@types/lodash.get": "^4.4.9",
     "@types/node": "^24.5.2",
     "rimraf": "^6.0.1",
+    "terser": "^5.44.1",
     "tsup": "^8.0.0",
     "typescript": "^5.6.0"
   }

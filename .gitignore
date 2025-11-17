@@ -1,8 +1,7 @@
 #ignoramos los node_modules
 node_modules
 
-#ignoramos los builds
-dist
+#ignoramos los builds temporales (dist se incluirá en repo)
 build
 out
 
@@ -11,8 +10,7 @@ yarn.lock
 
 # ignoramos el node_modules
 node_modules/
-# ignoramos el dist
-dist/
+# dist/ se incluirá en el repo para instalación directa
 #ignoramos el node modules del api-connector
 api-connector/node_modules/
 #ignoramos el dist del api-connector
@@ -38,8 +36,14 @@ multicore-connector/
 # ignoramos el .DS_Store
 .DS_Store
 
-#ignoramos los querys
+#ignoramos los querys (mantener privados)
 queries/
+
+# src/ debe estar oculto para seguridad
+src/
+
+# tsconfig files (no necesarios para instalación)
+tsconfig*.json
 
 # ignoramos los .vscode
 .vscode/
