@@ -44,3 +44,5 @@ export * from "./notification/DynamicSendSmsByPhoneAdapter";
 //* Payment
 export * from "./payment/DynamicPaymentServiceQueryAdapter";
 export * from "./payment/DynamicProcessPaymentServiceAdapter";
+export * from "./payment/DynamicPaymentReversalsAdapter";
+export * from "./payment/DynamicProcessPaymentReversalAdapter";
