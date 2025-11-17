@@ -4,8 +4,23 @@
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",
-  "private": true,
+  "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfSant/multicore-aurora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lfSant/multicore-aurora/issues"
+  },
+  "homepage": "https://github.com/lfSant/multicore-aurora#readme",
+  "keywords": [
+    "multicore",
+    "banking",
+    "connector",
+    "cooperative",
+    "dynamic-adapter"
+  ],
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
