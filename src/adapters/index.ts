@@ -1,4 +1,2 @@
-/**
- * Backend adapters DY23
- * @module adapters
- */
+export * from "./http/axios-executor";
+export * from "./shared/BaseDynamicAdapter";

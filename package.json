@@ -21,14 +21,14 @@
     "cooperative",
     "dynamic-adapter"
   ],
-  "main": "dist/core/index.cjs",
-  "module": "dist/core/index.js",
-  "types": "dist/core/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/core/index.d.ts",
-      "import": "./dist/core/index.js",
-      "require": "./dist/core/index.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./core": {
       "types": "./dist/core/index.d.ts",
@@ -82,7 +82,7 @@
     }
   },
   "scripts": {
-    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build"
   },
