@@ -86,7 +86,7 @@
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build",
     "deploy:develop": "git add src/ package.json README.md && git commit && git push github develop",
-    "deploy:release": "yarn build && git checkout release && git add dist/ && git commit -m 'chore(release): update dist' && git push github release && git checkout develop",
+    "deploy:release": "yarn build && git checkout release && git add dist/ && git diff --staged --quiet || (git commit -m 'chore(release): update dist' && git push github release) && git checkout develop",
     "deploy:all": "yarn deploy:develop && yarn deploy:release"
   },
   "files": [
