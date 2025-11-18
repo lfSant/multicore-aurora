@@ -14,11 +14,15 @@ Librería TypeScript para gestión dinámica de múltiples conexiones a cores ba
 ### Desde GitHub (Recomendado)
 
 ```bash
-# Instalar desde rama release (solo dist/ compilado)
+# Última versión desde rama release
 npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#release
+
+# Versión específica por tag
+npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#v1.0.1
 
 # O con HTTPS
 npm install git+https://github.com/lfSant/multicore-aurora.git#release
+npm install git+https://github.com/lfSant/multicore-aurora.git#v1.0.1
 ```
 
 ### Desarrollo Local
@@ -54,7 +58,7 @@ Agregar al `package.json` del proyecto consumidor:
 
 ## 🔄 Workflow de Desarrollo
 
-### 1. Desarrollar en `develop`
+### 1. Hacer Cambios en `develop`
 
 ```bash
 # Asegurarse de estar en develop
@@ -65,49 +69,76 @@ git checkout develop
 
 # Compilar para verificar
 yarn build
-
-# Commitear solo cambios de src/ (dist/ está ignorado en develop)
-git add src/
-git commit -m "feat: nueva funcionalidad"
-git push github develop
 ```
 
-### 2. Actualizar `release` con nuevo `dist/`
+### 2. Incrementar Versión (Semántico)
+
+Antes de hacer deploy, incrementa la versión según el tipo de cambio:
 
 ```bash
-# Asegurarse de tener el dist/ actualizado
-yarn build
+# Para correcciones de bugs (1.0.0 → 1.0.1)
+yarn version:patch
 
-# Cambiar a rama release
-git checkout release
+# Para nuevas funcionalidades compatibles (1.0.0 → 1.1.0)
+yarn version:minor
 
-# Agregar el nuevo dist/
-git add dist/
-git commit -m "chore: update dist from develop"
-git push github release
-
-# Volver a develop
-git checkout develop
+# Para cambios incompatibles (1.0.0 → 2.0.0)
+yarn version:major
 ```
 
-### 3. Workflow Completo (Recomendado)
+### 3. Desplegar con Scripts Automatizados
 
 ```bash
-# 1. Desarrollar
-git checkout develop
-# ... hacer cambios en src/ ...
-yarn build
-git add src/ queries/ .github/
-git commit -m "feat: descripción del cambio"
-git push github develop
+# Opción A: Desplegar solo a develop
+yarn deploy:develop
 
-# 2. Actualizar release
-yarn build  # asegurar dist/ actualizado
-git checkout release
-git add dist/
-git commit -m "chore: update dist from develop"
-git push github release
+# Opción B: Desplegar solo a release (compila y crea tag)
+yarn deploy:release
+
+# Opción C: Desplegar a ambas ramas (RECOMENDADO)
+yarn deploy:all
+```
+
+El script `deploy:release` automáticamente:
+- ✅ Compila el código (`yarn build`)
+- ✅ Cambia a rama `release`
+- ✅ Copia el `package.json` con la nueva versión
+- ✅ Agrega `dist/` y `package.json`
+- ✅ Crea commit con mensaje "chore(release): update dist v1.x.x"
+- ✅ Crea tag git con la versión (ej: `v1.0.1`)
+- ✅ Hace push a `release` con tags
+- ✅ Regresa a rama `develop`
+
+### 4. Instalar Versión Específica
+
+Los consumidores pueden instalar versiones específicas usando tags:
+
+```bash
+# Última versión desde release
+npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#release
+
+# Versión específica por tag
+npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#v1.0.1
+npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#v1.2.0
+```
+
+### Ejemplo Completo de Deploy
+
+```bash
+# 1. Hacer cambios
 git checkout develop
+# ... editar src/ ...
+
+# 2. Incrementar versión (corrección de bug)
+yarn version:patch  # 1.0.0 → 1.0.1
+
+# 3. Desplegar todo
+yarn deploy:all
+
+# Resultado:
+# ✅ develop actualizado con nueva versión en package.json
+# ✅ release actualizado con dist/ compilado
+# ✅ Tag v1.0.1 creado en GitHub
 ```
 
 ### ⚠️ Importante
