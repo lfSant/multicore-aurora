@@ -1,24 +1,56 @@
 # Libreria de MULTICORE
 
-- Qué hace la librería
-- Recibe input estándar (p.ej. { clientIdentification: "1000275816" }).
-- Mapea a lo que el core necesita (p.ej. { identificacionCliente: "1000275816" }).
-- Llama al core con ruta/método/timeout/headers/params definidos en MySQL.
-- Normaliza la respuesta a un envelope estándar (éxito/error) e incluye raw (opcional) con lo que devolvió el core.
+Librería TypeScript para gestión dinámica de múltiples conexiones a cores bancarios de cooperativas.
 
-yarn build y colocal el dist en la raiz del proyecto que se va a usar con el nombre:
+## 🎯 Qué hace
 
+- Recibe input estándar (p.ej. `{ clientIdentification: "1000275816" }`)
+- Mapea dinámicamente según configuración en MySQL (p.ej. `{ identificacionCliente: "1000275816" }`)
+- Llama al core con ruta/método/timeout/headers/params definidos en base de datos
+- Normaliza respuesta a envelope estándar (éxito/error) con opción de incluir `raw`
+
+## 📦 Instalación
+
+### Desde GitHub (Recomendado)
+
+```bash
+# Instalar desde rama release (solo dist/ compilado)
+npm install git+ssh://git@github.com/lfSant/multicore-aurora.git#release
+
+# O con HTTPS
+npm install git+https://github.com/lfSant/multicore-aurora.git#release
 ```
-/multicore-connector
+
+### Desarrollo Local
+
+```bash
+# Clonar repositorio
+git clone git@github.com:lfSant/multicore-aurora.git
+cd multicore-aurora
+
+# Instalar dependencias
+yarn install
+
+# Compilar
+yarn build
+
+# Copiar dist/ al proyecto consumidor
+cp -r dist /path/to/project/multicore-connector
 ```
 
-y agregar al package.json en las dependencias:
-
+Agregar al `package.json` del proyecto consumidor:
+```json
+{
+  "dependencies": {
+    "multicore-connector": "./multicore-connector"
+  }
+}
 ```
-"multicore-connector": "./multicore-connector",
-```
 
-para llamar a la libreria e instalar el compilado de la libreria.
+## 🌿 Ramas
+
+- **`develop`**: Rama de desarrollo (código fuente completo)
+- **`release`**: Rama de distribución (solo dist/ + configs) - **usar para npm install**
 
 ## Semilla de la libreria para la creacion de la tabla
 
