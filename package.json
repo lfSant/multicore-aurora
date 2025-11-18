@@ -85,8 +85,11 @@
     "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
     "deploy:develop": "git add src/ package.json README.md && git commit && git push github develop",
-    "deploy:release": "yarn build && git checkout release && git add dist/ && git diff --staged --quiet || (git commit -m 'chore(release): update dist' && git push github release) && git checkout develop",
+    "deploy:release": "yarn build && git checkout release && git checkout develop -- package.json && git add dist/ package.json && git diff --staged --quiet || (git commit -m \"chore(release): update dist v$(node -p \\\"require('./package.json').version\\\")\" && git tag v$(node -p \"require('./package.json').version\") && git push github release --tags) && git checkout develop",
     "deploy:all": "yarn deploy:develop && yarn deploy:release"
   },
   "files": [
