@@ -39,9 +39,6 @@ multicore-connector/
 #ignoramos los querys (mantener privados)
 queries/
 
-# src/ debe estar oculto para seguridad
-src/
-
 # tsconfig files (no necesarios para instalación)
 tsconfig*.json
 
