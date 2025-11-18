@@ -7,6 +7,12 @@ export const ProcessPaymentReversalCommandSchema = z.object({
   amount: z.string().min(1, "amount es requerido").refine(
     (val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0,
     { message: "amount debe ser un número positivo en formato string" }
+  ).refine(
+    (val) => {
+      const decimalPart = val.split('.')[1];
+      return !decimalPart || decimalPart.length <= 2;
+    },
+    { message: "amount debe tener máximo 2 decimales" }
   ),
   concept: z.string().min(1, "concept es requerido"),
 });
