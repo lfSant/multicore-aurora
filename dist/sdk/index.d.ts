@@ -17,7 +17,7 @@ import '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
 import '../ListCustomerProducts.usecase-CtbO3XtQ.js';
 import '../GetAccountSigners.usecase-BXZZ4NM2.js';
 import '../CreateExternalTransfer.usecase-1_762f9C.js';
-import '../ProcessPaymentReversal.usecase-BDLtklLp.js';
+import '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;

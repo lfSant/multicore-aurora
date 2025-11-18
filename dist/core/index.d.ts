@@ -9,7 +9,7 @@ export { a as ConsolidatedBuckets, C as ConsolidatedProduct, b as ConsolidatedPr
 export { A as Account, h as AccountMovement, i as AccountMovementsProviderPort, l as AccountSigner, m as AccountSignersInfo, n as AccountSignersProviderPort, b as ClientAccountByNumberProviderPort, C as ClientAccountsProviderPort, e as ConsolidatedAccountsProviderPort, f as ConsolidatedAccountsUseCase, G as GetAccountByNumberCommand, c as GetAccountByNumberUseCase, g as GetAccountMovementsCommand, k as GetAccountSignersCommand, o as GetAccountSignersUseCase, d as GetConsolidatedAccountsCommand, j as ListAccountMovementsUseCase, L as ListAccountsCommand, a as ListAccountsUseCase } from '../GetAccountSigners.usecase-BXZZ4NM2.js';
 export { C as ClientLoan, a as ClientLoansProviderPort, l as ConsolidatedTimeDepositsProviderPort, D as DepositMovement, o as DepositMovementsProviderPort, G as GetClientLoansCommand, b as GetClientLoansUseCase, k as GetConsolidatedTimeDepositsCommand, m as GetConsolidatedTimeDepositsUseCase, n as GetDepositMovementsCommand, p as GetDepositMovementsUseCase, c as GetLoanAdditionalInfoCommand, e as GetLoanAdditionalInfoUseCase, f as GetLoanAmortizationTableCommand, j as GetLoanAmortizationTableUseCase, L as LoanAdditionalInfo, d as LoanAdditionalInfoProviderPort, h as LoanAmortizationTable, i as LoanAmortizationTableProviderPort, g as LoanInstallment, S as SendSmsByIdentificationCommand, r as SendSmsByIdentificationProviderPort, q as SendSmsByIdentificationResult, s as SendSmsByIdentificationUseCase, t as SendSmsByPhoneCommand, u as SendSmsByPhoneProviderPort, v as SendSmsByPhoneUseCase, T as TimeDeposit } from '../SendSmsByPhone.usecase-u2oxDfX1.js';
 export { h as CreateExternalTransferUseCase, C as CreateInternalTransferUseCase, E as ExternalTransferCommand, g as ExternalTransferProviderPort, f as ExternalTransferResult, c as InternalTransferCommand, e as InternalTransferProviderPort, d as InternalTransferResult, I as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, a as TransferInitialChargeBuckets, T as TransferInitialChargeCategory, b as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-1_762f9C.js';
-export { h as GetPaymentReversalsCommand, l as GetPaymentReversalsUseCase, G as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, i as PaymentReversalItemResult, k as PaymentReversalsProviderPort, j as PaymentReversalsResult, P as PaymentServiceQueryItemResult, b as PaymentServiceQueryProviderPort, a as PaymentServiceQueryResult, m as ProcessPaymentReversalCommand, o as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, p as ProcessPaymentReversalUseCase, d as ProcessPaymentServiceCommand, f as ProcessPaymentServiceProviderPort, e as ProcessPaymentServiceResult, g as ProcessPaymentServiceUseCase } from '../ProcessPaymentReversal.usecase-BDLtklLp.js';
+export { h as GetPaymentReversalsCommand, l as GetPaymentReversalsUseCase, G as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, i as PaymentReversalItemResult, k as PaymentReversalsProviderPort, j as PaymentReversalsResult, P as PaymentServiceQueryItemResult, b as PaymentServiceQueryProviderPort, a as PaymentServiceQueryResult, m as ProcessPaymentReversalCommand, o as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, p as ProcessPaymentReversalUseCase, d as ProcessPaymentServiceCommand, f as ProcessPaymentServiceProviderPort, e as ProcessPaymentServiceResult, g as ProcessPaymentServiceUseCase } from '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 
 declare function successResponse<T>(items: T[], opts?: {
     client?: string;
@@ -327,7 +327,7 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodObject<{
     referenceNumber: z.ZodString;
     transactionId: z.ZodString;
     itemId: z.ZodString;
-    amountToPay: z.ZodNumber;
+    amountToPay: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
     concept: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     accountNumber: string;
@@ -336,7 +336,7 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodObject<{
     identifier: string;
     transactionId: string;
     itemId: string;
-    amountToPay: number;
+    amountToPay: string;
 }, {
     accountNumber: string;
     concept: string;
@@ -344,7 +344,7 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodObject<{
     identifier: string;
     transactionId: string;
     itemId: string;
-    amountToPay: number;
+    amountToPay: string;
 }>;
 type ProcessPaymentServiceCommandParsed = z.infer<typeof ProcessPaymentServiceCommandSchema>;
 
@@ -361,17 +361,17 @@ declare const ProcessPaymentReversalCommandSchema: z.ZodObject<{
     accountNumber: z.ZodString;
     referenceNumber: z.ZodString;
     sequential: z.ZodNumber;
-    amount: z.ZodNumber;
+    amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
     concept: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     accountNumber: string;
-    amount: number;
+    amount: string;
     concept: string;
     referenceNumber: string;
     sequential: number;
 }, {
     accountNumber: string;
-    amount: number;
+    amount: string;
     concept: string;
     referenceNumber: string;
     sequential: number;

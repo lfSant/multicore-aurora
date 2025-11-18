@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-BT5sFmip.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.js';
-import { c as GetPaymentServiceQueryUseCase, G as GetPaymentServiceQueryCommand, a as PaymentServiceQueryResult, g as ProcessPaymentServiceUseCase, d as ProcessPaymentServiceCommand, e as ProcessPaymentServiceResult, l as GetPaymentReversalsUseCase, h as GetPaymentReversalsCommand, j as PaymentReversalsResult, p as ProcessPaymentReversalUseCase, m as ProcessPaymentReversalCommand, n as ProcessPaymentReversalResult } from '../../ProcessPaymentReversal.usecase-BDLtklLp.js';
+import { c as GetPaymentServiceQueryUseCase, G as GetPaymentServiceQueryCommand, a as PaymentServiceQueryResult, g as ProcessPaymentServiceUseCase, d as ProcessPaymentServiceCommand, e as ProcessPaymentServiceResult, l as GetPaymentReversalsUseCase, h as GetPaymentReversalsCommand, j as PaymentReversalsResult, p as ProcessPaymentReversalUseCase, m as ProcessPaymentReversalCommand, n as ProcessPaymentReversalResult } from '../../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 
 declare function createPaymentServiceQueryUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetPaymentServiceQueryUseCase;
 declare function getPaymentServiceQuery(command: GetPaymentServiceQueryCommand, http: ProviderCallConfig, opts: {
