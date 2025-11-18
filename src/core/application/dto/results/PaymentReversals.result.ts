@@ -3,7 +3,7 @@ export interface PaymentReversalItemResult {
   name: string;
   category: string;
   reference: string;
-  value: number;
+  value: string;
   dateTime: string;
   concept: string;
 }

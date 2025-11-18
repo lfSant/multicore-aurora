@@ -6,7 +6,10 @@ export const ProcessPaymentServiceCommandSchema = z.object({
   referenceNumber: z.string().min(1, "referenceNumber es requerido"),
   transactionId: z.string().min(1, "transactionId es requerido"),
   itemId: z.string().min(1, "itemId es requerido"),
-  amountToPay: z.number().positive("amountToPay debe ser un número positivo"),
+  amountToPay: z.string().min(1, "amountToPay es requerido").refine(
+    (val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0,
+    { message: "amountToPay debe ser un número positivo en formato string" }
+  ),
   concept: z.string().min(1, "concept es requerido"),
 });
 

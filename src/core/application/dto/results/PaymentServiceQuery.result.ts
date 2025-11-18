@@ -3,8 +3,8 @@ export interface PaymentServiceQueryItemResult {
   description: string;
   item: string;
   priority: number;
-  value: number;
-  valueWithCommission: number;
+  value: string;
+  valueWithCommission: string;
 }
 
 export interface PaymentServiceQueryResult {

@@ -4,6 +4,6 @@ export interface ProcessPaymentServiceCommand {
   referenceNumber: string;
   transactionId: string;
   itemId: string;
-  amountToPay: number;
+  amountToPay: string;
   concept: string;
 }

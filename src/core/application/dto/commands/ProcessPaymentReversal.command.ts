@@ -2,6 +2,6 @@ export interface ProcessPaymentReversalCommand {
   accountNumber: string;
   referenceNumber: string;
   sequential: number;
-  amount: number;
+  amount: string;
   concept: string;
 }
