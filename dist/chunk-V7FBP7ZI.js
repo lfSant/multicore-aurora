@@ -1,1 +1,0 @@
-var s=class{constructor(s){this.base=s}listCustomerProducts(s,r,t){return this.base.run(s,r,t)}};export{s as ConsolidatedProductsDynamicAdapter};

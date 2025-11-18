@@ -1,1 +1,0 @@
-var r=class extends Error{constructor(r,s,t,e,i,o){super(r),this.status=s,this.provider=t,this.raw=e,this.codeHint=i,this.clientMessage=o,this.name="ProviderHttpError"}},s=class extends Error{constructor(r){super(`MappingConfigError: ${r}`),this.details=r}};export{r as ProviderHttpError,s as MappingConfigError};

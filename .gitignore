@@ -1,16 +1,16 @@
 #ignoramos los node_modules
 node_modules
 
-#ignoramos los builds temporales (dist se incluirá en repo)
+#ignoramos los builds temporales
 build
 out
+dist
 
 #ignoramos los yarn.lock
 yarn.lock
 
 # ignoramos el node_modules
 node_modules/
-# dist/ se incluirá en el repo para instalación directa
 #ignoramos el node modules del api-connector
 api-connector/node_modules/
 #ignoramos el dist del api-connector
