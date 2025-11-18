@@ -1,0 +1,1 @@
+var s=class{constructor(s){this.base=s}getProfile(s,t,r){return this.base.run(s,t,r)}},t=class{constructor(s){this.base=s}existsActive(s,t,r){return this.base.run(s,t,r)}},r=class{constructor(s){this.base=s}getProfile(s,t,r){return this.base.run(s,t,r)}};export{s as ClientProfileDynamicAdapter,t as ClientStatusDynamicAdapter,r as ClientProfileByNumberDynamicAdapter};

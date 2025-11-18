@@ -2,7 +2,7 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import { ProcessPaymentServiceCommand, ProcessPaymentServiceResult, ProcessPaymentServiceUseCase } from "../../core";
-import { ProcessPaymentServiceDynamicAdapter } from "../..";
+import { ProcessPaymentServiceDynamicAdapter } from "../../providers";
 
 export function createProcessPaymentServiceUseCase(
   providerKey: string,

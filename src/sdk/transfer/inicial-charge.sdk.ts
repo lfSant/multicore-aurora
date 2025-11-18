@@ -2,7 +2,8 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import { ListTransferInitialChargeProductsUseCase } from "../../core/application/use-cases/ListTransferInitialChargeProducts.usecase";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
-import {ItemTransferInitialCharge, TransferInitialChargeBuckets, TransferInitialChargeDynamicAdapter } from "../..";
+import { ItemTransferInitialCharge, TransferInitialChargeBuckets } from "../../core";
+import { TransferInitialChargeDynamicAdapter } from "../../providers";
 
 export function getListTransferInitialChargeUseCase(
   providerKey: string,

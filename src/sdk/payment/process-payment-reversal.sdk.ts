@@ -2,7 +2,7 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import { ProcessPaymentReversalCommand, ProcessPaymentReversalResult, ProcessPaymentReversalUseCase } from "../../core";
-import { ProcessPaymentReversalDynamicAdapter } from "../..";
+import { ProcessPaymentReversalDynamicAdapter } from "../../providers";
 
 export function createProcessPaymentReversalUseCase(
   providerKey: string,

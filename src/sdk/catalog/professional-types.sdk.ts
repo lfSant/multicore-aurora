@@ -1,7 +1,8 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
-import { ProfessionTypes, ProfessionTypesDynamicAdapter, ProfessionTypesUseCase } from "../..";
+import { ProfessionTypes, ProfessionTypesUseCase } from "../../core";
+import { ProfessionTypesDynamicAdapter } from "../../providers";
 
 export function findProfessionalTypesUseCase(
   providerKey: string,

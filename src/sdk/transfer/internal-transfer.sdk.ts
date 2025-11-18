@@ -2,7 +2,7 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import { InternalTransferCommand, InternalTransferResult, CreateInternalTransferUseCase } from "../../core";
-import { InternalTransferDynamicAdapter } from "../..";
+import { InternalTransferDynamicAdapter } from "../../providers";
 
 export function createInternalTransferUseCase(
   providerKey: string,

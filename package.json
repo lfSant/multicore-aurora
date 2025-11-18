@@ -32,27 +32,57 @@
     },
     "./core": {
       "types": "./dist/core/index.d.ts",
-      "import": "./dist/core/index.mjs",
+      "import": "./dist/core/index.js",
       "require": "./dist/core/index.cjs"
     },
     "./adapters": {
       "types": "./dist/adapters/index.d.ts",
-      "import": "./dist/adapters/index.mjs",
+      "import": "./dist/adapters/index.js",
       "require": "./dist/adapters/index.cjs"
+    },
+    "./sdk": {
+      "types": "./dist/sdk/index.d.ts",
+      "import": "./dist/sdk/index.js",
+      "require": "./dist/sdk/index.cjs"
     },
     "./sdk/client": {
       "types": "./dist/sdk/client/index.d.ts",
-      "import": "./dist/sdk/client/index.mjs",
+      "import": "./dist/sdk/client/index.js",
       "require": "./dist/sdk/client/index.cjs"
     },
     "./sdk/auth": {
       "types": "./dist/sdk/auth/index.d.ts",
-      "import": "./dist/sdk/auth/index.mjs",
+      "import": "./dist/sdk/auth/index.js",
       "require": "./dist/sdk/auth/index.cjs"
+    },
+    "./sdk/account": {
+      "types": "./dist/sdk/account/index.d.ts",
+      "import": "./dist/sdk/account/index.js",
+      "require": "./dist/sdk/account/index.cjs"
+    },
+    "./sdk/catalog": {
+      "types": "./dist/sdk/catalog/index.d.ts",
+      "import": "./dist/sdk/catalog/index.js",
+      "require": "./dist/sdk/catalog/index.cjs"
+    },
+    "./sdk/payment": {
+      "types": "./dist/sdk/payment/index.d.ts",
+      "import": "./dist/sdk/payment/index.js",
+      "require": "./dist/sdk/payment/index.cjs"
+    },
+    "./sdk/transfer": {
+      "types": "./dist/sdk/transfer/index.d.ts",
+      "import": "./dist/sdk/transfer/index.js",
+      "require": "./dist/sdk/transfer/index.cjs"
+    },
+    "./sdk/product": {
+      "types": "./dist/sdk/product/index.d.ts",
+      "import": "./dist/sdk/product/index.js",
+      "require": "./dist/sdk/product/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build"
   },
