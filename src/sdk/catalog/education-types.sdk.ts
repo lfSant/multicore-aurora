@@ -1,7 +1,8 @@
 import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
-import { EducationTypes, EducationTypesDynamicAdapter, EducationTypesUseCase } from "../..";
+import { EducationTypes, EducationTypesUseCase } from "../../core";
+import { EducationTypesDynamicAdapter } from "../../providers";
 
 export function findEducationTypesUseCase(
   providerKey: string,

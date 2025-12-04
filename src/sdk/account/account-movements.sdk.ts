@@ -2,7 +2,7 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import { AccountMovement, GetAccountMovementsCommand, ListAccountMovementsUseCase } from "../../core";
-import { AccountMovementsDynamicAdapter } from "../..";
+import { AccountMovementsDynamicAdapter } from "../../providers";
 
 export function createAccountMovementsUseCase(
   providerKey: string,

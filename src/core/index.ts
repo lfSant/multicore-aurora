@@ -167,3 +167,31 @@ export * from './application/validation/send-sms-by-phone.schema';
 export * from './application/dto/results/PaymentServiceConcepts.result';
 export * from './application/ports/outbound/PaymentServiceConceptsProviderPort';
 export * from './application/use-cases/PaymentServiceConcepts.usecase';
+
+// Payment Service Query - Post
+export * from './application/dto/commands/GetPaymentServiceQuery.command';
+export * from './application/dto/results/PaymentServiceQuery.result';
+export * from './application/ports/outbound/PaymentServiceQueryProviderPort';
+export * from './application/use-cases/GetPaymentServiceQuery.usecase';
+export * from './application/validation/get-payment-service-query.schema';
+
+// Process Payment Service - Post
+export * from './application/dto/commands/ProcessPaymentService.command';
+export * from './application/dto/results/ProcessPaymentService.result';
+export * from './application/ports/outbound/ProcessPaymentServiceProviderPort';
+export * from './application/use-cases/ProcessPaymentService.usecase';
+export * from './application/validation/process-payment-service.schema';
+
+// Payment Reversals - Post
+export * from './application/dto/commands/GetPaymentReversals.command';
+export * from './application/dto/results/PaymentReversals.result';
+export * from './application/ports/outbound/PaymentReversalsProviderPort';
+export * from './application/use-cases/GetPaymentReversals.usecase';
+export * from './application/validation/get-payment-reversals.schema';
+
+// Process Payment Reversal - Post
+export * from './application/dto/commands/ProcessPaymentReversal.command';
+export * from './application/dto/results/ProcessPaymentReversal.result';
+export * from './application/ports/outbound/ProcessPaymentReversalProviderPort';
+export * from './application/use-cases/ProcessPaymentReversal.usecase';
+export * from './application/validation/process-payment-reversal.schema';

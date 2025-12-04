@@ -48,6 +48,15 @@ export const MapExprSchema = z.union([
   Obj({ stripPrefix: z.object({ from: z.string(), prefix: z.string() }) }),
   Obj({ nowMs: z.union([z.literal(true), z.object({ offsetMs: z.number() })]) }),
   Obj({ toString: z.object({ from: z.string(), default: z.string().optional() }).passthrough() }),
+  Obj({
+    parseXml: z.object({
+      from: z.string(),
+      mode: z.enum(['array', 'object']).default('array'),
+      nodePattern: z.string().optional(),
+      itemPrefix: z.string().optional(),
+      default: z.any().optional()
+    }).passthrough()
+  }),
 ]);
 
 const ResponseItemShapeSchema = z.record(MapExprSchema);

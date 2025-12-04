@@ -1,59 +1,114 @@
 {
   "name": "lib-multicore-aurora",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",
-  "private": true,
+  "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfSant/multicore-aurora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lfSant/multicore-aurora/issues"
+  },
+  "homepage": "https://github.com/lfSant/multicore-aurora#readme",
+  "keywords": [
+    "multicore",
+    "banking",
+    "connector",
+    "cooperative",
+    "dynamic-adapter"
+  ],
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./core": {
       "types": "./dist/core/index.d.ts",
-      "import": "./dist/core/index.mjs",
+      "import": "./dist/core/index.js",
       "require": "./dist/core/index.cjs"
     },
     "./adapters": {
       "types": "./dist/adapters/index.d.ts",
-      "import": "./dist/adapters/index.mjs",
+      "import": "./dist/adapters/index.js",
       "require": "./dist/adapters/index.cjs"
+    },
+    "./sdk": {
+      "types": "./dist/sdk/index.d.ts",
+      "import": "./dist/sdk/index.js",
+      "require": "./dist/sdk/index.cjs"
     },
     "./sdk/client": {
       "types": "./dist/sdk/client/index.d.ts",
-      "import": "./dist/sdk/client/index.mjs",
+      "import": "./dist/sdk/client/index.js",
       "require": "./dist/sdk/client/index.cjs"
     },
     "./sdk/auth": {
       "types": "./dist/sdk/auth/index.d.ts",
-      "import": "./dist/sdk/auth/index.mjs",
+      "import": "./dist/sdk/auth/index.js",
       "require": "./dist/sdk/auth/index.cjs"
+    },
+    "./sdk/account": {
+      "types": "./dist/sdk/account/index.d.ts",
+      "import": "./dist/sdk/account/index.js",
+      "require": "./dist/sdk/account/index.cjs"
+    },
+    "./sdk/catalog": {
+      "types": "./dist/sdk/catalog/index.d.ts",
+      "import": "./dist/sdk/catalog/index.js",
+      "require": "./dist/sdk/catalog/index.cjs"
+    },
+    "./sdk/payment": {
+      "types": "./dist/sdk/payment/index.d.ts",
+      "import": "./dist/sdk/payment/index.js",
+      "require": "./dist/sdk/payment/index.cjs"
+    },
+    "./sdk/transfer": {
+      "types": "./dist/sdk/transfer/index.d.ts",
+      "import": "./dist/sdk/transfer/index.js",
+      "require": "./dist/sdk/transfer/index.cjs"
+    },
+    "./sdk/product": {
+      "types": "./dist/sdk/product/index.d.ts",
+      "import": "./dist/sdk/product/index.js",
+      "require": "./dist/sdk/product/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup ./src/core/index.ts ./src/adapters/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json",
-    "clean": "rimraf dist"
+    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "clean": "rimraf dist",
+    "prepublishOnly": "yarn clean && yarn build",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
+    "deploy:develop": "git add src/ package.json README.md && git commit && git push github develop",
+    "deploy:release": "yarn build && git checkout release && git checkout develop -- package.json && git add dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
+    "deploy:all": "yarn deploy:develop && yarn deploy:release"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "tsup": {
     "tsconfig": "tsconfig.lib.json"
   },
   "dependencies": {
     "axios": "^1.7.0",
     "ioredis": "5.8.0",
-    "lodash.get": "^4.4.2",
     "mysql2": "^3.15.1",
     "zod": "^3.23.0"
   },
   "devDependencies": {
-    "@types/lodash.get": "^4.4.9",
     "@types/node": "^24.5.2",
     "rimraf": "^6.0.1",
+    "terser": "^5.44.1",
     "tsup": "^8.0.0",
     "typescript": "^5.6.0"
   }

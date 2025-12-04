@@ -6,9 +6,9 @@ import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import {
   PaymentServiceConcepts,
-  PaymentServiceConceptsDynamicAdapter,
   PaymentServiceConceptsUseCase,
-} from "../..";
+} from "../../core";
+import { PaymentServiceConceptsDynamicAdapter } from "../../providers";
 
 export function findPaymentServiceConceptsUseCase(
   providerKey: string,

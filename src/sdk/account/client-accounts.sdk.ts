@@ -2,7 +2,7 @@ import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/facto
 import type { ProviderCallConfig } from "../../core/shared/http";
 import type { CanonicalResponse } from "../../core/shared/types";
 import { Account, ListAccountsCommand, ListAccountsUseCase } from "../../core";
-import { ClientAccountsDynamicAdapter } from "../..";
+import { ClientAccountsDynamicAdapter } from "../../providers";
 
 export function createClientAccountsUseCase(
   providerKey: string,
