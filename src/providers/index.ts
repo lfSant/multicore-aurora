@@ -50,3 +50,7 @@ export * from "./payment/DynamicProcessPaymentReversalAdapter";
 
 //* Risk
 export * from "./risk/DynamicStartRiskFlowAdapter";
+
+//* Causal
+export * from "./causal/DynamicValidateDebitNoteAdapter";
+export * from "./causal/DynamicValidateCreditNoteAdapter";

@@ -32,3 +32,5 @@ export * from "./notification/index";
 export * from "./payment/index";
 //Risk exports
 export * from "./risk/index";
+//Causal exports
+export * from "./causal/index";

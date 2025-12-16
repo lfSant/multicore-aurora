@@ -209,3 +209,17 @@ export * from './application/dto/results/AccountForCausal.result';
 export * from './application/ports/outbound/GetAccountsForCausalsProviderPort';
 export * from './application/use-cases/GetAccountsForCausals.usecase';
 export * from './application/validation/get-accounts-for-causals.schema';
+
+// Validate Debit Note - Post
+export * from './application/dto/commands/ValidateDebitNote.command';
+export * from './application/dto/results/ValidateDebitNote.result';
+export * from './application/ports/outbound/ValidateDebitNoteProviderPort';
+export * from './application/use-cases/ValidateDebitNote.usecase';
+export * from './application/validation/validate-debit-note.schema';
+
+// Validate Credit Note - Post
+export * from './application/dto/commands/ValidateCreditNote.command';
+export * from './application/dto/results/ValidateCreditNote.result';
+export * from './application/ports/outbound/ValidateCreditNoteProviderPort';
+export * from './application/use-cases/ValidateCreditNote.usecase';
+export * from './application/validation/validate-credit-note.schema';

@@ -3,7 +3,7 @@ import {
   AccountForCausalResult,
   GetAccountsForCausalsUseCase,
 } from "../../core";
-import { DynamicAccountsForCausalsAdapter } from "../../providers";
+import { AccountsForCausalsDynamicAdapter } from "../../providers";
 import { ProviderCallConfig, CanonicalResponse } from "../../core";
 import { createBaseDynamicAdapter } from "../common/factories";
 
@@ -12,7 +12,7 @@ export function createGetAccountsForCausalsUseCase(providerKey: string) {
     providerKey,
     "getAccountsForCausals"
   );
-  const adapter = new DynamicAccountsForCausalsAdapter(baseAdapter);
+  const adapter = new AccountsForCausalsDynamicAdapter(baseAdapter);
   return new GetAccountsForCausalsUseCase(adapter);
 }
 
