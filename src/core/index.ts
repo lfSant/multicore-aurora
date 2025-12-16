@@ -195,3 +195,17 @@ export * from './application/dto/results/ProcessPaymentReversal.result';
 export * from './application/ports/outbound/ProcessPaymentReversalProviderPort';
 export * from './application/use-cases/ProcessPaymentReversal.usecase';
 export * from './application/validation/process-payment-reversal.schema';
+
+// Start Risk Flow - Post
+export * from './application/dto/commands/StartRiskFlow.command';
+export * from './application/dto/results/StartRiskFlow.result';
+export * from './application/ports/outbound/StartRiskFlowProviderPort';
+export * from './application/use-cases/StartRiskFlow.usecase';
+export * from './application/validation/start-risk-flow.schema';
+
+// Get Accounts For Causals - Post
+export * from './application/dto/commands/GetAccountsForCausals.command';
+export * from './application/dto/results/AccountForCausal.result';
+export * from './application/ports/outbound/GetAccountsForCausalsProviderPort';
+export * from './application/use-cases/GetAccountsForCausals.usecase';
+export * from './application/validation/get-accounts-for-causals.schema';

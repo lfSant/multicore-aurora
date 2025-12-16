@@ -30,3 +30,5 @@ export * from "./deposit/index";
 export * from "./notification/index";
 //Payment exports
 export * from "./payment/index";
+//Risk exports
+export * from "./risk/index";
