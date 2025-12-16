@@ -98,8 +98,8 @@
     "version:patch": "npm version patch --no-git-tag-version",
     "version:minor": "npm version minor --no-git-tag-version",
     "version:major": "npm version major --no-git-tag-version",
-    "deploy:develop": "git add src/ package.json README.md && git commit && git push github develop",
-    "deploy:release": "yarn build && git checkout release && git checkout develop -- package.json && git add dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
+    "deploy:develop": "git add src/ package.json README.md && git commit && git push origin develop",
+    "deploy:release": "yarn build && git checkout release && git checkout develop -- package.json && git add -f dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
     "deploy:all": "yarn deploy:develop && yarn deploy:release"
   },
   "files": [
