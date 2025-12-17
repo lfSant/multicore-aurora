@@ -1,1 +1,0 @@
-import{getConsolidatedProductsUseCase as o,listConsolidatedProducts as r}from"../../chunk-CLJ27SQS.js";import"../../chunk-V7FBP7ZI.js";import"../../chunk-MV2CDJ6N.js";import"../../chunk-WMYWAF2A.js";import"../../chunk-PQQCP6NB.js";import"../../chunk-BHNYA3PD.js";import"../../chunk-2RVRTAUL.js";export{o as getConsolidatedProductsUseCase,r as listConsolidatedProducts};
