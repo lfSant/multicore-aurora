@@ -1,26 +1,30 @@
-import {
-  ValidateDebitNoteCommand,
-  ValidateDebitNoteResult,
-  ValidateDebitNoteUseCase,
-} from "../../core";
-import { ValidateDebitNoteDynamicAdapter } from "../../providers";
-import { ProviderCallConfig, CanonicalResponse } from "../../core";
-import { createBaseDynamicAdapter } from "../common/factories";
+import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
+import type { ProviderCallConfig } from "../../core/shared/http";
+import type { CanonicalResponse } from "../../core/shared/types";
+import { ValidateDebitNoteUseCase } from "../../core/application/use-cases/ValidateDebitNote.usecase";
+import { ValidateDebitNoteCommand } from "../../core/application/dto/commands/ValidateDebitNote.command";
+import { ValidateDebitNoteResult } from "../../core/application/dto/results/ValidateDebitNote.result";
+import { ValidateDebitNoteDynamicAdapter } from "../../providers/causal/ValidateDebitNoteDynamicAdapter";
 
-export function createValidateDebitNoteUseCase(providerKey: string) {
-  const baseAdapter = createBaseDynamicAdapter<ValidateDebitNoteResult>(
-    providerKey,
-    "validateDebitNote"
-  );
-  const adapter = new ValidateDebitNoteDynamicAdapter(baseAdapter);
-  return new ValidateDebitNoteUseCase(adapter);
+export function createValidateDebitNoteUseCase(
+  providerKey: string,
+  operationKey = "validateDebitNote",
+  adapterOptions?: AdapterFactoryOptions
+) {
+  const base = createBaseDynamicAdapter<ValidateDebitNoteResult>(providerKey, operationKey, adapterOptions);
+  const port = new ValidateDebitNoteDynamicAdapter(base);
+  return new ValidateDebitNoteUseCase(port);
 }
 
 export async function validateDebitNote(
   command: ValidateDebitNoteCommand,
   http: ProviderCallConfig,
-  options: { provider: string; tenant?: string; environment?: string }
+  opts: { provider: string; operation?: string; adapterOptions?: AdapterFactoryOptions }
 ): Promise<CanonicalResponse<ValidateDebitNoteResult>> {
-  const useCase = createValidateDebitNoteUseCase(options.provider);
-  return useCase.execute(command, http);
+  const uc = createValidateDebitNoteUseCase(
+    opts.provider,
+    opts.operation ?? "validateDebitNote",
+    opts.adapterOptions
+  );
+  return uc.execute(command, http);
 }

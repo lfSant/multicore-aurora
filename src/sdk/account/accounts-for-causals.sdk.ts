@@ -1,26 +1,30 @@
-import {
-  GetAccountsForCausalsCommand,
-  AccountForCausalResult,
-  GetAccountsForCausalsUseCase,
-} from "../../core";
-import { AccountsForCausalsDynamicAdapter } from "../../providers";
-import { ProviderCallConfig, CanonicalResponse } from "../../core";
-import { createBaseDynamicAdapter } from "../common/factories";
+import { createBaseDynamicAdapter, AdapterFactoryOptions } from "../common/factories";
+import type { ProviderCallConfig } from "../../core/shared/http";
+import type { CanonicalResponse } from "../../core/shared/types";
+import { GetAccountsForCausalsUseCase } from "../../core/application/use-cases/GetAccountsForCausals.usecase";
+import { GetAccountsForCausalsCommand } from "../../core/application/dto/commands/GetAccountsForCausals.command";
+import { AccountForCausalResult } from "../../core/application/dto/results/AccountForCausal.result";
+import { AccountsForCausalsDynamicAdapter } from "../../providers/account/AccountsForCausalsDynamicAdapter";
 
-export function createGetAccountsForCausalsUseCase(providerKey: string) {
-  const baseAdapter = createBaseDynamicAdapter<AccountForCausalResult>(
-    providerKey,
-    "getAccountsForCausals"
-  );
-  const adapter = new AccountsForCausalsDynamicAdapter(baseAdapter);
-  return new GetAccountsForCausalsUseCase(adapter);
+export function createGetAccountsForCausalsUseCase(
+  providerKey: string,
+  operationKey = "getAccountsForCausals",
+  adapterOptions?: AdapterFactoryOptions
+) {
+  const base = createBaseDynamicAdapter<AccountForCausalResult>(providerKey, operationKey, adapterOptions);
+  const port = new AccountsForCausalsDynamicAdapter(base);
+  return new GetAccountsForCausalsUseCase(port);
 }
 
 export async function getAccountsForCausals(
   command: GetAccountsForCausalsCommand,
   http: ProviderCallConfig,
-  options: { provider: string; tenant?: string; environment?: string }
+  opts: { provider: string; operation?: string; adapterOptions?: AdapterFactoryOptions }
 ): Promise<CanonicalResponse<AccountForCausalResult>> {
-  const useCase = createGetAccountsForCausalsUseCase(options.provider);
-  return useCase.execute(command, http);
+  const uc = createGetAccountsForCausalsUseCase(
+    opts.provider,
+    opts.operation ?? "getAccountsForCausals",
+    opts.adapterOptions
+  );
+  return uc.execute(command, http);
 }
