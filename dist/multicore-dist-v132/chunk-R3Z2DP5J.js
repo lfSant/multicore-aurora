@@ -1,0 +1,1 @@
+var t=class{constructor(t){this.base=t}validateDebitNote(t,s,e){return this.base.run(t,s,e)}},s=class{constructor(t){this.base=t}validateCreditNote(t,s,e){return this.base.run(t,s,e)}};export{t as ValidateDebitNoteDynamicAdapter,s as ValidateCreditNoteDynamicAdapter};
