@@ -223,3 +223,10 @@ export * from './application/dto/results/ValidateCreditNote.result';
 export * from './application/ports/outbound/ValidateCreditNoteProviderPort';
 export * from './application/use-cases/ValidateCreditNote.usecase';
 export * from './application/validation/validate-credit-note.schema';
+
+// Get User Data - Post
+export * from './application/dto/commands/GetUserData.command';
+export * from './application/dto/results/UserData.result';
+export * from './application/ports/outbound/GetUserDataProviderPort';
+export * from './application/use-cases/GetUserData.usecase';
+export * from './application/validation/get-user-data.schema';

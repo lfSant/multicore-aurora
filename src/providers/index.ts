@@ -54,3 +54,6 @@ export * from "./risk/DynamicStartRiskFlowAdapter";
 //* Causal
 export * from "./causal/ValidateDebitNoteDynamicAdapter";
 export * from "./causal/ValidateCreditNoteDynamicAdapter";
+
+//* User
+export * from "./user/UserDataDynamicAdapter";

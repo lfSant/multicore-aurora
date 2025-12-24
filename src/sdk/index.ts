@@ -34,3 +34,5 @@ export * from "./payment/index";
 export * from "./risk/index";
 //Causal exports
 export * from "./causal/index";
+//User exports
+export * from "./user/index";
