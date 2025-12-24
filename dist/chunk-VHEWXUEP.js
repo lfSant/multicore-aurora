@@ -1,0 +1,1 @@
+var r=class{constructor(r){this.base=r}getUserData(r,s,t){return this.base.run(r,s,t)}};export{r as UserDataDynamicAdapter};
