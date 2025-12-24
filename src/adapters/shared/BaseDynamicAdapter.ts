@@ -105,23 +105,7 @@ export class BaseDynamicAdapter<TItem> {
       data: bodyToSend,
     });
 
-    if (res.status < 200 || res.status >= 300) {
-      throw new ProviderHttpError(
-        `Proveedor ${this.providerKey} (${this.operationKey}) HTTP ${res.status}`,
-        res.status,
-        this.providerKey,
-        {
-          headersCore: res.headers,
-          dataCore: res.data,
-          timeResponseMs: res.timeResponseMs,
-          urlRequest: finalUrl,
-          bodyRequest: bodyToSend, // Usar el body serializado, no el original
-          headersRequest: headers,
-          paramsRequest: params,
-        }
-      );
-    }
-
+    // Primero evaluar reglas de error de negocio (incluye status HTTP personalizados)
     const biz = evaluateBusinessError(
       res.status,
       res.data,
@@ -137,12 +121,30 @@ export class BaseDynamicAdapter<TItem> {
           dataCore: res.data,
           timeResponseMs: res.timeResponseMs,
           urlRequest: finalUrl,
-          bodyRequest: bodyToSend, // Usar el body serializado, no el original
+          bodyRequest: bodyToSend,
           headersRequest: headers,
           paramsRequest: params,
         },
         biz.codeHint,
         biz.client
+      );
+    }
+
+    // Si no hay regla de error configurada, validar status HTTP genérico
+    if (res.status < 200 || res.status >= 300) {
+      throw new ProviderHttpError(
+        `Proveedor ${this.providerKey} (${this.operationKey}) HTTP ${res.status}`,
+        res.status,
+        this.providerKey,
+        {
+          headersCore: res.headers,
+          dataCore: res.data,
+          timeResponseMs: res.timeResponseMs,
+          urlRequest: finalUrl,
+          bodyRequest: bodyToSend,
+          headersRequest: headers,
+          paramsRequest: params,
+        }
       );
     }
 
