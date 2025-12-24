@@ -1,17 +1,6 @@
 import { P as ProviderCallConfig } from '../http-CRaj6wih.cjs';
 import { z } from 'zod';
 
-interface HttpExecutionResult {
-    url?: string;
-    method: string;
-    params?: Record<string, any>;
-    status: number;
-    headers: Record<string, any>;
-    data: any;
-    timeResponseMs: number;
-}
-declare function executeHttp(cfg: ProviderCallConfig): Promise<HttpExecutionResult>;
-
 /**
  * Config de mapeo entre request/response y la API externa
  */
@@ -13978,5 +13967,16 @@ declare class BaseDynamicAdapter<TItem> {
         } | undefined;
     }>;
 }
+
+interface HttpExecutionResult {
+    url?: string;
+    method: string;
+    params?: Record<string, any>;
+    status: number;
+    headers: Record<string, any>;
+    data: any;
+    timeResponseMs: number;
+}
+declare function executeHttp(cfg: ProviderCallConfig): Promise<HttpExecutionResult>;
 
 export { BaseDynamicAdapter, type HttpExecutionResult, executeHttp };

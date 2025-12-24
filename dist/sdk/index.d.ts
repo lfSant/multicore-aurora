@@ -4,20 +4,26 @@ export { checkClientStatus, createClientProfileByNumberUseCase, createClientProf
 export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase } from './auth/index.js';
 export { findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.js';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.js';
-export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getClientAccountByNumber } from './account/index.js';
+export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetAccountsForCausalsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getAccountsForCausals, getClientAccountByNumber } from './account/index.js';
 import { A as AdapterFactoryOptions } from '../factories-BT5sFmip.js';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../types-D11BfpWV.js';
 import { b as GetClientLoansUseCase, G as GetClientLoansCommand, C as ClientLoan, e as GetLoanAdditionalInfoUseCase, c as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, j as GetLoanAmortizationTableUseCase, f as GetLoanAmortizationTableCommand, h as LoanAmortizationTable, m as GetConsolidatedTimeDepositsUseCase, k as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, p as GetDepositMovementsUseCase, n as GetDepositMovementsCommand, D as DepositMovement, s as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, q as SendSmsByIdentificationResult, v as SendSmsByPhoneUseCase, t as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-u2oxDfX1.js';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.js';
 export { createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentReversal, processPaymentService } from './payment/index.js';
+export { createStartRiskFlowUseCase, startRiskFlow } from './risk/index.js';
+export { createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, validateCreditNote, validateDebitNote } from './causal/index.js';
+export { createGetUserDataUseCase, getUserData } from './user/index.js';
 import '../GetClientProfileByNumber.usecase-oTJdRTvT.js';
 import '../AuthLogin.usecase-C8-yHSyH.js';
 import '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
 import '../ListCustomerProducts.usecase-CtbO3XtQ.js';
-import '../GetAccountSigners.usecase-BXZZ4NM2.js';
+import '../GetAccountsForCausals.usecase-4L5pWUFp.js';
 import '../CreateExternalTransfer.usecase-1_762f9C.js';
 import '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
+import '../StartRiskFlow.usecase-CdettNyR.js';
+import '../ValidateCreditNote.usecase-CTXenlr5.js';
+import '../GetUserData.usecase-DgpcGCAt.js';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;
