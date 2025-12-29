@@ -13,7 +13,7 @@ export { createExternalTransfer, createExternalTransferUseCase, createInternalTr
 export { createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentReversal, processPaymentService } from './payment/index.cjs';
 export { createStartRiskFlowUseCase, startRiskFlow } from './risk/index.cjs';
 export { createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, validateCreditNote, validateDebitNote } from './causal/index.cjs';
-export { createGetUserDataUseCase, getUserData } from './user/index.cjs';
+export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
 import '../GetClientProfileByNumber.usecase-Dul49kWX.cjs';
 import '../AuthLogin.usecase-BwQ8-wf6.cjs';
 import '../PaymentServiceConcepts.usecase-BQmQsErH.cjs';
@@ -23,7 +23,7 @@ import '../CreateExternalTransfer.usecase-BqNTZS5_.cjs';
 import '../ProcessPaymentReversal.usecase-gtqQ_O_F.cjs';
 import '../StartRiskFlow.usecase-ByGp-cm1.cjs';
 import '../ValidateCreditNote.usecase-eOK5DQAi.cjs';
-import '../GetUserData.usecase-DskRAqPD.cjs';
+import '../GetUserBeneficiaries.usecase-Bn8BWxhk.cjs';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;

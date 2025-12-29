@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-BT5sFmip.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.js';
-import { b as GetUserDataUseCase, G as GetUserDataCommand, U as UserDataResult } from '../../GetUserData.usecase-DgpcGCAt.js';
+import { b as GetUserDataUseCase, G as GetUserDataCommand, U as UserDataResult, f as GetUserBeneficiariesUseCase, c as GetUserBeneficiariesCommand, d as UserBeneficiaryResult } from '../../GetUserBeneficiaries.usecase-CmnI66qD.js';
 
 declare function createGetUserDataUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetUserDataUseCase;
 declare function getUserData(command: GetUserDataCommand, http: ProviderCallConfig, opts: {
@@ -10,4 +10,11 @@ declare function getUserData(command: GetUserDataCommand, http: ProviderCallConf
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<UserDataResult>>;
 
-export { createGetUserDataUseCase, getUserData };
+declare function createGetUserBeneficiariesUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetUserBeneficiariesUseCase;
+declare function getUserBeneficiaries(command: GetUserBeneficiariesCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<UserBeneficiaryResult>>;
+
+export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData };

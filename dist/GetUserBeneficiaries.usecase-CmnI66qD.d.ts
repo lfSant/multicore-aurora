@@ -51,4 +51,38 @@ declare class GetUserDataUseCase {
     execute(cmd: GetUserDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<UserDataResult>>;
 }
 
-export { type GetUserDataCommand as G, type SecurityQuestion as S, type UserDataResult as U, type GetUserDataProviderPort as a, GetUserDataUseCase as b };
+interface GetUserBeneficiariesCommand {
+    username: string;
+    channel: string;
+}
+
+interface UserBeneficiaryResult {
+    clientNumber: number;
+    accountType: string;
+    accountNumber: string;
+    registrationDate: string;
+    bankCode: number;
+    beneficiaryIdentification: string;
+    beneficiaryFirstName: string;
+    beneficiaryLastName: string;
+    beneficiarySecondLastName: string;
+    beneficiaryEmail: string;
+    beneficiaryType: string;
+    beneficiaryPhone: string;
+    bank: string | null;
+}
+
+interface GetUserBeneficiariesProviderPort {
+    getUserBeneficiaries(cmd: GetUserBeneficiariesCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<UserBeneficiaryResult>>;
+}
+
+declare class GetUserBeneficiariesUseCase {
+    private readonly provider;
+    constructor(provider: GetUserBeneficiariesProviderPort);
+    execute(cmd: GetUserBeneficiariesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<UserBeneficiaryResult>>;
+}
+
+export { type GetUserDataCommand as G, type SecurityQuestion as S, type UserDataResult as U, type GetUserDataProviderPort as a, GetUserDataUseCase as b, type GetUserBeneficiariesCommand as c, type UserBeneficiaryResult as d, type GetUserBeneficiariesProviderPort as e, GetUserBeneficiariesUseCase as f };
