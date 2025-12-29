@@ -57,3 +57,4 @@ export * from "./causal/ValidateCreditNoteDynamicAdapter";
 
 //* User
 export * from "./user/UserDataDynamicAdapter";
+export * from "./user/UserBeneficiariesDynamicAdapter";

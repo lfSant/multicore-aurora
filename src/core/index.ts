@@ -230,3 +230,10 @@ export * from './application/dto/results/UserData.result';
 export * from './application/ports/outbound/GetUserDataProviderPort';
 export * from './application/use-cases/GetUserData.usecase';
 export * from './application/validation/get-user-data.schema';
+
+// Get User Beneficiaries - Post
+export * from './application/dto/commands/GetUserBeneficiaries.command';
+export * from './application/dto/results/UserBeneficiary.result';
+export * from './application/ports/outbound/GetUserBeneficiariesProviderPort';
+export * from './application/use-cases/GetUserBeneficiaries.usecase';
+export * from './application/validation/get-user-beneficiaries.schema';
