@@ -1,6 +1,8 @@
 export interface SecurityQuestion {
   questionId: number;
+  question: string;
   answerId: number | null;
+  answer: string | null;
   personalAnswer: string | null;
 }
 
