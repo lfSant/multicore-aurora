@@ -1,6 +1,6 @@
 {
   "name": "lib-multicore-aurora",
-  "version": "1.0.3",
+  "version": "3.0.0",
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",
@@ -79,17 +79,32 @@
       "types": "./dist/sdk/product/index.d.ts",
       "import": "./dist/sdk/product/index.js",
       "require": "./dist/sdk/product/index.cjs"
+    },
+    "./sdk/risk": {
+      "types": "./dist/sdk/risk/index.d.ts",
+      "import": "./dist/sdk/risk/index.js",
+      "require": "./dist/sdk/risk/index.cjs"
+    },
+    "./sdk/causal": {
+      "types": "./dist/sdk/causal/index.d.ts",
+      "import": "./dist/sdk/causal/index.js",
+      "require": "./dist/sdk/causal/index.cjs"
+    },
+    "./sdk/user": {
+      "types": "./dist/sdk/user/index.d.ts",
+      "import": "./dist/sdk/user/index.js",
+      "require": "./dist/sdk/user/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts ./src/sdk/risk/index.ts ./src/sdk/causal/index.ts ./src/sdk/user/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build",
     "version:patch": "npm version patch --no-git-tag-version",
     "version:minor": "npm version minor --no-git-tag-version",
     "version:major": "npm version major --no-git-tag-version",
-    "deploy:develop": "git add src/ package.json README.md && git commit && git push github develop",
-    "deploy:release": "yarn build && git checkout release && git checkout develop -- package.json && git add dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
+    "deploy:develop": "git add src/ package.json README.md && (git diff --staged --quiet || git commit -m 'chore: update develop') && git push origin develop",
+    "deploy:release": "yarn build && DIST_TMP=$(mktemp -d) && cp -r dist/* $DIST_TMP/ && git checkout release && rm -rf dist && mkdir -p dist && cp -r $DIST_TMP/* dist/ && rm -rf $DIST_TMP && git checkout develop -- package.json && git add -f dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
     "deploy:all": "yarn deploy:develop && yarn deploy:release"
   },
   "files": [

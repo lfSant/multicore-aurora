@@ -1,7 +1,9 @@
 import { BaseDynamicAdapter } from "../../adapters/shared/BaseDynamicAdapter";
 import { ProviderCallConfig } from "../../core/shared/http";
 import { ProviderResult } from "../../core/shared/types";
-import { ProcessPaymentServiceCommand, ProcessPaymentServiceProviderPort, ProcessPaymentServiceResult } from "../..";
+import { ProcessPaymentServiceCommand } from "../../core/application/dto/commands/ProcessPaymentService.command";
+import { ProcessPaymentServiceProviderPort } from "../../core/application/ports/outbound/ProcessPaymentServiceProviderPort";
+import { ProcessPaymentServiceResult } from "../../core/application/dto/results/ProcessPaymentService.result";
 
 export class ProcessPaymentServiceDynamicAdapter implements ProcessPaymentServiceProviderPort {
   constructor(private readonly base: BaseDynamicAdapter<ProcessPaymentServiceResult>) {}

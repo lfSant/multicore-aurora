@@ -22,6 +22,7 @@ export * from "./account/DynamicGetClientAccountAdapter";
 export * from "./account/DynamicConsolidatedAccountsAdapter";
 export * from "./account/DynamicAccountMovementsAdapter";
 export * from "./account/DynamicAccountSignersAdapter";
+export * from "./account/AccountsForCausalsDynamicAdapter";
 
 //* Loan
 export * from "./loan/DynamicClientLoansAdapter";
@@ -46,3 +47,14 @@ export * from "./payment/DynamicPaymentServiceQueryAdapter";
 export * from "./payment/DynamicProcessPaymentServiceAdapter";
 export * from "./payment/DynamicPaymentReversalsAdapter";
 export * from "./payment/DynamicProcessPaymentReversalAdapter";
+
+//* Risk
+export * from "./risk/DynamicStartRiskFlowAdapter";
+
+//* Causal
+export * from "./causal/ValidateDebitNoteDynamicAdapter";
+export * from "./causal/ValidateCreditNoteDynamicAdapter";
+
+//* User
+export * from "./user/UserDataDynamicAdapter";
+export * from "./user/UserBeneficiariesDynamicAdapter";
