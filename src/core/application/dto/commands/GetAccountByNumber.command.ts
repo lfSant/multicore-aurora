@@ -1,4 +1,4 @@
 export interface GetAccountByNumberCommand {
   accountNumber: string;
-  prodCod: string | number;
+  productCode: string | number;
 }

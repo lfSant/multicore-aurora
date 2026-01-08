@@ -67,6 +67,6 @@ export interface ConsolidatedBuckets {
   accounts: ConsolidatedProduct[];
   timeDeposits: ConsolidatedProduct[];
   loans: ConsolidatedProduct[];
-  garantias: ConsolidatedProduct[];
-  tarjetasCredito: ConsolidatedProduct[];
+  guarantees: ConsolidatedProduct[];
+  creditCards: ConsolidatedProduct[];
 }
