@@ -15,8 +15,5 @@ export interface Account {
   operationalTransactionsAllowed?: boolean | null;
   productCategory: 'ACCOUNT';
   extras?: Record<string, any>;
-  errorCode?: number;
-  errorType?: string;
-  errorDescription?: string;
 }
 
