@@ -5,8 +5,8 @@ export function groupConsolidated(items: ConsolidatedProduct[]): ConsolidatedBuc
     accounts: [], 
     timeDeposits: [], 
     loans: [], 
-    garantias: [], 
-    tarjetasCredito: [] 
+    guarantees: [], 
+    creditCards: [] 
   };
   
   for (const it of items || []) {
@@ -14,8 +14,8 @@ export function groupConsolidated(items: ConsolidatedProduct[]): ConsolidatedBuc
       case 'ACCOUNT':       out.accounts.push(it);       break;
       case 'TIME_DEPOSIT':  out.timeDeposits.push(it);   break;
       case 'LOAN':          out.loans.push(it);          break;
-      case 'GUARANTEE':     out.garantias.push(it);      break;
-      case 'CREDIT_CARD':   out.tarjetasCredito.push(it); break;
+      case 'GUARANTEE':     out.guarantees.push(it);      break;
+      case 'CREDIT_CARD':   out.creditCards.push(it); break;
     }
   }
   return out;
