@@ -1,8 +1,8 @@
-export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN' | 'GUARANTEE' | 'CREDIT_CARD';
+export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN' | 'CREDIT_CARD';
 
 export interface ConsolidatedProduct {
   productCategory: ProductCategory;
-  
+
   // ACCOUNT
   accountNumber?: string;
   accountType?: string;
@@ -16,6 +16,7 @@ export interface ConsolidatedProduct {
   operationalTransactionsAllowed?: boolean;
   status?: string;
   signatureType?: string;
+  currencyCode?: string;
 
   // TIME_DEPOSIT
   id?: string | number;
@@ -30,6 +31,10 @@ export interface ConsolidatedProduct {
   termDays?: number;
   openDate?: string;
   installments?: number;
+  retentionTax?: string;
+  totalToReceive?: string;
+  branchTDCode?: string;
+  branchTDName?: string; 
 
   // LOAN
   loanCode?: string;
@@ -38,16 +43,17 @@ export interface ConsolidatedProduct {
   payoffAmount?: string;
   nextDueDate?: string;
   relationshipType?: string;
+  originalAmount?: string;
+  creationDate?: string;
+  daysPastDue?: number;
+  loanStatus?: string;
+  loanStatusDescription?: string;
+  numberOfInstallments?: number;
+  interestRate?: string;
+  branchCode?: string;
+  branchName?: string;
 
-  // GUARANTEE FIELDS
-  guaranteeDescription?: string;
-  guaranteeNumber?: string;
-  guaranteeValue?: string;
-  guaranteeStatus?: string;
-  guaranteeExpirationDate?: string;
-  guaranteeIssueDate?: string;
-
-  // CREDIT CARD FIELDS
+  // CREDIT CARD
   creditCardDescription?: string;
   creditCardNumber?: string;
   creditCardLimit?: string;
@@ -57,12 +63,14 @@ export interface ConsolidatedProduct {
   creditCardCutOffDate?: string;
   creditCardPaymentDate?: string;
   creditCardStatus?: string;
+  creditCardCoreCode?: string;
+  creditCardProductCode?: string;
+  creditCardCurrencyCode?: string;
 }
 
 export interface ConsolidatedBuckets {
   accounts: ConsolidatedProduct[];
   timeDeposits: ConsolidatedProduct[];
   loans: ConsolidatedProduct[];
-  guarantees: ConsolidatedProduct[];
   creditCards: ConsolidatedProduct[];
 }

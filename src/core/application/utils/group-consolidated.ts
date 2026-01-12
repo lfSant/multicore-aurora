@@ -5,7 +5,6 @@ export function groupConsolidated(items: ConsolidatedProduct[]): ConsolidatedBuc
     accounts: [], 
     timeDeposits: [], 
     loans: [], 
-    guarantees: [], 
     creditCards: [] 
   };
   
@@ -13,8 +12,7 @@ export function groupConsolidated(items: ConsolidatedProduct[]): ConsolidatedBuc
     switch (it.productCategory) {
       case 'ACCOUNT':       out.accounts.push(it);       break;
       case 'TIME_DEPOSIT':  out.timeDeposits.push(it);   break;
-      case 'LOAN':          out.loans.push(it);          break;
-      case 'GUARANTEE':     out.guarantees.push(it);      break;
+      case 'LOAN':          out.loans.push(it);          break;    break;
       case 'CREDIT_CARD':   out.creditCards.push(it); break;
     }
   }
