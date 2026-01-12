@@ -1,4 +1,4 @@
-export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN';
+export type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN' | 'CREDIT_CARD';
 
 export interface ConsolidatedProduct {
   productCategory: ProductCategory;
@@ -16,6 +16,7 @@ export interface ConsolidatedProduct {
   operationalTransactionsAllowed?: boolean;
   status?: string;
   signatureType?: string;
+  currencyCode?: string;
 
   // TIME_DEPOSIT
   id?: string | number;
@@ -30,6 +31,10 @@ export interface ConsolidatedProduct {
   termDays?: number;
   openDate?: string;
   installments?: number;
+  retentionTax?: string;
+  totalToReceive?: string;
+  branchTDCode?: string;
+  branchTDName?: string; 
 
   // LOAN
   loanCode?: string;
@@ -38,10 +43,34 @@ export interface ConsolidatedProduct {
   payoffAmount?: string;
   nextDueDate?: string;
   relationshipType?: string;
+  originalAmount?: string;
+  creationDate?: string;
+  daysPastDue?: number;
+  loanStatus?: string;
+  loanStatusDescription?: string;
+  numberOfInstallments?: number;
+  interestRate?: string;
+  branchCode?: string;
+  branchName?: string;
+
+  // CREDIT CARD
+  creditCardDescription?: string;
+  creditCardNumber?: string;
+  creditCardLimit?: string;
+  creditCardBalance?: string;
+  creditCardAvailable?: string;
+  creditCardMinimumPayment?: string;
+  creditCardCutOffDate?: string;
+  creditCardPaymentDate?: string;
+  creditCardStatus?: string;
+  creditCardCoreCode?: string;
+  creditCardProductCode?: string;
+  creditCardCurrencyCode?: string;
 }
 
 export interface ConsolidatedBuckets {
   accounts: ConsolidatedProduct[];
   timeDeposits: ConsolidatedProduct[];
   loans: ConsolidatedProduct[];
+  creditCards?: ConsolidatedProduct[];
 }

@@ -1,5 +1,6 @@
 export interface GetAccountMovementsCommand {
-  accountNumber: string;
+  accountNumber?: string;
+  productCode?: string;
   startDate: string;
   endDate: string;
 }
