@@ -1,0 +1,1 @@
+var s=class{constructor(s){this.base=s}getUserData(s,r,e){return this.base.run(s,r,e)}},r=class{constructor(s){this.base=s}getUserBeneficiaries(s,r,e){return this.base.run(s,r,e)}};export{s as UserDataDynamicAdapter,r as UserBeneficiariesDynamicAdapter};
