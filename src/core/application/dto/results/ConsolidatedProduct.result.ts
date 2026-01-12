@@ -72,5 +72,5 @@ export interface ConsolidatedBuckets {
   accounts: ConsolidatedProduct[];
   timeDeposits: ConsolidatedProduct[];
   loans: ConsolidatedProduct[];
-  creditCards: ConsolidatedProduct[];
+  creditCards?: ConsolidatedProduct[];
 }
