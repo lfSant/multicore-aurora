@@ -8,10 +8,10 @@ export interface ExternalTransferCommand {
   institutionSequential: string;
   accountTypeCode: string;
   concept: string;
-  Platform?: string;
-  Date?: string;
-  Device?: string;
-  CodeReference?: string;
+  platform?: string;
+  date?: string;
+  device?: string;
+  codeReference?: string;
   clientNumber?: string
   subType?: string;
 }

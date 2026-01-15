@@ -7,9 +7,9 @@ export const InternalTransferCommandSchema = z.object({
     message: "amount debe tener el formato correcto con 2 decimales",
   }),
   concept: z.string().min(1, "concept es requerido"),
-  transferPlatform: z.string().min(1, "transferPlatform es requerido").optional(),
-  trasnferDate: z.string()
-    .min(1, "trasnferDate es requerido")
+  platform: z.string().min(1, "platform es requerido").optional(),
+  date: z.string()
+    .min(1, "date es requerido")
     .regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/, {
       message: "trasnferDate debe tener el formato YYYY-MM-DD HH:MM:SS"
     })
@@ -20,8 +20,8 @@ export const InternalTransferCommandSchema = z.object({
       message: "trasnferDate debe ser una fecha y hora válida"
     })
     .optional(),
-  transferDevice: z.string().min(1, "transferDevice es requerido").optional(),
-  transferCodeReference: z.string().min(1, "transferCodeReference es requerido").optional(),
+  device: z.string().min(1, "device es requerido").optional(),
+  codeReference: z.string().min(1, "codeReference es requerido").optional(),
   subType: z.string().min(1, "subType es requerido").optional(),
 });
 

@@ -12,21 +12,22 @@ export const ExternalTransferCommandSchema = z.object({
   institutionSequential: z.string().min(1, "institutionSequential es requerido"),
   accountTypeCode: z.string().min(1, "accountTypeCode es requerido"),
   concept: z.string().min(1, "concept es requerido"),
-  transferPlatform: z.string().min(1, "transferPlatform es requerido").optional(),
-  trasnferDate: z.string()
+  platform: z.string().min(1, "platform es requerido").optional(),
+  date: z.string()
     .min(1, "trasnferDate es requerido")
     .regex(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/, {
-      message: "trasnferDate debe tener el formato YYYY-MM-DD HH:MM:SS"
+      message: "date debe tener el formato YYYY-MM-DD HH:MM:SS"
     })
     .refine((dateStr) => {
       const date = new Date(dateStr);
       return !isNaN(date.getTime());
     }, {
-      message: "trasnferDate debe ser una fecha y hora válida"
+      message: "date debe ser una fecha y hora válida"
     })
     .optional(),
-  transferDevice: z.string().min(1, "transferDevice es requerido").optional(),
-  transferCodeReference: z.string().min(1, "transferCodeReference es requerido").optional(),
+  device: z.string().min(1, "device es requerido").optional(),
+  codeReference: z.string().min(1, "codeReference es requerido").optional(),
+  clientNumber: z.string().min(1, "clientNumber es requerido").optional(),
   subType: z.string().min(1, "subType es requerido").optional(),
 });
 
