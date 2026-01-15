@@ -3,8 +3,9 @@ export interface InternalTransferCommand {
   destinationAccountNumber: string;
   amount: string;
   concept: string;
-  transferPlatform?: string;
-  transferDate?: string;
-  transferDevice?: string;
-  transferCodeReference?: string;
+  Platform?: string;
+  Date?: string;
+  Device?: string;
+  CodeReference?: string;
+  subType?: string;
 }

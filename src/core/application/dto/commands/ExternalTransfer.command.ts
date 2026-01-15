@@ -8,9 +8,10 @@ export interface ExternalTransferCommand {
   institutionSequential: string;
   accountTypeCode: string;
   concept: string;
-  transferPlatform?: string;
-  transferDate?: string;
-  transferDevice?: string;
-  transferCodeReference?: string;
-  userCoreCode?: string
+  Platform?: string;
+  Date?: string;
+  Device?: string;
+  CodeReference?: string;
+  clientNumber?: string
+  subType?: string;
 }
