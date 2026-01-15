@@ -1,4 +1,6 @@
 export interface ExternalTransferResult {
-  date: string;
-  transactionIdentifier: string;
+  date?: string;
+  transactionIdentifier: string | number;
+  stateTransaction?: boolean;
+  transferMessage?: string;
 }
