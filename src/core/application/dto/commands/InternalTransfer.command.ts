@@ -3,4 +3,9 @@ export interface InternalTransferCommand {
   destinationAccountNumber: string;
   amount: string;
   concept: string;
+  platform?: string;
+  date?: string;
+  device?: string;
+  codeReference?: string;
+  subType?: string;
 }
