@@ -103,14 +103,17 @@
     "version:patch": "npm version patch --no-git-tag-version",
     "version:minor": "npm version minor --no-git-tag-version",
     "version:major": "npm version major --no-git-tag-version",
+    "version:patch-est": "npm version patch --no-git-tag-version && git tag $(node -p \"require('./package.json').version\")-st",
+    "version:minor-est": "npm version minor --no-git-tag-version && git tag $(node -p \"require('./package.json').version\")-st",
+    "version:major-est": "npm version major --no-git-tag-version && git tag $(node -p \"require('./package.json').version\")-st",
 
     "deploy:develop-est": "git add src/ package.json README.md && (git diff --staged --quiet || git commit -m 'chore: update develop_stabilization') && git push origin develop_stabilization",
     "deploy:release-est": "yarn build && DIST_TMP=$(mktemp -d) && cp -r dist/* $DIST_TMP/ && git checkout release-testing && rm -rf dist && mkdir -p dist && cp -r $DIST_TMP/* dist/ && rm -rf $DIST_TMP && git checkout develop_stabilization -- package.json && git add -f dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release-testing): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release-testing --tags)) && git checkout develop_stabilization",
-    "deploy:all-est": "yarn deploy:develop-est && yarn deploy:release-est",
+    "deploy:all-est": "yarn version:patch-est && yarn deploy:develop-est && yarn deploy:release-est",
 
     "deploy:develop": "git add src/ package.json README.md && (git diff --staged --quiet || git commit -m 'chore: update develop') && git push origin develop",
     "deploy:release": "yarn build && DIST_TMP=$(mktemp -d) && cp -r dist/* $DIST_TMP/ && git checkout release && rm -rf dist && mkdir -p dist && cp -r $DIST_TMP/* dist/ && rm -rf $DIST_TMP && git checkout develop -- package.json && git add -f dist/ package.json && (git diff --staged --quiet && echo 'No changes to deploy' || (VERSION=$(node -p \"require('./package.json').version\") && git commit -m \"chore(release): update dist v$VERSION\" && git tag \"v$VERSION\" && git push github release --tags)) && git checkout develop",
-    "deploy:all": "yarn deploy:develop && yarn deploy:release"
+    "deploy:all": "yarn version:patch && yarn deploy:develop && yarn deploy:release"
   },
   "files": [
     "dist",
