@@ -5,10 +5,10 @@ export { c as CheckClientActiveCommand, f as CheckClientActiveUseCase, d as Clie
 import { z } from 'zod';
 export { e as AuthLogin, d as AuthLoginCommand, f as AuthLoginProviderPort, g as AuthLoginUseCase, A as AuthPrecheckCommand, b as AuthPrecheckProviderPort, a as AuthPrecheckStatus, c as AuthPrecheckUseCase } from '../AuthLogin.usecase-C8-yHSyH.js';
 export { E as EducationTypes, c as EducationTypesProviderPort, d as EducationTypesUseCase, M as MaritalStatus, a as MaritalStatusProviderPort, b as MaritalStatusUseCase, g as PaymentServiceConcepts, h as PaymentServiceConceptsProviderPort, i as PaymentServiceConceptsUseCase, P as ProfessionTypes, e as ProfessionTypesProviderPort, f as ProfessionTypesUseCase } from '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
-export { a as ConsolidatedBuckets, C as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-CtbO3XtQ.js';
-export { A as Account, q as AccountForCausalResult, h as AccountMovement, i as AccountMovementsProviderPort, l as AccountSigner, m as AccountSignersInfo, n as AccountSignersProviderPort, b as ClientAccountByNumberProviderPort, C as ClientAccountsProviderPort, e as ConsolidatedAccountsProviderPort, f as ConsolidatedAccountsUseCase, G as GetAccountByNumberCommand, c as GetAccountByNumberUseCase, g as GetAccountMovementsCommand, k as GetAccountSignersCommand, o as GetAccountSignersUseCase, p as GetAccountsForCausalsCommand, r as GetAccountsForCausalsProviderPort, s as GetAccountsForCausalsUseCase, d as GetConsolidatedAccountsCommand, j as ListAccountMovementsUseCase, L as ListAccountsCommand, a as ListAccountsUseCase } from '../GetAccountsForCausals.usecase-4L5pWUFp.js';
+export { a as ConsolidatedBuckets, C as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-D_jPHLkI.js';
+export { A as Account, q as AccountForCausalResult, h as AccountMovement, i as AccountMovementsProviderPort, l as AccountSigner, m as AccountSignersInfo, n as AccountSignersProviderPort, b as ClientAccountByNumberProviderPort, C as ClientAccountsProviderPort, e as ConsolidatedAccountsProviderPort, f as ConsolidatedAccountsUseCase, G as GetAccountByNumberCommand, c as GetAccountByNumberUseCase, g as GetAccountMovementsCommand, k as GetAccountSignersCommand, o as GetAccountSignersUseCase, p as GetAccountsForCausalsCommand, r as GetAccountsForCausalsProviderPort, s as GetAccountsForCausalsUseCase, d as GetConsolidatedAccountsCommand, j as ListAccountMovementsUseCase, L as ListAccountsCommand, a as ListAccountsUseCase } from '../GetAccountsForCausals.usecase-C3JbIbUb.js';
 export { C as ClientLoan, a as ClientLoansProviderPort, l as ConsolidatedTimeDepositsProviderPort, D as DepositMovement, o as DepositMovementsProviderPort, G as GetClientLoansCommand, b as GetClientLoansUseCase, k as GetConsolidatedTimeDepositsCommand, m as GetConsolidatedTimeDepositsUseCase, n as GetDepositMovementsCommand, p as GetDepositMovementsUseCase, c as GetLoanAdditionalInfoCommand, e as GetLoanAdditionalInfoUseCase, f as GetLoanAmortizationTableCommand, j as GetLoanAmortizationTableUseCase, L as LoanAdditionalInfo, d as LoanAdditionalInfoProviderPort, h as LoanAmortizationTable, i as LoanAmortizationTableProviderPort, g as LoanInstallment, S as SendSmsByIdentificationCommand, r as SendSmsByIdentificationProviderPort, q as SendSmsByIdentificationResult, s as SendSmsByIdentificationUseCase, t as SendSmsByPhoneCommand, u as SendSmsByPhoneProviderPort, v as SendSmsByPhoneUseCase, T as TimeDeposit } from '../SendSmsByPhone.usecase-u2oxDfX1.js';
-export { h as CreateExternalTransferUseCase, C as CreateInternalTransferUseCase, E as ExternalTransferCommand, g as ExternalTransferProviderPort, f as ExternalTransferResult, c as InternalTransferCommand, e as InternalTransferProviderPort, d as InternalTransferResult, I as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, a as TransferInitialChargeBuckets, T as TransferInitialChargeCategory, b as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-1_762f9C.js';
+export { h as CreateExternalTransferUseCase, C as CreateInternalTransferUseCase, E as ExternalTransferCommand, g as ExternalTransferProviderPort, f as ExternalTransferResult, c as InternalTransferCommand, e as InternalTransferProviderPort, d as InternalTransferResult, I as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, a as TransferInitialChargeBuckets, T as TransferInitialChargeCategory, b as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-BABLrVfK.js';
 export { h as GetPaymentReversalsCommand, l as GetPaymentReversalsUseCase, G as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, i as PaymentReversalItemResult, k as PaymentReversalsProviderPort, j as PaymentReversalsResult, P as PaymentServiceQueryItemResult, b as PaymentServiceQueryProviderPort, a as PaymentServiceQueryResult, m as ProcessPaymentReversalCommand, o as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, p as ProcessPaymentReversalUseCase, d as ProcessPaymentServiceCommand, f as ProcessPaymentServiceProviderPort, e as ProcessPaymentServiceResult, g as ProcessPaymentServiceUseCase } from '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 export { S as StartRiskFlowCommand, b as StartRiskFlowProviderPort, a as StartRiskFlowResult, c as StartRiskFlowUseCase } from '../StartRiskFlow.usecase-CdettNyR.js';
 export { d as ValidateCreditNoteCommand, f as ValidateCreditNoteProviderPort, e as ValidateCreditNoteResult, g as ValidateCreditNoteUseCase, V as ValidateDebitNoteCommand, b as ValidateDebitNoteProviderPort, a as ValidateDebitNoteResult, c as ValidateDebitNoteUseCase } from '../ValidateCreditNote.usecase-CTXenlr5.js';
@@ -134,10 +134,13 @@ type ListAccountsCommandParsed = z.infer<typeof ListAccountsCommandSchema>;
 
 declare const GetAccountByNumberCommandSchema: z.ZodObject<{
     accountNumber: z.ZodString;
+    productCode: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     accountNumber: string;
+    productCode?: string | undefined;
 }, {
     accountNumber: string;
+    productCode?: string | undefined;
 }>;
 type GetAccountByNumberCommandParsed = z.infer<typeof GetAccountByNumberCommandSchema>;
 
@@ -150,18 +153,31 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
 }>;
 type GetConsolidatedAccountsCommandParsed = z.infer<typeof GetConsolidatedAccountsCommandSchema>;
 
-declare const GetAccountMovementsCommandSchema: z.ZodObject<{
-    accountNumber: z.ZodString;
-    startDate: z.ZodString;
-    endDate: z.ZodString;
+declare const GetAccountMovementsCommandSchema: z.ZodEffects<z.ZodObject<{
+    accountNumber: z.ZodOptional<z.ZodString>;
+    productCode: z.ZodOptional<z.ZodString>;
+    startDate: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+    endDate: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
 }, "strip", z.ZodTypeAny, {
-    accountNumber: string;
     startDate: string;
     endDate: string;
+    accountNumber?: string | undefined;
+    productCode?: string | undefined;
 }, {
-    accountNumber: string;
     startDate: string;
     endDate: string;
+    accountNumber?: string | undefined;
+    productCode?: string | undefined;
+}>, {
+    startDate: string;
+    endDate: string;
+    accountNumber?: string | undefined;
+    productCode?: string | undefined;
+}, {
+    startDate: string;
+    endDate: string;
+    accountNumber?: string | undefined;
+    productCode?: string | undefined;
 }>;
 type GetAccountMovementsCommandParsed = z.infer<typeof GetAccountMovementsCommandSchema>;
 
@@ -211,16 +227,31 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     destinationAccountNumber: z.ZodString;
     amount: z.ZodString;
     concept: z.ZodString;
+    platform: z.ZodOptional<z.ZodString>;
+    date: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+    device: z.ZodOptional<z.ZodString>;
+    codeReference: z.ZodOptional<z.ZodString>;
+    subType: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     accountNumberOrigin: string;
     destinationAccountNumber: string;
     amount: string;
     concept: string;
+    date?: string | undefined;
+    platform?: string | undefined;
+    device?: string | undefined;
+    codeReference?: string | undefined;
+    subType?: string | undefined;
 }, {
     accountNumberOrigin: string;
     destinationAccountNumber: string;
     amount: string;
     concept: string;
+    date?: string | undefined;
+    platform?: string | undefined;
+    device?: string | undefined;
+    codeReference?: string | undefined;
+    subType?: string | undefined;
 }>;
 type InternalTransferCommandParsed = z.infer<typeof InternalTransferCommandSchema>;
 
@@ -229,28 +260,49 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     destinationAccountNumber: z.ZodString;
     amount: z.ZodString;
     destinationIdentification: z.ZodString;
+    originIdentification: z.ZodString;
     destinationName: z.ZodString;
     institutionSequential: z.ZodString;
     accountTypeCode: z.ZodString;
     concept: z.ZodString;
+    platform: z.ZodOptional<z.ZodString>;
+    date: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+    device: z.ZodOptional<z.ZodString>;
+    codeReference: z.ZodOptional<z.ZodString>;
+    clientNumber: z.ZodOptional<z.ZodString>;
+    subType: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     accountNumberOrigin: string;
     destinationAccountNumber: string;
     amount: string;
     concept: string;
     destinationIdentification: string;
+    originIdentification: string;
     destinationName: string;
     institutionSequential: string;
     accountTypeCode: string;
+    date?: string | undefined;
+    clientNumber?: string | undefined;
+    platform?: string | undefined;
+    device?: string | undefined;
+    codeReference?: string | undefined;
+    subType?: string | undefined;
 }, {
     accountNumberOrigin: string;
     destinationAccountNumber: string;
     amount: string;
     concept: string;
     destinationIdentification: string;
+    originIdentification: string;
     destinationName: string;
     institutionSequential: string;
     accountTypeCode: string;
+    date?: string | undefined;
+    clientNumber?: string | undefined;
+    platform?: string | undefined;
+    device?: string | undefined;
+    codeReference?: string | undefined;
+    subType?: string | undefined;
 }>;
 type ExternalTransferCommandParsed = z.infer<typeof ExternalTransferCommandSchema>;
 

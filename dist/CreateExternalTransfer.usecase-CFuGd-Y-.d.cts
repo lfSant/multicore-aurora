@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
 
 type TransferInitialChargeCategory = 'CONCEPT_TRANSACTION' | 'ACCOUNT_TYPE' | 'INSTITUTION_INFO';
 interface ItemTransferInitialCharge {
@@ -36,11 +36,18 @@ interface InternalTransferCommand {
     destinationAccountNumber: string;
     amount: string;
     concept: string;
+    platform?: string;
+    date?: string;
+    device?: string;
+    codeReference?: string;
+    subType?: string;
 }
 
 interface InternalTransferResult {
-    date: string;
+    date?: string;
     transactionIdentifier: string;
+    state?: boolean;
+    message?: string;
 }
 
 interface InternalTransferProviderPort {
@@ -61,15 +68,24 @@ interface ExternalTransferCommand {
     destinationAccountNumber: string;
     amount: string;
     destinationIdentification: string;
+    originIdentification: string;
     destinationName: string;
     institutionSequential: string;
     accountTypeCode: string;
     concept: string;
+    platform?: string;
+    date?: string;
+    device?: string;
+    codeReference?: string;
+    clientNumber?: string;
+    subType?: string;
 }
 
 interface ExternalTransferResult {
-    date: string;
+    date?: string;
     transactionIdentifier: string;
+    state?: boolean;
+    message?: string;
 }
 
 interface ExternalTransferProviderPort {

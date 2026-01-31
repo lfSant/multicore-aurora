@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-BT5sFmip.cjs';
-import { c as ListCustomerProductsUseCase, L as ListCustomerProductsCommand, a as ConsolidatedBuckets } from '../../ListCustomerProducts.usecase-CMicbZiu.cjs';
+import { c as ListCustomerProductsUseCase, L as ListCustomerProductsCommand, a as ConsolidatedBuckets } from '../../ListCustomerProducts.usecase-Dk8l7N6X.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
 

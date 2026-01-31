@@ -39,6 +39,7 @@ declare class ListAccountsUseCase {
 
 interface GetAccountByNumberCommand {
     accountNumber: string;
+    productCode?: string;
 }
 
 interface ClientAccountByNumberProviderPort {
@@ -72,7 +73,8 @@ declare class ConsolidatedAccountsUseCase {
 }
 
 interface GetAccountMovementsCommand {
-    accountNumber: string;
+    accountNumber?: string;
+    productCode?: string;
     startDate: string;
     endDate: string;
 }
