@@ -66,6 +66,16 @@ interface ErrorMessages {
 declare function formatZodErrors(error: ZodError): string;
 declare function handleUseCaseError<T>(error: unknown, messages?: ErrorMessages): CanonicalResponse<T>;
 
+declare const parseDateTimeDDMMYYYY: (dateStr: string) => Date;
+declare const isValidDateComponentsDDMMYYYY: (val: string) => boolean;
+declare const parseDateTimeISO: (dateStr: string) => Date;
+declare const isValidDateComponentsISO: (val: string) => boolean;
+declare const parseDateOnlyISO: (dateStr: string) => Date;
+declare const isValidDateOnlyISO: (val: string) => boolean;
+declare const dateTimeDDMMYYYYSchema: (fieldName: string, required?: boolean) => z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+declare const dateTimeISOSchema: (fieldName: string, required?: boolean) => z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+declare const dateOnlyISOSchema: (fieldName: string, required?: boolean) => z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+
 declare const GetClientProfileCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
 }, "strip", z.ZodTypeAny, {
@@ -236,7 +246,7 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     amount: z.ZodString;
     concept: z.ZodString;
     platform: z.ZodOptional<z.ZodString>;
-    date: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+    date: z.ZodOptional<z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>>;
     device: z.ZodOptional<z.ZodString>;
     codeReference: z.ZodOptional<z.ZodString>;
     subType: z.ZodOptional<z.ZodString>;
@@ -274,7 +284,7 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     accountTypeCode: z.ZodString;
     concept: z.ZodString;
     platform: z.ZodOptional<z.ZodString>;
-    date: z.ZodOptional<z.ZodEffects<z.ZodString, string, string>>;
+    date: z.ZodOptional<z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>>;
     device: z.ZodOptional<z.ZodString>;
     codeReference: z.ZodOptional<z.ZodString>;
     clientNumber: z.ZodOptional<z.ZodString>;
@@ -328,12 +338,22 @@ declare const GetConsolidatedTimeDepositsSchema: z.ZodObject<{
     isActive?: boolean | undefined;
 }>;
 
-declare const GetDepositMovementsSchema: z.ZodObject<{
+declare const GetDepositMovementsSchema: z.ZodEffects<z.ZodObject<{
     depositSequential: z.ZodNumber;
-    startDate: z.ZodString;
-    endDate: z.ZodString;
+    startDate: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+    endDate: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
     companySequential: z.ZodOptional<z.ZodNumber>;
 }, "strip", z.ZodTypeAny, {
+    startDate: string;
+    endDate: string;
+    depositSequential: number;
+    companySequential?: number | undefined;
+}, {
+    startDate: string;
+    endDate: string;
+    depositSequential: number;
+    companySequential?: number | undefined;
+}>, {
     startDate: string;
     endDate: string;
     depositSequential: number;
@@ -567,4 +587,4 @@ declare const GetUserBeneficiariesCommandSchema: z.ZodObject<{
 }>;
 type GetUserBeneficiariesCommandParsed = z.infer<typeof GetUserBeneficiariesCommandSchema>;
 
-export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, CanonicalResponse, CheckClientActiveCommandSchema, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, GetDepositMovementsSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, MappingConfigError, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartRiskFlowCommandParsed, StartRiskFlowCommandSchema, type ValidateCreditNoteCommandParsed, ValidateCreditNoteCommandSchema, type ValidateDebitNoteCommandParsed, ValidateDebitNoteCommandSchema, errorResponse, formatZodErrors, handleUseCaseError, successResponse };
+export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, CanonicalResponse, CheckClientActiveCommandSchema, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, GetDepositMovementsSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, MappingConfigError, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartRiskFlowCommandParsed, StartRiskFlowCommandSchema, type ValidateCreditNoteCommandParsed, ValidateCreditNoteCommandSchema, type ValidateDebitNoteCommandParsed, ValidateDebitNoteCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };
