@@ -13957,13 +13957,14 @@ declare class BaseDynamicAdapter<TItem> {
         provider: string;
         aditionalData: Record<string, any> | undefined;
         raw: {
+            headersRequest: any;
+            paramsRequest: any;
+            bodyRequestRaw?: any;
             headersCore: Record<string, any>;
             dataCore: any;
             timeResponseCoreMs: number;
             urlRequest: string;
             bodyRequest: any;
-            headersRequest: any;
-            paramsRequest: any;
         } | undefined;
     }>;
 }

@@ -27,6 +27,8 @@ import '../GetUserBeneficiaries.usecase-Bp1d_-63.js';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;
+declare function isDebugMode(): boolean;
+declare function setDebugMode(enabled: boolean): void;
 declare function setMySqlPool(pool: Pool): void;
 declare function getMySqlPool(): Pool;
 declare function setRedisClient(client: Redis): void;
@@ -88,4 +90,4 @@ declare function sendSmsByPhone(command: SendSmsByPhoneCommand, http: ProviderCa
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 
-export { type InitOptions, type ProviderKey, createClientLoansUseCase, createConsolidatedTimeDepositsUseCase, createDepositMovementsUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, getClientLoans, getConsolidatedTimeDeposits, getDepositMovements, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, sendSmsByIdentification, sendSmsByPhone, setMySqlPool, setRedisClient, shutdown };
+export { type InitOptions, type ProviderKey, createClientLoansUseCase, createConsolidatedTimeDepositsUseCase, createDepositMovementsUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, getClientLoans, getConsolidatedTimeDeposits, getDepositMovements, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };
