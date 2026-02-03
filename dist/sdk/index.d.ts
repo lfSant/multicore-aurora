@@ -19,7 +19,7 @@ import '../AuthLogin.usecase-C8-yHSyH.js';
 import '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
 import '../ListCustomerProducts.usecase-D_jPHLkI.js';
 import '../GetAccountsForCausals.usecase-C3JbIbUb.js';
-import '../CreateExternalTransfer.usecase-BABLrVfK.js';
+import '../CreateExternalTransfer.usecase-COd8jrHf.js';
 import '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 import '../StartRiskFlow.usecase-CdettNyR.js';
 import '../ValidateCreditNote.usecase-CTXenlr5.js';
