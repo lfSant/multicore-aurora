@@ -13957,6 +13957,7 @@ declare class BaseDynamicAdapter<TItem> {
         provider: string;
         aditionalData: Record<string, any> | undefined;
         raw: {
+            bodyReceived: any;
             headersRequest: any;
             paramsRequest: any;
             bodyRequestRaw?: any;

@@ -38,6 +38,7 @@ declare class ProviderHttpError extends Error {
         timeResponseMs?: number;
         urlRequest?: string;
         bodyRequest?: any;
+        bodyReceived?: any;
         headersRequest?: any;
         paramsRequest?: any;
     } | undefined;
@@ -49,6 +50,7 @@ declare class ProviderHttpError extends Error {
         timeResponseMs?: number;
         urlRequest?: string;
         bodyRequest?: any;
+        bodyReceived?: any;
         headersRequest?: any;
         paramsRequest?: any;
     } | undefined, codeHint?: string | undefined, clientMessage?: string | undefined);
@@ -247,7 +249,8 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     concept: z.ZodString;
     platform: z.ZodOptional<z.ZodString>;
     date: z.ZodOptional<z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>>;
-    device: z.ZodOptional<z.ZodString>;
+    ipTransaction: z.ZodOptional<z.ZodString>;
+    identifierDevice: z.ZodOptional<z.ZodString>;
     codeReference: z.ZodOptional<z.ZodString>;
     subType: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
@@ -257,7 +260,8 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     concept: string;
     date?: string | undefined;
     platform?: string | undefined;
-    device?: string | undefined;
+    ipTransaction?: string | undefined;
+    identifierDevice?: string | undefined;
     codeReference?: string | undefined;
     subType?: string | undefined;
 }, {
@@ -267,7 +271,8 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     concept: string;
     date?: string | undefined;
     platform?: string | undefined;
-    device?: string | undefined;
+    ipTransaction?: string | undefined;
+    identifierDevice?: string | undefined;
     codeReference?: string | undefined;
     subType?: string | undefined;
 }>;
@@ -302,9 +307,9 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     date?: string | undefined;
     clientNumber?: string | undefined;
     platform?: string | undefined;
-    device?: string | undefined;
     codeReference?: string | undefined;
     subType?: string | undefined;
+    device?: string | undefined;
 }, {
     accountNumberOrigin: string;
     destinationAccountNumber: string;
@@ -318,9 +323,9 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     date?: string | undefined;
     clientNumber?: string | undefined;
     platform?: string | undefined;
-    device?: string | undefined;
     codeReference?: string | undefined;
     subType?: string | undefined;
+    device?: string | undefined;
 }>;
 type ExternalTransferCommandParsed = z.infer<typeof ExternalTransferCommandSchema>;
 
