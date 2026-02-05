@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-BT5sFmip.cjs';
-import { c as AuthPrecheckUseCase, A as AuthPrecheckCommand, a as AuthPrecheckStatus, g as AuthLoginUseCase, d as AuthLoginCommand, e as AuthLogin } from '../../AuthLogin.usecase-BwQ8-wf6.cjs';
+import { c as AuthPrecheckUseCase, A as AuthPrecheckCommand, a as AuthPrecheckStatus, g as AuthLoginUseCase, d as AuthLoginCommand, e as AuthLogin, j as LoginCoreUseCase, L as LoginCoreCommand, h as LoginCoreResult } from '../../LoginCore.usecase-BK03Fec-.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
 
@@ -17,4 +17,11 @@ declare function authLogin(command: AuthLoginCommand, http: ProviderCallConfig, 
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<AuthLogin>>;
 
-export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase };
+declare function createLoginCoreUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): LoginCoreUseCase;
+declare function loginCore(command: LoginCoreCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<LoginCoreResult>>;
+
+export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore };

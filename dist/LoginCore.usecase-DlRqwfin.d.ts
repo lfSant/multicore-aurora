@@ -56,4 +56,27 @@ declare class AuthLoginUseCase {
     execute(cmd: AuthLoginCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AuthLogin>>;
 }
 
-export { type AuthPrecheckCommand as A, type AuthPrecheckStatus as a, type AuthPrecheckProviderPort as b, AuthPrecheckUseCase as c, type AuthLoginCommand as d, type AuthLogin as e, type AuthLoginProviderPort as f, AuthLoginUseCase as g };
+interface LoginCoreCommand {
+    username: string;
+    password: string;
+}
+
+interface LoginCoreResult {
+    clientNumber: string;
+    lastPasswordChangeDate?: string;
+}
+
+interface LoginCoreProviderPort {
+    loginCore(cmd: LoginCoreCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<LoginCoreResult>>;
+}
+
+declare class LoginCoreUseCase {
+    private readonly provider;
+    constructor(provider: LoginCoreProviderPort);
+    execute(cmd: LoginCoreCommand, http: ProviderCallConfig): Promise<CanonicalResponse<LoginCoreResult>>;
+}
+
+export { type AuthPrecheckCommand as A, type LoginCoreCommand as L, type AuthPrecheckStatus as a, type AuthPrecheckProviderPort as b, AuthPrecheckUseCase as c, type AuthLoginCommand as d, type AuthLogin as e, type AuthLoginProviderPort as f, AuthLoginUseCase as g, type LoginCoreResult as h, type LoginCoreProviderPort as i, LoginCoreUseCase as j };

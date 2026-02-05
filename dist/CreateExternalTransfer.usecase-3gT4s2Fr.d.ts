@@ -76,7 +76,8 @@ interface ExternalTransferCommand {
     concept: string;
     platform?: string;
     date?: string;
-    device?: string;
+    ipTransaction?: string;
+    identifierDevice?: string;
     codeReference?: string;
     clientNumber?: string;
     subType?: string;

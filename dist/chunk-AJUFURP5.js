@@ -1,1 +1,0 @@
-var s=class{constructor(s){this.base=s}preCheck(s,r,t){return this.base.run(s,r,t)}},r=class{constructor(s){this.base=s}login(s,r,t){return this.base.run(s,r,t)}};export{s as AuthPrecheckDynamicAdapter,r as AuthLoginDynamicAdapter};
