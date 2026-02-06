@@ -18,7 +18,7 @@ import '../GetClientProfileByNumber.usecase-Dul49kWX.cjs';
 import '../LoginCore.usecase-BK03Fec-.cjs';
 import '../PaymentServiceConcepts.usecase-BQmQsErH.cjs';
 import '../ListCustomerProducts.usecase-Dk8l7N6X.cjs';
-import '../GetAccountsForCausals.usecase-CTk0Kr3j.cjs';
+import '../GetAccountsForCausals.usecase-Dr0Mz025.cjs';
 import '../CreateExternalTransfer.usecase-DY0AZz6U.cjs';
 import '../ProcessPaymentReversal.usecase-gtqQ_O_F.cjs';
 import '../StartRiskFlow.usecase-ByGp-cm1.cjs';

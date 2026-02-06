@@ -57,6 +57,7 @@ declare class GetAccountByNumberUseCase {
 
 interface GetConsolidatedAccountsCommand {
     clientNumber: number | string;
+    clientIdentification?: string;
 }
 
 interface ConsolidatedAccountsProviderPort {

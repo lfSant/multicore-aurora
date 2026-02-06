@@ -18,7 +18,7 @@ import '../GetClientProfileByNumber.usecase-oTJdRTvT.js';
 import '../LoginCore.usecase-DlRqwfin.js';
 import '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
 import '../ListCustomerProducts.usecase-D_jPHLkI.js';
-import '../GetAccountsForCausals.usecase-C3JbIbUb.js';
+import '../GetAccountsForCausals.usecase-BAuOEB6r.js';
 import '../CreateExternalTransfer.usecase-3gT4s2Fr.js';
 import '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
 import '../StartRiskFlow.usecase-CdettNyR.js';
