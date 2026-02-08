@@ -1,5 +1,39 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+
+interface GetClientCardsCommand {
+    clientIdentification: string;
+    operationType?: string;
+}
+
+interface Card {
+    category?: string;
+    holderName?: string;
+    number?: string;
+    brand?: string;
+    type?: string;
+    status?: string;
+    coreCode?: string;
+    email?: string;
+    phone?: string;
+    expiryDate?: string;
+    identification?: string | null;
+    typeId?: string | null;
+    productCategory: 'CREDIT_CARD' | 'DEBIT_CARD';
+}
+
+interface ClientCardsProviderPort {
+    getClientCards(cmd: GetClientCardsCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<Card[]>>;
+}
+
+declare class GetClientCardsUseCase {
+    private readonly provider;
+    constructor(provider: ClientCardsProviderPort);
+    execute(cmd: GetClientCardsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<Card[]>>;
+}
 
 interface GetClientLoansCommand {
     clientNumber: number;
@@ -226,4 +260,4 @@ declare class SendSmsByPhoneUseCase {
     execute(cmd: SendSmsByPhoneCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 }
 
-export { type ClientLoan as C, type DepositMovement as D, type GetClientLoansCommand as G, type LoanAdditionalInfo as L, type SendSmsByIdentificationCommand as S, type TimeDeposit as T, type ClientLoansProviderPort as a, GetClientLoansUseCase as b, type GetLoanAdditionalInfoCommand as c, type LoanAdditionalInfoProviderPort as d, GetLoanAdditionalInfoUseCase as e, type GetLoanAmortizationTableCommand as f, type LoanInstallment as g, type LoanAmortizationTable as h, type LoanAmortizationTableProviderPort as i, GetLoanAmortizationTableUseCase as j, type GetConsolidatedTimeDepositsCommand as k, type ConsolidatedTimeDepositsProviderPort as l, GetConsolidatedTimeDepositsUseCase as m, type GetDepositMovementsCommand as n, type DepositMovementsProviderPort as o, GetDepositMovementsUseCase as p, type SendSmsByIdentificationResult as q, type SendSmsByIdentificationProviderPort as r, SendSmsByIdentificationUseCase as s, type SendSmsByPhoneCommand as t, type SendSmsByPhoneProviderPort as u, SendSmsByPhoneUseCase as v };
+export { type Card as C, type DepositMovement as D, type GetClientCardsCommand as G, type LoanAdditionalInfo as L, type SendSmsByIdentificationCommand as S, type TimeDeposit as T, type ClientCardsProviderPort as a, GetClientCardsUseCase as b, type GetClientLoansCommand as c, type ClientLoan as d, type ClientLoansProviderPort as e, GetClientLoansUseCase as f, type GetLoanAdditionalInfoCommand as g, type LoanAdditionalInfoProviderPort as h, GetLoanAdditionalInfoUseCase as i, type GetLoanAmortizationTableCommand as j, type LoanInstallment as k, type LoanAmortizationTable as l, type LoanAmortizationTableProviderPort as m, GetLoanAmortizationTableUseCase as n, type GetConsolidatedTimeDepositsCommand as o, type ConsolidatedTimeDepositsProviderPort as p, GetConsolidatedTimeDepositsUseCase as q, type GetDepositMovementsCommand as r, type DepositMovementsProviderPort as s, GetDepositMovementsUseCase as t, type SendSmsByIdentificationResult as u, type SendSmsByIdentificationProviderPort as v, SendSmsByIdentificationUseCase as w, type SendSmsByPhoneCommand as x, type SendSmsByPhoneProviderPort as y, SendSmsByPhoneUseCase as z };

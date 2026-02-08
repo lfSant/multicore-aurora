@@ -4,11 +4,11 @@ export { checkClientStatus, createClientProfileByNumberUseCase, createClientProf
 export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore } from './auth/index.js';
 export { findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.js';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.js';
-export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetAccountsForCausalsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getAccountsForCausals, getClientAccountByNumber } from './account/index.js';
 import { A as AdapterFactoryOptions } from '../factories-BT5sFmip.js';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../types-D11BfpWV.js';
-import { b as GetClientLoansUseCase, G as GetClientLoansCommand, C as ClientLoan, e as GetLoanAdditionalInfoUseCase, c as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, j as GetLoanAmortizationTableUseCase, f as GetLoanAmortizationTableCommand, h as LoanAmortizationTable, m as GetConsolidatedTimeDepositsUseCase, k as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, p as GetDepositMovementsUseCase, n as GetDepositMovementsCommand, D as DepositMovement, s as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, q as SendSmsByIdentificationResult, v as SendSmsByPhoneUseCase, t as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-u2oxDfX1.js';
+import { b as GetClientCardsUseCase, G as GetClientCardsCommand, C as Card, f as GetClientLoansUseCase, c as GetClientLoansCommand, d as ClientLoan, i as GetLoanAdditionalInfoUseCase, g as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, n as GetLoanAmortizationTableUseCase, j as GetLoanAmortizationTableCommand, l as LoanAmortizationTable, q as GetConsolidatedTimeDepositsUseCase, o as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, t as GetDepositMovementsUseCase, r as GetDepositMovementsCommand, D as DepositMovement, w as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, u as SendSmsByIdentificationResult, z as SendSmsByPhoneUseCase, x as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-DJWsGJh9.js';
+export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetAccountsForCausalsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getAccountsForCausals, getClientAccountByNumber } from './account/index.js';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.js';
 export { createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentReversal, processPaymentService } from './payment/index.js';
 export { createStartRiskFlowUseCase, startRiskFlow } from './risk/index.js';
@@ -40,6 +40,13 @@ interface InitOptions {
     mysqlPool?: Pool;
     redisClient?: Redis;
 }
+
+declare function createClientCardsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientCardsUseCase;
+declare function getClientCards(command: GetClientCardsCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<Card[]>>;
 
 declare function createClientLoansUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientLoansUseCase;
 declare function getClientLoans(command: GetClientLoansCommand, http: ProviderCallConfig, opts: {
@@ -90,4 +97,4 @@ declare function sendSmsByPhone(command: SendSmsByPhoneCommand, http: ProviderCa
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 
-export { type InitOptions, type ProviderKey, createClientLoansUseCase, createConsolidatedTimeDepositsUseCase, createDepositMovementsUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, getClientLoans, getConsolidatedTimeDeposits, getDepositMovements, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };
+export { type InitOptions, type ProviderKey, createClientCardsUseCase, createClientLoansUseCase, createConsolidatedTimeDepositsUseCase, createDepositMovementsUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, getClientCards, getClientLoans, getConsolidatedTimeDeposits, getDepositMovements, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };
