@@ -6,7 +6,7 @@ export { c as CheckClientActiveCommand, f as CheckClientActiveUseCase, d as Clie
 export { e as AuthLogin, d as AuthLoginCommand, f as AuthLoginProviderPort, g as AuthLoginUseCase, A as AuthPrecheckCommand, b as AuthPrecheckProviderPort, a as AuthPrecheckStatus, c as AuthPrecheckUseCase, L as LoginCoreCommand, i as LoginCoreProviderPort, h as LoginCoreResult, j as LoginCoreUseCase } from '../LoginCore.usecase-DlRqwfin.js';
 export { E as EducationTypes, c as EducationTypesProviderPort, d as EducationTypesUseCase, M as MaritalStatus, a as MaritalStatusProviderPort, b as MaritalStatusUseCase, g as PaymentServiceConcepts, h as PaymentServiceConceptsProviderPort, i as PaymentServiceConceptsUseCase, P as ProfessionTypes, e as ProfessionTypesProviderPort, f as ProfessionTypesUseCase } from '../PaymentServiceConcepts.usecase-Cz69s2JW.js';
 export { a as ConsolidatedBuckets, C as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-D_jPHLkI.js';
-export { C as Card, a as ClientCardsProviderPort, d as ClientLoan, e as ClientLoansProviderPort, p as ConsolidatedTimeDepositsProviderPort, D as DepositMovement, s as DepositMovementsProviderPort, G as GetClientCardsCommand, b as GetClientCardsUseCase, c as GetClientLoansCommand, f as GetClientLoansUseCase, o as GetConsolidatedTimeDepositsCommand, q as GetConsolidatedTimeDepositsUseCase, r as GetDepositMovementsCommand, t as GetDepositMovementsUseCase, g as GetLoanAdditionalInfoCommand, i as GetLoanAdditionalInfoUseCase, j as GetLoanAmortizationTableCommand, n as GetLoanAmortizationTableUseCase, L as LoanAdditionalInfo, h as LoanAdditionalInfoProviderPort, l as LoanAmortizationTable, m as LoanAmortizationTableProviderPort, k as LoanInstallment, S as SendSmsByIdentificationCommand, v as SendSmsByIdentificationProviderPort, u as SendSmsByIdentificationResult, w as SendSmsByIdentificationUseCase, x as SendSmsByPhoneCommand, y as SendSmsByPhoneProviderPort, z as SendSmsByPhoneUseCase, T as TimeDeposit } from '../SendSmsByPhone.usecase-DJWsGJh9.js';
+export { C as Card, d as CardData, e as CardDataProviderPort, g as ChangeCardPinCommand, i as ChangeCardPinProviderPort, h as ChangeCardPinResult, j as ChangeCardPinUseCase, a as ClientCardsProviderPort, p as ClientLoan, q as ClientLoansProviderPort, B as ConsolidatedTimeDepositsProviderPort, F as DepositMovement, H as DepositMovementsProviderPort, k as GenerateCardPinCommand, m as GenerateCardPinProviderPort, l as GenerateCardPinResult, n as GenerateCardPinUseCase, c as GetCardDataCommand, f as GetCardDataUseCase, G as GetClientCardsCommand, b as GetClientCardsUseCase, o as GetClientLoansCommand, r as GetClientLoansUseCase, A as GetConsolidatedTimeDepositsCommand, D as GetConsolidatedTimeDepositsUseCase, E as GetDepositMovementsCommand, I as GetDepositMovementsUseCase, s as GetLoanAdditionalInfoCommand, u as GetLoanAdditionalInfoUseCase, v as GetLoanAmortizationTableCommand, z as GetLoanAmortizationTableUseCase, L as LoanAdditionalInfo, t as LoanAdditionalInfoProviderPort, x as LoanAmortizationTable, y as LoanAmortizationTableProviderPort, w as LoanInstallment, S as SendSmsByIdentificationCommand, K as SendSmsByIdentificationProviderPort, J as SendSmsByIdentificationResult, M as SendSmsByIdentificationUseCase, N as SendSmsByPhoneCommand, O as SendSmsByPhoneProviderPort, P as SendSmsByPhoneUseCase, T as TimeDeposit } from '../SendSmsByPhone.usecase-DF5zf2bo.js';
 export { A as Account, q as AccountForCausalResult, h as AccountMovement, i as AccountMovementsProviderPort, l as AccountSigner, m as AccountSignersInfo, n as AccountSignersProviderPort, b as ClientAccountByNumberProviderPort, C as ClientAccountsProviderPort, e as ConsolidatedAccountsProviderPort, f as ConsolidatedAccountsUseCase, G as GetAccountByNumberCommand, c as GetAccountByNumberUseCase, g as GetAccountMovementsCommand, k as GetAccountSignersCommand, o as GetAccountSignersUseCase, p as GetAccountsForCausalsCommand, r as GetAccountsForCausalsProviderPort, s as GetAccountsForCausalsUseCase, d as GetConsolidatedAccountsCommand, j as ListAccountMovementsUseCase, L as ListAccountsCommand, a as ListAccountsUseCase } from '../GetAccountsForCausals.usecase-BAuOEB6r.js';
 export { h as CreateExternalTransferUseCase, C as CreateInternalTransferUseCase, E as ExternalTransferCommand, g as ExternalTransferProviderPort, f as ExternalTransferResult, c as InternalTransferCommand, e as InternalTransferProviderPort, d as InternalTransferResult, I as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, a as TransferInitialChargeBuckets, T as TransferInitialChargeCategory, b as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-3gT4s2Fr.js';
 export { h as GetPaymentReversalsCommand, l as GetPaymentReversalsUseCase, G as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, i as PaymentReversalItemResult, k as PaymentReversalsProviderPort, j as PaymentReversalsResult, P as PaymentServiceQueryItemResult, b as PaymentServiceQueryProviderPort, a as PaymentServiceQueryResult, m as ProcessPaymentReversalCommand, o as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, p as ProcessPaymentReversalUseCase, d as ProcessPaymentServiceCommand, f as ProcessPaymentServiceProviderPort, e as ProcessPaymentServiceResult, g as ProcessPaymentServiceUseCase } from '../ProcessPaymentReversal.usecase-mXT-4tQN.js';
@@ -166,6 +166,45 @@ declare const GetClientCardsCommandSchema: z.ZodObject<{
     operationType?: string | undefined;
 }>;
 type GetClientCardsCommandParsed = z.infer<typeof GetClientCardsCommandSchema>;
+
+declare const GetCardDataCommandSchema: z.ZodObject<{
+    cardNumber: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    cardNumber: string;
+}, {
+    cardNumber: string;
+}>;
+type GetCardDataCommandParsed = z.infer<typeof GetCardDataCommandSchema>;
+
+declare const ChangeCardPinCommandSchema: z.ZodObject<{
+    clientNumber: z.ZodString;
+    cardCode: z.ZodString;
+    newPinCode: z.ZodString;
+    oldPinCode: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    clientNumber: string;
+    cardCode: string;
+    newPinCode: string;
+    oldPinCode: string;
+}, {
+    clientNumber: string;
+    cardCode: string;
+    newPinCode: string;
+    oldPinCode: string;
+}>;
+type ChangeCardPinCommandParsed = z.infer<typeof ChangeCardPinCommandSchema>;
+
+declare const GenerateCardPinCommandSchema: z.ZodObject<{
+    clientNumber: z.ZodString;
+    cardCode: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    clientNumber: string;
+    cardCode: string;
+}, {
+    clientNumber: string;
+    cardCode: string;
+}>;
+type GenerateCardPinCommandParsed = z.infer<typeof GenerateCardPinCommandSchema>;
 
 declare const ListAccountsCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
@@ -622,4 +661,4 @@ declare const GetUserBeneficiariesCommandSchema: z.ZodObject<{
 }>;
 type GetUserBeneficiariesCommandParsed = z.infer<typeof GetUserBeneficiariesCommandSchema>;
 
-export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, CanonicalResponse, CheckClientActiveCommandSchema, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, GetDepositMovementsSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartRiskFlowCommandParsed, StartRiskFlowCommandSchema, type ValidateCreditNoteCommandParsed, ValidateCreditNoteCommandSchema, type ValidateDebitNoteCommandParsed, ValidateDebitNoteCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };
+export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, CanonicalResponse, type ChangeCardPinCommandParsed, ChangeCardPinCommandSchema, CheckClientActiveCommandSchema, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GenerateCardPinCommandParsed, GenerateCardPinCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetCardDataCommandParsed, GetCardDataCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, GetDepositMovementsSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartRiskFlowCommandParsed, StartRiskFlowCommandSchema, type ValidateCreditNoteCommandParsed, ValidateCreditNoteCommandSchema, type ValidateDebitNoteCommandParsed, ValidateDebitNoteCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };

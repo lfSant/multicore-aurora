@@ -35,6 +35,79 @@ declare class GetClientCardsUseCase {
     execute(cmd: GetClientCardsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<Card[]>>;
 }
 
+interface GetCardDataCommand {
+    cardNumber: string;
+}
+
+interface CardData {
+    holderName?: string;
+    phone?: string;
+    email?: string;
+    coreCode?: string;
+}
+
+interface CardDataProviderPort {
+    getCardData(cmd: GetCardDataCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardData>>;
+}
+
+declare class GetCardDataUseCase {
+    private readonly provider;
+    constructor(provider: CardDataProviderPort);
+    execute(cmd: GetCardDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardData>>;
+}
+
+interface ChangeCardPinCommand {
+    clientNumber: string;
+    cardCode: string;
+    newPinCode: string;
+    oldPinCode: string;
+}
+
+interface ChangeCardPinResult {
+    success: boolean;
+    message?: string;
+}
+
+interface ChangeCardPinProviderPort {
+    changeCardPin(cmd: ChangeCardPinCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ChangeCardPinResult>>;
+}
+
+declare class ChangeCardPinUseCase {
+    private readonly provider;
+    constructor(provider: ChangeCardPinProviderPort);
+    execute(cmd: ChangeCardPinCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ChangeCardPinResult>>;
+}
+
+interface GenerateCardPinCommand {
+    clientNumber: string;
+    cardCode: string;
+}
+
+interface GenerateCardPinResult {
+    success: boolean;
+    newPinCode?: string;
+    message?: string;
+}
+
+interface GenerateCardPinProviderPort {
+    generateCardPin(cmd: GenerateCardPinCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<GenerateCardPinResult>>;
+}
+
+declare class GenerateCardPinUseCase {
+    private readonly provider;
+    constructor(provider: GenerateCardPinProviderPort);
+    execute(cmd: GenerateCardPinCommand, http: ProviderCallConfig): Promise<CanonicalResponse<GenerateCardPinResult>>;
+}
+
 interface GetClientLoansCommand {
     clientNumber: number;
     companySequential?: number;
@@ -260,4 +333,4 @@ declare class SendSmsByPhoneUseCase {
     execute(cmd: SendSmsByPhoneCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 }
 
-export { type Card as C, type DepositMovement as D, type GetClientCardsCommand as G, type LoanAdditionalInfo as L, type SendSmsByIdentificationCommand as S, type TimeDeposit as T, type ClientCardsProviderPort as a, GetClientCardsUseCase as b, type GetClientLoansCommand as c, type ClientLoan as d, type ClientLoansProviderPort as e, GetClientLoansUseCase as f, type GetLoanAdditionalInfoCommand as g, type LoanAdditionalInfoProviderPort as h, GetLoanAdditionalInfoUseCase as i, type GetLoanAmortizationTableCommand as j, type LoanInstallment as k, type LoanAmortizationTable as l, type LoanAmortizationTableProviderPort as m, GetLoanAmortizationTableUseCase as n, type GetConsolidatedTimeDepositsCommand as o, type ConsolidatedTimeDepositsProviderPort as p, GetConsolidatedTimeDepositsUseCase as q, type GetDepositMovementsCommand as r, type DepositMovementsProviderPort as s, GetDepositMovementsUseCase as t, type SendSmsByIdentificationResult as u, type SendSmsByIdentificationProviderPort as v, SendSmsByIdentificationUseCase as w, type SendSmsByPhoneCommand as x, type SendSmsByPhoneProviderPort as y, SendSmsByPhoneUseCase as z };
+export { type GetConsolidatedTimeDepositsCommand as A, type ConsolidatedTimeDepositsProviderPort as B, type Card as C, GetConsolidatedTimeDepositsUseCase as D, type GetDepositMovementsCommand as E, type DepositMovement as F, type GetClientCardsCommand as G, type DepositMovementsProviderPort as H, GetDepositMovementsUseCase as I, type SendSmsByIdentificationResult as J, type SendSmsByIdentificationProviderPort as K, type LoanAdditionalInfo as L, SendSmsByIdentificationUseCase as M, type SendSmsByPhoneCommand as N, type SendSmsByPhoneProviderPort as O, SendSmsByPhoneUseCase as P, type SendSmsByIdentificationCommand as S, type TimeDeposit as T, type ClientCardsProviderPort as a, GetClientCardsUseCase as b, type GetCardDataCommand as c, type CardData as d, type CardDataProviderPort as e, GetCardDataUseCase as f, type ChangeCardPinCommand as g, type ChangeCardPinResult as h, type ChangeCardPinProviderPort as i, ChangeCardPinUseCase as j, type GenerateCardPinCommand as k, type GenerateCardPinResult as l, type GenerateCardPinProviderPort as m, GenerateCardPinUseCase as n, type GetClientLoansCommand as o, type ClientLoan as p, type ClientLoansProviderPort as q, GetClientLoansUseCase as r, type GetLoanAdditionalInfoCommand as s, type LoanAdditionalInfoProviderPort as t, GetLoanAdditionalInfoUseCase as u, type GetLoanAmortizationTableCommand as v, type LoanInstallment as w, type LoanAmortizationTable as x, type LoanAmortizationTableProviderPort as y, GetLoanAmortizationTableUseCase as z };

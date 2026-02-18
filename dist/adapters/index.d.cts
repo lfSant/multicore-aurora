@@ -13934,6 +13934,30 @@ interface MappingConfigRepo {
     getActive(provider: string, operation: string, tenant?: string, environment?: string): Promise<MappingConfig | null>;
 }
 
+interface ErrorRule {
+    when?: {
+        status?: number;
+        [jsonPath: string]: any;
+    };
+    whenContains?: {
+        [jsonPath: string]: string | {
+            any: string[];
+        };
+    };
+    client: string | {
+        template: string;
+    };
+    server: string | {
+        template: string;
+    };
+    status: number;
+    codeHint?: string;
+}
+
+interface GlobalErrorRulesRepo {
+    getByProvider(providerKey: string): Promise<ErrorRule[]>;
+}
+
 interface KVCache {
     get<T>(key: string): Promise<T | null>;
     set<T>(key: string, val: T, ttlSec: number): Promise<void>;
@@ -13946,8 +13970,11 @@ declare class BaseDynamicAdapter<TItem> {
     private readonly providerKey;
     private readonly operationKey;
     private readonly cacheTTL;
-    constructor(repo: MappingConfigRepo, cache: KVCache, providerKey: string, operationKey: string, cacheTTL?: number);
+    private readonly globalErrorRepo?;
+    constructor(repo: MappingConfigRepo, cache: KVCache, providerKey: string, operationKey: string, cacheTTL?: number, globalErrorRepo?: GlobalErrorRulesRepo | undefined);
     private cacheKey;
+    private globalCacheKey;
+    private loadGlobalErrorRules;
     run(stdInput: any, http: ProviderCallConfig, options?: {
         tenant?: string;
         environment?: string;
