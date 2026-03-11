@@ -1,9 +1,10 @@
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
 
 interface GetUserDataCommand {
-    username: string;
-    channel: string;
+    username?: string;
+    channel?: string;
+    clientNumber?: string;
 }
 
 interface SecurityQuestion {

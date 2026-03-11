@@ -10,7 +10,7 @@ import { C as CanonicalResponse } from '../types-D11BfpWV.cjs';
 import { b as GetClientCardsUseCase, G as GetClientCardsCommand, C as Card, f as GetCardDataUseCase, c as GetCardDataCommand, d as CardData, j as ChangeCardPinUseCase, g as ChangeCardPinCommand, h as ChangeCardPinResult, n as GenerateCardPinUseCase, k as GenerateCardPinCommand, l as GenerateCardPinResult, r as GetClientLoansUseCase, o as GetClientLoansCommand, p as ClientLoan, u as GetLoanAdditionalInfoUseCase, s as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, z as GetLoanAmortizationTableUseCase, v as GetLoanAmortizationTableCommand, x as LoanAmortizationTable, D as GetConsolidatedTimeDepositsUseCase, A as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, I as GetDepositMovementsUseCase, E as GetDepositMovementsCommand, F as DepositMovement, M as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, J as SendSmsByIdentificationResult, P as SendSmsByPhoneUseCase, N as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-BmSo3DqR.cjs';
 export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetAccountsForCausalsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getAccountsForCausals, getClientAccountByNumber } from './account/index.cjs';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.cjs';
-export { createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentReversal, processPaymentService } from './payment/index.cjs';
+export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.cjs';
 export { createStartRiskFlowUseCase, startRiskFlow } from './risk/index.cjs';
 export { createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, validateCreditNote, validateDebitNote } from './causal/index.cjs';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
@@ -20,10 +20,10 @@ import '../PaymentServiceConcepts.usecase-BQmQsErH.cjs';
 import '../ListCustomerProducts.usecase-Dk8l7N6X.cjs';
 import '../GetAccountsForCausals.usecase-Dr0Mz025.cjs';
 import '../CreateExternalTransfer.usecase-DY0AZz6U.cjs';
-import '../ProcessPaymentReversal.usecase-gtqQ_O_F.cjs';
+import '../CreatePaymentOwnCard.usecase-D9ATqt6W.cjs';
 import '../StartRiskFlow.usecase-ByGp-cm1.cjs';
 import '../ValidateCreditNote.usecase-eOK5DQAi.cjs';
-import '../GetUserBeneficiaries.usecase-GXmBdseU.cjs';
+import '../GetUserBeneficiaries.usecase-DO3llI-w.cjs';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;
@@ -35,7 +35,7 @@ declare function setRedisClient(client: Redis): void;
 declare function getRedisClient(): Redis;
 declare function shutdown(): Promise<void>;
 
-type ProviderKey = 'dy-23' | 'dy-29' | 'dy-cc';
+type ProviderKey = 'dy-23' | 'dy-29' | 'dy-mu' | 'dy-vg' | 'dy-09' | 'dy-lc';
 interface InitOptions {
     mysqlPool?: Pool;
     redisClient?: Redis;

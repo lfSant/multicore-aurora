@@ -2,9 +2,15 @@ import { P as ProviderCallConfig } from './http-CRaj6wih.js';
 import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface GetPaymentServiceQueryCommand {
-    referenceNumber: string;
-    identifier: string;
-    clientNumber: number;
+    referenceNumber?: string;
+    identifier?: string;
+    clientNumber?: number;
+    parameters?: Record<string, any>;
+    platform?: string;
+    date?: string;
+    device?: string;
+    companyId?: string;
+    serviceNumber?: string;
 }
 
 interface PaymentServiceQueryItemResult {
@@ -16,10 +22,14 @@ interface PaymentServiceQueryItemResult {
     valueWithCommission: string;
 }
 interface PaymentServiceQueryResult {
+    returnedData?: string;
     items: PaymentServiceQueryItemResult[];
     transactionId: string;
     identification: string;
     name: string;
+    state?: boolean;
+    movementNumber?: string;
+    amount?: number;
 }
 
 interface PaymentServiceQueryProviderPort {
@@ -37,12 +47,18 @@ declare class GetPaymentServiceQueryUseCase {
 
 interface ProcessPaymentServiceCommand {
     accountNumber: string;
-    identifier: string;
+    identifier?: string;
     referenceNumber: string;
-    transactionId: string;
-    itemId: string;
+    transactionId?: string;
+    itemId?: string;
     amountToPay: string;
     concept: string;
+    companyId?: string;
+    serviceType?: string;
+    parameters?: Record<string, any>;
+    platform?: string;
+    date?: string;
+    device?: string;
 }
 
 interface ProcessPaymentServiceResult {
@@ -62,6 +78,9 @@ interface ProcessPaymentServiceResult {
     xmlReceipt: string;
     receiptLines?: string[];
     receiptObject?: Record<string, string>;
+    transactionNumber: string;
+    returnedData?: string;
+    state?: boolean;
 }
 
 interface ProcessPaymentServiceProviderPort {
@@ -133,4 +152,36 @@ declare class ProcessPaymentReversalUseCase {
     execute(cmd: ProcessPaymentReversalCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ProcessPaymentReversalResult>>;
 }
 
-export { type GetPaymentServiceQueryCommand as G, type PaymentServiceQueryItemResult as P, type PaymentServiceQueryResult as a, type PaymentServiceQueryProviderPort as b, GetPaymentServiceQueryUseCase as c, type ProcessPaymentServiceCommand as d, type ProcessPaymentServiceResult as e, type ProcessPaymentServiceProviderPort as f, ProcessPaymentServiceUseCase as g, type GetPaymentReversalsCommand as h, type PaymentReversalItemResult as i, type PaymentReversalsResult as j, type PaymentReversalsProviderPort as k, GetPaymentReversalsUseCase as l, type ProcessPaymentReversalCommand as m, type ProcessPaymentReversalResult as n, type ProcessPaymentReversalProviderPort as o, ProcessPaymentReversalUseCase as p };
+interface PaymentOwnCardCommand {
+    cardCode: string;
+    accountNumber: string;
+    clientNumber: string;
+    platform: string;
+    date: string;
+    device: string;
+    reference: string;
+    concept: string;
+    amount: string;
+}
+
+interface PaymentOwnCardResult {
+    date?: string;
+    transactionIdentifier: string;
+    state?: boolean;
+    message?: string;
+}
+
+interface PaymentOwnCardProviderPort {
+    createPaymentOwnCard(cmd: PaymentOwnCardCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<PaymentOwnCardResult>>;
+}
+
+declare class CreatePaymentOwnCardUseCase {
+    private readonly provider;
+    constructor(provider: PaymentOwnCardProviderPort);
+    execute(cmd: PaymentOwnCardCommand, http: ProviderCallConfig): Promise<CanonicalResponse<PaymentOwnCardResult>>;
+}
+
+export { CreatePaymentOwnCardUseCase as C, type GetPaymentServiceQueryCommand as G, type PaymentServiceQueryItemResult as P, type PaymentServiceQueryResult as a, type PaymentServiceQueryProviderPort as b, GetPaymentServiceQueryUseCase as c, type ProcessPaymentServiceCommand as d, type ProcessPaymentServiceResult as e, type ProcessPaymentServiceProviderPort as f, ProcessPaymentServiceUseCase as g, type GetPaymentReversalsCommand as h, type PaymentReversalItemResult as i, type PaymentReversalsResult as j, type PaymentReversalsProviderPort as k, GetPaymentReversalsUseCase as l, type ProcessPaymentReversalCommand as m, type ProcessPaymentReversalResult as n, type ProcessPaymentReversalProviderPort as o, ProcessPaymentReversalUseCase as p, type PaymentOwnCardCommand as q, type PaymentOwnCardResult as r, type PaymentOwnCardProviderPort as s };
