@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
 
 interface StartRiskFlowCommand {
     providerAcronym: string;
@@ -33,4 +33,4 @@ declare class StartRiskFlowUseCase {
     execute(command: StartRiskFlowCommand, http: ProviderCallConfig): Promise<CanonicalResponse<StartRiskFlowResult>>;
 }
 
-export { type StartRiskFlowCommand as S, type StartRiskFlowResult as a, type StartRiskFlowProviderPort as b, StartRiskFlowUseCase as c };
+export { type StartRiskFlowCommand as S, type StartRiskFlowProviderPort as a, type StartRiskFlowResult as b, StartRiskFlowUseCase as c };

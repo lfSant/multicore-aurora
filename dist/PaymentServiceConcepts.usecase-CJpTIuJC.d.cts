@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
 
 interface MaritalStatus {
     code: string;
@@ -97,4 +97,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type EducationTypes as E, type MaritalStatus as M, type ProfessionTypes as P, type MaritalStatusProviderPort as a, MaritalStatusUseCase as b, type EducationTypesProviderPort as c, EducationTypesUseCase as d, type ProfessionTypesProviderPort as e, ProfessionTypesUseCase as f, type PaymentServiceConcepts as g, type PaymentServiceConceptsProviderPort as h, PaymentServiceConceptsUseCase as i };
+export { type EducationTypes as E, type MaritalStatus as M, type PaymentServiceConcepts as P, type EducationTypesProviderPort as a, EducationTypesUseCase as b, type MaritalStatusProviderPort as c, MaritalStatusUseCase as d, type PaymentServiceConceptsProviderPort as e, PaymentServiceConceptsUseCase as f, type ProfessionTypes as g, type ProfessionTypesProviderPort as h, ProfessionTypesUseCase as i };

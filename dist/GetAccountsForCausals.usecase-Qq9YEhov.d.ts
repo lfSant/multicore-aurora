@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface ListAccountsCommand {
     clientIdentification: string;
@@ -167,4 +167,4 @@ declare class GetAccountsForCausalsUseCase {
     execute(cmd: GetAccountsForCausalsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AccountForCausalResult>>;
 }
 
-export { type Account as A, type ClientAccountsProviderPort as C, type GetAccountByNumberCommand as G, type ListAccountsCommand as L, ListAccountsUseCase as a, type ClientAccountByNumberProviderPort as b, GetAccountByNumberUseCase as c, type GetConsolidatedAccountsCommand as d, type ConsolidatedAccountsProviderPort as e, ConsolidatedAccountsUseCase as f, type GetAccountMovementsCommand as g, type AccountMovement as h, type AccountMovementsProviderPort as i, ListAccountMovementsUseCase as j, type GetAccountSignersCommand as k, type AccountSigner as l, type AccountSignersInfo as m, type AccountSignersProviderPort as n, GetAccountSignersUseCase as o, type GetAccountsForCausalsCommand as p, type AccountForCausalResult as q, type GetAccountsForCausalsProviderPort as r, GetAccountsForCausalsUseCase as s };
+export { type Account as A, type ClientAccountByNumberProviderPort as C, type GetAccountByNumberCommand as G, ListAccountMovementsUseCase as L, type AccountForCausalResult as a, type AccountMovement as b, type AccountMovementsProviderPort as c, type AccountSigner as d, type AccountSignersInfo as e, type AccountSignersProviderPort as f, type ClientAccountsProviderPort as g, type ConsolidatedAccountsProviderPort as h, ConsolidatedAccountsUseCase as i, GetAccountByNumberUseCase as j, type GetAccountMovementsCommand as k, type GetAccountSignersCommand as l, GetAccountSignersUseCase as m, type GetAccountsForCausalsCommand as n, type GetAccountsForCausalsProviderPort as o, GetAccountsForCausalsUseCase as p, type GetConsolidatedAccountsCommand as q, type ListAccountsCommand as r, ListAccountsUseCase as s };

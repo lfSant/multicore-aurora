@@ -54,7 +54,7 @@ interface ProcessPaymentServiceCommand {
     amountToPay: string;
     concept: string;
     companyId?: string;
-    serviceType?: string;
+    serviceNumber?: string;
     parameters?: Record<string, any>;
     platform?: string;
     date?: string;
@@ -184,4 +184,4 @@ declare class CreatePaymentOwnCardUseCase {
     execute(cmd: PaymentOwnCardCommand, http: ProviderCallConfig): Promise<CanonicalResponse<PaymentOwnCardResult>>;
 }
 
-export { CreatePaymentOwnCardUseCase as C, type GetPaymentServiceQueryCommand as G, type PaymentServiceQueryItemResult as P, type PaymentServiceQueryResult as a, type PaymentServiceQueryProviderPort as b, GetPaymentServiceQueryUseCase as c, type ProcessPaymentServiceCommand as d, type ProcessPaymentServiceResult as e, type ProcessPaymentServiceProviderPort as f, ProcessPaymentServiceUseCase as g, type GetPaymentReversalsCommand as h, type PaymentReversalItemResult as i, type PaymentReversalsResult as j, type PaymentReversalsProviderPort as k, GetPaymentReversalsUseCase as l, type ProcessPaymentReversalCommand as m, type ProcessPaymentReversalResult as n, type ProcessPaymentReversalProviderPort as o, ProcessPaymentReversalUseCase as p, type PaymentOwnCardCommand as q, type PaymentOwnCardResult as r, type PaymentOwnCardProviderPort as s };
+export { CreatePaymentOwnCardUseCase as C, type GetPaymentReversalsCommand as G, type PaymentOwnCardCommand as P, GetPaymentReversalsUseCase as a, type GetPaymentServiceQueryCommand as b, GetPaymentServiceQueryUseCase as c, type PaymentOwnCardProviderPort as d, type PaymentOwnCardResult as e, type PaymentReversalItemResult as f, type PaymentReversalsProviderPort as g, type PaymentReversalsResult as h, type PaymentServiceQueryItemResult as i, type PaymentServiceQueryProviderPort as j, type PaymentServiceQueryResult as k, type ProcessPaymentReversalCommand as l, type ProcessPaymentReversalProviderPort as m, type ProcessPaymentReversalResult as n, ProcessPaymentReversalUseCase as o, type ProcessPaymentServiceCommand as p, type ProcessPaymentServiceProviderPort as q, type ProcessPaymentServiceResult as r, ProcessPaymentServiceUseCase as s };

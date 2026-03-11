@@ -88,4 +88,4 @@ declare class GetUserBeneficiariesUseCase {
     execute(cmd: GetUserBeneficiariesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<UserBeneficiaryResult>>;
 }
 
-export { type GetUserDataCommand as G, type SecurityQuestion as S, type UserDataResult as U, type GetUserDataProviderPort as a, GetUserDataUseCase as b, type GetUserBeneficiariesCommand as c, type UserBeneficiaryResult as d, type GetUserBeneficiariesProviderPort as e, GetUserBeneficiariesUseCase as f };
+export { type GetUserBeneficiariesCommand as G, type SecurityQuestion as S, type UserBeneficiaryResult as U, type GetUserBeneficiariesProviderPort as a, GetUserBeneficiariesUseCase as b, type GetUserDataCommand as c, type GetUserDataProviderPort as d, GetUserDataUseCase as e, type UserDataResult as f };

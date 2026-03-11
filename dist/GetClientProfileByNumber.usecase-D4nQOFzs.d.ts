@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface GetClientProfileCommand {
     clientIdentification: string;
@@ -106,4 +106,4 @@ declare class GetClientProfileByNumberUseCase {
     execute(cmd: GetClientProfileByNumberCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ClientProfileByNumber>>;
 }
 
-export { type ClientProfile as C, type GetClientProfileCommand as G, type ClientProfileProviderPort as a, GetClientProfileUseCase as b, type CheckClientActiveCommand as c, type ClientActiveStatus as d, type ClientStatusProviderPort as e, CheckClientActiveUseCase as f, type GetClientProfileByNumberCommand as g, type ClientProfileByNumber as h, type ClientProfileByNumberProviderPort as i, GetClientProfileByNumberUseCase as j };
+export { type CheckClientActiveCommand as C, type GetClientProfileByNumberCommand as G, CheckClientActiveUseCase as a, type ClientActiveStatus as b, type ClientProfile as c, type ClientProfileByNumber as d, type ClientProfileByNumberProviderPort as e, type ClientProfileProviderPort as f, type ClientStatusProviderPort as g, GetClientProfileByNumberUseCase as h, type GetClientProfileCommand as i, GetClientProfileUseCase as j };

@@ -1,5 +1,5 @@
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
 
 interface ValidateDebitNoteCommand {
     identification: string;
@@ -55,4 +55,4 @@ declare class ValidateCreditNoteUseCase {
     execute(cmd: ValidateCreditNoteCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ValidateCreditNoteResult>>;
 }
 
-export { type ValidateDebitNoteCommand as V, type ValidateDebitNoteResult as a, type ValidateDebitNoteProviderPort as b, ValidateDebitNoteUseCase as c, type ValidateCreditNoteCommand as d, type ValidateCreditNoteResult as e, type ValidateCreditNoteProviderPort as f, ValidateCreditNoteUseCase as g };
+export { type ValidateCreditNoteCommand as V, type ValidateCreditNoteProviderPort as a, type ValidateCreditNoteResult as b, ValidateCreditNoteUseCase as c, type ValidateDebitNoteCommand as d, type ValidateDebitNoteProviderPort as e, type ValidateDebitNoteResult as f, ValidateDebitNoteUseCase as g };

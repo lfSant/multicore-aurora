@@ -85,4 +85,4 @@ declare class ListCustomerProductsUseCase {
     execute(cmd: ListCustomerProductsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ConsolidatedBuckets>>;
 }
 
-export { type ConsolidatedProduct as C, type ListCustomerProductsCommand as L, type ProductCategory as P, type ConsolidatedBuckets as a, type ConsolidatedProductsProviderPort as b, ListCustomerProductsUseCase as c };
+export { type ConsolidatedBuckets as C, type ListCustomerProductsCommand as L, type ProductCategory as P, type ConsolidatedProduct as a, type ConsolidatedProductsProviderPort as b, ListCustomerProductsUseCase as c };
