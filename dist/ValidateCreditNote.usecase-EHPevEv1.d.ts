@@ -1,5 +1,37 @@
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+
+interface StartCausalFlowCommand {
+    providerAcronym: string;
+    channel: string;
+    deviceIp: string;
+    date: string;
+    country: string;
+    latitude: number;
+    longitude: number;
+    username?: string;
+    clientNumber?: number;
+    observation?: string;
+    transactionIdentifier: string;
+}
+
+interface StartCausalFlowResult {
+    success: boolean;
+    message: string;
+}
+
+interface StartCausalFlowProviderPort {
+    startCausalFlow(cmd: StartCausalFlowCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<StartCausalFlowResult>>;
+}
+
+declare class StartCausalFlowUseCase {
+    private readonly provider;
+    constructor(provider: StartCausalFlowProviderPort);
+    execute(command: StartCausalFlowCommand, http: ProviderCallConfig): Promise<CanonicalResponse<StartCausalFlowResult>>;
+}
 
 interface ValidateDebitNoteCommand {
     identification: string;
@@ -55,4 +87,4 @@ declare class ValidateCreditNoteUseCase {
     execute(cmd: ValidateCreditNoteCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ValidateCreditNoteResult>>;
 }
 
-export { type ValidateCreditNoteCommand as V, type ValidateCreditNoteProviderPort as a, type ValidateCreditNoteResult as b, ValidateCreditNoteUseCase as c, type ValidateDebitNoteCommand as d, type ValidateDebitNoteProviderPort as e, type ValidateDebitNoteResult as f, ValidateDebitNoteUseCase as g };
+export { type StartCausalFlowCommand as S, type ValidateCreditNoteCommand as V, type StartCausalFlowProviderPort as a, type StartCausalFlowResult as b, StartCausalFlowUseCase as c, type ValidateCreditNoteProviderPort as d, type ValidateCreditNoteResult as e, ValidateCreditNoteUseCase as f, type ValidateDebitNoteCommand as g, type ValidateDebitNoteProviderPort as h, type ValidateDebitNoteResult as i, ValidateDebitNoteUseCase as j };

@@ -1,6 +1,6 @@
 {
   "name": "lib-multicore-aurora",
-  "version": "3.0.23",
+  "version": "3.0.24",
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",
@@ -80,11 +80,6 @@
       "import": "./dist/sdk/product/index.js",
       "require": "./dist/sdk/product/index.cjs"
     },
-    "./sdk/risk": {
-      "types": "./dist/sdk/risk/index.d.ts",
-      "import": "./dist/sdk/risk/index.js",
-      "require": "./dist/sdk/risk/index.cjs"
-    },
     "./sdk/causal": {
       "types": "./dist/sdk/causal/index.d.ts",
       "import": "./dist/sdk/causal/index.js",
@@ -97,7 +92,7 @@
     }
   },
   "scripts": {
-    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts ./src/sdk/risk/index.ts ./src/sdk/causal/index.ts ./src/sdk/user/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts ./src/sdk/causal/index.ts ./src/sdk/user/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build",
     "version:patch": "npm version patch --no-git-tag-version",

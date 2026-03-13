@@ -11,8 +11,7 @@ import { r as GetClientCardsUseCase, q as GetClientCardsCommand, C as Card, p as
 export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetAccountsForCausalsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getAccountsForCausals, getClientAccountByNumber } from './account/index.cjs';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.cjs';
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.cjs';
-export { createStartRiskFlowUseCase, startRiskFlow } from './risk/index.cjs';
-export { createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, validateCreditNote, validateDebitNote } from './causal/index.cjs';
+export { createStartCausalFlowUseCase, createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, startCausalFlow, validateCreditNote, validateDebitNote } from './causal/index.cjs';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
 import '../GetClientProfileByNumber.usecase-N6DyROjK.cjs';
 import '../LoginCore.usecase-AIJv6P63.cjs';
@@ -21,8 +20,7 @@ import '../ListCustomerProducts.usecase-BIQAplZX.cjs';
 import '../GetAccountsForCausals.usecase-DN7ZXmKW.cjs';
 import '../CreateExternalTransfer.usecase-CEGWfopo.cjs';
 import '../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
-import '../StartRiskFlow.usecase-Cu6VL5f3.cjs';
-import '../ValidateCreditNote.usecase-Bi3qMkD1.cjs';
+import '../ValidateCreditNote.usecase-BelrQMnZ.cjs';
 import '../GetUserBeneficiaries.usecase-DpBG63Rf.cjs';
 
 declare function hasMySqlPool(): boolean;
