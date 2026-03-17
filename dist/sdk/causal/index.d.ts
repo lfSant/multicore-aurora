@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.js';
-import { c as StartCausalFlowUseCase, S as StartCausalFlowCommand, b as StartCausalFlowResult, j as ValidateDebitNoteUseCase, g as ValidateDebitNoteCommand, i as ValidateDebitNoteResult, f as ValidateCreditNoteUseCase, V as ValidateCreditNoteCommand, e as ValidateCreditNoteResult } from '../../ValidateCreditNote.usecase-EHPevEv1.js';
+import { n as StartCausalFlowUseCase, S as StartCausalFlowCommand, m as StartCausalFlowResult, i as CreateDebitNoteUseCase, f as CreateDebitNoteCommand, h as CreateDebitNoteResult, e as CreateCreditNoteUseCase, b as CreateCreditNoteCommand, d as CreateCreditNoteResult, k as GetAccountsForCausalsUseCase, G as GetAccountsForCausalsCommand, A as AccountForCausalResult, L as ListCausalsCatalogUseCase, C as CausalCatalogItem } from '../../ListCausalsCatalog.usecase-kmcsBIWp.js';
 
 declare function createStartCausalFlowUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): StartCausalFlowUseCase;
 declare function startCausalFlow(command: StartCausalFlowCommand, http: ProviderCallConfig, opts: {
@@ -10,18 +10,32 @@ declare function startCausalFlow(command: StartCausalFlowCommand, http: Provider
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<StartCausalFlowResult>>;
 
-declare function createValidateDebitNoteUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ValidateDebitNoteUseCase;
-declare function validateDebitNote(command: ValidateDebitNoteCommand, http: ProviderCallConfig, opts: {
+declare function createCreateDebitNoteUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): CreateDebitNoteUseCase;
+declare function createDebitNote(command: CreateDebitNoteCommand, http: ProviderCallConfig, opts: {
     provider: string;
     operation?: string;
     adapterOptions?: AdapterFactoryOptions;
-}): Promise<CanonicalResponse<ValidateDebitNoteResult>>;
+}): Promise<CanonicalResponse<CreateDebitNoteResult>>;
 
-declare function createValidateCreditNoteUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ValidateCreditNoteUseCase;
-declare function validateCreditNote(command: ValidateCreditNoteCommand, http: ProviderCallConfig, opts: {
+declare function createCreateCreditNoteUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): CreateCreditNoteUseCase;
+declare function createCreditNote(command: CreateCreditNoteCommand, http: ProviderCallConfig, opts: {
     provider: string;
     operation?: string;
     adapterOptions?: AdapterFactoryOptions;
-}): Promise<CanonicalResponse<ValidateCreditNoteResult>>;
+}): Promise<CanonicalResponse<CreateCreditNoteResult>>;
 
-export { createStartCausalFlowUseCase, createValidateCreditNoteUseCase, createValidateDebitNoteUseCase, startCausalFlow, validateCreditNote, validateDebitNote };
+declare function createGetAccountsForCausalsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetAccountsForCausalsUseCase;
+declare function getAccountsForCausals(command: GetAccountsForCausalsCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<AccountForCausalResult>>;
+
+declare function getListCausalsCatalogUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ListCausalsCatalogUseCase;
+declare function listCausalsCatalog(http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CausalCatalogItem>>;
+
+export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow };

@@ -140,31 +140,4 @@ declare class GetAccountSignersUseCase {
     execute(cmd: GetAccountSignersCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AccountSignersInfo>>;
 }
 
-interface GetAccountsForCausalsCommand {
-    identification: string;
-    documentTypeId?: string;
-    flowSsn: string;
-}
-
-interface AccountForCausalResult {
-    accountHolder: string;
-    currency: string;
-    status: string;
-    product: string;
-    accountNumber: string;
-}
-
-interface GetAccountsForCausalsProviderPort {
-    getAccountsForCausals(cmd: GetAccountsForCausalsCommand, http: ProviderCallConfig, options?: {
-        tenant?: string;
-        environment?: string;
-    }): Promise<ProviderResult<AccountForCausalResult>>;
-}
-
-declare class GetAccountsForCausalsUseCase {
-    private readonly provider;
-    constructor(provider: GetAccountsForCausalsProviderPort);
-    execute(cmd: GetAccountsForCausalsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AccountForCausalResult>>;
-}
-
-export { type Account as A, type ClientAccountByNumberProviderPort as C, type GetAccountByNumberCommand as G, ListAccountMovementsUseCase as L, type AccountForCausalResult as a, type AccountMovement as b, type AccountMovementsProviderPort as c, type AccountSigner as d, type AccountSignersInfo as e, type AccountSignersProviderPort as f, type ClientAccountsProviderPort as g, type ConsolidatedAccountsProviderPort as h, ConsolidatedAccountsUseCase as i, GetAccountByNumberUseCase as j, type GetAccountMovementsCommand as k, type GetAccountSignersCommand as l, GetAccountSignersUseCase as m, type GetAccountsForCausalsCommand as n, type GetAccountsForCausalsProviderPort as o, GetAccountsForCausalsUseCase as p, type GetConsolidatedAccountsCommand as q, type ListAccountsCommand as r, ListAccountsUseCase as s };
+export { type Account as A, type ClientAccountByNumberProviderPort as C, type GetAccountByNumberCommand as G, ListAccountMovementsUseCase as L, type AccountMovement as a, type AccountMovementsProviderPort as b, type AccountSigner as c, type AccountSignersInfo as d, type AccountSignersProviderPort as e, type ClientAccountsProviderPort as f, type ConsolidatedAccountsProviderPort as g, ConsolidatedAccountsUseCase as h, GetAccountByNumberUseCase as i, type GetAccountMovementsCommand as j, type GetAccountSignersCommand as k, GetAccountSignersUseCase as l, type GetConsolidatedAccountsCommand as m, type ListAccountsCommand as n, ListAccountsUseCase as o };
