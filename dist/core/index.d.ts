@@ -627,7 +627,7 @@ declare const StartCausalFlowCommandSchema: z.ZodObject<{
     providerAcronym: z.ZodString;
     channel: z.ZodString;
     deviceIp: z.ZodString;
-    date: z.ZodString;
+    date: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
     country: z.ZodString;
     latitude: z.ZodNumber;
     longitude: z.ZodNumber;

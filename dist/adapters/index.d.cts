@@ -243,6 +243,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -620,6 +755,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -1001,6 +1271,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -1378,6 +1783,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -1760,6 +2300,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -2141,6 +2816,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -2520,6 +3330,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
@@ -2905,6 +3850,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -3281,6 +4361,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -3663,6 +4878,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -4044,6 +5394,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -4423,6 +5908,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
@@ -4884,6 +6504,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -5261,6 +7016,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -5642,6 +7532,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -6019,6 +8044,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -6401,6 +8561,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -6782,6 +9077,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -7161,6 +9591,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
@@ -7546,6 +10111,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -7922,6 +10622,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -8304,6 +11139,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -8685,6 +11655,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -9064,6 +12169,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
@@ -9525,6 +12765,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -9902,6 +13277,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -10283,6 +13793,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -10660,6 +14305,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -11042,6 +14822,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -11423,6 +15338,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -11802,6 +15852,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
@@ -12187,6 +16372,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
             from: z.ZodString;
             prefix: z.ZodString;
@@ -12563,6 +16883,141 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             dict: z.ZodRecord<z.ZodString, z.ZodAny>;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        replace: z.ZodObject<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            pattern: z.ZodString;
+            template: z.ZodString;
+            flags: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        formatDate: z.ZodObject<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            input: z.ZodString;
+            output: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        truncate: z.ZodObject<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            from: z.ZodString;
+            maxLength: z.ZodNumber;
+            default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         stripPrefix: z.ZodObject<{
@@ -12945,6 +17400,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -13326,6 +17916,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodAny>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
                 from: z.ZodString;
                 prefix: z.ZodString;
@@ -13705,6 +18430,141 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 dict: z.ZodRecord<z.ZodString, z.ZodAny>;
                 default: z.ZodOptional<z.ZodAny>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            replace: z.ZodObject<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                pattern: z.ZodString;
+                template: z.ZodString;
+                flags: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            formatDate: z.ZodObject<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                input: z.ZodString;
+                output: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            truncate: z.ZodObject<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
+            }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+                from: z.ZodString;
+                maxLength: z.ZodNumber;
+                default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             stripPrefix: z.ZodObject<{
