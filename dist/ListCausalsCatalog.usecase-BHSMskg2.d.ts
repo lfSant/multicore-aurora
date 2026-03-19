@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface StartCausalFlowCommand {
     providerAcronym: string;
@@ -104,6 +104,7 @@ interface CreateCreditNoteCommand {
     accountNumber?: string;
     amount?: string;
     observation?: string;
+    originalTransactionId?: string;
     reversalReason?: string;
 }
 

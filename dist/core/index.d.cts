@@ -10,7 +10,7 @@ export { C as Card, a as CardData, b as CardDataProviderPort, c as ChangeCardPin
 export { A as Account, a as AccountMovement, b as AccountMovementsProviderPort, c as AccountSigner, d as AccountSignersInfo, e as AccountSignersProviderPort, C as ClientAccountByNumberProviderPort, f as ClientAccountsProviderPort, g as ConsolidatedAccountsProviderPort, h as ConsolidatedAccountsUseCase, G as GetAccountByNumberCommand, i as GetAccountByNumberUseCase, j as GetAccountMovementsCommand, k as GetAccountSignersCommand, l as GetAccountSignersUseCase, m as GetConsolidatedAccountsCommand, L as ListAccountMovementsUseCase, n as ListAccountsCommand, o as ListAccountsUseCase } from '../GetAccountSigners.usecase-0QM5HED-.cjs';
 export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-CEGWfopo.cjs';
 export { C as CreatePaymentOwnCardUseCase, G as GetPaymentReversalsCommand, a as GetPaymentReversalsUseCase, b as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, P as PaymentOwnCardCommand, d as PaymentOwnCardProviderPort, e as PaymentOwnCardResult, f as PaymentReversalItemResult, g as PaymentReversalsProviderPort, h as PaymentReversalsResult, i as PaymentServiceQueryItemResult, j as PaymentServiceQueryProviderPort, k as PaymentServiceQueryResult, l as ProcessPaymentReversalCommand, m as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, o as ProcessPaymentReversalUseCase, p as ProcessPaymentServiceCommand, q as ProcessPaymentServiceProviderPort, r as ProcessPaymentServiceResult, s as ProcessPaymentServiceUseCase } from '../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
-export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, S as StartCausalFlowCommand, l as StartCausalFlowProviderPort, m as StartCausalFlowResult, n as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-BHzFBYeI.cjs';
+export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, S as StartCausalFlowCommand, l as StartCausalFlowProviderPort, m as StartCausalFlowResult, n as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-R3g99zBx.cjs';
 export { G as GetUserBeneficiariesCommand, a as GetUserBeneficiariesProviderPort, b as GetUserBeneficiariesUseCase, c as GetUserDataCommand, d as GetUserDataProviderPort, e as GetUserDataUseCase, S as SecurityQuestion, U as UserBeneficiaryResult, f as UserDataResult } from '../GetUserBeneficiaries.usecase-DpBG63Rf.cjs';
 
 declare function successResponse<T>(items: T[], opts?: {
@@ -730,6 +730,7 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
     accountNumber: z.ZodOptional<z.ZodString>;
     amount: z.ZodEffects<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>, string | undefined, string | undefined>;
     observation: z.ZodOptional<z.ZodString>;
+    originalTransactionId: z.ZodOptional<z.ZodString>;
     reversalReason: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     channel: string;
@@ -739,6 +740,7 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
     amount?: string | undefined;
     observation?: string | undefined;
     identification?: string | undefined;
+    originalTransactionId?: string | undefined;
     reversalReason?: string | undefined;
 }, {
     channel: string;
@@ -748,6 +750,7 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
     amount?: string | undefined;
     observation?: string | undefined;
     identification?: string | undefined;
+    originalTransactionId?: string | undefined;
     reversalReason?: string | undefined;
 }>;
 type CreateCreditNoteCommandParsed = z.infer<typeof CreateCreditNoteCommandSchema>;

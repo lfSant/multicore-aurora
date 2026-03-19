@@ -20,7 +20,7 @@ import '../ListCustomerProducts.usecase-BIQAplZX.cjs';
 import '../GetAccountSigners.usecase-0QM5HED-.cjs';
 import '../CreateExternalTransfer.usecase-CEGWfopo.cjs';
 import '../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
-import '../ListCausalsCatalog.usecase-BHzFBYeI.cjs';
+import '../ListCausalsCatalog.usecase-R3g99zBx.cjs';
 import '../GetUserBeneficiaries.usecase-DpBG63Rf.cjs';
 
 declare function hasMySqlPool(): boolean;
