@@ -74,6 +74,8 @@ interface ExternalTransferCommand {
     institutionSequential: string;
     accountTypeCode: string;
     concept: string;
+    causal?: string;
+    destinationIdentificationType?: string;
     platform?: string;
     date?: string;
     ipTransaction?: string;

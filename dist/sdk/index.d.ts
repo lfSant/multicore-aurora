@@ -18,7 +18,7 @@ import '../LoginCore.usecase-Bb6QSonc.js';
 import '../PaymentServiceConcepts.usecase-LJaJ66Z-.js';
 import '../ListCustomerProducts.usecase-DAV9SL84.js';
 import '../GetAccountSigners.usecase-BIKu_oGT.js';
-import '../CreateExternalTransfer.usecase-AUSwuJf9.js';
+import '../CreateExternalTransfer.usecase-voTk6pwI.js';
 import '../CreatePaymentOwnCard.usecase-CBvoi8Az.js';
 import '../ListCausalsCatalog.usecase-BHSMskg2.js';
 import '../GetUserBeneficiaries.usecase-D4SpPEz9.js';
