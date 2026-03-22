@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
-import { n as ListAccountsCommand, A as Account, o as ListAccountsUseCase, i as GetAccountByNumberUseCase, G as GetAccountByNumberCommand, m as GetConsolidatedAccountsCommand, h as ConsolidatedAccountsUseCase, j as GetAccountMovementsCommand, a as AccountMovement, L as ListAccountMovementsUseCase, l as GetAccountSignersUseCase, k as GetAccountSignersCommand, d as AccountSignersInfo } from '../../GetAccountSigners.usecase-0QM5HED-.cjs';
+import { H as ListAccountsCommand, A as Account, I as ListAccountsUseCase, w as GetAccountByNumberUseCase, v as GetAccountByNumberCommand, B as GetConsolidatedAccountsCommand, n as ConsolidatedAccountsUseCase, x as GetAccountMovementsCommand, a as AccountMovement, L as ListAccountMovementsUseCase, z as GetAccountSignersUseCase, y as GetAccountSignersCommand, j as AccountSignersInfo, Q as ValidateCreateAccountPlusUseCase, V as ValidateCreateAccountPlusCommand, g as AccountPlusValidation, O as SubmitPepsInformationUseCase, N as SubmitPepsInformationCommand, K as PepsInformationSubmission, M as SubmitFiscalResidenceUseCase, S as SubmitFiscalResidenceCommand, t as FiscalResidenceSubmission, E as GetFiscalResidenceUseCase, D as GetFiscalResidenceCommand, F as FiscalResidence, o as CreateAccountPlusCommand, c as AccountPlusCreation, p as CreateAccountPlusUseCase, u as GenerateAccountPlusDocumentsPdfUseCase, G as GenerateAccountPlusDocumentsPdfCommand, e as AccountPlusDocuments } from '../../GenerateAccountPlusDocumentsPdf.usecase-DlE7rQX5.cjs';
 
 declare function createClientAccountsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ListAccountsUseCase;
 declare function clientAccounts(command: ListAccountsCommand, http: ProviderCallConfig, opts: {
@@ -38,4 +38,46 @@ declare function getAccountSigners(command: GetAccountSignersCommand, http: Prov
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<AccountSignersInfo>>;
 
-export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createGetClientAccountByNumberUseCase, getAccountSigners, getClientAccountByNumber };
+declare function createValidateCreateAccountPlusUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ValidateCreateAccountPlusUseCase;
+declare function validateCreateAccountPlus(command: ValidateCreateAccountPlusCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<AccountPlusValidation>>;
+
+declare function createSubmitPepsInformationUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SubmitPepsInformationUseCase;
+declare function submitPepsInformation(command: SubmitPepsInformationCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<PepsInformationSubmission>>;
+
+declare function createSubmitFiscalResidenceUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SubmitFiscalResidenceUseCase;
+declare function submitFiscalResidence(command: SubmitFiscalResidenceCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<FiscalResidenceSubmission>>;
+
+declare function createGetFiscalResidenceUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetFiscalResidenceUseCase;
+declare function getFiscalResidence(command: GetFiscalResidenceCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<FiscalResidence>>;
+
+declare function createCreateAccountPlusUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): CreateAccountPlusUseCase;
+declare function createAccountPlus(command: CreateAccountPlusCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<AccountPlusCreation>>;
+
+declare function createGenerateAccountPlusDocumentsPdfUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GenerateAccountPlusDocumentsPdfUseCase;
+declare function generateAccountPlusDocumentsPdf(command: GenerateAccountPlusDocumentsPdfCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<AccountPlusDocuments>>;
+
+export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createSubmitFiscalResidenceUseCase, createSubmitPepsInformationUseCase, createValidateCreateAccountPlusUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, submitFiscalResidence, submitPepsInformation, validateCreateAccountPlus };
