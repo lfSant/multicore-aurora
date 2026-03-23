@@ -41,9 +41,6 @@ interface CreateAccountPlusCommand {
 interface AccountPlusCreation {
     accountNumber: string;
     transactionStatus: boolean;
-    errorCode: string;
-    errorType: string;
-    errorDescription: string;
 }
 
 interface AccountPlusCreationProviderPort {
@@ -206,9 +203,6 @@ interface AccountPlusValidation {
     transactionStatus: boolean;
     requiresPepsForm: boolean;
     requiresFiscalResidenceForm: boolean;
-    errorCode: string;
-    errorType: string;
-    errorDescription: string;
 }
 
 interface AccountPlusValidationProviderPort {
@@ -238,9 +232,6 @@ interface SubmitPepsInformationCommand {
 
 interface PepsInformationSubmission {
     transactionStatus: boolean;
-    errorCode: string;
-    errorType: string;
-    errorDescription: string;
 }
 
 interface PepsInformationProviderPort {
@@ -273,9 +264,6 @@ interface SubmitFiscalResidenceCommand {
 
 interface FiscalResidenceSubmission {
     transactionStatus: boolean;
-    errorCode: string;
-    errorType: string;
-    errorDescription: string;
 }
 
 interface FiscalResidenceProviderPort {
@@ -298,9 +286,6 @@ interface GenerateAccountPlusDocumentsPdfCommand {
 interface AccountPlusDocuments {
     transactionStatus: boolean;
     documentUrl: string;
-    errorCode: string;
-    errorType: string;
-    errorDescription: string;
 }
 
 interface AccountPlusDocumentsProviderPort {

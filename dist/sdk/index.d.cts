@@ -1,24 +1,26 @@
 import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
-export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, getClientProfile, getClientProfileByNumber } from './client/index.cjs';
+export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.cjs';
 export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore } from './auth/index.cjs';
 export { findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.cjs';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.cjs';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../types-D11BfpWV.cjs';
-import { r as GetClientCardsUseCase, q as GetClientCardsCommand, C as Card, p as GetCardDataUseCase, o as GetCardDataCommand, a as CardData, c as ChangeCardPinCommand, e as ChangeCardPinResult, f as ChangeCardPinUseCase, n as GenerateCardPinUseCase, G as GenerateCardPinCommand, m as GenerateCardPinResult, t as GetClientLoansUseCase, s as GetClientLoansCommand, h as ClientLoan, z as GetLoanAdditionalInfoUseCase, y as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, B as GetLoanAmortizationTableUseCase, A as GetLoanAmortizationTableCommand, F as LoanAmortizationTable, v as GetConsolidatedTimeDepositsUseCase, u as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, x as GetDepositMovementsUseCase, w as GetDepositMovementsCommand, D as DepositMovement, M as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, K as SendSmsByIdentificationResult, P as SendSmsByPhoneUseCase, N as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-DKgN0bEw.cjs';
+import { p as GetClientCardsUseCase, o as GetClientCardsCommand, C as Card, n as GetCardDataUseCase, m as GetCardDataCommand, a as CardData, c as ChangeCardPinCommand, e as ChangeCardPinResult, f as ChangeCardPinUseCase, l as GenerateCardPinUseCase, G as GenerateCardPinCommand, k as GenerateCardPinResult, r as GetClientLoansUseCase, q as GetClientLoansCommand, h as ClientLoan, t as GetLoanAdditionalInfoUseCase, s as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, v as GetLoanAmortizationTableUseCase, u as GetLoanAmortizationTableCommand, x as LoanAmortizationTable, D as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, B as SendSmsByIdentificationResult, H as SendSmsByPhoneUseCase, E as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-DMW9K4Pa.cjs';
 export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createSubmitFiscalResidenceUseCase, createSubmitPepsInformationUseCase, createValidateCreateAccountPlusUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, submitFiscalResidence, submitPepsInformation, validateCreateAccountPlus } from './account/index.cjs';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.cjs';
+export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, listDpfProductsCatalog } from './deposit/index.cjs';
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.cjs';
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow } from './causal/index.cjs';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
-import '../GetClientProfileByNumber.usecase-N6DyROjK.cjs';
+import '../GetCivilRegistryData.usecase-DYL12dkv.cjs';
 import '../LoginCore.usecase-AIJv6P63.cjs';
 import '../PaymentServiceConcepts.usecase-CJpTIuJC.cjs';
 import '../ListCustomerProducts.usecase-BIQAplZX.cjs';
-import '../GenerateAccountPlusDocumentsPdf.usecase-DlE7rQX5.cjs';
+import '../GenerateAccountPlusDocumentsPdf.usecase-BjEOKqpG.cjs';
 import '../CreateExternalTransfer.usecase-BmKEnIbl.cjs';
+import '../GetDpfReceipt.usecase-BE4kgXw7.cjs';
 import '../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
 import '../ListCausalsCatalog.usecase-R3g99zBx.cjs';
 import '../GetUserBeneficiaries.usecase-DpBG63Rf.cjs';
@@ -88,20 +90,6 @@ declare function getLoanAmortizationTable(command: GetLoanAmortizationTableComma
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<LoanAmortizationTable>>;
 
-declare function createConsolidatedTimeDepositsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetConsolidatedTimeDepositsUseCase;
-declare function getConsolidatedTimeDeposits(command: GetConsolidatedTimeDepositsCommand, http: ProviderCallConfig, opts: {
-    provider: string;
-    operation?: string;
-    adapterOptions?: AdapterFactoryOptions;
-}): Promise<CanonicalResponse<TimeDeposit[]>>;
-
-declare function createDepositMovementsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetDepositMovementsUseCase;
-declare function getDepositMovements(command: GetDepositMovementsCommand, http: ProviderCallConfig, opts: {
-    provider: string;
-    operation?: string;
-    adapterOptions?: AdapterFactoryOptions;
-}): Promise<CanonicalResponse<DepositMovement[]>>;
-
 declare function createSendSmsByIdentificationUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SendSmsByIdentificationUseCase;
 declare function sendSmsByIdentification(command: SendSmsByIdentificationCommand, http: ProviderCallConfig, opts: {
     provider: string;
@@ -116,4 +104,4 @@ declare function sendSmsByPhone(command: SendSmsByPhoneCommand, http: ProviderCa
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 
-export { type InitOptions, type ProviderKey, changeCardPin, createCardDataUseCase, createChangeCardPinUseCase, createClientCardsUseCase, createClientLoansUseCase, createConsolidatedTimeDepositsUseCase, createDepositMovementsUseCase, createGenerateCardPinUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, generateCardPin, getCardData, getClientCards, getClientLoans, getConsolidatedTimeDeposits, getDepositMovements, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };
+export { type InitOptions, type ProviderKey, changeCardPin, createCardDataUseCase, createChangeCardPinUseCase, createClientCardsUseCase, createClientLoansUseCase, createGenerateCardPinUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, generateCardPin, getCardData, getClientCards, getClientLoans, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };

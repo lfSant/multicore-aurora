@@ -1,6 +1,6 @@
 {
   "name": "lib-multicore-aurora",
-  "version": "3.0.29",
+  "version": "3.0.30",
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",
@@ -89,10 +89,15 @@
       "types": "./dist/sdk/user/index.d.ts",
       "import": "./dist/sdk/user/index.js",
       "require": "./dist/sdk/user/index.cjs"
+    },
+    "./sdk/deposit": {
+      "types": "./dist/sdk/deposit/index.d.ts",
+      "import": "./dist/sdk/deposit/index.js",
+      "require": "./dist/sdk/deposit/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts ./src/sdk/causal/index.ts ./src/sdk/user/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
+    "build": "tsup ./src/index.ts ./src/core/index.ts ./src/adapters/index.ts ./src/sdk/index.ts ./src/sdk/client/index.ts ./src/sdk/auth/index.ts ./src/sdk/account/index.ts ./src/sdk/catalog/index.ts ./src/sdk/payment/index.ts ./src/sdk/transfer/index.ts ./src/sdk/product/index.ts ./src/sdk/causal/index.ts ./src/sdk/user/index.ts ./src/sdk/deposit/index.ts --dts --format cjs,esm --clean --tsconfig tsconfig.lib.json --minify terser",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn clean && yarn build",
     "version:patch": "npm version patch --no-git-tag-version",

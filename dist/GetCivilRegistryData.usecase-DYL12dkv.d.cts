@@ -106,4 +106,43 @@ declare class GetClientProfileByNumberUseCase {
     execute(cmd: GetClientProfileByNumberCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ClientProfileByNumber>>;
 }
 
-export { type CheckClientActiveCommand as C, type GetClientProfileByNumberCommand as G, CheckClientActiveUseCase as a, type ClientActiveStatus as b, type ClientProfile as c, type ClientProfileByNumber as d, type ClientProfileByNumberProviderPort as e, type ClientProfileProviderPort as f, type ClientStatusProviderPort as g, GetClientProfileByNumberUseCase as h, type GetClientProfileCommand as i, GetClientProfileUseCase as j };
+interface CivilRegistryData {
+    identification: string;
+    firstNames: string;
+    lastNames: string;
+    birthDateMs: number;
+    issueDateMs?: number;
+    deathDateMs?: number;
+    gender: string;
+    genderCode: string;
+    maritalStatus: string;
+    maritalStatusCode: string;
+    address: string;
+    educationLevel: string;
+    educationLevelCode: string;
+    profession: string;
+    spouseName?: string;
+    spouseId?: string;
+    photoBase64: string;
+    signatureBase64?: string;
+}
+
+interface GetCivilRegistryDataCommand {
+    identification: string;
+    fingerCode: string;
+}
+
+interface CivilRegistryDataProviderPort {
+    getCivilRegistryData(cmd: GetCivilRegistryDataCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CivilRegistryData>>;
+}
+
+declare class GetCivilRegistryDataUseCase {
+    private readonly provider;
+    constructor(provider: CivilRegistryDataProviderPort);
+    execute(cmd: GetCivilRegistryDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CivilRegistryData>>;
+}
+
+export { type CheckClientActiveCommand as C, type GetCivilRegistryDataCommand as G, CheckClientActiveUseCase as a, type CivilRegistryData as b, type CivilRegistryDataProviderPort as c, type ClientActiveStatus as d, type ClientProfile as e, type ClientProfileByNumber as f, type ClientProfileByNumberProviderPort as g, type ClientProfileProviderPort as h, type ClientStatusProviderPort as i, GetCivilRegistryDataUseCase as j, type GetClientProfileByNumberCommand as k, GetClientProfileByNumberUseCase as l, type GetClientProfileCommand as m, GetClientProfileUseCase as n };
