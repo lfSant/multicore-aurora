@@ -8,8 +8,8 @@ export { E as EducationTypes, a as EducationTypesProviderPort, b as EducationTyp
 export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-DAV9SL84.js';
 export { C as Card, a as CardData, b as CardDataProviderPort, c as ChangeCardPinCommand, d as ChangeCardPinProviderPort, e as ChangeCardPinResult, f as ChangeCardPinUseCase, g as ClientCardsProviderPort, h as ClientLoan, i as ClientLoansProviderPort, G as GenerateCardPinCommand, j as GenerateCardPinProviderPort, k as GenerateCardPinResult, l as GenerateCardPinUseCase, m as GetCardDataCommand, n as GetCardDataUseCase, o as GetClientCardsCommand, p as GetClientCardsUseCase, q as GetClientLoansCommand, r as GetClientLoansUseCase, s as GetLoanAdditionalInfoCommand, t as GetLoanAdditionalInfoUseCase, u as GetLoanAmortizationTableCommand, v as GetLoanAmortizationTableUseCase, L as LoanAdditionalInfo, w as LoanAdditionalInfoProviderPort, x as LoanAmortizationTable, y as LoanAmortizationTableProviderPort, z as LoanInstallment, S as SendSmsByIdentificationCommand, A as SendSmsByIdentificationProviderPort, B as SendSmsByIdentificationResult, D as SendSmsByIdentificationUseCase, E as SendSmsByPhoneCommand, F as SendSmsByPhoneProviderPort, H as SendSmsByPhoneUseCase } from '../SendSmsByPhone.usecase-7YXuye7C.js';
 export { A as Account, a as AccountMovement, b as AccountMovementsProviderPort, c as AccountPlusCreation, d as AccountPlusCreationProviderPort, e as AccountPlusDocuments, f as AccountPlusDocumentsProviderPort, g as AccountPlusValidation, h as AccountPlusValidationProviderPort, i as AccountSigner, j as AccountSignersInfo, k as AccountSignersProviderPort, C as ClientAccountByNumberProviderPort, l as ClientAccountsProviderPort, m as ConsolidatedAccountsProviderPort, n as ConsolidatedAccountsUseCase, o as CreateAccountPlusCommand, p as CreateAccountPlusUseCase, F as FiscalResidence, q as FiscalResidenceData, r as FiscalResidenceProviderPort, s as FiscalResidenceQueryProviderPort, t as FiscalResidenceSubmission, G as GenerateAccountPlusDocumentsPdfCommand, u as GenerateAccountPlusDocumentsPdfUseCase, v as GetAccountByNumberCommand, w as GetAccountByNumberUseCase, x as GetAccountMovementsCommand, y as GetAccountSignersCommand, z as GetAccountSignersUseCase, B as GetConsolidatedAccountsCommand, D as GetFiscalResidenceCommand, E as GetFiscalResidenceUseCase, L as ListAccountMovementsUseCase, H as ListAccountsCommand, I as ListAccountsUseCase, P as PepsData, J as PepsInformationProviderPort, K as PepsInformationSubmission, S as SubmitFiscalResidenceCommand, M as SubmitFiscalResidenceUseCase, N as SubmitPepsInformationCommand, O as SubmitPepsInformationUseCase, V as ValidateCreateAccountPlusCommand, Q as ValidateCreateAccountPlusUseCase } from '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';
-export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-voTk6pwI.js';
-export { C as CalculateDpfValuesCommand, a as CalculateDpfValuesUseCase, b as ConsolidatedTimeDepositsProviderPort, c as CreateDpfCommand, d as CreateDpfProviderPort, e as CreateDpfUseCase, D as DepositMovement, f as DepositMovementsProviderPort, g as DpfCalculation, h as DpfCalculationProviderPort, i as DpfCreation, j as DpfPaymentSchedule, k as DpfProductCatalog, l as DpfProductsCatalogProviderPort, m as DpfReceipt, n as DpfReceiptProviderPort, G as GetConsolidatedTimeDepositsCommand, o as GetConsolidatedTimeDepositsUseCase, p as GetDepositMovementsCommand, q as GetDepositMovementsUseCase, r as GetDpfReceiptCommand, s as GetDpfReceiptUseCase, L as ListDpfProductsCatalogUseCase, T as TimeDeposit } from '../GetDpfReceipt.usecase-T4qwgYs_.js';
+export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-DA2yQMNC.js';
+export { C as CalculateDpfValuesCommand, a as CalculateDpfValuesUseCase, b as ConsolidatedTimeDepositsProviderPort, c as CreateDpfCommand, d as CreateDpfProviderPort, e as CreateDpfUseCase, D as DepositMovement, f as DepositMovementsProviderPort, g as DpfCalculation, h as DpfCalculationProviderPort, i as DpfCreation, j as DpfPaymentSchedule, k as DpfProductCatalog, l as DpfProductsCatalogProviderPort, m as DpfReceipt, n as DpfReceiptProviderPort, G as GetConsolidatedTimeDepositsCommand, o as GetConsolidatedTimeDepositsUseCase, p as GetDepositMovementsCommand, q as GetDepositMovementsUseCase, r as GetDpfReceiptCommand, s as GetDpfReceiptUseCase, L as ListDpfProductsCatalogUseCase, T as TimeDeposit } from '../GetDpfReceipt.usecase-j-1fcN8H.js';
 export { C as CreatePaymentOwnCardUseCase, G as GetPaymentReversalsCommand, a as GetPaymentReversalsUseCase, b as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, P as PaymentOwnCardCommand, d as PaymentOwnCardProviderPort, e as PaymentOwnCardResult, f as PaymentReversalItemResult, g as PaymentReversalsProviderPort, h as PaymentReversalsResult, i as PaymentServiceQueryItemResult, j as PaymentServiceQueryProviderPort, k as PaymentServiceQueryResult, l as ProcessPaymentReversalCommand, m as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, o as ProcessPaymentReversalUseCase, p as ProcessPaymentServiceCommand, q as ProcessPaymentServiceProviderPort, r as ProcessPaymentServiceResult, s as ProcessPaymentServiceUseCase } from '../CreatePaymentOwnCard.usecase-CBvoi8Az.js';
 export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, S as StartCausalFlowCommand, l as StartCausalFlowProviderPort, m as StartCausalFlowResult, n as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-BHSMskg2.js';
 export { G as GetUserBeneficiariesCommand, a as GetUserBeneficiariesProviderPort, b as GetUserBeneficiariesUseCase, c as GetUserDataCommand, d as GetUserDataProviderPort, e as GetUserDataUseCase, S as SecurityQuestion, U as UserBeneficiaryResult, f as UserDataResult } from '../GetUserBeneficiaries.usecase-D4SpPEz9.js';
@@ -477,6 +477,7 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     amount: z.ZodString;
     concept: z.ZodString;
     platform: z.ZodOptional<z.ZodString>;
+    platformCode: z.ZodOptional<z.ZodString>;
     date: z.ZodOptional<z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>>;
     ipTransaction: z.ZodOptional<z.ZodString>;
     identifierDevice: z.ZodOptional<z.ZodString>;
@@ -489,6 +490,7 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     concept: string;
     date?: string | undefined;
     platform?: string | undefined;
+    platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
     codeReference?: string | undefined;
@@ -500,6 +502,7 @@ declare const InternalTransferCommandSchema: z.ZodObject<{
     concept: string;
     date?: string | undefined;
     platform?: string | undefined;
+    platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
     codeReference?: string | undefined;
@@ -520,6 +523,7 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     causal: z.ZodOptional<z.ZodString>;
     destinationIdentificationType: z.ZodOptional<z.ZodString>;
     platform: z.ZodOptional<z.ZodString>;
+    platformCode: z.ZodOptional<z.ZodString>;
     date: z.ZodOptional<z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>>;
     ipTransaction: z.ZodOptional<z.ZodString>;
     identifierDevice: z.ZodOptional<z.ZodString>;
@@ -539,6 +543,7 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     date?: string | undefined;
     clientNumber?: string | undefined;
     platform?: string | undefined;
+    platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
     codeReference?: string | undefined;
@@ -558,6 +563,7 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     date?: string | undefined;
     clientNumber?: string | undefined;
     platform?: string | undefined;
+    platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
     codeReference?: string | undefined;
@@ -652,6 +658,7 @@ declare const CreateDpfCommandSchema: z.ZodObject<{
     productCode: z.ZodNumber;
     termDays: z.ZodNumber;
     investmentAmount: z.ZodString;
+    interestRate: z.ZodNumber;
     transactionPlatform: z.ZodString;
     transactionDate: z.ZodString;
     transactionDevice: z.ZodString;
@@ -673,6 +680,7 @@ declare const CreateDpfCommandSchema: z.ZodObject<{
     transactionReference: string;
     transactionNotes: string;
     clientName: string;
+    interestRate: number;
 }, {
     clientIdentification: string;
     username: string;
@@ -686,6 +694,7 @@ declare const CreateDpfCommandSchema: z.ZodObject<{
     transactionReference: string;
     transactionNotes: string;
     clientName: string;
+    interestRate: number;
 }>;
 type CreateDpfCommandParsed = z.infer<typeof CreateDpfCommandSchema>;
 
