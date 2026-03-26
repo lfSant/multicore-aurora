@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 type TransferInitialChargeCategory = 'CONCEPT_TRANSACTION' | 'ACCOUNT_TYPE' | 'INSTITUTION_INFO';
 interface ItemTransferInitialCharge {
@@ -37,6 +37,7 @@ interface InternalTransferCommand {
     amount: string;
     concept: string;
     platform?: string;
+    platformCode?: string;
     date?: string;
     ipTransaction?: string;
     identifierDevice?: string;

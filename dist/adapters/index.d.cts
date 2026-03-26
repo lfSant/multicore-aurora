@@ -468,6 +468,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -981,6 +987,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -1496,6 +1508,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -2009,6 +2027,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -2525,6 +2549,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -3041,6 +3071,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -3556,6 +3592,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
@@ -4075,6 +4117,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -4587,6 +4635,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -5103,6 +5157,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -5619,6 +5679,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -6134,6 +6200,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
@@ -6729,6 +6801,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -7242,6 +7320,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -7757,6 +7841,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -8270,6 +8360,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -8786,6 +8882,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -9302,6 +9404,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -9817,6 +9925,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
@@ -10336,6 +10450,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -10848,6 +10968,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -11364,6 +11490,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -11880,6 +12012,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -12395,6 +12533,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
@@ -12990,6 +13134,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -13503,6 +13653,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -14018,6 +14174,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -14531,6 +14693,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -15047,6 +15215,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -15563,6 +15737,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -16078,6 +16258,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
@@ -16597,6 +16783,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
             mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -17109,6 +17301,12 @@ declare const MappingConfigSchema: z.ZodObject<{
             from: z.ZodString;
             default: z.ZodOptional<z.ZodString>;
         }, z.ZodTypeAny, "passthrough">>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        shape: z.ZodRecord<z.ZodString, z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         parseXml: z.ZodObject<{
             from: z.ZodString;
@@ -17625,6 +17823,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -18141,6 +18345,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;
                 mode: z.ZodDefault<z.ZodEnum<["array", "object"]>>;
@@ -18656,6 +18866,12 @@ declare const MappingConfigSchema: z.ZodObject<{
                 from: z.ZodString;
                 default: z.ZodOptional<z.ZodString>;
             }, z.ZodTypeAny, "passthrough">>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            shape: z.ZodRecord<z.ZodString, z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             parseXml: z.ZodObject<{
                 from: z.ZodString;

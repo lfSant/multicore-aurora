@@ -19,11 +19,11 @@ import '../LoginCore.usecase-Bb6QSonc.js';
 import '../PaymentServiceConcepts.usecase-LJaJ66Z-.js';
 import '../ListCustomerProducts.usecase-DAV9SL84.js';
 import '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';
-import '../CreateExternalTransfer.usecase-DA2yQMNC.js';
+import '../CreateExternalTransfer.usecase-xihbQIYR.js';
 import '../GetDpfReceipt.usecase-j-1fcN8H.js';
 import '../CreatePaymentOwnCard.usecase-CBvoi8Az.js';
 import '../ListCausalsCatalog.usecase-BHSMskg2.js';
-import '../GetUserBeneficiaries.usecase-D4SpPEz9.js';
+import '../GetUserBeneficiaries.usecase-ncXrZPjD.js';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;

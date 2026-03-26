@@ -1,44 +1,53 @@
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
 
 interface GetUserDataCommand {
-    username?: string;
-    channel?: string;
-    clientNumber?: string;
+    username: string;
+    password: string;
+    channel: string;
 }
 
 interface SecurityQuestion {
     questionId: number;
     question: string;
-    answerId: number | null;
-    answer: string | null;
-    personalAnswer: string | null;
+    answerId?: number;
+    answer?: string;
+    personalAnswer?: string;
+}
+interface UserPersonalData {
+    names: string;
+    firstName: string;
+    firstLastName: string;
+    secondLastName: string;
+    birthDateMs: number;
+    maritalStatus: string;
+    address: string;
+}
+interface UserContactData {
+    phoneNumber: string;
+    email: string;
+}
+interface UserSecurityData {
+    image: string;
+    imageAlias: string;
+    questions: SecurityQuestion[];
+}
+interface UserAccountData {
+    creationDateMs: number;
+    lastPasswordChangeDateMs: number;
+    officeCode: string;
+    limits: unknown[];
+    dataUsageAcceptance: boolean;
+    lastLoginDateMs: number;
 }
 interface UserDataResult {
     username: string;
     identification: string;
-    phoneNumber: string;
-    email: string;
-    creationDate: string;
-    lastPasswordChange: string;
-    securityImage: string;
-    securityImageAlias: string;
-    securityQuestions: SecurityQuestion[];
-    limitDay: string;
-    limitWeek: string;
-    limitMonth: string;
-    names: string | null;
-    firstName: string | null;
-    secondName: string | null;
-    firstLastName: string | null;
-    secondLastName: string | null;
-    birthDate: string;
-    maritalStatus: string;
-    address: string;
-    officeCode: string;
-    clientCode: string;
-    dataUsageAcceptance: boolean;
-    lastLogin: string;
+    clientNumber: string;
+    personal: UserPersonalData;
+    contact: UserContactData;
+    security: UserSecurityData;
+    account: UserAccountData;
 }
 
 interface GetUserDataProviderPort {
@@ -63,16 +72,16 @@ interface UserBeneficiaryResult {
     clientNumber: number;
     accountType: string;
     accountNumber: string;
-    registrationDate: string;
+    registrationDateMs: number;
     bankCode: number;
     beneficiaryIdentification: string;
     beneficiaryFirstName: string;
     beneficiaryLastName: string;
-    beneficiarySecondLastName: string;
+    beneficiarySecondLastName?: string;
     beneficiaryEmail: string;
     beneficiaryType: string;
     beneficiaryPhone: string;
-    bank: string | null;
+    bank?: string;
 }
 
 interface GetUserBeneficiariesProviderPort {
@@ -88,4 +97,4 @@ declare class GetUserBeneficiariesUseCase {
     execute(cmd: GetUserBeneficiariesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<UserBeneficiaryResult>>;
 }
 
-export { type GetUserBeneficiariesCommand as G, type SecurityQuestion as S, type UserBeneficiaryResult as U, type GetUserBeneficiariesProviderPort as a, GetUserBeneficiariesUseCase as b, type GetUserDataCommand as c, type GetUserDataProviderPort as d, GetUserDataUseCase as e, type UserDataResult as f };
+export { type GetUserBeneficiariesCommand as G, type SecurityQuestion as S, type UserAccountData as U, type GetUserBeneficiariesProviderPort as a, GetUserBeneficiariesUseCase as b, type GetUserDataCommand as c, type GetUserDataProviderPort as d, GetUserDataUseCase as e, type UserBeneficiaryResult as f, type UserContactData as g, type UserDataResult as h, type UserPersonalData as i, type UserSecurityData as j };

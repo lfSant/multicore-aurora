@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.js';
-import { e as GetUserDataUseCase, c as GetUserDataCommand, f as UserDataResult, b as GetUserBeneficiariesUseCase, G as GetUserBeneficiariesCommand, U as UserBeneficiaryResult } from '../../GetUserBeneficiaries.usecase-D4SpPEz9.js';
+import { e as GetUserDataUseCase, c as GetUserDataCommand, h as UserDataResult, b as GetUserBeneficiariesUseCase, G as GetUserBeneficiariesCommand, f as UserBeneficiaryResult } from '../../GetUserBeneficiaries.usecase-ncXrZPjD.js';
 
 declare function createGetUserDataUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetUserDataUseCase;
 declare function getUserData(command: GetUserDataCommand, http: ProviderCallConfig, opts: {
