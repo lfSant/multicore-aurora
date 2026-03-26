@@ -7,7 +7,7 @@ export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './prod
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../types-D11BfpWV.js';
-import { p as GetClientCardsUseCase, o as GetClientCardsCommand, C as Card, n as GetCardDataUseCase, m as GetCardDataCommand, a as CardData, c as ChangeCardPinCommand, e as ChangeCardPinResult, f as ChangeCardPinUseCase, l as GenerateCardPinUseCase, G as GenerateCardPinCommand, k as GenerateCardPinResult, r as GetClientLoansUseCase, q as GetClientLoansCommand, h as ClientLoan, t as GetLoanAdditionalInfoUseCase, s as GetLoanAdditionalInfoCommand, L as LoanAdditionalInfo, v as GetLoanAmortizationTableUseCase, u as GetLoanAmortizationTableCommand, x as LoanAmortizationTable, D as SendSmsByIdentificationUseCase, S as SendSmsByIdentificationCommand, B as SendSmsByIdentificationResult, H as SendSmsByPhoneUseCase, E as SendSmsByPhoneCommand } from '../SendSmsByPhone.usecase-7YXuye7C.js';
+import { I as GetClientCardsUseCase, H as GetClientCardsCommand, g as Card, w as GetCardDataUseCase, v as GetCardDataCommand, h as CardData, l as ChangeCardPinCommand, n as ChangeCardPinResult, o as ChangeCardPinUseCase, u as GenerateCardPinUseCase, G as GenerateCardPinCommand, t as GenerateCardPinResult, a6 as ValidateCardPinUseCase, a3 as ValidateCardPinCommand, a5 as ValidateCardPinResult, z as GetCardMovementsUseCase, x as GetCardMovementsCommand, j as CardMovementsResult, F as GetCardStatementUseCase, A as GetCardStatementCommand, k as CardStatementResult, N as GetDeferredCardUseCase, L as GetDeferredCardCommand, D as DeferredCardResult, e as CalculateDeferredValuesCommand, C as CalculateDeferredResult, d as CalculateDeferredValueUseCase, B as BlockCardCommand, b as BlockCardResult, c as BlockCardUseCase, K as GetClientLoansUseCase, J as GetClientLoansCommand, q as ClientLoan, P as GetLoanAdditionalInfoUseCase, O as GetLoanAdditionalInfoCommand, S as LoanAdditionalInfo, R as GetLoanAmortizationTableUseCase, Q as GetLoanAmortizationTableCommand, U as LoanAmortizationTable, $ as SendSmsByIdentificationUseCase, Y as SendSmsByIdentificationCommand, _ as SendSmsByIdentificationResult, a2 as SendSmsByPhoneUseCase, a0 as SendSmsByPhoneCommand } from '../BlockCard.usecase-f3uJYXeQ.js';
 export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createSubmitFiscalResidenceUseCase, createSubmitPepsInformationUseCase, createValidateCreateAccountPlusUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, submitFiscalResidence, submitPepsInformation, validateCreateAccountPlus } from './account/index.js';
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.js';
 export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, listDpfProductsCatalog } from './deposit/index.js';
@@ -69,6 +69,48 @@ declare function generateCardPin(command: GenerateCardPinCommand, http: Provider
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<GenerateCardPinResult>>;
 
+declare function createValidateCardPinUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ValidateCardPinUseCase;
+declare function validateCardPin(command: ValidateCardPinCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<ValidateCardPinResult>>;
+
+declare function createGetCardMovementsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetCardMovementsUseCase;
+declare function getCardMovements(command: GetCardMovementsCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CardMovementsResult>>;
+
+declare function createGetCardStatementUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetCardStatementUseCase;
+declare function getCardStatement(command: GetCardStatementCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CardStatementResult>>;
+
+declare function createGetDeferredCardUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetDeferredCardUseCase;
+declare function getDeferredCard(command: GetDeferredCardCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<DeferredCardResult>>;
+
+declare function calculateDeferredValuesUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): CalculateDeferredValueUseCase;
+declare function calculateDeferredValues(command: CalculateDeferredValuesCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CalculateDeferredResult>>;
+
+declare function blockCardUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): BlockCardUseCase;
+declare function BlockCard(command: BlockCardCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<BlockCardResult>>;
+
 declare function createClientLoansUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientLoansUseCase;
 declare function getClientLoans(command: GetClientLoansCommand, http: ProviderCallConfig, opts: {
     provider: string;
@@ -104,4 +146,4 @@ declare function sendSmsByPhone(command: SendSmsByPhoneCommand, http: ProviderCa
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 
-export { type InitOptions, type ProviderKey, changeCardPin, createCardDataUseCase, createChangeCardPinUseCase, createClientCardsUseCase, createClientLoansUseCase, createGenerateCardPinUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, generateCardPin, getCardData, getClientCards, getClientLoans, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown };
+export { BlockCard, type InitOptions, type ProviderKey, blockCardUseCase, calculateDeferredValues, calculateDeferredValuesUseCase, changeCardPin, createCardDataUseCase, createChangeCardPinUseCase, createClientCardsUseCase, createClientLoansUseCase, createGenerateCardPinUseCase, createGetCardMovementsUseCase, createGetCardStatementUseCase, createGetDeferredCardUseCase, createLoanAdditionalInfoUseCase, createLoanAmortizationTableUseCase, createSendSmsByIdentificationUseCase, createSendSmsByPhoneUseCase, createValidateCardPinUseCase, generateCardPin, getCardData, getCardMovements, getCardStatement, getClientCards, getClientLoans, getDeferredCard, getLoanAdditionalInfo, getLoanAmortizationTable, getMySqlPool, getRedisClient, hasMySqlPool, hasRedisClient, isDebugMode, sendSmsByIdentification, sendSmsByPhone, setDebugMode, setMySqlPool, setRedisClient, shutdown, validateCardPin };

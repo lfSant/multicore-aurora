@@ -87,12 +87,14 @@ declare class ChangeCardPinUseCase {
 interface GenerateCardPinCommand {
     clientNumber: string;
     cardCode: string;
+    newPinCode?: string;
 }
 
 interface GenerateCardPinResult {
     success: boolean;
     newPinCode?: string;
     message?: string;
+    stateCard?: boolean;
 }
 
 interface GenerateCardPinProviderPort {
@@ -106,6 +108,134 @@ declare class GenerateCardPinUseCase {
     private readonly provider;
     constructor(provider: GenerateCardPinProviderPort);
     execute(cmd: GenerateCardPinCommand, http: ProviderCallConfig): Promise<CanonicalResponse<GenerateCardPinResult>>;
+}
+
+interface ValidateCardPinCommand {
+    identifier: string;
+    pin: string;
+}
+
+interface ValidateCardPinResult {
+    state: boolean;
+}
+
+interface ValidateCardPinProviderPort {
+    validateCardPin(cmd: ValidateCardPinCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ValidateCardPinResult>>;
+}
+
+declare class ValidateCardPinUseCase {
+    private readonly provider;
+    constructor(provider: ValidateCardPinProviderPort);
+    execute(cmd: ValidateCardPinCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ValidateCardPinResult>>;
+}
+
+interface GetCardMovementsCommand {
+    cardCode: string;
+}
+
+interface movements {
+    cardNumber: string;
+    transactionCode: string;
+    description: string;
+    transactionDate: string;
+    movementNumber: string;
+    deferredBalance: string;
+    transactionType: string;
+    amount: string;
+}
+interface CardMovementsResult {
+    success: boolean;
+    movements: movements[];
+    credits: number;
+    limit: number;
+    debits: number;
+    available: number;
+    status: string;
+    paymentStatus: string;
+    currentBalance: number;
+    deferredBalance: number;
+}
+
+interface GetCardMovementsProviderPort {
+    getCardMovements(cmd: GetCardMovementsCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardMovementsResult>>;
+}
+
+declare class GetCardMovementsUseCase {
+    private readonly provider;
+    constructor(provider: GetCardMovementsProviderPort);
+    execute(cmd: GetCardMovementsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardMovementsResult>>;
+}
+
+interface GetCardStatementCommand {
+    cardCode: string;
+    year: string;
+    month: string;
+}
+
+interface CardStatementResult {
+    state: boolean;
+    url: string;
+}
+
+interface GetCardStatementProviderPort {
+    getCardStatement(cmd: GetCardStatementCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardStatementResult>>;
+}
+
+declare class GetCardStatementUseCase {
+    private readonly provider;
+    constructor(provider: GetCardStatementProviderPort);
+    execute(cmd: GetCardStatementCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardStatementResult>>;
+}
+
+interface GetDeferredCardCommand {
+    clientNumber: string;
+    cardCode: string;
+}
+
+interface Movements {
+    cardNumber: string;
+    transactionCode: string;
+    description: string;
+    transactionDate: string;
+    movementNumber: string;
+    deferredBalance: number;
+    transactionType: string;
+    amount: number;
+}
+interface DeferredCardResult {
+    success: boolean;
+    movements: Movements[];
+    credits: number;
+    limit: number;
+    debits: number;
+    available: number;
+    currentBalance: number;
+    deferredBalance: number;
+    minimumDeferralAmount: number;
+    deferralTerms: number[];
+    deferralRate: number;
+}
+
+interface GetDeferredCardProviderPort {
+    getDeferredCard(cmd: GetDeferredCardCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DeferredCardResult>>;
+}
+
+declare class GetDeferredCardUseCase {
+    private readonly provider;
+    constructor(provider: GetDeferredCardProviderPort);
+    execute(cmd: GetDeferredCardCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DeferredCardResult>>;
 }
 
 interface GetClientLoansCommand {
@@ -271,4 +401,55 @@ declare class SendSmsByPhoneUseCase {
     execute(cmd: SendSmsByPhoneCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 }
 
-export { type SendSmsByIdentificationProviderPort as A, type SendSmsByIdentificationResult as B, type Card as C, SendSmsByIdentificationUseCase as D, type SendSmsByPhoneCommand as E, type SendSmsByPhoneProviderPort as F, type GenerateCardPinCommand as G, SendSmsByPhoneUseCase as H, type LoanAdditionalInfo as L, type SendSmsByIdentificationCommand as S, type CardData as a, type CardDataProviderPort as b, type ChangeCardPinCommand as c, type ChangeCardPinProviderPort as d, type ChangeCardPinResult as e, ChangeCardPinUseCase as f, type ClientCardsProviderPort as g, type ClientLoan as h, type ClientLoansProviderPort as i, type GenerateCardPinProviderPort as j, type GenerateCardPinResult as k, GenerateCardPinUseCase as l, type GetCardDataCommand as m, GetCardDataUseCase as n, type GetClientCardsCommand as o, GetClientCardsUseCase as p, type GetClientLoansCommand as q, GetClientLoansUseCase as r, type GetLoanAdditionalInfoCommand as s, GetLoanAdditionalInfoUseCase as t, type GetLoanAmortizationTableCommand as u, GetLoanAmortizationTableUseCase as v, type LoanAdditionalInfoProviderPort as w, type LoanAmortizationTable as x, type LoanAmortizationTableProviderPort as y, type LoanInstallment as z };
+interface CalculateDeferredValuesCommand {
+    clientNumber: string;
+    cardCode: string;
+    deferralTerm: string;
+    movements: Record<string, any>;
+}
+
+interface CalculateDeferredResult {
+    succes: boolean;
+    term: number;
+    totalDefer: number;
+    interest: number;
+    monthlyPayment: number;
+}
+
+interface CalculateDeferredValuesProviderPort {
+    calculateDeferredValues(cmd: CalculateDeferredValuesCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CalculateDeferredResult>>;
+}
+
+declare class CalculateDeferredValueUseCase {
+    private readonly provider;
+    constructor(provider: CalculateDeferredValuesProviderPort);
+    execute(cmd: CalculateDeferredValuesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CalculateDeferredResult>>;
+}
+
+interface BlockCardCommand {
+    clientNumber: string;
+    cardCode: string;
+}
+
+interface BlockCardResult {
+    success: boolean;
+    stateBlockCard?: boolean;
+}
+
+interface BlockCardProviderPort {
+    blockCard(cmd: BlockCardCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<BlockCardResult>>;
+}
+
+declare class BlockCardUseCase {
+    private readonly provider;
+    constructor(provider: BlockCardProviderPort);
+    execute(cmd: BlockCardCommand, http: ProviderCallConfig): Promise<CanonicalResponse<BlockCardResult>>;
+}
+
+export { SendSmsByIdentificationUseCase as $, type GetCardStatementCommand as A, type BlockCardCommand as B, type CalculateDeferredResult as C, type DeferredCardResult as D, type GetCardStatementProviderPort as E, GetCardStatementUseCase as F, type GenerateCardPinCommand as G, type GetClientCardsCommand as H, GetClientCardsUseCase as I, type GetClientLoansCommand as J, GetClientLoansUseCase as K, type GetDeferredCardCommand as L, type GetDeferredCardProviderPort as M, GetDeferredCardUseCase as N, type GetLoanAdditionalInfoCommand as O, GetLoanAdditionalInfoUseCase as P, type GetLoanAmortizationTableCommand as Q, GetLoanAmortizationTableUseCase as R, type LoanAdditionalInfo as S, type LoanAdditionalInfoProviderPort as T, type LoanAmortizationTable as U, type LoanAmortizationTableProviderPort as V, type LoanInstallment as W, type Movements as X, type SendSmsByIdentificationCommand as Y, type SendSmsByIdentificationProviderPort as Z, type SendSmsByIdentificationResult as _, type BlockCardProviderPort as a, type SendSmsByPhoneCommand as a0, type SendSmsByPhoneProviderPort as a1, SendSmsByPhoneUseCase as a2, type ValidateCardPinCommand as a3, type ValidateCardPinProviderPort as a4, type ValidateCardPinResult as a5, ValidateCardPinUseCase as a6, type movements as a7, type BlockCardResult as b, BlockCardUseCase as c, CalculateDeferredValueUseCase as d, type CalculateDeferredValuesCommand as e, type CalculateDeferredValuesProviderPort as f, type Card as g, type CardData as h, type CardDataProviderPort as i, type CardMovementsResult as j, type CardStatementResult as k, type ChangeCardPinCommand as l, type ChangeCardPinProviderPort as m, type ChangeCardPinResult as n, ChangeCardPinUseCase as o, type ClientCardsProviderPort as p, type ClientLoan as q, type ClientLoansProviderPort as r, type GenerateCardPinProviderPort as s, type GenerateCardPinResult as t, GenerateCardPinUseCase as u, type GetCardDataCommand as v, GetCardDataUseCase as w, type GetCardMovementsCommand as x, type GetCardMovementsProviderPort as y, GetCardMovementsUseCase as z };
