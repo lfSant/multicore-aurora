@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { d as MaritalStatusUseCase, M as MaritalStatus, b as EducationTypesUseCase, E as EducationTypes, i as ProfessionTypesUseCase, g as ProfessionTypes, f as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts } from '../../PaymentServiceConcepts.usecase-CJpTIuJC.cjs';
+import { f as MaritalStatusUseCase, M as MaritalStatus, c as EducationTypesUseCase, E as EducationTypes, k as ProfessionTypesUseCase, i as ProfessionTypes, h as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, d as GetCatalogFitUseCase } from '../../PaymentServiceConcepts.usecase-nkGZKv87.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
 
@@ -31,4 +31,11 @@ declare function getPaymentServiceConcepts(http: ProviderCallConfig, opts: {
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 
-export { findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts };
+declare function createCatalogFilterUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetCatalogFitUseCase;
+declare function catalogFilter(command: GetCatalogFitCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CatalogFitItem[]>>;
+
+export { catalogFilter, createCatalogFilterUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts };

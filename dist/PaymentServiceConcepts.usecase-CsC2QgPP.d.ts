@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface MaritalStatus {
     code: string;
@@ -37,6 +37,29 @@ declare class EducationTypesUseCase {
     private readonly provider;
     constructor(provider: EducationTypesProviderPort);
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<EducationTypes[]>>;
+}
+
+interface GetCatalogFitCommand {
+    catalogType: string;
+    filter: string;
+}
+
+interface CatalogFitItem {
+    code: string;
+    description: string;
+}
+
+interface CatalogFitProviderPort {
+    catalogFilter(cmd: GetCatalogFitCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CatalogFitItem[]>>;
+}
+
+declare class GetCatalogFitUseCase {
+    private readonly provider;
+    constructor(provider: CatalogFitProviderPort);
+    execute(cmd: GetCatalogFitCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CatalogFitItem[]>>;
 }
 
 interface ProfessionTypes {
@@ -97,4 +120,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type EducationTypes as E, type MaritalStatus as M, type PaymentServiceConcepts as P, type EducationTypesProviderPort as a, EducationTypesUseCase as b, type MaritalStatusProviderPort as c, MaritalStatusUseCase as d, type PaymentServiceConceptsProviderPort as e, PaymentServiceConceptsUseCase as f, type ProfessionTypes as g, type ProfessionTypesProviderPort as h, ProfessionTypesUseCase as i };
+export { type CatalogFitItem as C, type EducationTypes as E, type GetCatalogFitCommand as G, type MaritalStatus as M, type PaymentServiceConcepts as P, type CatalogFitProviderPort as a, type EducationTypesProviderPort as b, EducationTypesUseCase as c, GetCatalogFitUseCase as d, type MaritalStatusProviderPort as e, MaritalStatusUseCase as f, type PaymentServiceConceptsProviderPort as g, PaymentServiceConceptsUseCase as h, type ProfessionTypes as i, type ProfessionTypesProviderPort as j, ProfessionTypesUseCase as k };

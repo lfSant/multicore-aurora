@@ -2,7 +2,7 @@ import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
 export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.js';
 export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore } from './auth/index.js';
-export { findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.js';
+export { catalogFilter, createCatalogFilterUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.js';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.js';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.js';
@@ -16,7 +16,7 @@ export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCred
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.js';
 import '../GetCivilRegistryData.usecase-Dxmh22DJ.js';
 import '../LoginCore.usecase-Bb6QSonc.js';
-import '../PaymentServiceConcepts.usecase-LJaJ66Z-.js';
+import '../PaymentServiceConcepts.usecase-CsC2QgPP.js';
 import '../ListCustomerProducts.usecase-DAV9SL84.js';
 import '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';
 import '../CreateExternalTransfer.usecase-xihbQIYR.js';
