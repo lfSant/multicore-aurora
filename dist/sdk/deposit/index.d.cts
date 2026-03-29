@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
-import { o as GetConsolidatedTimeDepositsUseCase, G as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, q as GetDepositMovementsUseCase, p as GetDepositMovementsCommand, D as DepositMovement, L as ListDpfProductsCatalogUseCase, k as DpfProductCatalog, C as CalculateDpfValuesCommand, g as DpfCalculation, a as CalculateDpfValuesUseCase, e as CreateDpfUseCase, c as CreateDpfCommand, i as DpfCreation, s as GetDpfReceiptUseCase, r as GetDpfReceiptCommand, m as DpfReceipt } from '../../GetDpfReceipt.usecase-BFEGAFds.cjs';
+import { o as GetConsolidatedTimeDepositsUseCase, G as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, q as GetDepositMovementsUseCase, p as GetDepositMovementsCommand, D as DepositMovement, L as ListDpfProductsCatalogUseCase, k as DpfProductCatalog, C as CalculateDpfValuesCommand, g as DpfCalculation, a as CalculateDpfValuesUseCase, e as CreateDpfUseCase, c as CreateDpfCommand, i as DpfCreation, s as GetDpfReceiptUseCase, r as GetDpfReceiptCommand, m as DpfReceipt } from '../../GetDpfReceipt.usecase-DSLBPzcs.cjs';
 
 declare function createConsolidatedTimeDepositsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetConsolidatedTimeDepositsUseCase;
 declare function getConsolidatedTimeDeposits(command: GetConsolidatedTimeDepositsCommand, http: ProviderCallConfig, opts: {

@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
 
 interface GetConsolidatedTimeDepositsCommand {
     clientNumber: number;
@@ -118,8 +118,8 @@ interface DpfCalculation {
     paymentType?: string;
     principalAmount: string;
     termDays: number;
-    issueDateMs?: number;
-    maturityDateMs: number;
+    issueDate?: string;
+    maturityDate: string;
     interestRate: number;
     totalInterestAmount: string;
     monthlyInterestAmount?: string;

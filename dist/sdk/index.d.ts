@@ -20,7 +20,7 @@ import '../PaymentServiceConcepts.usecase-CsC2QgPP.js';
 import '../ListCustomerProducts.usecase-DAV9SL84.js';
 import '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';
 import '../CreateExternalTransfer.usecase-xihbQIYR.js';
-import '../GetDpfReceipt.usecase-j-1fcN8H.js';
+import '../GetDpfReceipt.usecase-1maCuD0o.js';
 import '../CreatePaymentOwnCard.usecase-CBvoi8Az.js';
 import '../ListCausalsCatalog.usecase-BHSMskg2.js';
 import '../GetUserBeneficiaries.usecase-ncXrZPjD.js';
