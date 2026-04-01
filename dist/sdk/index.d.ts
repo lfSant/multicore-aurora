@@ -1,7 +1,7 @@
 import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
 export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.js';
-export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore } from './auth/index.js';
+export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createResetPasswordUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, resetPassword, unblockUser, validateUsername } from './auth/index.js';
 export { catalogFilter, createCatalogFilterUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.js';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.js';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.js';
@@ -15,7 +15,7 @@ export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPayme
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow } from './causal/index.js';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.js';
 import '../GetCivilRegistryData.usecase-Dxmh22DJ.js';
-import '../LoginCore.usecase-Bb6QSonc.js';
+import '../ValidateUsername.usecase-Dp2N--Z1.js';
 import '../PaymentServiceConcepts.usecase-CsC2QgPP.js';
 import '../ListCustomerProducts.usecase-DAV9SL84.js';
 import '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';

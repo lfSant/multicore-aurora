@@ -1,7 +1,7 @@
 import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
 export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.cjs';
-export { authLogin, authPrecheck, createAuthLoginUseCase, createAuthPrecheckUseCase, createLoginCoreUseCase, loginCore } from './auth/index.cjs';
+export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createResetPasswordUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, resetPassword, unblockUser, validateUsername } from './auth/index.cjs';
 export { catalogFilter, createCatalogFilterUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.cjs';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.cjs';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.cjs';
@@ -15,7 +15,7 @@ export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPayme
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow } from './causal/index.cjs';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
 import '../GetCivilRegistryData.usecase-DYL12dkv.cjs';
-import '../LoginCore.usecase-AIJv6P63.cjs';
+import '../ValidateUsername.usecase-DN-fuVa-.cjs';
 import '../PaymentServiceConcepts.usecase-nkGZKv87.cjs';
 import '../ListCustomerProducts.usecase-BIQAplZX.cjs';
 import '../GenerateAccountPlusDocumentsPdf.usecase-BjEOKqpG.cjs';
