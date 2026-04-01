@@ -80,7 +80,7 @@ declare class LoginCoreUseCase {
 }
 
 interface ResetPasswordCommand {
-    clientCode: string;
+    clientNumber: string;
     newPassword: string;
 }
 
@@ -102,7 +102,7 @@ declare class ResetPasswordUseCase {
 }
 
 interface ChangePasswordCommand {
-    clientCode: string;
+    clientNumber: string;
     currentPassword: string;
     newPassword: string;
 }
@@ -125,7 +125,7 @@ declare class ChangePasswordUseCase {
 }
 
 interface BlockUserCommand {
-    clientCode: string;
+    clientNumber: string;
 }
 
 interface BlockUser {
@@ -146,7 +146,7 @@ declare class BlockUserUseCase {
 }
 
 interface UnblockUserCommand {
-    clientCode: string;
+    clientNumber: string;
 }
 
 interface UnblockUser {
@@ -188,4 +188,27 @@ declare class ValidateUsernameUseCase {
     execute(cmd: ValidateUsernameCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ValidateUsername>>;
 }
 
-export { type AuthLogin as A, type BlockUser as B, type ChangePassword as C, type LoginCoreCommand as L, type ResetPassword as R, type UnblockUser as U, type ValidateUsername as V, type AuthLoginCommand as a, type AuthLoginProviderPort as b, AuthLoginUseCase as c, type AuthPrecheckCommand as d, type AuthPrecheckProviderPort as e, type AuthPrecheckStatus as f, AuthPrecheckUseCase as g, type BlockUserCommand as h, type BlockUserProviderPort as i, BlockUserUseCase as j, type ChangePasswordCommand as k, type ChangePasswordProviderPort as l, ChangePasswordUseCase as m, type LoginCoreProviderPort as n, type LoginCoreResult as o, LoginCoreUseCase as p, type ResetPasswordCommand as q, type ResetPasswordProviderPort as r, ResetPasswordUseCase as s, type UnblockUserCommand as t, type UnblockUserProviderPort as u, UnblockUserUseCase as v, type ValidateUsernameCommand as w, type ValidateUsernameProviderPort as x, ValidateUsernameUseCase as y };
+interface RegisterCredentialsCommand {
+    clientNumber: string;
+    clientUsername: string;
+    clientPassword: string;
+}
+
+interface RegisterCredentials {
+    transactionStatus: boolean;
+}
+
+interface RegisterCredentialsProviderPort {
+    registerCredentials(cmd: RegisterCredentialsCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<RegisterCredentials>>;
+}
+
+declare class RegisterCredentialsUseCase {
+    private readonly provider;
+    constructor(provider: RegisterCredentialsProviderPort);
+    execute(cmd: RegisterCredentialsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<RegisterCredentials>>;
+}
+
+export { type AuthLogin as A, type BlockUser as B, type ChangePassword as C, type ValidateUsernameCommand as D, type ValidateUsernameProviderPort as E, ValidateUsernameUseCase as F, type LoginCoreCommand as L, type RegisterCredentials as R, type UnblockUser as U, type ValidateUsername as V, type AuthLoginCommand as a, type AuthLoginProviderPort as b, AuthLoginUseCase as c, type AuthPrecheckCommand as d, type AuthPrecheckProviderPort as e, type AuthPrecheckStatus as f, AuthPrecheckUseCase as g, type BlockUserCommand as h, type BlockUserProviderPort as i, BlockUserUseCase as j, type ChangePasswordCommand as k, type ChangePasswordProviderPort as l, ChangePasswordUseCase as m, type LoginCoreProviderPort as n, type LoginCoreResult as o, LoginCoreUseCase as p, type RegisterCredentialsCommand as q, type RegisterCredentialsProviderPort as r, RegisterCredentialsUseCase as s, type ResetPassword as t, type ResetPasswordCommand as u, type ResetPasswordProviderPort as v, ResetPasswordUseCase as w, type UnblockUserCommand as x, type UnblockUserProviderPort as y, UnblockUserUseCase as z };

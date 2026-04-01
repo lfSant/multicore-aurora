@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { d as AuthPrecheckCommand, f as AuthPrecheckStatus, g as AuthPrecheckUseCase, a as AuthLoginCommand, A as AuthLogin, c as AuthLoginUseCase, p as LoginCoreUseCase, L as LoginCoreCommand, o as LoginCoreResult, s as ResetPasswordUseCase, q as ResetPasswordCommand, R as ResetPassword, k as ChangePasswordCommand, C as ChangePassword, m as ChangePasswordUseCase, h as BlockUserCommand, B as BlockUser, j as BlockUserUseCase, v as UnblockUserUseCase, t as UnblockUserCommand, U as UnblockUser, y as ValidateUsernameUseCase, w as ValidateUsernameCommand, V as ValidateUsername } from '../../ValidateUsername.usecase-DN-fuVa-.cjs';
+import { d as AuthPrecheckCommand, f as AuthPrecheckStatus, g as AuthPrecheckUseCase, a as AuthLoginCommand, A as AuthLogin, c as AuthLoginUseCase, p as LoginCoreUseCase, L as LoginCoreCommand, o as LoginCoreResult, w as ResetPasswordUseCase, u as ResetPasswordCommand, t as ResetPassword, k as ChangePasswordCommand, C as ChangePassword, m as ChangePasswordUseCase, h as BlockUserCommand, B as BlockUser, j as BlockUserUseCase, z as UnblockUserUseCase, x as UnblockUserCommand, U as UnblockUser, F as ValidateUsernameUseCase, D as ValidateUsernameCommand, V as ValidateUsername, s as RegisterCredentialsUseCase, q as RegisterCredentialsCommand, R as RegisterCredentials } from '../../RegisterCredentials.usecase-BWN3LIyA.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
 
@@ -59,4 +59,11 @@ declare function validateUsername(command: ValidateUsernameCommand, http: Provid
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<ValidateUsername>>;
 
-export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createResetPasswordUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, resetPassword, unblockUser, validateUsername };
+declare function createRegisterCredentialsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): RegisterCredentialsUseCase;
+declare function registerCredentials(command: RegisterCredentialsCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<RegisterCredentials>>;
+
+export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createRegisterCredentialsUseCase, createResetPasswordUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, registerCredentials, resetPassword, unblockUser, validateUsername };
