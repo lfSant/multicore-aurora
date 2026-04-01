@@ -211,4 +211,27 @@ declare class RegisterCredentialsUseCase {
     execute(cmd: RegisterCredentialsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<RegisterCredentials>>;
 }
 
-export { type AuthLogin as A, type BlockUser as B, type ChangePassword as C, type ValidateUsernameCommand as D, type ValidateUsernameProviderPort as E, ValidateUsernameUseCase as F, type LoginCoreCommand as L, type RegisterCredentials as R, type UnblockUser as U, type ValidateUsername as V, type AuthLoginCommand as a, type AuthLoginProviderPort as b, AuthLoginUseCase as c, type AuthPrecheckCommand as d, type AuthPrecheckProviderPort as e, type AuthPrecheckStatus as f, AuthPrecheckUseCase as g, type BlockUserCommand as h, type BlockUserProviderPort as i, BlockUserUseCase as j, type ChangePasswordCommand as k, type ChangePasswordProviderPort as l, ChangePasswordUseCase as m, type LoginCoreProviderPort as n, type LoginCoreResult as o, LoginCoreUseCase as p, type RegisterCredentialsCommand as q, type RegisterCredentialsProviderPort as r, RegisterCredentialsUseCase as s, type ResetPassword as t, type ResetPasswordCommand as u, type ResetPasswordProviderPort as v, ResetPasswordUseCase as w, type UnblockUserCommand as x, type UnblockUserProviderPort as y, UnblockUserUseCase as z };
+interface ResetUserCommand {
+    clientNumber: string;
+    newUsername: string;
+    newPassword: string;
+}
+
+interface ResetUser {
+    transactionStatus: boolean;
+}
+
+interface ResetUserProviderPort {
+    resetUser(cmd: ResetUserCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ResetUser>>;
+}
+
+declare class ResetUserUseCase {
+    private readonly provider;
+    constructor(provider: ResetUserProviderPort);
+    execute(cmd: ResetUserCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ResetUser>>;
+}
+
+export { type AuthLogin as A, type BlockUser as B, type ChangePassword as C, ResetUserUseCase as D, type UnblockUserCommand as E, type UnblockUserProviderPort as F, UnblockUserUseCase as G, type ValidateUsernameCommand as H, type ValidateUsernameProviderPort as I, ValidateUsernameUseCase as J, type LoginCoreCommand as L, type RegisterCredentials as R, type UnblockUser as U, type ValidateUsername as V, type AuthLoginCommand as a, type AuthLoginProviderPort as b, AuthLoginUseCase as c, type AuthPrecheckCommand as d, type AuthPrecheckProviderPort as e, type AuthPrecheckStatus as f, AuthPrecheckUseCase as g, type BlockUserCommand as h, type BlockUserProviderPort as i, BlockUserUseCase as j, type ChangePasswordCommand as k, type ChangePasswordProviderPort as l, ChangePasswordUseCase as m, type LoginCoreProviderPort as n, type LoginCoreResult as o, LoginCoreUseCase as p, type RegisterCredentialsCommand as q, type RegisterCredentialsProviderPort as r, RegisterCredentialsUseCase as s, type ResetPassword as t, type ResetPasswordCommand as u, type ResetPasswordProviderPort as v, ResetPasswordUseCase as w, type ResetUser as x, type ResetUserCommand as y, type ResetUserProviderPort as z };

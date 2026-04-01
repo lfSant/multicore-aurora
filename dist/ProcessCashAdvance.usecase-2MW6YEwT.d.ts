@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface GetClientCardsCommand {
     clientIdentification: string;
@@ -43,7 +43,8 @@ interface CardData {
     holderName?: string;
     phone?: string;
     email?: string;
-    coreCode?: string;
+    cardCode?: string;
+    identification?: string;
 }
 
 interface CardDataProviderPort {
@@ -452,4 +453,71 @@ declare class BlockCardUseCase {
     execute(cmd: BlockCardCommand, http: ProviderCallConfig): Promise<CanonicalResponse<BlockCardResult>>;
 }
 
-export { SendSmsByIdentificationUseCase as $, type GetCardStatementCommand as A, type BlockCardCommand as B, type CalculateDeferredResult as C, type DeferredCardResult as D, type GetCardStatementProviderPort as E, GetCardStatementUseCase as F, type GenerateCardPinCommand as G, type GetClientCardsCommand as H, GetClientCardsUseCase as I, type GetClientLoansCommand as J, GetClientLoansUseCase as K, type GetDeferredCardCommand as L, type GetDeferredCardProviderPort as M, GetDeferredCardUseCase as N, type GetLoanAdditionalInfoCommand as O, GetLoanAdditionalInfoUseCase as P, type GetLoanAmortizationTableCommand as Q, GetLoanAmortizationTableUseCase as R, type LoanAdditionalInfo as S, type LoanAdditionalInfoProviderPort as T, type LoanAmortizationTable as U, type LoanAmortizationTableProviderPort as V, type LoanInstallment as W, type Movements as X, type SendSmsByIdentificationCommand as Y, type SendSmsByIdentificationProviderPort as Z, type SendSmsByIdentificationResult as _, type BlockCardProviderPort as a, type SendSmsByPhoneCommand as a0, type SendSmsByPhoneProviderPort as a1, SendSmsByPhoneUseCase as a2, type ValidateCardPinCommand as a3, type ValidateCardPinProviderPort as a4, type ValidateCardPinResult as a5, ValidateCardPinUseCase as a6, type movements as a7, type BlockCardResult as b, BlockCardUseCase as c, CalculateDeferredValueUseCase as d, type CalculateDeferredValuesCommand as e, type CalculateDeferredValuesProviderPort as f, type Card as g, type CardData as h, type CardDataProviderPort as i, type CardMovementsResult as j, type CardStatementResult as k, type ChangeCardPinCommand as l, type ChangeCardPinProviderPort as m, type ChangeCardPinResult as n, ChangeCardPinUseCase as o, type ClientCardsProviderPort as p, type ClientLoan as q, type ClientLoansProviderPort as r, type GenerateCardPinProviderPort as s, type GenerateCardPinResult as t, GenerateCardPinUseCase as u, type GetCardDataCommand as v, GetCardDataUseCase as w, type GetCardMovementsCommand as x, type GetCardMovementsProviderPort as y, GetCardMovementsUseCase as z };
+interface ProcessDeferredBillingCommand {
+    clientNumber: string;
+    cardCode: string;
+    movements: Record<string, any>;
+    cvv: string;
+    deferralTerm: string;
+    platform: string;
+    date: string;
+    device: string;
+    reference: string;
+    concept: string;
+    amount: string;
+}
+
+interface ProcessDeferredBillingResult {
+    success: string;
+    transactionNumber: string;
+}
+
+interface ProcessDeferredBillingProviderPort {
+    processDeferredBilling(cmd: ProcessDeferredBillingCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ProcessDeferredBillingResult>>;
+}
+
+declare class ProcessDeferredBillingUseCase {
+    private readonly provider;
+    constructor(provider: ProcessDeferredBillingProviderPort);
+    execute(cmd: ProcessDeferredBillingCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ProcessDeferredBillingResult>>;
+}
+
+interface ProcessCashAdvanceCommand {
+    cardCode: string;
+    cvv: string;
+    expirationYear: string;
+    expirationMonth: string;
+    amount: string;
+    term: string;
+    destinationAccountNumber: string;
+    cardholderName: string;
+    platform: string;
+    date: string;
+    device: string;
+    reference: string;
+    concept: string;
+}
+
+interface ProcessCashAdvanceResult {
+    success: string;
+    transactionNumber: string;
+    message: string;
+}
+
+interface ProcessCashAdvanceProviderPort {
+    processCashAdvance(cmd: ProcessCashAdvanceCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ProcessCashAdvanceResult>>;
+}
+
+declare class ProcessCashAdvanceUseCase {
+    private readonly provider;
+    constructor(provider: ProcessCashAdvanceProviderPort);
+    execute(cmd: ProcessCashAdvanceCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ProcessCashAdvanceResult>>;
+}
+
+export { ProcessCashAdvanceUseCase as $, type GetCardStatementCommand as A, type BlockCardCommand as B, type CalculateDeferredResult as C, type DeferredCardResult as D, type GetCardStatementProviderPort as E, GetCardStatementUseCase as F, type GenerateCardPinCommand as G, type GetClientCardsCommand as H, GetClientCardsUseCase as I, type GetClientLoansCommand as J, GetClientLoansUseCase as K, type GetDeferredCardCommand as L, type GetDeferredCardProviderPort as M, GetDeferredCardUseCase as N, type GetLoanAdditionalInfoCommand as O, GetLoanAdditionalInfoUseCase as P, type GetLoanAmortizationTableCommand as Q, GetLoanAmortizationTableUseCase as R, type LoanAdditionalInfo as S, type LoanAdditionalInfoProviderPort as T, type LoanAmortizationTable as U, type LoanAmortizationTableProviderPort as V, type LoanInstallment as W, type Movements as X, type ProcessCashAdvanceCommand as Y, type ProcessCashAdvanceProviderPort as Z, type ProcessCashAdvanceResult as _, type BlockCardProviderPort as a, type ProcessDeferredBillingCommand as a0, type ProcessDeferredBillingProviderPort as a1, type ProcessDeferredBillingResult as a2, ProcessDeferredBillingUseCase as a3, type SendSmsByIdentificationCommand as a4, type SendSmsByIdentificationProviderPort as a5, type SendSmsByIdentificationResult as a6, SendSmsByIdentificationUseCase as a7, type SendSmsByPhoneCommand as a8, type SendSmsByPhoneProviderPort as a9, SendSmsByPhoneUseCase as aa, type ValidateCardPinCommand as ab, type ValidateCardPinProviderPort as ac, type ValidateCardPinResult as ad, ValidateCardPinUseCase as ae, type movements as af, type BlockCardResult as b, BlockCardUseCase as c, CalculateDeferredValueUseCase as d, type CalculateDeferredValuesCommand as e, type CalculateDeferredValuesProviderPort as f, type Card as g, type CardData as h, type CardDataProviderPort as i, type CardMovementsResult as j, type CardStatementResult as k, type ChangeCardPinCommand as l, type ChangeCardPinProviderPort as m, type ChangeCardPinResult as n, ChangeCardPinUseCase as o, type ClientCardsProviderPort as p, type ClientLoan as q, type ClientLoansProviderPort as r, type GenerateCardPinProviderPort as s, type GenerateCardPinResult as t, GenerateCardPinUseCase as u, type GetCardDataCommand as v, GetCardDataUseCase as w, type GetCardMovementsCommand as x, type GetCardMovementsProviderPort as y, GetCardMovementsUseCase as z };
