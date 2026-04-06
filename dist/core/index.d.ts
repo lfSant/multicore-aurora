@@ -7,7 +7,7 @@ export { A as AuthLogin, a as AuthLoginCommand, b as AuthLoginProviderPort, c as
 export { C as CatalogFitItem, a as CatalogFitProviderPort, E as EducationTypes, b as EducationTypesProviderPort, c as EducationTypesUseCase, G as GetCatalogFitCommand, d as GetCatalogFitUseCase, M as MaritalStatus, e as MaritalStatusProviderPort, f as MaritalStatusUseCase, P as PaymentServiceConcepts, g as PaymentServiceConceptsProviderPort, h as PaymentServiceConceptsUseCase, i as ProfessionTypes, j as ProfessionTypesProviderPort, k as ProfessionTypesUseCase } from '../PaymentServiceConcepts.usecase-CsC2QgPP.js';
 export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-DAV9SL84.js';
 export { B as BlockCardCommand, a as BlockCardProviderPort, b as BlockCardResult, c as BlockCardUseCase, C as CalculateDeferredResult, d as CalculateDeferredValueUseCase, e as CalculateDeferredValuesCommand, f as CalculateDeferredValuesProviderPort, g as Card, h as CardData, i as CardDataProviderPort, j as CardMovementsResult, k as CardStatementResult, l as ChangeCardPinCommand, m as ChangeCardPinProviderPort, n as ChangeCardPinResult, o as ChangeCardPinUseCase, p as ClientCardsProviderPort, q as ClientLoan, r as ClientLoansProviderPort, D as DeferredCardResult, G as GenerateCardPinCommand, s as GenerateCardPinProviderPort, t as GenerateCardPinResult, u as GenerateCardPinUseCase, v as GetCardDataCommand, w as GetCardDataUseCase, x as GetCardMovementsCommand, y as GetCardMovementsProviderPort, z as GetCardMovementsUseCase, A as GetCardStatementCommand, E as GetCardStatementProviderPort, F as GetCardStatementUseCase, H as GetClientCardsCommand, I as GetClientCardsUseCase, J as GetClientLoansCommand, K as GetClientLoansUseCase, L as GetDeferredCardCommand, M as GetDeferredCardProviderPort, N as GetDeferredCardUseCase, O as GetLoanAdditionalInfoCommand, P as GetLoanAdditionalInfoUseCase, Q as GetLoanAmortizationTableCommand, R as GetLoanAmortizationTableUseCase, S as LoanAdditionalInfo, T as LoanAdditionalInfoProviderPort, U as LoanAmortizationTable, V as LoanAmortizationTableProviderPort, W as LoanInstallment, X as Movements, Y as ProcessCashAdvanceCommand, Z as ProcessCashAdvanceProviderPort, _ as ProcessCashAdvanceResult, $ as ProcessCashAdvanceUseCase, a0 as ProcessDeferredBillingCommand, a1 as ProcessDeferredBillingProviderPort, a2 as ProcessDeferredBillingResult, a3 as ProcessDeferredBillingUseCase, a4 as SendEmailCommand, a5 as SendEmailProviderPort, a6 as SendEmailResult, a7 as SendEmailUseCase, a8 as SendSmsByIdentificationCommand, a9 as SendSmsByIdentificationProviderPort, aa as SendSmsByIdentificationResult, ab as SendSmsByIdentificationUseCase, ac as SendSmsByPhoneCommand, ad as SendSmsByPhoneProviderPort, ae as SendSmsByPhoneUseCase, af as ValidateCardPinCommand, ag as ValidateCardPinProviderPort, ah as ValidateCardPinResult, ai as ValidateCardPinUseCase, aj as movements } from '../ProcessCashAdvance.usecase-sHNS2QjR.js';
-export { A as Account, a as AccountMovement, b as AccountMovementsProviderPort, c as AccountPlusCreation, d as AccountPlusCreationProviderPort, e as AccountPlusDocuments, f as AccountPlusDocumentsProviderPort, g as AccountPlusValidation, h as AccountPlusValidationProviderPort, i as AccountSigner, j as AccountSignersInfo, k as AccountSignersProviderPort, C as ClientAccountByNumberProviderPort, l as ClientAccountsProviderPort, m as ConsolidatedAccountsProviderPort, n as ConsolidatedAccountsUseCase, o as CreateAccountPlusCommand, p as CreateAccountPlusUseCase, F as FiscalResidence, q as FiscalResidenceData, r as FiscalResidenceProviderPort, s as FiscalResidenceQueryProviderPort, t as FiscalResidenceSubmission, G as GenerateAccountPlusDocumentsPdfCommand, u as GenerateAccountPlusDocumentsPdfUseCase, v as GetAccountByNumberCommand, w as GetAccountByNumberUseCase, x as GetAccountMovementsCommand, y as GetAccountSignersCommand, z as GetAccountSignersUseCase, B as GetConsolidatedAccountsCommand, D as GetFiscalResidenceCommand, E as GetFiscalResidenceUseCase, L as ListAccountMovementsUseCase, H as ListAccountsCommand, I as ListAccountsUseCase, P as PepsData, J as PepsInformationProviderPort, K as PepsInformationSubmission, S as SubmitFiscalResidenceCommand, M as SubmitFiscalResidenceUseCase, N as SubmitPepsInformationCommand, O as SubmitPepsInformationUseCase, V as ValidateCreateAccountPlusCommand, Q as ValidateCreateAccountPlusUseCase } from '../GenerateAccountPlusDocumentsPdf.usecase-DtkGuTqH.js';
+export { A as Account, a as AccountMovement, b as AccountMovementsProviderPort, c as AccountPlusCreation, d as AccountPlusCreationProviderPort, e as AccountPlusDocuments, f as AccountPlusDocumentsProviderPort, g as AccountPlusValidation, h as AccountPlusValidationProviderPort, i as AccountSigner, j as AccountSignersInfo, k as AccountSignersProviderPort, C as ClientAccountByNumberProviderPort, l as ClientAccountsProviderPort, m as ConsolidatedAccountsProviderPort, n as ConsolidatedAccountsUseCase, o as CreateAccountPlusCommand, p as CreateAccountPlusUseCase, F as FiscalResidence, q as FiscalResidenceData, r as FiscalResidenceItem, s as FiscalResidenceProviderPort, t as FiscalResidenceQueryProviderPort, u as FiscalResidenceSubmission, G as GenerateAccountPlusDocumentsPdfCommand, v as GenerateAccountPlusDocumentsPdfUseCase, w as GetAccountByNumberCommand, x as GetAccountByNumberUseCase, y as GetAccountMovementsCommand, z as GetAccountSignersCommand, B as GetAccountSignersUseCase, D as GetConsolidatedAccountsCommand, E as GetFiscalResidenceCommand, H as GetFiscalResidenceUseCase, L as ListAccountMovementsUseCase, I as ListAccountsCommand, J as ListAccountsUseCase, P as PepsData, K as PepsInformationProviderPort, M as PepsInformationSubmission, S as SubmitFiscalResidenceCommand, N as SubmitFiscalResidenceUseCase, O as SubmitPepsInformationCommand, Q as SubmitPepsInformationUseCase, V as ValidateCreateAccountPlusCommand, R as ValidateCreateAccountPlusUseCase } from '../GenerateAccountPlusDocumentsPdf.usecase-ArpD3rFr.js';
 export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-xihbQIYR.js';
 export { C as CalculateDpfValuesCommand, a as CalculateDpfValuesUseCase, b as ConsolidatedTimeDepositsProviderPort, c as CreateDpfCommand, d as CreateDpfProviderPort, e as CreateDpfUseCase, D as DepositMovement, f as DepositMovementsProviderPort, g as DpfCalculation, h as DpfCalculationProviderPort, i as DpfCreation, j as DpfPaymentSchedule, k as DpfProductCatalog, l as DpfProductsCatalogProviderPort, m as DpfReceipt, n as DpfReceiptProviderPort, G as GetConsolidatedTimeDepositsCommand, o as GetConsolidatedTimeDepositsUseCase, p as GetDepositMovementsCommand, q as GetDepositMovementsUseCase, r as GetDpfReceiptCommand, s as GetDpfReceiptUseCase, L as ListDpfProductsCatalogUseCase, T as TimeDeposit } from '../GetDpfReceipt.usecase-1maCuD0o.js';
 export { C as CreatePaymentOwnCardUseCase, G as GetPaymentReversalsCommand, a as GetPaymentReversalsUseCase, b as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, P as PaymentOwnCardCommand, d as PaymentOwnCardProviderPort, e as PaymentOwnCardResult, f as PaymentReversalItemResult, g as PaymentReversalsProviderPort, h as PaymentReversalsResult, i as PaymentServiceQueryItemResult, j as PaymentServiceQueryProviderPort, k as PaymentServiceQueryResult, l as ProcessPaymentReversalCommand, m as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, o as ProcessPaymentReversalUseCase, p as ProcessPaymentServiceCommand, q as ProcessPaymentServiceProviderPort, r as ProcessPaymentServiceResult, s as ProcessPaymentServiceUseCase } from '../CreatePaymentOwnCard.usecase-CBvoi8Az.js';
@@ -27,7 +27,7 @@ declare function successResponse<T>(items: T[], opts?: {
 declare function errorResponse<T = never>(clientMsg: string, serverMsg: string, status: number, raw?: Array<{
     headersCore: any;
     dataCore: any;
-}>): CanonicalResponse<T>;
+}>, code?: string): CanonicalResponse<T>;
 
 declare class ProviderHttpError extends Error {
     readonly status: number;
@@ -59,10 +59,43 @@ declare class MappingConfigError extends Error {
     details: string;
     constructor(details: string);
 }
+/**
+ * Error de red — no se recibio respuesta HTTP del core.
+ */
+declare class NetworkError extends Error {
+    readonly axiosCode: string;
+    readonly url: string;
+    readonly method: string;
+    readonly elapsedMs: number;
+    readonly name = "NetworkError";
+    readonly errorCode: string;
+    readonly description: string;
+    constructor(message: string, axiosCode: string, url: string, method: string, elapsedMs: number);
+}
+/**
+ * Error de cache (Redis).
+ */
+declare class CacheError extends Error {
+    readonly operation: string;
+    readonly name = "CacheError";
+    readonly errorCode = "SRV-E5030";
+    constructor(message: string, operation: string);
+}
+/**
+ * Error de base de datos (MySQL).
+ */
+declare class DatabaseError extends Error {
+    readonly query?: string | undefined;
+    readonly name = "DatabaseError";
+    readonly errorCode = "SRV-E5040";
+    constructor(message: string, query?: string | undefined);
+}
 
 interface ErrorMessages {
     validation?: string;
     provider?: string;
+    network?: string;
+    database?: string;
     generic?: string;
 }
 declare function formatZodErrors(error: ZodError): string;
@@ -441,7 +474,7 @@ type SubmitPepsInformationCommandParsed = z.infer<typeof SubmitPepsInformationCo
 declare const SubmitFiscalResidenceCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
     hasFiscalResidence: z.ZodOptional<z.ZodBoolean>;
-    fiscalResidenceData: z.ZodObject<{
+    fiscalResidenceData: z.ZodOptional<z.ZodObject<{
         address: z.ZodString;
         countryCode: z.ZodString;
         provinceCode: z.ZodString;
@@ -465,10 +498,28 @@ declare const SubmitFiscalResidenceCommandSchema: z.ZodObject<{
         taxCountryCode: string;
         taxIdentificationNumber: string;
         taxAddress: string;
-    }>;
+    }>>;
+    codeWindow: z.ZodOptional<z.ZodNumber>;
+    fiscalResidenceList: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        countryCode: z.ZodString;
+        taxId: z.ZodString;
+        provinceCode: z.ZodOptional<z.ZodString>;
+        cityCode: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        countryCode: string;
+        taxId: string;
+        provinceCode?: string | undefined;
+        cityCode?: string | undefined;
+    }, {
+        countryCode: string;
+        taxId: string;
+        provinceCode?: string | undefined;
+        cityCode?: string | undefined;
+    }>, "many">>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
-    fiscalResidenceData: {
+    hasFiscalResidence?: boolean | undefined;
+    fiscalResidenceData?: {
         address: string;
         countryCode: string;
         provinceCode: string;
@@ -476,11 +527,18 @@ declare const SubmitFiscalResidenceCommandSchema: z.ZodObject<{
         taxCountryCode: string;
         taxIdentificationNumber: string;
         taxAddress: string;
-    };
-    hasFiscalResidence?: boolean | undefined;
+    } | undefined;
+    codeWindow?: number | undefined;
+    fiscalResidenceList?: {
+        countryCode: string;
+        taxId: string;
+        provinceCode?: string | undefined;
+        cityCode?: string | undefined;
+    }[] | undefined;
 }, {
     clientIdentification: string;
-    fiscalResidenceData: {
+    hasFiscalResidence?: boolean | undefined;
+    fiscalResidenceData?: {
         address: string;
         countryCode: string;
         provinceCode: string;
@@ -488,8 +546,14 @@ declare const SubmitFiscalResidenceCommandSchema: z.ZodObject<{
         taxCountryCode: string;
         taxIdentificationNumber: string;
         taxAddress: string;
-    };
-    hasFiscalResidence?: boolean | undefined;
+    } | undefined;
+    codeWindow?: number | undefined;
+    fiscalResidenceList?: {
+        countryCode: string;
+        taxId: string;
+        provinceCode?: string | undefined;
+        cityCode?: string | undefined;
+    }[] | undefined;
 }>;
 type SubmitFiscalResidenceCommandParsed = z.infer<typeof SubmitFiscalResidenceCommandSchema>;
 
@@ -1458,4 +1522,4 @@ declare const ResetUserCommandSchema: z.ZodObject<{
 }>;
 type ResetUserCommandParsed = z.infer<typeof ResetUserCommandSchema>;
 
-export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, type BlockCardCommandParsed, BlockCardCommandSchema, type BlockUserCommandParsed, BlockUserCommandSchema, type CalculateDeferredValuesCommandParsed, CalculateDeferredValuesCommandSchema, type CalculateDpfValuesCommandParsed, CalculateDpfValuesCommandSchema, CanonicalResponse, type ChangeCardPinCommandParsed, ChangeCardPinCommandSchema, type ChangePasswordCommandParsed, ChangePasswordCommandSchema, CheckClientActiveCommandSchema, type CreateAccountPlusCommandParsed, CreateAccountPlusCommandSchema, type CreateCreditNoteCommandParsed, CreateCreditNoteCommandSchema, type CreateDebitNoteCommandParsed, CreateDebitNoteCommandSchema, type CreateDpfCommandParsed, CreateDpfCommandSchema, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GenerateAccountPlusDocumentsPdfCommandParsed, GenerateAccountPlusDocumentsPdfCommandSchema, type GenerateCardPinCommandParsed, GenerateCardPinCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetCardDataCommandParsed, GetCardDataCommandSchema, type GetCardMovementsCommandParsed, GetCardMovementsCommandSchema, type GetCardStatementCommandParsed, GetCardStatementCommandSchema, type GetCatalogFitCommandParsed, GetCatalogFitCommandSchema, type GetCivilRegistryDataCommandParsed, GetCivilRegistryDataCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, type GetDeferredCardCommandParsed, GetDeferredCardCommandSchema, GetDepositMovementsSchema, type GetDpfReceiptCommandParsed, GetDpfReceiptCommandSchema, type GetFiscalResidenceCommandParsed, GetFiscalResidenceCommandSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, PaymentOwnCardCommandSchema, type PaymentOwnCardParsed, type ProcessCashAdvanceCommandParsed, ProcessCashAdvanceCommandSchema, type ProcessDeferredBillingCommandParsed, ProcessDeferredBillingCommandSchema, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type RegisterCredentialsCommandParsed, RegisterCredentialsCommandSchema, type ResetPasswordCommandParsed, ResetPasswordCommandSchema, type ResetUserCommandParsed, ResetUserCommandSchema, type SendEmailCommandParsed, SendEmailCommandSchema, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartCausalFlowCommandParsed, StartCausalFlowCommandSchema, type SubmitFiscalResidenceCommandParsed, SubmitFiscalResidenceCommandSchema, type SubmitPepsInformationCommandParsed, SubmitPepsInformationCommandSchema, type UnblockUserCommandParsed, UnblockUserCommandSchema, type ValidateCardPinCommandParsed, ValidateCardPinCommandSchema, type ValidateCreateAccountPlusCommandParsed, ValidateCreateAccountPlusCommandSchema, type ValidateUsernameCommandParsed, ValidateUsernameCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISO8601Schema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };
+export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, type BlockCardCommandParsed, BlockCardCommandSchema, type BlockUserCommandParsed, BlockUserCommandSchema, CacheError, type CalculateDeferredValuesCommandParsed, CalculateDeferredValuesCommandSchema, type CalculateDpfValuesCommandParsed, CalculateDpfValuesCommandSchema, CanonicalResponse, type ChangeCardPinCommandParsed, ChangeCardPinCommandSchema, type ChangePasswordCommandParsed, ChangePasswordCommandSchema, CheckClientActiveCommandSchema, type CreateAccountPlusCommandParsed, CreateAccountPlusCommandSchema, type CreateCreditNoteCommandParsed, CreateCreditNoteCommandSchema, type CreateDebitNoteCommandParsed, CreateDebitNoteCommandSchema, type CreateDpfCommandParsed, CreateDpfCommandSchema, DatabaseError, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GenerateAccountPlusDocumentsPdfCommandParsed, GenerateAccountPlusDocumentsPdfCommandSchema, type GenerateCardPinCommandParsed, GenerateCardPinCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetCardDataCommandParsed, GetCardDataCommandSchema, type GetCardMovementsCommandParsed, GetCardMovementsCommandSchema, type GetCardStatementCommandParsed, GetCardStatementCommandSchema, type GetCatalogFitCommandParsed, GetCatalogFitCommandSchema, type GetCivilRegistryDataCommandParsed, GetCivilRegistryDataCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, type GetDeferredCardCommandParsed, GetDeferredCardCommandSchema, GetDepositMovementsSchema, type GetDpfReceiptCommandParsed, GetDpfReceiptCommandSchema, type GetFiscalResidenceCommandParsed, GetFiscalResidenceCommandSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, NetworkError, PaymentOwnCardCommandSchema, type PaymentOwnCardParsed, type ProcessCashAdvanceCommandParsed, ProcessCashAdvanceCommandSchema, type ProcessDeferredBillingCommandParsed, ProcessDeferredBillingCommandSchema, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type RegisterCredentialsCommandParsed, RegisterCredentialsCommandSchema, type ResetPasswordCommandParsed, ResetPasswordCommandSchema, type ResetUserCommandParsed, ResetUserCommandSchema, type SendEmailCommandParsed, SendEmailCommandSchema, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartCausalFlowCommandParsed, StartCausalFlowCommandSchema, type SubmitFiscalResidenceCommandParsed, SubmitFiscalResidenceCommandSchema, type SubmitPepsInformationCommandParsed, SubmitPepsInformationCommandSchema, type UnblockUserCommandParsed, UnblockUserCommandSchema, type ValidateCardPinCommandParsed, ValidateCardPinCommandSchema, type ValidateCreateAccountPlusCommandParsed, ValidateCreateAccountPlusCommandSchema, type ValidateUsernameCommandParsed, ValidateUsernameCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISO8601Schema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };
