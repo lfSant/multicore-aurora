@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-D11BfpWV.js';
 
 interface GetConsolidatedTimeDepositsCommand {
     clientNumber: number;
@@ -209,4 +209,126 @@ declare class GetDpfReceiptUseCase {
     execute(cmd: GetDpfReceiptCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DpfReceipt>>;
 }
 
-export { type CalculateDpfValuesCommand as C, type DepositMovement as D, type GetConsolidatedTimeDepositsCommand as G, ListDpfProductsCatalogUseCase as L, type TimeDeposit as T, CalculateDpfValuesUseCase as a, type ConsolidatedTimeDepositsProviderPort as b, type CreateDpfCommand as c, type CreateDpfProviderPort as d, CreateDpfUseCase as e, type DepositMovementsProviderPort as f, type DpfCalculation as g, type DpfCalculationProviderPort as h, type DpfCreation as i, type DpfPaymentSchedule as j, type DpfProductCatalog as k, type DpfProductsCatalogProviderPort as l, type DpfReceipt as m, type DpfReceiptProviderPort as n, GetConsolidatedTimeDepositsUseCase as o, type GetDepositMovementsCommand as p, GetDepositMovementsUseCase as q, type GetDpfReceiptCommand as r, GetDpfReceiptUseCase as s };
+interface GetSelfCertificationDataCommand {
+    clientIdentification: string;
+}
+
+interface SelfCertificationDataResult {
+    success: boolean;
+    data: SelfCertificationData;
+    citiesCatalogList: CityCatalog[];
+    provincesCatalogList: ProvinceCatalog[];
+    countriesCatalogList: CountryCatalog[];
+}
+interface SelfCertificationData {
+    clientIdentification: string;
+    date: string;
+    productNumber: string;
+    fiscalResidenceList: FiscalResidenceList[];
+    personIdentification: PersonIdentification;
+}
+interface FiscalResidenceList {
+    personType: string;
+    isUsCitizen: boolean;
+    usIdentification: string;
+    residesInOtherCountries: boolean;
+    countriesOfResidenceList: CountryOfResidenceList[];
+}
+interface CountryOfResidenceList {
+    countryCode: string;
+    countryDescription: string;
+    nationality?: string | null;
+    address?: string;
+    identification?: string;
+}
+interface PersonIdentification {
+    lastNames: string;
+    names: string;
+    birthDate: string;
+    birthCountry: BirthCountry;
+    birthCity: BirthCity;
+    residenceAddress: ResidenceAddress;
+}
+interface BirthCountry {
+    countryCode: string;
+    countryDescription: string;
+    nationality?: string | null;
+}
+interface BirthCity {
+    cityCode: string;
+    cityDescription: string;
+}
+interface ResidenceAddress {
+    addressId: string;
+    address: string;
+    country: AddressCountry;
+    province: AddressProvince;
+    postalCode: string;
+    city?: AddressCity;
+}
+interface AddressCountry {
+    countryCode: string;
+    countryDescription: string;
+    nationality?: string | null;
+}
+interface AddressProvince {
+    provinceCode: string;
+    provinceDescription: string;
+}
+interface AddressCity {
+    cityCode: string;
+    cityDescription: string;
+}
+interface CityCatalog {
+    cityCode: string;
+    cityDescription: string;
+}
+interface ProvinceCatalog {
+    provinceCode: string;
+    provinceDescription: string;
+}
+interface CountryCatalog {
+    countryCode: string;
+    countryDescription: string;
+    nationality?: string | null;
+}
+
+interface SelfCertificationDataProviderPort {
+    getSelfCertificationData(cmd: GetSelfCertificationDataCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<SelfCertificationDataResult>>;
+}
+
+declare class SelfCertificationDataUseCase {
+    private readonly provider;
+    constructor(provider: SelfCertificationDataProviderPort);
+    execute(cmd: GetSelfCertificationDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SelfCertificationDataResult>>;
+}
+
+interface SaveSelfCertificationDataCommand {
+    clientIdentification: string;
+    date: string;
+    productNumber: string;
+    fiscalResidenceList: Array<any>;
+    personIdentification: Record<string, any>;
+}
+
+interface SaveSelfCertificationDataResult {
+    success: boolean;
+}
+
+interface SaveSelfCertificationDataProviderPort {
+    saveSelfCertificationData(cmd: SaveSelfCertificationDataCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<SaveSelfCertificationDataResult>>;
+}
+
+declare class SaveSelfCertificationDataUseCase {
+    private readonly provider;
+    constructor(provider: SaveSelfCertificationDataProviderPort);
+    execute(cmd: SaveSelfCertificationDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SaveSelfCertificationDataResult>>;
+}
+
+export { type AddressCity as A, type BirthCity as B, type CalculateDpfValuesCommand as C, type DepositMovement as D, type ProvinceCatalog as E, type FiscalResidenceList as F, type GetConsolidatedTimeDepositsCommand as G, type SaveSelfCertificationDataProviderPort as H, type SaveSelfCertificationDataResult as I, SaveSelfCertificationDataUseCase as J, type SelfCertificationData as K, ListDpfProductsCatalogUseCase as L, type SelfCertificationDataProviderPort as M, type SelfCertificationDataResult as N, SelfCertificationDataUseCase as O, type PersonIdentification as P, type ResidenceAddress as R, type SaveSelfCertificationDataCommand as S, type TimeDeposit as T, type AddressCountry as a, type AddressProvince as b, type BirthCountry as c, CalculateDpfValuesUseCase as d, type CityCatalog as e, type ConsolidatedTimeDepositsProviderPort as f, type CountryCatalog as g, type CountryOfResidenceList as h, type CreateDpfCommand as i, type CreateDpfProviderPort as j, CreateDpfUseCase as k, type DepositMovementsProviderPort as l, type DpfCalculation as m, type DpfCalculationProviderPort as n, type DpfCreation as o, type DpfPaymentSchedule as p, type DpfProductCatalog as q, type DpfProductsCatalogProviderPort as r, type DpfReceipt as s, type DpfReceiptProviderPort as t, GetConsolidatedTimeDepositsUseCase as u, type GetDepositMovementsCommand as v, GetDepositMovementsUseCase as w, type GetDpfReceiptCommand as x, GetDpfReceiptUseCase as y, type GetSelfCertificationDataCommand as z };

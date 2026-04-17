@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
-import { o as GetConsolidatedTimeDepositsUseCase, G as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, q as GetDepositMovementsUseCase, p as GetDepositMovementsCommand, D as DepositMovement, L as ListDpfProductsCatalogUseCase, k as DpfProductCatalog, C as CalculateDpfValuesCommand, g as DpfCalculation, a as CalculateDpfValuesUseCase, e as CreateDpfUseCase, c as CreateDpfCommand, i as DpfCreation, s as GetDpfReceiptUseCase, r as GetDpfReceiptCommand, m as DpfReceipt } from '../../GetDpfReceipt.usecase-DSLBPzcs.cjs';
+import { u as GetConsolidatedTimeDepositsUseCase, G as GetConsolidatedTimeDepositsCommand, T as TimeDeposit, w as GetDepositMovementsUseCase, v as GetDepositMovementsCommand, D as DepositMovement, L as ListDpfProductsCatalogUseCase, q as DpfProductCatalog, C as CalculateDpfValuesCommand, m as DpfCalculation, d as CalculateDpfValuesUseCase, k as CreateDpfUseCase, i as CreateDpfCommand, o as DpfCreation, y as GetDpfReceiptUseCase, x as GetDpfReceiptCommand, s as DpfReceipt, z as GetSelfCertificationDataCommand, N as SelfCertificationDataResult, O as SelfCertificationDataUseCase, S as SaveSelfCertificationDataCommand, I as SaveSelfCertificationDataResult, J as SaveSelfCertificationDataUseCase } from '../../SaveSelfCertificationData.usecase-B6nmI7sV.cjs';
 
 declare function createConsolidatedTimeDepositsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetConsolidatedTimeDepositsUseCase;
 declare function getConsolidatedTimeDeposits(command: GetConsolidatedTimeDepositsCommand, http: ProviderCallConfig, opts: {
@@ -45,4 +45,18 @@ declare function getDpfReceipt(command: GetDpfReceiptCommand, http: ProviderCall
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<DpfReceipt>>;
 
-export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, listDpfProductsCatalog };
+declare function getSelfCertificationDataUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SelfCertificationDataUseCase;
+declare function getSelfCertificationData(command: GetSelfCertificationDataCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<SelfCertificationDataResult>>;
+
+declare function saveSelfCertificationDataUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SaveSelfCertificationDataUseCase;
+declare function saveSelfCertificationData(command: SaveSelfCertificationDataCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<SaveSelfCertificationDataResult>>;
+
+export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, getSelfCertificationData, getSelfCertificationDataUseCase, listDpfProductsCatalog, saveSelfCertificationData, saveSelfCertificationDataUseCase };
