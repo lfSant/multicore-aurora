@@ -23,7 +23,7 @@ import '../CreateExternalTransfer.usecase-CHBz7xU8.cjs';
 import '../SaveSelfCertificationData.usecase-B6nmI7sV.cjs';
 import '../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
 import '../ListCausalsCatalog.usecase-R3g99zBx.cjs';
-import '../GetUserBeneficiaries.usecase-m99zWgXo.cjs';
+import '../GetUserBeneficiaries.usecase-B1wuqFtU.cjs';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;

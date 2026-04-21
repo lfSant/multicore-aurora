@@ -65,6 +65,7 @@ declare class GetUserDataUseCase {
 
 interface GetUserBeneficiariesCommand {
     username: string;
+    password?: string;
     channel: string;
 }
 
