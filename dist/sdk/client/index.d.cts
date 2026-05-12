@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { n as GetClientProfileUseCase, m as GetClientProfileCommand, e as ClientProfile, C as CheckClientActiveCommand, d as ClientActiveStatus, a as CheckClientActiveUseCase, l as GetClientProfileByNumberUseCase, k as GetClientProfileByNumberCommand, f as ClientProfileByNumber, j as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, b as CivilRegistryData } from '../../GetCivilRegistryData.usecase-DYL12dkv.cjs';
+import { n as GetClientProfileUseCase, m as GetClientProfileCommand, e as ClientProfile, C as CheckClientActiveCommand, d as ClientActiveStatus, a as CheckClientActiveUseCase, l as GetClientProfileByNumberUseCase, k as GetClientProfileByNumberCommand, f as ClientProfileByNumber, j as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, b as CivilRegistryData } from '../../GetCivilRegistryData.usecase-BD-sv25X.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
-import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
+import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
 
 declare function createClientProfileUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientProfileUseCase;
 declare function getClientProfile(command: GetClientProfileCommand, http: ProviderCallConfig, opts: {

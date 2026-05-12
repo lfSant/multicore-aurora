@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
-import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
-import { c as GetPaymentServiceQueryUseCase, b as GetPaymentServiceQueryCommand, k as PaymentServiceQueryResult, s as ProcessPaymentServiceUseCase, p as ProcessPaymentServiceCommand, r as ProcessPaymentServiceResult, a as GetPaymentReversalsUseCase, G as GetPaymentReversalsCommand, h as PaymentReversalsResult, o as ProcessPaymentReversalUseCase, l as ProcessPaymentReversalCommand, n as ProcessPaymentReversalResult, C as CreatePaymentOwnCardUseCase, P as PaymentOwnCardCommand, e as PaymentOwnCardResult } from '../../CreatePaymentOwnCard.usecase-Cu6Gg8sn.cjs';
+import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
+import { c as GetPaymentServiceQueryUseCase, b as GetPaymentServiceQueryCommand, k as PaymentServiceQueryResult, s as ProcessPaymentServiceUseCase, p as ProcessPaymentServiceCommand, r as ProcessPaymentServiceResult, a as GetPaymentReversalsUseCase, G as GetPaymentReversalsCommand, h as PaymentReversalsResult, o as ProcessPaymentReversalUseCase, l as ProcessPaymentReversalCommand, n as ProcessPaymentReversalResult, C as CreatePaymentOwnCardUseCase, P as PaymentOwnCardCommand, e as PaymentOwnCardResult } from '../../CreatePaymentOwnCard.usecase-DWxQ_cUr.cjs';
 
 declare function createPaymentServiceQueryUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetPaymentServiceQueryUseCase;
 declare function getPaymentServiceQuery(command: GetPaymentServiceQueryCommand, http: ProviderCallConfig, opts: {

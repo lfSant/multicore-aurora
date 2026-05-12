@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
-import { C as CanonicalResponse } from '../../types-D11BfpWV.cjs';
-import { n as StartCausalFlowUseCase, S as StartCausalFlowCommand, m as StartCausalFlowResult, i as CreateDebitNoteUseCase, f as CreateDebitNoteCommand, h as CreateDebitNoteResult, e as CreateCreditNoteUseCase, b as CreateCreditNoteCommand, d as CreateCreditNoteResult, k as GetAccountsForCausalsUseCase, G as GetAccountsForCausalsCommand, A as AccountForCausalResult, L as ListCausalsCatalogUseCase, C as CausalCatalogItem } from '../../ListCausalsCatalog.usecase-R3g99zBx.cjs';
+import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
+import { n as StartCausalFlowUseCase, S as StartCausalFlowCommand, m as StartCausalFlowResult, i as CreateDebitNoteUseCase, f as CreateDebitNoteCommand, h as CreateDebitNoteResult, e as CreateCreditNoteUseCase, b as CreateCreditNoteCommand, d as CreateCreditNoteResult, k as GetAccountsForCausalsUseCase, G as GetAccountsForCausalsCommand, A as AccountForCausalResult, L as ListCausalsCatalogUseCase, C as CausalCatalogItem } from '../../ListCausalsCatalog.usecase-D-RAyPd1.cjs';
 
 declare function createStartCausalFlowUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): StartCausalFlowUseCase;
 declare function startCausalFlow(command: StartCausalFlowCommand, http: ProviderCallConfig, opts: {

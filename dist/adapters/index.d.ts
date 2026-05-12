@@ -19020,14 +19020,23 @@ interface ErrorRule {
             any: string[];
         };
     };
-    client: string | {
+    client?: string | {
         template: string;
     };
-    server: string | {
+    server?: string | {
         template: string;
     };
-    status: number;
+    status?: number;
     codeHint?: string;
+    outcome?: 'error' | 'success';
+    treatAsSuccess?: boolean;
+    responseItemsMap?: any[];
+    response_items_map?: any[];
+    includeRaw?: boolean;
+    responseRaw?: boolean;
+    response_raw?: boolean;
+    aditionalData?: Record<string, any>;
+    additionalData?: Record<string, any>;
 }
 
 interface GlobalErrorRulesRepo {
