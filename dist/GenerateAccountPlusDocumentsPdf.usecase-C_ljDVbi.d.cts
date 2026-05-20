@@ -252,9 +252,9 @@ interface FiscalResidenceData {
     countryCode: string;
     provinceCode: string;
     cityCode: string;
-    taxCountryCode: string;
-    taxIdentificationNumber: string;
-    taxAddress: string;
+    taxCountryCode?: string;
+    taxIdentificationNumber?: string;
+    taxAddress?: string;
 }
 interface FiscalResidenceItem {
     countryCode: string;
