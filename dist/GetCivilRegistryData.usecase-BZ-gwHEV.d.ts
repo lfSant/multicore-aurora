@@ -108,9 +108,11 @@ declare class GetClientProfileByNumberUseCase {
 
 interface CivilRegistryData {
     identification: string;
+    fingerCode?: string;
     firstNames: string;
     lastNames: string;
     birthDateMs: number;
+    birthPlace?: string;
     issueDateMs?: number;
     deathDateMs?: number;
     gender: string;
