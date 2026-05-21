@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface GetClientCardsCommand {
     clientIdentification: string;
@@ -459,7 +459,7 @@ interface CalculateDeferredValuesCommand {
     clientNumber: string;
     cardCode: string;
     deferralTerm: string;
-    movements: Record<string, any>;
+    movements: Array<any>;
 }
 
 interface CalculateDeferredResult {
@@ -509,7 +509,7 @@ declare class BlockCardUseCase {
 interface ProcessDeferredBillingCommand {
     clientNumber: string;
     cardCode: string;
-    movements: Record<string, any>;
+    movements: Array<any>;
     cvv: string;
     deferralTerm: string;
     platform: string;
