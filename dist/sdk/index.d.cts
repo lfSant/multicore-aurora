@@ -13,7 +13,7 @@ export { createExternalTransfer, createExternalTransferUseCase, createInternalTr
 export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, getSelfCertificationData, getSelfCertificationDataUseCase, listDpfProductsCatalog, saveSelfCertificationData, saveSelfCertificationDataUseCase } from './deposit/index.cjs';
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.cjs';
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow } from './causal/index.cjs';
-export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData } from './user/index.cjs';
+export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.cjs';
 import '../GetCivilRegistryData.usecase-BD-sv25X.cjs';
 import '../ResetUser.usecase-DMgnwCva.cjs';
 import '../PaymentServiceConcepts.usecase-BbgjJU1Y.cjs';
@@ -23,7 +23,7 @@ import '../CreateExternalTransfer.usecase-joBihw2Z.cjs';
 import '../SaveSelfCertificationData.usecase-Q8cuae8L.cjs';
 import '../CreatePaymentOwnCard.usecase-DWxQ_cUr.cjs';
 import '../ListCausalsCatalog.usecase-D-RAyPd1.cjs';
-import '../GetUserBeneficiaries.usecase-wUqnadtH.cjs';
+import '../GetUserBeneficiaries.usecase-Dr2b-vNf.cjs';
 
 declare function hasMySqlPool(): boolean;
 declare function hasRedisClient(): boolean;

@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
-import { e as GetUserDataUseCase, c as GetUserDataCommand, h as UserDataResult, b as GetUserBeneficiariesUseCase, G as GetUserBeneficiariesCommand, f as UserBeneficiaryResult } from '../../GetUserBeneficiaries.usecase-wUqnadtH.cjs';
+import { f as GetUserDataUseCase, d as GetUserDataCommand, k as UserDataResult, c as GetUserBeneficiariesUseCase, G as GetUserBeneficiariesCommand, i as UserBeneficiaryResult, g as UpdateContractStatusUseCase, U as UpdateContractStatusCommand, C as ContractStatusUpdate } from '../../GetUserBeneficiaries.usecase-Dr2b-vNf.cjs';
 
 declare function createGetUserDataUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetUserDataUseCase;
 declare function getUserData(command: GetUserDataCommand, http: ProviderCallConfig, opts: {
@@ -17,4 +17,11 @@ declare function getUserBeneficiaries(command: GetUserBeneficiariesCommand, http
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<UserBeneficiaryResult>>;
 
-export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, getUserBeneficiaries, getUserData };
+declare function createUpdateContractStatusUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): UpdateContractStatusUseCase;
+declare function updateContractStatus(command: UpdateContractStatusCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<ContractStatusUpdate>>;
+
+export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus };

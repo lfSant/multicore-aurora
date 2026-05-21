@@ -1,5 +1,34 @@
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+
+interface UpdateContractStatusCommand {
+    clientCoreCode: string;
+    clientIdentificationType: string;
+    contractCode: string;
+    contractStatus: boolean;
+    transactionPlatform: string;
+    transactionIp: string;
+    transactionDate: string;
+    contractVersion: string;
+    contractMd5?: string;
+}
+
+interface ContractStatusUpdate {
+    transactionStatus: boolean;
+}
+
+interface ContractStatusUpdateProviderPort {
+    updateContractStatus(cmd: UpdateContractStatusCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ContractStatusUpdate>>;
+}
+
+declare class UpdateContractStatusUseCase {
+    private readonly provider;
+    constructor(provider: ContractStatusUpdateProviderPort);
+    execute(cmd: UpdateContractStatusCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ContractStatusUpdate>>;
+}
 
 interface GetUserDataCommand {
     username: string;
@@ -98,4 +127,4 @@ declare class GetUserBeneficiariesUseCase {
     execute(cmd: GetUserBeneficiariesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<UserBeneficiaryResult>>;
 }
 
-export { type GetUserBeneficiariesCommand as G, type SecurityQuestion as S, type UserAccountData as U, type GetUserBeneficiariesProviderPort as a, GetUserBeneficiariesUseCase as b, type GetUserDataCommand as c, type GetUserDataProviderPort as d, GetUserDataUseCase as e, type UserBeneficiaryResult as f, type UserContactData as g, type UserDataResult as h, type UserPersonalData as i, type UserSecurityData as j };
+export { type ContractStatusUpdate as C, type GetUserBeneficiariesCommand as G, type SecurityQuestion as S, type UpdateContractStatusCommand as U, type ContractStatusUpdateProviderPort as a, type GetUserBeneficiariesProviderPort as b, GetUserBeneficiariesUseCase as c, type GetUserDataCommand as d, type GetUserDataProviderPort as e, GetUserDataUseCase as f, UpdateContractStatusUseCase as g, type UserAccountData as h, type UserBeneficiaryResult as i, type UserContactData as j, type UserDataResult as k, type UserPersonalData as l, type UserSecurityData as m };
