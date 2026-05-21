@@ -1,7 +1,7 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
-import { K as ListAccountsCommand, A as Account, M as ListAccountsUseCase, z as GetAccountByNumberUseCase, y as GetAccountByNumberCommand, H as GetConsolidatedAccountsCommand, p as ConsolidatedAccountsUseCase, B as GetAccountMovementsCommand, c as AccountMovement, L as ListAccountMovementsUseCase, E as GetAccountSignersUseCase, D as GetAccountSignersCommand, l as AccountSignersInfo, W as ValidateCreateAccountPlusUseCase, U as ValidateCreateAccountPlusCommand, i as AccountPlusValidation, X as ValidateCreateAccountUseCase, V as ValidateCreateAccountCommand, a as AccountCreationValidation, T as SubmitPepsInformationUseCase, R as SubmitPepsInformationCommand, O as PepsInformationSubmission, Q as SubmitFiscalResidenceUseCase, S as SubmitFiscalResidenceCommand, w as FiscalResidenceSubmission, J as GetFiscalResidenceUseCase, I as GetFiscalResidenceCommand, F as FiscalResidence, q as CreateAccountPlusCommand, e as AccountPlusCreation, r as CreateAccountPlusUseCase, x as GenerateAccountPlusDocumentsPdfUseCase, G as GenerateAccountPlusDocumentsPdfCommand, g as AccountPlusDocuments } from '../../GenerateAccountPlusDocumentsPdf.usecase-DW9l7cDL.cjs';
+import { N as ListAccountsCommand, A as Account, O as ListAccountsUseCase, B as GetAccountByNumberUseCase, z as GetAccountByNumberCommand, J as GetConsolidatedAccountsCommand, p as ConsolidatedAccountsUseCase, E as GetAccountMovementsCommand, c as AccountMovement, M as ListAccountMovementsUseCase, I as GetAccountSignersUseCase, H as GetAccountSignersCommand, l as AccountSignersInfo, Y as ValidateCreateAccountPlusUseCase, X as ValidateCreateAccountPlusCommand, i as AccountPlusValidation, Z as ValidateCreateAccountUseCase, W as ValidateCreateAccountCommand, a as AccountCreationValidation, $ as ValidateDocumentUseCase, _ as ValidateDocumentCommand, D as DocumentValidation, V as SubmitPepsInformationUseCase, U as SubmitPepsInformationCommand, R as PepsInformationSubmission, T as SubmitFiscalResidenceUseCase, S as SubmitFiscalResidenceCommand, x as FiscalResidenceSubmission, L as GetFiscalResidenceUseCase, K as GetFiscalResidenceCommand, F as FiscalResidence, q as CreateAccountPlusCommand, e as AccountPlusCreation, r as CreateAccountPlusUseCase, y as GenerateAccountPlusDocumentsPdfUseCase, G as GenerateAccountPlusDocumentsPdfCommand, g as AccountPlusDocuments } from '../../GenerateAccountPlusDocumentsPdf.usecase-BBsSyHRw.cjs';
 
 declare function createClientAccountsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ListAccountsUseCase;
 declare function clientAccounts(command: ListAccountsCommand, http: ProviderCallConfig, opts: {
@@ -52,6 +52,13 @@ declare function validateCreateAccount(command: ValidateCreateAccountCommand, ht
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<AccountCreationValidation>>;
 
+declare function createValidateDocumentUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ValidateDocumentUseCase;
+declare function validateDocument(command: ValidateDocumentCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<DocumentValidation>>;
+
 declare function createSubmitPepsInformationUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): SubmitPepsInformationUseCase;
 declare function submitPepsInformation(command: SubmitPepsInformationCommand, http: ProviderCallConfig, opts: {
     provider: string;
@@ -87,4 +94,4 @@ declare function generateAccountPlusDocumentsPdf(command: GenerateAccountPlusDoc
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<AccountPlusDocuments>>;
 
-export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createSubmitFiscalResidenceUseCase, createSubmitPepsInformationUseCase, createValidateCreateAccountPlusUseCase, createValidateCreateAccountUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, submitFiscalResidence, submitPepsInformation, validateCreateAccount, validateCreateAccountPlus };
+export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createSubmitFiscalResidenceUseCase, createSubmitPepsInformationUseCase, createValidateCreateAccountPlusUseCase, createValidateCreateAccountUseCase, createValidateDocumentUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, submitFiscalResidence, submitPepsInformation, validateCreateAccount, validateCreateAccountPlus, validateDocument };

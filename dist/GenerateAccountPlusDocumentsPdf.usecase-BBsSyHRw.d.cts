@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -244,6 +244,29 @@ declare class ValidateCreateAccountUseCase {
     execute(cmd: ValidateCreateAccountCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AccountCreationValidation>>;
 }
 
+interface ValidateDocumentCommand {
+    clientIdentification: string;
+    documentType: "cedulaanverso" | "cedulareverso" | "planillaservicio";
+    document: string;
+}
+
+interface DocumentValidation {
+    transactionStatus: boolean;
+}
+
+interface DocumentValidationProviderPort {
+    validateDocument(cmd: ValidateDocumentCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DocumentValidation>>;
+}
+
+declare class ValidateDocumentUseCase {
+    private readonly provider;
+    constructor(provider: DocumentValidationProviderPort);
+    execute(cmd: ValidateDocumentCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DocumentValidation>>;
+}
+
 interface PepsData {
     hasPublicOffice: boolean;
     appointmentDateMs?: number;
@@ -335,4 +358,4 @@ declare class GenerateAccountPlusDocumentsPdfUseCase {
     execute(cmd: GenerateAccountPlusDocumentsPdfCommand, http: ProviderCallConfig): Promise<CanonicalResponse<AccountPlusDocuments>>;
 }
 
-export { type Account as A, type GetAccountMovementsCommand as B, type ClientAccountByNumberProviderPort as C, type GetAccountSignersCommand as D, GetAccountSignersUseCase as E, type FiscalResidence as F, type GenerateAccountPlusDocumentsPdfCommand as G, type GetConsolidatedAccountsCommand as H, type GetFiscalResidenceCommand as I, GetFiscalResidenceUseCase as J, type ListAccountsCommand as K, ListAccountMovementsUseCase as L, ListAccountsUseCase as M, type PepsInformationProviderPort as N, type PepsInformationSubmission as O, type PepsData as P, SubmitFiscalResidenceUseCase as Q, type SubmitPepsInformationCommand as R, type SubmitFiscalResidenceCommand as S, SubmitPepsInformationUseCase as T, type ValidateCreateAccountPlusCommand as U, type ValidateCreateAccountCommand as V, ValidateCreateAccountPlusUseCase as W, ValidateCreateAccountUseCase as X, type AccountCreationValidation as a, type AccountCreationValidationProviderPort as b, type AccountMovement as c, type AccountMovementsProviderPort as d, type AccountPlusCreation as e, type AccountPlusCreationProviderPort as f, type AccountPlusDocuments as g, type AccountPlusDocumentsProviderPort as h, type AccountPlusValidation as i, type AccountPlusValidationProviderPort as j, type AccountSigner as k, type AccountSignersInfo as l, type AccountSignersProviderPort as m, type ClientAccountsProviderPort as n, type ConsolidatedAccountsProviderPort as o, ConsolidatedAccountsUseCase as p, type CreateAccountPlusCommand as q, CreateAccountPlusUseCase as r, type FiscalResidenceData as s, type FiscalResidenceItem as t, type FiscalResidenceProviderPort as u, type FiscalResidenceQueryProviderPort as v, type FiscalResidenceSubmission as w, GenerateAccountPlusDocumentsPdfUseCase as x, type GetAccountByNumberCommand as y, GetAccountByNumberUseCase as z };
+export { ValidateDocumentUseCase as $, type Account as A, GetAccountByNumberUseCase as B, type ClientAccountByNumberProviderPort as C, type DocumentValidation as D, type GetAccountMovementsCommand as E, type FiscalResidence as F, type GenerateAccountPlusDocumentsPdfCommand as G, type GetAccountSignersCommand as H, GetAccountSignersUseCase as I, type GetConsolidatedAccountsCommand as J, type GetFiscalResidenceCommand as K, GetFiscalResidenceUseCase as L, ListAccountMovementsUseCase as M, type ListAccountsCommand as N, ListAccountsUseCase as O, type PepsData as P, type PepsInformationProviderPort as Q, type PepsInformationSubmission as R, type SubmitFiscalResidenceCommand as S, SubmitFiscalResidenceUseCase as T, type SubmitPepsInformationCommand as U, SubmitPepsInformationUseCase as V, type ValidateCreateAccountCommand as W, type ValidateCreateAccountPlusCommand as X, ValidateCreateAccountPlusUseCase as Y, ValidateCreateAccountUseCase as Z, type ValidateDocumentCommand as _, type AccountCreationValidation as a, type AccountCreationValidationProviderPort as b, type AccountMovement as c, type AccountMovementsProviderPort as d, type AccountPlusCreation as e, type AccountPlusCreationProviderPort as f, type AccountPlusDocuments as g, type AccountPlusDocumentsProviderPort as h, type AccountPlusValidation as i, type AccountPlusValidationProviderPort as j, type AccountSigner as k, type AccountSignersInfo as l, type AccountSignersProviderPort as m, type ClientAccountsProviderPort as n, type ConsolidatedAccountsProviderPort as o, ConsolidatedAccountsUseCase as p, type CreateAccountPlusCommand as q, CreateAccountPlusUseCase as r, type DocumentValidationProviderPort as s, type FiscalResidenceData as t, type FiscalResidenceItem as u, type FiscalResidenceProviderPort as v, type FiscalResidenceQueryProviderPort as w, type FiscalResidenceSubmission as x, GenerateAccountPlusDocumentsPdfUseCase as y, type GetAccountByNumberCommand as z };
