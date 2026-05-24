@@ -2,7 +2,7 @@ import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
 export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.cjs';
 export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createRegisterCredentialsUseCase, createResetPasswordUseCase, createResetUserUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, registerCredentials, resetPassword, resetUser, unblockUser, validateUsername } from './auth/index.cjs';
-export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts } from './catalog/index.cjs';
+export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createOtherEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts } from './catalog/index.cjs';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.cjs';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.cjs';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.cjs';
@@ -16,7 +16,7 @@ export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCred
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.cjs';
 import '../GetCivilRegistryData.usecase-Bvq0aKoG.cjs';
 import '../ResetUser.usecase-DMgnwCva.cjs';
-import '../PaymentServiceConcepts.usecase-CUj8myBB.cjs';
+import '../PaymentServiceConcepts.usecase-DBqlwP4d.cjs';
 import '../ListCustomerProducts.usecase-rkGzRwoR.cjs';
 import '../PepsAccountOpening.usecase-DniPTAbJ.cjs';
 import '../CreateExternalTransfer.usecase-joBihw2Z.cjs';

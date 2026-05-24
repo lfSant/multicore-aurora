@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { i as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, n as ProfessionTypesUseCase, l as ProfessionTypes, k as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity } from '../../PaymentServiceConcepts.usecase-CUj8myBB.cjs';
+import { j as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, o as ProfessionTypesUseCase, m as ProfessionTypes, l as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity, h as GetOtherEconomicActivityCatalogUseCase } from '../../PaymentServiceConcepts.usecase-DBqlwP4d.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
 
@@ -45,4 +45,11 @@ declare function getEconomicActivityCatalog(http: ProviderCallConfig, opts: {
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<EconomicActivity[]>>;
 
-export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts };
+declare function createOtherEconomicActivityCatalogUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetOtherEconomicActivityCatalogUseCase;
+declare function getOtherEconomicActivityCatalog(http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<EconomicActivity[]>>;
+
+export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createOtherEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts };
