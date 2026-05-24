@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
-import { f as MaritalStatusUseCase, M as MaritalStatus, c as EducationTypesUseCase, E as EducationTypes, k as ProfessionTypesUseCase, i as ProfessionTypes, h as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, d as GetCatalogFitUseCase } from '../../PaymentServiceConcepts.usecase-vE9f5uzP.js';
+import { i as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, n as ProfessionTypesUseCase, l as ProfessionTypes, k as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity } from '../../PaymentServiceConcepts.usecase-qo448I5O.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
 
@@ -38,4 +38,11 @@ declare function catalogFilter(command: GetCatalogFitCommand, http: ProviderCall
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<CatalogFitItem[]>>;
 
-export { catalogFilter, createCatalogFilterUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts };
+declare function createEconomicActivityCatalogUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetEconomicActivityCatalogUseCase;
+declare function getEconomicActivityCatalog(http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<EconomicActivity[]>>;
+
+export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getPaymentServiceConcepts };
