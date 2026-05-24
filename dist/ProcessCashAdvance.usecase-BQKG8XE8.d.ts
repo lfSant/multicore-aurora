@@ -423,16 +423,14 @@ declare class SendSmsByPhoneUseCase {
     execute(cmd: SendSmsByPhoneCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SendSmsByIdentificationResult>>;
 }
 
-/**
- * Command para enviar un email a través del proveedor.
- * - Core dy-mu: la respuesta es XML (Entidad), el adapter parsea internamente.
- */
 interface SendEmailCommand {
-    recipientEmail: string;
+    recipientEmail?: string;
     ccEmail?: string;
     bccEmail?: string;
     subject: string;
     body: string;
+    recipientEmails?: string[];
+    ccEmails?: string[];
 }
 
 /**
