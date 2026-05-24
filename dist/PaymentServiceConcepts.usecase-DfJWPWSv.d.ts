@@ -113,6 +113,25 @@ declare class ProfessionTypesUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<ProfessionTypes[]>>;
 }
 
+interface LaborPosition {
+    code: string;
+    name: string;
+    extras?: Record<string, any>;
+}
+
+interface LaborPositionCatalogProviderPort {
+    getLaborPositionCatalog(http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<LaborPosition[]>>;
+}
+
+declare class GetLaborPositionCatalogUseCase {
+    private readonly provider;
+    constructor(provider: LaborPositionCatalogProviderPort);
+    execute(http: ProviderCallConfig): Promise<CanonicalResponse<LaborPosition[]>>;
+}
+
 interface PaymentServiceConcepts {
     code: string;
     name: string;
@@ -152,4 +171,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type CatalogFitItem as C, type EconomicActivity as E, type GetCatalogFitCommand as G, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type CatalogFitProviderPort as a, type EconomicActivityCatalogProviderPort as b, type EducationTypes as c, type EducationTypesProviderPort as d, EducationTypesUseCase as e, GetCatalogFitUseCase as f, GetEconomicActivityCatalogUseCase as g, GetOtherEconomicActivityCatalogUseCase as h, type MaritalStatusProviderPort as i, MaritalStatusUseCase as j, type PaymentServiceConceptsProviderPort as k, PaymentServiceConceptsUseCase as l, type ProfessionTypes as m, type ProfessionTypesProviderPort as n, ProfessionTypesUseCase as o };
+export { type CatalogFitItem as C, type EconomicActivity as E, type GetCatalogFitCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type CatalogFitProviderPort as a, type EconomicActivityCatalogProviderPort as b, type EducationTypes as c, type EducationTypesProviderPort as d, EducationTypesUseCase as e, GetCatalogFitUseCase as f, GetEconomicActivityCatalogUseCase as g, GetLaborPositionCatalogUseCase as h, GetOtherEconomicActivityCatalogUseCase as i, type LaborPositionCatalogProviderPort as j, type MaritalStatusProviderPort as k, MaritalStatusUseCase as l, type PaymentServiceConceptsProviderPort as m, PaymentServiceConceptsUseCase as n, type ProfessionTypes as o, type ProfessionTypesProviderPort as p, ProfessionTypesUseCase as q };

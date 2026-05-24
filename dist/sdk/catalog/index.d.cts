@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { j as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, o as ProfessionTypesUseCase, m as ProfessionTypes, l as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity, h as GetOtherEconomicActivityCatalogUseCase } from '../../PaymentServiceConcepts.usecase-DBqlwP4d.cjs';
+import { l as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, q as ProfessionTypesUseCase, o as ProfessionTypes, n as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity, i as GetOtherEconomicActivityCatalogUseCase, h as GetLaborPositionCatalogUseCase, L as LaborPosition } from '../../PaymentServiceConcepts.usecase-U3F--vCn.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
 
@@ -52,4 +52,11 @@ declare function getOtherEconomicActivityCatalog(http: ProviderCallConfig, opts:
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<EconomicActivity[]>>;
 
-export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createOtherEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts };
+declare function createLaborPositionCatalogUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetLaborPositionCatalogUseCase;
+declare function getLaborPositionCatalog(http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<LaborPosition[]>>;
+
+export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createLaborPositionCatalogUseCase, createOtherEconomicActivityCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getLaborPositionCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts };
