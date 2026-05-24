@@ -295,6 +295,7 @@ interface SubmitBasicInformationCommand {
     homePhone?: string;
     maritalStatus?: string;
     maritalStatusCode?: string;
+    spouseId?: string;
     gender?: string;
     genderCode: string;
     educationLevel?: string;

@@ -45,6 +45,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -564,6 +576,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -1085,6 +1109,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -1604,6 +1640,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -2126,6 +2174,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -2648,6 +2708,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -3169,6 +3241,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
@@ -3694,6 +3778,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -4212,6 +4308,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -4734,6 +4842,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -5256,6 +5376,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -5777,6 +5909,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
@@ -6378,6 +6522,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -6897,6 +7053,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -7418,6 +7586,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -7937,6 +8117,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -8459,6 +8651,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -8981,6 +9185,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -9502,6 +9718,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
@@ -10027,6 +10255,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -10545,6 +10785,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -11067,6 +11319,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -11589,6 +11853,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -12110,6 +12386,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
@@ -12711,6 +12999,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -13230,6 +13530,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -13751,6 +14063,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -14270,6 +14594,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -14792,6 +15128,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -15314,6 +15662,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -15835,6 +16195,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
@@ -16360,6 +16732,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
         optional: z.ZodOptional<z.ZodBoolean>;
@@ -16878,6 +17262,18 @@ declare const MappingConfigSchema: z.ZodObject<{
     }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
         coalesce: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodAny>;
+    }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+    }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+        each: z.ZodString;
+        map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
     }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
         pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
         default: z.ZodOptional<z.ZodBoolean>;
@@ -17400,6 +17796,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -17922,6 +18330,18 @@ declare const MappingConfigSchema: z.ZodObject<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
             optional: z.ZodOptional<z.ZodBoolean>;
@@ -18443,6 +18863,18 @@ declare const MappingConfigSchema: z.ZodObject<{
         }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
             coalesce: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodAny>;
+        }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, "passthrough", z.ZodTypeAny, z.objectOutputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+        }, z.ZodTypeAny, "passthrough">, z.objectInputType<{
+            each: z.ZodString;
+            map: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
+            mapShape: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodAny>>;
         }, z.ZodTypeAny, "passthrough">>, z.ZodObject<{
             pickAnyBoolean: z.ZodArray<z.ZodString, "many">;
             default: z.ZodOptional<z.ZodBoolean>;
