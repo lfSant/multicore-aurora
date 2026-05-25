@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -368,6 +368,7 @@ interface FiscalResidenceItem {
     taxId: string;
     provinceCode?: string;
     cityCode?: string;
+    fiscalResidenceAddress?: string;
 }
 interface SubmitFiscalResidenceCommand {
     clientIdentification: string;
