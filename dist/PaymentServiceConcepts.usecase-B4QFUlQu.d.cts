@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface MaritalStatus {
     code: string;
@@ -172,6 +172,33 @@ declare class GetCardDeliveryLocationCatalogUseCase {
     execute(cmd: GetCardDeliveryLocationCatalogCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardDeliveryLocation[]>>;
 }
 
+interface SubmitCardDeliveryInfoCommand {
+    clientIdentification: string;
+    screenCode: string;
+    deliveryLocationCode: string;
+    deliveryCoordinateX?: string;
+    deliveryCoordinateY?: string;
+    cardNameCode: string;
+    deliveryReference: string;
+}
+
+interface CardDeliveryInfoSubmission {
+    transactionStatus: boolean;
+}
+
+interface CardDeliveryInfoSubmissionProviderPort {
+    submitCardDeliveryInfo(cmd: SubmitCardDeliveryInfoCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardDeliveryInfoSubmission>>;
+}
+
+declare class SubmitCardDeliveryInfoUseCase {
+    private readonly provider;
+    constructor(provider: CardDeliveryInfoSubmissionProviderPort);
+    execute(cmd: SubmitCardDeliveryInfoCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardDeliveryInfoSubmission>>;
+}
+
 interface PaymentServiceConcepts {
     code: string;
     name: string;
@@ -211,4 +238,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type CardDeliveryLocation as C, type EconomicActivity as E, type GetCardDeliveryLocationCatalogCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type CardDeliveryLocationCatalogProviderPort as a, type CatalogFitItem as b, type CatalogFitProviderPort as c, type EconomicActivityCatalogProviderPort as d, type EducationTypes as e, type EducationTypesProviderPort as f, EducationTypesUseCase as g, GetCardDeliveryLocationCatalogUseCase as h, type GetCatalogFitCommand as i, GetCatalogFitUseCase as j, GetEconomicActivityCatalogUseCase as k, GetLaborPositionCatalogUseCase as l, GetOtherEconomicActivityCatalogUseCase as m, GetPurposeCatalogUseCase as n, type LaborPositionCatalogProviderPort as o, type MaritalStatusProviderPort as p, MaritalStatusUseCase as q, type PaymentServiceConceptsProviderPort as r, PaymentServiceConceptsUseCase as s, type ProfessionTypes as t, type ProfessionTypesProviderPort as u, ProfessionTypesUseCase as v, type PurposeCatalogItem as w, type PurposeCatalogProviderPort as x };
+export { SubmitCardDeliveryInfoUseCase as A, type CardDeliveryInfoSubmission as C, type EconomicActivity as E, type GetCardDeliveryLocationCatalogCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type SubmitCardDeliveryInfoCommand as S, type CardDeliveryInfoSubmissionProviderPort as a, type CardDeliveryLocation as b, type CardDeliveryLocationCatalogProviderPort as c, type CatalogFitItem as d, type CatalogFitProviderPort as e, type EconomicActivityCatalogProviderPort as f, type EducationTypes as g, type EducationTypesProviderPort as h, EducationTypesUseCase as i, GetCardDeliveryLocationCatalogUseCase as j, type GetCatalogFitCommand as k, GetCatalogFitUseCase as l, GetEconomicActivityCatalogUseCase as m, GetLaborPositionCatalogUseCase as n, GetOtherEconomicActivityCatalogUseCase as o, GetPurposeCatalogUseCase as p, type LaborPositionCatalogProviderPort as q, type MaritalStatusProviderPort as r, MaritalStatusUseCase as s, type PaymentServiceConceptsProviderPort as t, PaymentServiceConceptsUseCase as u, type ProfessionTypes as v, type ProfessionTypesProviderPort as w, ProfessionTypesUseCase as x, type PurposeCatalogItem as y, type PurposeCatalogProviderPort as z };
