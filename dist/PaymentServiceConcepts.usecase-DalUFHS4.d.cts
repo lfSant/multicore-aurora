@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface MaritalStatus {
     code: string;
@@ -132,6 +132,24 @@ declare class GetLaborPositionCatalogUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<LaborPosition[]>>;
 }
 
+interface PurposeCatalogItem {
+    code: string;
+    description: string;
+}
+
+interface PurposeCatalogProviderPort {
+    getPurposeCatalog(http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<PurposeCatalogItem[]>>;
+}
+
+declare class GetPurposeCatalogUseCase {
+    private readonly provider;
+    constructor(provider: PurposeCatalogProviderPort);
+    execute(http: ProviderCallConfig): Promise<CanonicalResponse<PurposeCatalogItem[]>>;
+}
+
 interface PaymentServiceConcepts {
     code: string;
     name: string;
@@ -171,4 +189,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type CatalogFitItem as C, type EconomicActivity as E, type GetCatalogFitCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type CatalogFitProviderPort as a, type EconomicActivityCatalogProviderPort as b, type EducationTypes as c, type EducationTypesProviderPort as d, EducationTypesUseCase as e, GetCatalogFitUseCase as f, GetEconomicActivityCatalogUseCase as g, GetLaborPositionCatalogUseCase as h, GetOtherEconomicActivityCatalogUseCase as i, type LaborPositionCatalogProviderPort as j, type MaritalStatusProviderPort as k, MaritalStatusUseCase as l, type PaymentServiceConceptsProviderPort as m, PaymentServiceConceptsUseCase as n, type ProfessionTypes as o, type ProfessionTypesProviderPort as p, ProfessionTypesUseCase as q };
+export { type CatalogFitItem as C, type EconomicActivity as E, type GetCatalogFitCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type CatalogFitProviderPort as a, type EconomicActivityCatalogProviderPort as b, type EducationTypes as c, type EducationTypesProviderPort as d, EducationTypesUseCase as e, GetCatalogFitUseCase as f, GetEconomicActivityCatalogUseCase as g, GetLaborPositionCatalogUseCase as h, GetOtherEconomicActivityCatalogUseCase as i, GetPurposeCatalogUseCase as j, type LaborPositionCatalogProviderPort as k, type MaritalStatusProviderPort as l, MaritalStatusUseCase as m, type PaymentServiceConceptsProviderPort as n, PaymentServiceConceptsUseCase as o, type ProfessionTypes as p, type ProfessionTypesProviderPort as q, ProfessionTypesUseCase as r, type PurposeCatalogItem as s, type PurposeCatalogProviderPort as t };
