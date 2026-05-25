@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
-import { m as MaritalStatusUseCase, M as MaritalStatus, e as EducationTypesUseCase, c as EducationTypes, r as ProfessionTypesUseCase, p as ProfessionTypes, o as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, G as GetCatalogFitCommand, C as CatalogFitItem, f as GetCatalogFitUseCase, g as GetEconomicActivityCatalogUseCase, E as EconomicActivity, i as GetOtherEconomicActivityCatalogUseCase, h as GetLaborPositionCatalogUseCase, L as LaborPosition, j as GetPurposeCatalogUseCase, s as PurposeCatalogItem } from '../../PaymentServiceConcepts.usecase-XIduuAJI.js';
+import { q as MaritalStatusUseCase, M as MaritalStatus, g as EducationTypesUseCase, e as EducationTypes, v as ProfessionTypesUseCase, t as ProfessionTypes, s as PaymentServiceConceptsUseCase, P as PaymentServiceConcepts, i as GetCatalogFitCommand, b as CatalogFitItem, j as GetCatalogFitUseCase, k as GetEconomicActivityCatalogUseCase, E as EconomicActivity, m as GetOtherEconomicActivityCatalogUseCase, l as GetLaborPositionCatalogUseCase, L as LaborPosition, n as GetPurposeCatalogUseCase, w as PurposeCatalogItem, h as GetCardDeliveryLocationCatalogUseCase, G as GetCardDeliveryLocationCatalogCommand, C as CardDeliveryLocation } from '../../PaymentServiceConcepts.usecase-DjZyqP0Y.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
 
@@ -66,4 +66,11 @@ declare function getPurposeCatalog(http: ProviderCallConfig, opts: {
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<PurposeCatalogItem[]>>;
 
-export { catalogFilter, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createLaborPositionCatalogUseCase, createOtherEconomicActivityCatalogUseCase, createPurposeCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getEconomicActivityCatalog, getLaborPositionCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts, getPurposeCatalog };
+declare function createCardDeliveryLocationCatalogUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetCardDeliveryLocationCatalogUseCase;
+declare function getCardDeliveryLocationCatalog(command: GetCardDeliveryLocationCatalogCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<CardDeliveryLocation[]>>;
+
+export { catalogFilter, createCardDeliveryLocationCatalogUseCase, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createLaborPositionCatalogUseCase, createOtherEconomicActivityCatalogUseCase, createPurposeCatalogUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getCardDeliveryLocationCatalog, getEconomicActivityCatalog, getLaborPositionCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts, getPurposeCatalog };
