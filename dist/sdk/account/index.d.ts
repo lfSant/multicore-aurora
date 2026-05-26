@@ -1,6 +1,6 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
-import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
+import { C as CanonicalResponse, P as ProviderResult } from '../../types-DZJuEFLS.js';
 import { W as ListAccountsCommand, A as Account, X as ListAccountsUseCase, L as GetAccountByNumberUseCase, K as GetAccountByNumberCommand, P as GetConsolidatedAccountsCommand, t as ConsolidatedAccountsUseCase, M as GetAccountMovementsCommand, c as AccountMovement, V as ListAccountMovementsUseCase, O as GetAccountSignersUseCase, N as GetAccountSignersCommand, l as AccountSignersInfo, al as ValidateCreateAccountPlusUseCase, ak as ValidateCreateAccountPlusCommand, i as AccountPlusValidation, am as ValidateCreateAccountUseCase, aj as ValidateCreateAccountCommand, a as AccountCreationValidation, ao as ValidateDocumentUseCase, an as ValidateDocumentCommand, D as DocumentValidation, a9 as SubmitBasicInformationUseCase, a8 as SubmitBasicInformationCommand, n as BasicInformationSubmission, af as SubmitPepsInformationUseCase, ae as SubmitPepsInformationCommand, a3 as PepsInformationSubmission, a0 as PepsAccountOpeningUseCase, _ as PepsAccountOpeningCommand, Z as PepsAccountOpening, ab as SubmitFiscalResidenceUseCase, aa as SubmitFiscalResidenceCommand, H as FiscalResidenceSubmission, ad as SubmitLaborInformationUseCase, ac as SubmitLaborInformationCommand, T as LaborInformationSubmission, ah as SubmitReferenceDataUseCase, ag as SubmitReferenceDataCommand, a5 as ReferenceDataSubmission, R as GetFiscalResidenceUseCase, Q as GetFiscalResidenceCommand, F as FiscalResidence, u as CreateAccountPlusCommand, e as AccountPlusCreation, v as CreateAccountPlusUseCase, J as GenerateAccountPlusDocumentsPdfUseCase, I as GenerateAccountPlusDocumentsPdfCommand, g as AccountPlusDocuments } from '../../PepsAccountOpening.usecase-KkBH2BgN.js';
 
 declare function createClientAccountsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ListAccountsUseCase;
@@ -122,4 +122,42 @@ declare function generateAccountPlusDocumentsPdf(command: GenerateAccountPlusDoc
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<AccountPlusDocuments>>;
 
-export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createPepsAccountOpeningUseCase, createSubmitBasicInformationUseCase, createSubmitFiscalResidenceUseCase, createSubmitLaborInformationUseCase, createSubmitPepsInformationUseCase, createSubmitReferenceDataUseCase, createValidateCreateAccountPlusUseCase, createValidateCreateAccountUseCase, createValidateDocumentUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, pepsAccountOpening, submitBasicInformation, submitFiscalResidence, submitLaborInformation, submitPepsInformation, submitReferenceData, validateCreateAccount, validateCreateAccountPlus, validateDocument };
+interface ElectronicAccount {
+    accountNumber: string;
+    clientCoreCode: string;
+    advisorName: string;
+    advisorEmail: string;
+}
+
+interface CreateElectronicAccountCommand {
+    clientIdentification: string;
+    clientPlatform: string;
+    creationDate: string;
+    device: string;
+    reference: string;
+    clientCoreCode?: number;
+    clientUsername?: string;
+    clientIdentificationType?: string;
+}
+
+interface ElectronicAccountProviderPort {
+    createElectronicAccount(cmd: CreateElectronicAccountCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ElectronicAccount>>;
+}
+
+declare class CreateElectronicAccountUseCase {
+    private readonly provider;
+    constructor(provider: ElectronicAccountProviderPort);
+    execute(cmd: CreateElectronicAccountCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ElectronicAccount>>;
+}
+
+declare function createCreateElectronicAccountUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): CreateElectronicAccountUseCase;
+declare function createElectronicAccount(command: CreateElectronicAccountCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<ElectronicAccount>>;
+
+export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMovementsUseCase, createAccountPlus, createAccountSignersUseCase, createClientAccountsUseCase, createConsolidatedAccountsUseCase, createCreateAccountPlusUseCase, createCreateElectronicAccountUseCase, createElectronicAccount, createGenerateAccountPlusDocumentsPdfUseCase, createGetClientAccountByNumberUseCase, createGetFiscalResidenceUseCase, createPepsAccountOpeningUseCase, createSubmitBasicInformationUseCase, createSubmitFiscalResidenceUseCase, createSubmitLaborInformationUseCase, createSubmitPepsInformationUseCase, createSubmitReferenceDataUseCase, createValidateCreateAccountPlusUseCase, createValidateCreateAccountUseCase, createValidateDocumentUseCase, generateAccountPlusDocumentsPdf, getAccountSigners, getClientAccountByNumber, getFiscalResidence, pepsAccountOpening, submitBasicInformation, submitFiscalResidence, submitLaborInformation, submitPepsInformation, submitReferenceData, validateCreateAccount, validateCreateAccountPlus, validateDocument };
