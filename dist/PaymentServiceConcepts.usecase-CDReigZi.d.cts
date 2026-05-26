@@ -199,6 +199,28 @@ declare class SubmitCardDeliveryInfoUseCase {
     execute(cmd: SubmitCardDeliveryInfoCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardDeliveryInfoSubmission>>;
 }
 
+interface GetCatalogCardNamesCommand {
+    clientIdentification: string;
+}
+
+interface CardName {
+    nameCode: string;
+    nameDescription: string;
+}
+
+interface CatalogCardNamesProviderPort {
+    getCatalogCardNames(cmd: GetCatalogCardNamesCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardName[]>>;
+}
+
+declare class GetCatalogCardNamesUseCase {
+    private readonly provider;
+    constructor(provider: CatalogCardNamesProviderPort);
+    execute(cmd: GetCatalogCardNamesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardName[]>>;
+}
+
 interface PaymentServiceConcepts {
     code: string;
     name: string;
@@ -238,4 +260,4 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { SubmitCardDeliveryInfoUseCase as A, type CardDeliveryInfoSubmission as C, type EconomicActivity as E, type GetCardDeliveryLocationCatalogCommand as G, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type SubmitCardDeliveryInfoCommand as S, type CardDeliveryInfoSubmissionProviderPort as a, type CardDeliveryLocation as b, type CardDeliveryLocationCatalogProviderPort as c, type CatalogFitItem as d, type CatalogFitProviderPort as e, type EconomicActivityCatalogProviderPort as f, type EducationTypes as g, type EducationTypesProviderPort as h, EducationTypesUseCase as i, GetCardDeliveryLocationCatalogUseCase as j, type GetCatalogFitCommand as k, GetCatalogFitUseCase as l, GetEconomicActivityCatalogUseCase as m, GetLaborPositionCatalogUseCase as n, GetOtherEconomicActivityCatalogUseCase as o, GetPurposeCatalogUseCase as p, type LaborPositionCatalogProviderPort as q, type MaritalStatusProviderPort as r, MaritalStatusUseCase as s, type PaymentServiceConceptsProviderPort as t, PaymentServiceConceptsUseCase as u, type ProfessionTypes as v, type ProfessionTypesProviderPort as w, ProfessionTypesUseCase as x, type PurposeCatalogItem as y, type PurposeCatalogProviderPort as z };
+export { type ProfessionTypesProviderPort as A, ProfessionTypesUseCase as B, type CardDeliveryInfoSubmission as C, type PurposeCatalogItem as D, type EconomicActivity as E, type PurposeCatalogProviderPort as F, type GetCardDeliveryLocationCatalogCommand as G, SubmitCardDeliveryInfoUseCase as H, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type SubmitCardDeliveryInfoCommand as S, type CardDeliveryInfoSubmissionProviderPort as a, type CardDeliveryLocation as b, type CardDeliveryLocationCatalogProviderPort as c, type CardName as d, type CatalogCardNamesProviderPort as e, type CatalogFitItem as f, type CatalogFitProviderPort as g, type EconomicActivityCatalogProviderPort as h, type EducationTypes as i, type EducationTypesProviderPort as j, EducationTypesUseCase as k, GetCardDeliveryLocationCatalogUseCase as l, type GetCatalogCardNamesCommand as m, GetCatalogCardNamesUseCase as n, type GetCatalogFitCommand as o, GetCatalogFitUseCase as p, GetEconomicActivityCatalogUseCase as q, GetLaborPositionCatalogUseCase as r, GetOtherEconomicActivityCatalogUseCase as s, GetPurposeCatalogUseCase as t, type LaborPositionCatalogProviderPort as u, type MaritalStatusProviderPort as v, MaritalStatusUseCase as w, type PaymentServiceConceptsProviderPort as x, PaymentServiceConceptsUseCase as y, type ProfessionTypes as z };
