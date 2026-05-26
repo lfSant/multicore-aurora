@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface MaritalStatus {
     code: string;
@@ -260,4 +260,29 @@ declare class PaymentServiceConceptsUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<PaymentServiceConcepts[]>>;
 }
 
-export { type ProfessionTypesProviderPort as A, ProfessionTypesUseCase as B, type CardDeliveryInfoSubmission as C, type PurposeCatalogItem as D, type EconomicActivity as E, type PurposeCatalogProviderPort as F, type GetCardDeliveryLocationCatalogCommand as G, SubmitCardDeliveryInfoUseCase as H, type LaborPosition as L, type MaritalStatus as M, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type SubmitCardDeliveryInfoCommand as S, type CardDeliveryInfoSubmissionProviderPort as a, type CardDeliveryLocation as b, type CardDeliveryLocationCatalogProviderPort as c, type CardName as d, type CatalogCardNamesProviderPort as e, type CatalogFitItem as f, type CatalogFitProviderPort as g, type EconomicActivityCatalogProviderPort as h, type EducationTypes as i, type EducationTypesProviderPort as j, EducationTypesUseCase as k, GetCardDeliveryLocationCatalogUseCase as l, type GetCatalogCardNamesCommand as m, GetCatalogCardNamesUseCase as n, type GetCatalogFitCommand as o, GetCatalogFitUseCase as p, GetEconomicActivityCatalogUseCase as q, GetLaborPositionCatalogUseCase as r, GetOtherEconomicActivityCatalogUseCase as s, GetPurposeCatalogUseCase as t, type LaborPositionCatalogProviderPort as u, type MaritalStatusProviderPort as v, MaritalStatusUseCase as w, type PaymentServiceConceptsProviderPort as x, PaymentServiceConceptsUseCase as y, type ProfessionTypes as z };
+interface GetCardDeliveryInfoCommand {
+    clientIdentification: string;
+}
+
+interface CardDeliveryInfo {
+    deliveryLocationCode: string;
+    locationCoordinateX?: string;
+    locationCoordinateY?: string;
+    cardNameCode: string;
+    deliveryReference: string;
+}
+
+interface CardDeliveryInfoProviderPort {
+    getCardDeliveryInfo(cmd: GetCardDeliveryInfoCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CardDeliveryInfo>>;
+}
+
+declare class GetCardDeliveryInfoUseCase {
+    private readonly provider;
+    constructor(provider: CardDeliveryInfoProviderPort);
+    execute(cmd: GetCardDeliveryInfoCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CardDeliveryInfo>>;
+}
+
+export { MaritalStatusUseCase as A, type PaymentServiceConceptsProviderPort as B, type CardDeliveryInfo as C, PaymentServiceConceptsUseCase as D, type EconomicActivity as E, type ProfessionTypes as F, type GetCardDeliveryInfoCommand as G, type ProfessionTypesProviderPort as H, ProfessionTypesUseCase as I, type PurposeCatalogItem as J, type PurposeCatalogProviderPort as K, type LaborPosition as L, type MaritalStatus as M, SubmitCardDeliveryInfoUseCase as N, type OtherEconomicActivityCatalogProviderPort as O, type PaymentServiceConcepts as P, type SubmitCardDeliveryInfoCommand as S, type CardDeliveryInfoProviderPort as a, type CardDeliveryInfoSubmission as b, type CardDeliveryInfoSubmissionProviderPort as c, type CardDeliveryLocation as d, type CardDeliveryLocationCatalogProviderPort as e, type CardName as f, type CatalogCardNamesProviderPort as g, type CatalogFitItem as h, type CatalogFitProviderPort as i, type EconomicActivityCatalogProviderPort as j, type EducationTypes as k, type EducationTypesProviderPort as l, EducationTypesUseCase as m, GetCardDeliveryInfoUseCase as n, type GetCardDeliveryLocationCatalogCommand as o, GetCardDeliveryLocationCatalogUseCase as p, type GetCatalogCardNamesCommand as q, GetCatalogCardNamesUseCase as r, type GetCatalogFitCommand as s, GetCatalogFitUseCase as t, GetEconomicActivityCatalogUseCase as u, GetLaborPositionCatalogUseCase as v, GetOtherEconomicActivityCatalogUseCase as w, GetPurposeCatalogUseCase as x, type LaborPositionCatalogProviderPort as y, type MaritalStatusProviderPort as z };
