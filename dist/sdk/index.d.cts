@@ -18,7 +18,7 @@ import '../GetCivilRegistryData.usecase-Bvq0aKoG.cjs';
 import '../ResetUser.usecase-DMgnwCva.cjs';
 import '../GetCardDeliveryInfo.usecase-BTRRWpa4.cjs';
 import '../ListCustomerProducts.usecase-rkGzRwoR.cjs';
-import '../PepsAccountOpening.usecase-C9hEJCwU.cjs';
+import '../PepsAccountOpening.usecase-Bkv0bbqm.cjs';
 import '../CreateExternalTransfer.usecase-joBihw2Z.cjs';
 import '../SaveSelfCertificationData.usecase-Q8cuae8L.cjs';
 import '../CreatePaymentOwnCard.usecase-DWxQ_cUr.cjs';

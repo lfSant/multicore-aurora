@@ -89,6 +89,7 @@ declare class CreateElectronicAccountUseCase {
 
 interface ListAccountsCommand {
     clientIdentification: string;
+    isDebit?: string;
 }
 
 interface Account {
