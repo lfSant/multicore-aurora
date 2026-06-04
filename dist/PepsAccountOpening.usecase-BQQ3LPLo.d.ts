@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -536,8 +536,9 @@ declare class GenerateAccountPlusDocumentsPdfUseCase {
 }
 
 interface GenerateElectronicAccountDocumentsPdfCommand {
-    clientIdentification: string;
-    reference: string;
+    clientIdentification?: string;
+    reference?: string;
+    accountNumber: string;
 }
 
 interface ElectronicAccountDocuments {
