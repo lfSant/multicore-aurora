@@ -12,7 +12,7 @@ export { accountMovements, clientAccounts, consolidatedAccounts, createAccountMo
 export { createExternalTransfer, createExternalTransferUseCase, createInternalTransfer, createInternalTransferUseCase, getListTransferInitialChargeUseCase, listTransferInitialCharge } from './transfer/index.js';
 export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidatedTimeDepositsUseCase, createCreateDpfUseCase, createDepositMovementsUseCase, createDpf, createGetDpfReceiptUseCase, createListDpfProductsCatalogUseCase, getConsolidatedTimeDeposits, getDepositMovements, getDpfReceipt, getSelfCertificationData, getSelfCertificationDataUseCase, listDpfProductsCatalog, saveSelfCertificationData, saveSelfCertificationDataUseCase } from './deposit/index.js';
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.js';
-export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, startCausalFlow } from './causal/index.js';
+export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createReverseCreditNoteUseCase, createReverseDebitNoteUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, reverseCreditNote, reverseDebitNote, startCausalFlow } from './causal/index.js';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.js';
 import '../GetCivilRegistryData.usecase-BZ-gwHEV.js';
 import '../ResetUser.usecase-BbdiyNYi.js';
@@ -22,7 +22,7 @@ import '../PepsAccountOpening.usecase-BQQ3LPLo.js';
 import '../CreateExternalTransfer.usecase-DhAfF6Sr.js';
 import '../SaveSelfCertificationData.usecase-B6cMiZis.js';
 import '../CreatePaymentOwnCard.usecase-CXMxSW4V.js';
-import '../ListCausalsCatalog.usecase-HJ1iz3n8.js';
+import '../ListCausalsCatalog.usecase-D6QvyJIV.js';
 import '../GetUserBeneficiaries.usecase-8GehKDz1.js';
 
 declare function hasMySqlPool(): boolean;

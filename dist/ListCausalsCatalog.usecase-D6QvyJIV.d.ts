@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface StartCausalFlowCommand {
     providerAcronym: string;
@@ -153,6 +153,108 @@ declare class CreateCreditNoteUseCase {
     execute(cmd: CreateCreditNoteCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CreateCreditNoteResult>>;
 }
 
+interface ReverseDebitNoteCommand {
+    transaction: {
+        channel: string;
+        platform?: string;
+        clientRequestId: string;
+        transactionId: string;
+        transactionIdReverse: string;
+        transactionReferenceReverse: string;
+        causal: string;
+        amount: string;
+        concept: string;
+    };
+    debtor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+        sourceAccountSequential?: number;
+    };
+    creditor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+    };
+}
+
+interface ReverseDebitNoteResult {
+    transactionReference: string;
+    commissionReference: string;
+    transactionId?: string;
+    transactionIdReverse?: string;
+    transactionReferenceReverse?: string;
+    postingDateTime?: string;
+    reversedAmount?: string;
+    accountingDate?: string;
+}
+
+interface ReverseDebitNoteProviderPort {
+    reverseDebitNote(cmd: ReverseDebitNoteCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ReverseDebitNoteResult>>;
+}
+
+declare class ReverseDebitNoteUseCase {
+    private readonly provider;
+    constructor(provider: ReverseDebitNoteProviderPort);
+    execute(cmd: ReverseDebitNoteCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ReverseDebitNoteResult>>;
+}
+
+interface ReverseCreditNoteCommand {
+    transaction: {
+        channel: string;
+        platform?: string;
+        clientRequestId: string;
+        transactionId: string;
+        transactionIdReverse: string;
+        transactionReferenceReverse: string;
+        causal: string;
+        amount: string;
+        concept: string;
+    };
+    debtor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+        sourceAccountSequential?: number;
+    };
+    creditor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+    };
+}
+
+interface ReverseCreditNoteResult {
+    transactionReference: string;
+    commissionReference: string;
+    transactionId?: string;
+    transactionIdReverse?: string;
+    transactionReferenceReverse?: string;
+    postingDateTime?: string;
+    reversedAmount?: string;
+    accountingDate?: string;
+}
+
+interface ReverseCreditNoteProviderPort {
+    reverseCreditNote(cmd: ReverseCreditNoteCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ReverseCreditNoteResult>>;
+}
+
+declare class ReverseCreditNoteUseCase {
+    private readonly provider;
+    constructor(provider: ReverseCreditNoteProviderPort);
+    execute(cmd: ReverseCreditNoteCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ReverseCreditNoteResult>>;
+}
+
 interface CausalCatalogItem {
     accountingAccount?: string;
     active?: boolean;
@@ -178,4 +280,4 @@ declare class ListCausalsCatalogUseCase {
     execute(http: ProviderCallConfig): Promise<CanonicalResponse<CausalCatalogItem>>;
 }
 
-export { type AccountForCausalResult as A, type CausalCatalogItem as C, type GetAccountsForCausalsCommand as G, ListCausalsCatalogUseCase as L, type StartCausalFlowCommand as S, type CausalsCatalogProviderPort as a, type CreateCreditNoteCommand as b, type CreateCreditNoteProviderPort as c, type CreateCreditNoteResult as d, CreateCreditNoteUseCase as e, type CreateDebitNoteCommand as f, type CreateDebitNoteProviderPort as g, type CreateDebitNoteResult as h, CreateDebitNoteUseCase as i, type GetAccountsForCausalsProviderPort as j, GetAccountsForCausalsUseCase as k, type StartCausalFlowProviderPort as l, type StartCausalFlowResult as m, StartCausalFlowUseCase as n };
+export { type AccountForCausalResult as A, type CausalCatalogItem as C, type GetAccountsForCausalsCommand as G, ListCausalsCatalogUseCase as L, type ReverseCreditNoteCommand as R, type StartCausalFlowCommand as S, type CausalsCatalogProviderPort as a, type CreateCreditNoteCommand as b, type CreateCreditNoteProviderPort as c, type CreateCreditNoteResult as d, CreateCreditNoteUseCase as e, type CreateDebitNoteCommand as f, type CreateDebitNoteProviderPort as g, type CreateDebitNoteResult as h, CreateDebitNoteUseCase as i, type GetAccountsForCausalsProviderPort as j, GetAccountsForCausalsUseCase as k, type ReverseCreditNoteProviderPort as l, type ReverseCreditNoteResult as m, ReverseCreditNoteUseCase as n, type ReverseDebitNoteCommand as o, type ReverseDebitNoteProviderPort as p, type ReverseDebitNoteResult as q, ReverseDebitNoteUseCase as r, type StartCausalFlowProviderPort as s, type StartCausalFlowResult as t, StartCausalFlowUseCase as u };
