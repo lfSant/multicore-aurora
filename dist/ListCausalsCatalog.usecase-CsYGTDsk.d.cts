@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface StartCausalFlowCommand {
     providerAcronym: string;
@@ -61,26 +61,37 @@ declare class GetAccountsForCausalsUseCase {
 }
 
 interface CreateDebitNoteCommand {
-    identification: string;
-    accountNumber: string;
-    amount: string;
-    causal: string;
-    observation: string;
-    transactionIdentifier: string;
-    channel: string;
-    clientPaymentId?: string;
-    sourceAccountSequential?: number;
-    destinationAccount?: string;
-    beneficiaryIdentification?: string;
-    beneficiaryName?: string;
-    payerName?: string;
+    transaction: {
+        channel: string;
+        platform?: string;
+        clientRequestId: string;
+        transactionId: string;
+        causal: string;
+        amount: string;
+        concept: string;
+    };
+    debtor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+        sourceAccountSequential?: number;
+    };
+    creditor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+    };
 }
 
 interface CreateDebitNoteResult {
     transactionReference: string;
     commissionReference: string;
+    transactionId?: string;
     postingDateTime?: string;
     debitedAmount?: number;
+    accountingDate?: string;
 }
 
 interface CreateDebitNoteProviderPort {
@@ -97,22 +108,36 @@ declare class CreateDebitNoteUseCase {
 }
 
 interface CreateCreditNoteCommand {
-    channel: string;
-    causal: string;
-    transactionIdentifier: string;
-    identification?: string;
-    accountNumber?: string;
-    amount?: string;
-    observation?: string;
-    originalTransactionId?: string;
-    reversalReason?: string;
+    transaction: {
+        channel: string;
+        platform?: string;
+        clientRequestId: string;
+        transactionId: string;
+        causal: string;
+        amount: string;
+        concept: string;
+    };
+    debtor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+    };
+    creditor: {
+        account: string;
+        identification: string;
+        name: string;
+        ifi?: string;
+    };
 }
 
 interface CreateCreditNoteResult {
     transactionReference: string;
     commissionReference: string;
+    transactionId?: string;
     postingDateTime?: string;
     creditedAmount?: number;
+    accountingDate?: string;
 }
 
 interface CreateCreditNoteProviderPort {

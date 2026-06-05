@@ -12,7 +12,7 @@ export { C as ContractStatusUpdate, a as ContractStatusUpdateProviderPort, G as 
 export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-joBihw2Z.cjs';
 export { A as AddressCity, a as AddressCountry, b as AddressProvince, B as BirthCity, c as BirthCountry, C as CalculateDpfValuesCommand, d as CalculateDpfValuesUseCase, e as CityCatalog, f as ConsolidatedTimeDepositsProviderPort, g as CountryCatalog, h as CountryOfResidenceList, i as CreateDpfCommand, j as CreateDpfProviderPort, k as CreateDpfUseCase, D as DepositMovement, l as DepositMovementsProviderPort, m as DpfCalculation, n as DpfCalculationProviderPort, o as DpfCreation, p as DpfPaymentSchedule, q as DpfProductCatalog, r as DpfProductsCatalogProviderPort, s as DpfReceipt, t as DpfReceiptProviderPort, F as FiscalResidenceList, G as GetConsolidatedTimeDepositsCommand, u as GetConsolidatedTimeDepositsUseCase, v as GetDepositMovementsCommand, w as GetDepositMovementsUseCase, x as GetDpfReceiptCommand, y as GetDpfReceiptUseCase, z as GetSelfCertificationDataCommand, L as ListDpfProductsCatalogUseCase, P as PersonIdentification, E as ProvinceCatalog, R as ResidenceAddress, S as SaveSelfCertificationDataCommand, H as SaveSelfCertificationDataProviderPort, I as SaveSelfCertificationDataResult, J as SaveSelfCertificationDataUseCase, K as SelfCertificationData, M as SelfCertificationDataProviderPort, N as SelfCertificationDataResult, O as SelfCertificationDataUseCase, T as TimeDeposit } from '../SaveSelfCertificationData.usecase-Q8cuae8L.cjs';
 export { C as CreatePaymentOwnCardUseCase, G as GetPaymentReversalsCommand, a as GetPaymentReversalsUseCase, b as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, P as PaymentOwnCardCommand, d as PaymentOwnCardProviderPort, e as PaymentOwnCardResult, f as PaymentReversalItemResult, g as PaymentReversalsProviderPort, h as PaymentReversalsResult, i as PaymentServiceQueryItemResult, j as PaymentServiceQueryProviderPort, k as PaymentServiceQueryResult, l as ProcessPaymentReversalCommand, m as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, o as ProcessPaymentReversalUseCase, p as ProcessPaymentServiceCommand, q as ProcessPaymentServiceProviderPort, r as ProcessPaymentServiceResult, s as ProcessPaymentServiceUseCase } from '../CreatePaymentOwnCard.usecase-DWxQ_cUr.cjs';
-export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, S as StartCausalFlowCommand, l as StartCausalFlowProviderPort, m as StartCausalFlowResult, n as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-D-RAyPd1.cjs';
+export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, S as StartCausalFlowCommand, l as StartCausalFlowProviderPort, m as StartCausalFlowResult, n as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-CsYGTDsk.cjs';
 
 interface SuccessResponseOptions {
     client?: string;
@@ -1599,80 +1599,218 @@ declare const GetAccountsForCausalsCommandSchema: z.ZodObject<{
 type GetAccountsForCausalsCommandParsed = z.infer<typeof GetAccountsForCausalsCommandSchema>;
 
 declare const CreateDebitNoteCommandSchema: z.ZodObject<{
-    identification: z.ZodString;
-    accountNumber: z.ZodString;
-    amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
-    causal: z.ZodString;
-    observation: z.ZodString;
-    transactionIdentifier: z.ZodString;
-    channel: z.ZodString;
-    clientPaymentId: z.ZodOptional<z.ZodString>;
-    sourceAccountSequential: z.ZodOptional<z.ZodNumber>;
-    destinationAccount: z.ZodOptional<z.ZodString>;
-    beneficiaryIdentification: z.ZodOptional<z.ZodString>;
-    beneficiaryName: z.ZodOptional<z.ZodString>;
-    payerName: z.ZodOptional<z.ZodString>;
+    transaction: z.ZodObject<{
+        channel: z.ZodString;
+        platform: z.ZodOptional<z.ZodString>;
+        clientRequestId: z.ZodString;
+        transactionId: z.ZodString;
+        causal: z.ZodString;
+        amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+        concept: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    }, {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    }>;
+    debtor: z.ZodObject<{
+        account: z.ZodString;
+        identification: z.ZodString;
+        name: z.ZodString;
+        ifi: z.ZodOptional<z.ZodString>;
+    } & {
+        sourceAccountSequential: z.ZodOptional<z.ZodNumber>;
+    }, "strip", z.ZodTypeAny, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+        sourceAccountSequential?: number | undefined;
+    }, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+        sourceAccountSequential?: number | undefined;
+    }>;
+    creditor: z.ZodObject<{
+        account: z.ZodString;
+        identification: z.ZodString;
+        name: z.ZodString;
+        ifi: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    identification: string;
-    accountNumber: string;
-    amount: string;
-    causal: string;
-    channel: string;
-    observation: string;
-    transactionIdentifier: string;
-    clientPaymentId?: string | undefined;
-    sourceAccountSequential?: number | undefined;
-    destinationAccount?: string | undefined;
-    beneficiaryIdentification?: string | undefined;
-    beneficiaryName?: string | undefined;
-    payerName?: string | undefined;
+    transaction: {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    };
+    debtor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+        sourceAccountSequential?: number | undefined;
+    };
+    creditor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
 }, {
-    identification: string;
-    accountNumber: string;
-    amount: string;
-    causal: string;
-    channel: string;
-    observation: string;
-    transactionIdentifier: string;
-    clientPaymentId?: string | undefined;
-    sourceAccountSequential?: number | undefined;
-    destinationAccount?: string | undefined;
-    beneficiaryIdentification?: string | undefined;
-    beneficiaryName?: string | undefined;
-    payerName?: string | undefined;
+    transaction: {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    };
+    debtor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+        sourceAccountSequential?: number | undefined;
+    };
+    creditor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
 }>;
 type CreateDebitNoteCommandParsed = z.infer<typeof CreateDebitNoteCommandSchema>;
 
 declare const CreateCreditNoteCommandSchema: z.ZodObject<{
-    channel: z.ZodString;
-    causal: z.ZodString;
-    transactionIdentifier: z.ZodString;
-    identification: z.ZodOptional<z.ZodString>;
-    accountNumber: z.ZodOptional<z.ZodString>;
-    amount: z.ZodEffects<z.ZodEffects<z.ZodOptional<z.ZodString>, string | undefined, string | undefined>, string | undefined, string | undefined>;
-    observation: z.ZodOptional<z.ZodString>;
-    originalTransactionId: z.ZodOptional<z.ZodString>;
-    reversalReason: z.ZodOptional<z.ZodString>;
+    transaction: z.ZodObject<{
+        channel: z.ZodString;
+        platform: z.ZodOptional<z.ZodString>;
+        clientRequestId: z.ZodString;
+        transactionId: z.ZodString;
+        causal: z.ZodString;
+        amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
+        concept: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    }, {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    }>;
+    debtor: z.ZodObject<{
+        account: z.ZodString;
+        identification: z.ZodString;
+        name: z.ZodString;
+        ifi: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }>;
+    creditor: z.ZodObject<{
+        account: z.ZodString;
+        identification: z.ZodString;
+        name: z.ZodString;
+        ifi: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }, {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    }>;
 }, "strip", z.ZodTypeAny, {
-    causal: string;
-    channel: string;
-    transactionIdentifier: string;
-    identification?: string | undefined;
-    accountNumber?: string | undefined;
-    amount?: string | undefined;
-    observation?: string | undefined;
-    originalTransactionId?: string | undefined;
-    reversalReason?: string | undefined;
+    transaction: {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    };
+    debtor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
+    creditor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
 }, {
-    causal: string;
-    channel: string;
-    transactionIdentifier: string;
-    identification?: string | undefined;
-    accountNumber?: string | undefined;
-    amount?: string | undefined;
-    observation?: string | undefined;
-    originalTransactionId?: string | undefined;
-    reversalReason?: string | undefined;
+    transaction: {
+        amount: string;
+        concept: string;
+        causal: string;
+        transactionId: string;
+        channel: string;
+        clientRequestId: string;
+        platform?: string | undefined;
+    };
+    debtor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
+    creditor: {
+        identification: string;
+        account: string;
+        name: string;
+        ifi?: string | undefined;
+    };
 }>;
 type CreateCreditNoteCommandParsed = z.infer<typeof CreateCreditNoteCommandSchema>;
 
