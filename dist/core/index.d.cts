@@ -543,13 +543,13 @@ declare const ValidateDocumentCommandSchema: z.ZodObject<{
     documentType: z.ZodEnum<["cedulaanverso", "cedulareverso", "planillaservicio"]>;
     document: z.ZodString;
 }, "strip", z.ZodTypeAny, {
+    document: string;
     clientIdentification: string;
     documentType: "cedulaanverso" | "cedulareverso" | "planillaservicio";
-    document: string;
 }, {
+    document: string;
     clientIdentification: string;
     documentType: "cedulaanverso" | "cedulareverso" | "planillaservicio";
-    document: string;
 }>;
 type ValidateDocumentCommandParsed = z.infer<typeof ValidateDocumentCommandSchema>;
 
