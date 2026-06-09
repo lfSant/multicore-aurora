@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface StartCausalFlowCommand {
     providerAcronym: string;
@@ -75,13 +75,16 @@ interface CreateDebitNoteCommand {
         identification: string;
         name: string;
         ifi?: string;
-        sourceAccountSequential?: number;
+        ifiCode?: string;
+        accountNumber?: string;
     };
     creditor: {
         account: string;
         identification: string;
         name: string;
         ifi?: string;
+        ifiCode?: string;
+        accountNumber?: string;
     };
 }
 
@@ -122,12 +125,16 @@ interface CreateCreditNoteCommand {
         identification: string;
         name: string;
         ifi?: string;
+        ifiCode?: string;
+        accountNumber?: string;
     };
     creditor: {
         account: string;
         identification: string;
         name: string;
         ifi?: string;
+        ifiCode?: string;
+        accountNumber?: string;
     };
 }
 
@@ -170,13 +177,16 @@ interface ReverseDebitNoteCommand {
         identification: string;
         name: string;
         ifi?: string;
-        sourceAccountSequential?: number;
+        ifiCode?: string;
+        accountNumber?: string;
     };
     creditor: {
         account: string;
         identification: string;
         name: string;
         ifi?: string;
+        ifiCode?: string;
+        accountNumber?: string;
     };
 }
 
@@ -221,13 +231,16 @@ interface ReverseCreditNoteCommand {
         identification: string;
         name: string;
         ifi?: string;
-        sourceAccountSequential?: number;
+        ifiCode?: string;
+        accountNumber?: string;
     };
     creditor: {
         account: string;
         identification: string;
         name: string;
         ifi?: string;
+        ifiCode?: string;
+        accountNumber?: string;
     };
 }
 
