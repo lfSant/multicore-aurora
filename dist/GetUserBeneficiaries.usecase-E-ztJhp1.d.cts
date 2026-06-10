@@ -31,8 +31,9 @@ declare class UpdateContractStatusUseCase {
 }
 
 interface GetUserDataCommand {
-    username: string;
-    password: string;
+    username?: string;
+    identification?: string;
+    password?: string;
     channel: string;
 }
 
