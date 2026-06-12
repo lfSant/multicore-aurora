@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface GetClientCardsCommand {
     clientIdentification: string;
@@ -571,4 +571,102 @@ declare class ProcessCashAdvanceUseCase {
     execute(cmd: ProcessCashAdvanceCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ProcessCashAdvanceResult>>;
 }
 
-export { type ProcessCashAdvanceResult as $, type GetCardStatementCommand as A, type BlockCardCommand as B, type CalculateDeferredResult as C, type DeferredCardResult as D, type GetCardStatementProviderPort as E, GetCardStatementUseCase as F, type GenerateCardPinCommand as G, type GetClientCardsCommand as H, GetClientCardsUseCase as I, type GetClientLoansCommand as J, GetClientLoansUseCase as K, type GetDeferredCardCommand as L, type GetDeferredCardProviderPort as M, GetDeferredCardUseCase as N, type GetLoanAdditionalInfoCommand as O, GetLoanAdditionalInfoUseCase as P, type GetLoanAmortizationTableCommand as Q, GetLoanAmortizationTableUseCase as R, type LoanAdditionalInfo as S, type LoanAdditionalInfoProviderPort as T, type LoanAmortizationTable as U, type LoanAmortizationTableProviderPort as V, type LoanInstallment as W, type Movements as X, type PaidInstallment as Y, type ProcessCashAdvanceCommand as Z, type ProcessCashAdvanceProviderPort as _, type BlockCardProviderPort as a, ProcessCashAdvanceUseCase as a0, type ProcessDeferredBillingCommand as a1, type ProcessDeferredBillingProviderPort as a2, type ProcessDeferredBillingResult as a3, ProcessDeferredBillingUseCase as a4, type SendEmailCommand as a5, type SendEmailProviderPort as a6, type SendEmailResult as a7, SendEmailUseCase as a8, type SendSmsByIdentificationCommand as a9, type SendSmsByIdentificationProviderPort as aa, type SendSmsByIdentificationResult as ab, SendSmsByIdentificationUseCase as ac, type SendSmsByPhoneCommand as ad, type SendSmsByPhoneProviderPort as ae, SendSmsByPhoneUseCase as af, type ValidateCardPinCommand as ag, type ValidateCardPinProviderPort as ah, type ValidateCardPinResult as ai, ValidateCardPinUseCase as aj, type movements as ak, type BlockCardResult as b, BlockCardUseCase as c, CalculateDeferredValueUseCase as d, type CalculateDeferredValuesCommand as e, type CalculateDeferredValuesProviderPort as f, type Card as g, type CardData as h, type CardDataProviderPort as i, type CardMovementsResult as j, type CardStatementResult as k, type ChangeCardPinCommand as l, type ChangeCardPinProviderPort as m, type ChangeCardPinResult as n, ChangeCardPinUseCase as o, type ClientCardsProviderPort as p, type ClientLoan as q, type ClientLoansProviderPort as r, type GenerateCardPinProviderPort as s, type GenerateCardPinResult as t, GenerateCardPinUseCase as u, type GetCardDataCommand as v, GetCardDataUseCase as w, type GetCardMovementsCommand as x, type GetCardMovementsProviderPort as y, GetCardMovementsUseCase as z };
+interface SavePaymentOrderCommand {
+    accountNumberOrigin: string;
+    identification: string;
+    clientName: string;
+    phoneNumber: string;
+    email: string;
+    token: string;
+    platform: string;
+    date: string;
+    device: string;
+    reference: string;
+    concept: string;
+    amount: string;
+}
+
+interface SavePaymentOrderResult {
+    succes: boolean;
+    transactionIdentifier: string;
+}
+
+interface SavePaymentOrderProviderPort {
+    saveOrderPayment(cmd: SavePaymentOrderCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<SavePaymentOrderResult>>;
+}
+
+declare class SavePaymetOrderUseCase {
+    private readonly provider;
+    constructor(provider: SavePaymentOrderProviderPort);
+    execute(cmd: SavePaymentOrderCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SavePaymentOrderResult>>;
+}
+
+interface GetPaymentOrdersCommand {
+    clientNumber: string;
+    startDate: string;
+    endDate: string;
+}
+
+interface paymentOrder {
+    email: string;
+    status: string;
+    statusDescription: string;
+    date: string;
+    expirationDate: string;
+    modificationDate: string;
+    orderId: number;
+    identification: string;
+    beneficiaryName: string;
+    cellPhone: string;
+    accountNumber: number;
+    concept: string;
+    platform: string;
+    reference: string;
+    amount: number;
+}
+interface PaymentOrdersResult {
+    clientNumber: number;
+    success: boolean;
+    paymentOrders: paymentOrder[];
+}
+
+interface GetPaymentOrdersProviderPort {
+    getPaymentOrders(cmd: GetPaymentOrdersCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<PaymentOrdersResult>>;
+}
+
+declare class PaymentOrdersUseCase {
+    private readonly provider;
+    constructor(provider: GetPaymentOrdersProviderPort);
+    execute(cmd: GetPaymentOrdersCommand, http: ProviderCallConfig): Promise<CanonicalResponse<PaymentOrdersResult>>;
+}
+
+interface CancelPaymentOrderCommand {
+    orderId: number;
+    accountNumber: string;
+}
+
+interface CancelPaymentOrderResult {
+    success: boolean;
+    message: string;
+}
+
+interface CancelPaymentOrderProviderPort {
+    cancelPaymentOrder(cmd: CancelPaymentOrderCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<CancelPaymentOrderResult>>;
+}
+
+declare class ProcessCancelPaymentOrderUseCase {
+    private readonly provider;
+    constructor(provider: CancelPaymentOrderProviderPort);
+    execute(cmd: CancelPaymentOrderCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CancelPaymentOrderResult>>;
+}
+
+export { type LoanInstallment as $, type GetCardMovementsCommand as A, type BlockCardCommand as B, type CalculateDeferredResult as C, type DeferredCardResult as D, type GetCardMovementsProviderPort as E, GetCardMovementsUseCase as F, type GenerateCardPinCommand as G, type GetCardStatementCommand as H, type GetCardStatementProviderPort as I, GetCardStatementUseCase as J, type GetClientCardsCommand as K, GetClientCardsUseCase as L, type GetClientLoansCommand as M, GetClientLoansUseCase as N, type GetDeferredCardCommand as O, type GetDeferredCardProviderPort as P, GetDeferredCardUseCase as Q, type GetLoanAdditionalInfoCommand as R, GetLoanAdditionalInfoUseCase as S, type GetLoanAmortizationTableCommand as T, GetLoanAmortizationTableUseCase as U, type GetPaymentOrdersCommand as V, type GetPaymentOrdersProviderPort as W, type LoanAdditionalInfo as X, type LoanAdditionalInfoProviderPort as Y, type LoanAmortizationTable as Z, type LoanAmortizationTableProviderPort as _, type BlockCardProviderPort as a, type Movements as a0, type PaidInstallment as a1, type PaymentOrdersResult as a2, PaymentOrdersUseCase as a3, ProcessCancelPaymentOrderUseCase as a4, type ProcessCashAdvanceCommand as a5, type ProcessCashAdvanceProviderPort as a6, type ProcessCashAdvanceResult as a7, ProcessCashAdvanceUseCase as a8, type ProcessDeferredBillingCommand as a9, type ProcessDeferredBillingProviderPort as aa, type ProcessDeferredBillingResult as ab, ProcessDeferredBillingUseCase as ac, type SavePaymentOrderCommand as ad, type SavePaymentOrderProviderPort as ae, type SavePaymentOrderResult as af, SavePaymetOrderUseCase as ag, type SendEmailCommand as ah, type SendEmailProviderPort as ai, type SendEmailResult as aj, SendEmailUseCase as ak, type SendSmsByIdentificationCommand as al, type SendSmsByIdentificationProviderPort as am, type SendSmsByIdentificationResult as an, SendSmsByIdentificationUseCase as ao, type SendSmsByPhoneCommand as ap, type SendSmsByPhoneProviderPort as aq, SendSmsByPhoneUseCase as ar, type ValidateCardPinCommand as as, type ValidateCardPinProviderPort as at, type ValidateCardPinResult as au, ValidateCardPinUseCase as av, type movements as aw, type paymentOrder as ax, type BlockCardResult as b, BlockCardUseCase as c, CalculateDeferredValueUseCase as d, type CalculateDeferredValuesCommand as e, type CalculateDeferredValuesProviderPort as f, type CancelPaymentOrderCommand as g, type CancelPaymentOrderProviderPort as h, type CancelPaymentOrderResult as i, type Card as j, type CardData as k, type CardDataProviderPort as l, type CardMovementsResult as m, type CardStatementResult as n, type ChangeCardPinCommand as o, type ChangeCardPinProviderPort as p, type ChangeCardPinResult as q, ChangeCardPinUseCase as r, type ClientCardsProviderPort as s, type ClientLoan as t, type ClientLoansProviderPort as u, type GenerateCardPinProviderPort as v, type GenerateCardPinResult as w, GenerateCardPinUseCase as x, type GetCardDataCommand as y, GetCardDataUseCase as z };
