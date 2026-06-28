@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -58,12 +58,12 @@ declare class CreateAccountPlusUseCase {
 
 interface CreateElectronicAccountCommand {
     clientIdentification: string;
-    clientPlatform: string;
+    platform: string;
     creationDate: string;
     device: string;
     reference: string;
-    clientCoreCode?: number;
-    clientUsername?: string;
+    clientCoreCode?: string;
+    username?: string;
     clientIdentificationType?: string;
 }
 
