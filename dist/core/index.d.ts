@@ -12,7 +12,7 @@ export { C as ContractStatusUpdate, a as ContractStatusUpdateProviderPort, G as 
 export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-DhAfF6Sr.js';
 export { A as AddressCity, a as AddressCountry, b as AddressProvince, B as BirthCity, c as BirthCountry, C as CalculateDpfValuesCommand, d as CalculateDpfValuesUseCase, e as CityCatalog, f as ConsolidatedTimeDepositsProviderPort, g as CountryCatalog, h as CountryOfResidenceList, i as CreateDpfCommand, j as CreateDpfProviderPort, k as CreateDpfUseCase, D as DepositMovement, l as DepositMovementsProviderPort, m as DpfCalculation, n as DpfCalculationProviderPort, o as DpfCreation, p as DpfPaymentSchedule, q as DpfProductCatalog, r as DpfProductsCatalogProviderPort, s as DpfReceipt, t as DpfReceiptProviderPort, F as FiscalResidenceList, G as GetConsolidatedTimeDepositsCommand, u as GetConsolidatedTimeDepositsUseCase, v as GetDepositMovementsCommand, w as GetDepositMovementsUseCase, x as GetDpfReceiptCommand, y as GetDpfReceiptUseCase, z as GetSelfCertificationDataCommand, L as ListDpfProductsCatalogUseCase, P as PersonIdentification, E as ProvinceCatalog, R as ResidenceAddress, S as SaveSelfCertificationDataCommand, H as SaveSelfCertificationDataProviderPort, I as SaveSelfCertificationDataResult, J as SaveSelfCertificationDataUseCase, K as SelfCertificationData, M as SelfCertificationDataProviderPort, N as SelfCertificationDataResult, O as SelfCertificationDataUseCase, T as TimeDeposit } from '../SaveSelfCertificationData.usecase-B6cMiZis.js';
 export { C as CreatePaymentOwnCardUseCase, G as GetPaymentReversalsCommand, a as GetPaymentReversalsUseCase, b as GetPaymentServiceQueryCommand, c as GetPaymentServiceQueryUseCase, P as PaymentOwnCardCommand, d as PaymentOwnCardProviderPort, e as PaymentOwnCardResult, f as PaymentReversalItemResult, g as PaymentReversalsProviderPort, h as PaymentReversalsResult, i as PaymentServiceQueryItemResult, j as PaymentServiceQueryProviderPort, k as PaymentServiceQueryResult, l as ProcessPaymentReversalCommand, m as ProcessPaymentReversalProviderPort, n as ProcessPaymentReversalResult, o as ProcessPaymentReversalUseCase, p as ProcessPaymentServiceCommand, q as ProcessPaymentServiceProviderPort, r as ProcessPaymentServiceResult, s as ProcessPaymentServiceUseCase } from '../CreatePaymentOwnCard.usecase-CXMxSW4V.js';
-export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, R as ReverseCreditNoteCommand, l as ReverseCreditNoteProviderPort, m as ReverseCreditNoteResult, n as ReverseCreditNoteUseCase, o as ReverseDebitNoteCommand, p as ReverseDebitNoteProviderPort, q as ReverseDebitNoteResult, r as ReverseDebitNoteUseCase, S as StartCausalFlowCommand, s as StartCausalFlowProviderPort, t as StartCausalFlowResult, u as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-D4OCEKBI.js';
+export { A as AccountForCausalResult, C as CausalCatalogItem, a as CausalsCatalogProviderPort, b as CreateCreditNoteCommand, c as CreateCreditNoteProviderPort, d as CreateCreditNoteResult, e as CreateCreditNoteUseCase, f as CreateDebitNoteCommand, g as CreateDebitNoteProviderPort, h as CreateDebitNoteResult, i as CreateDebitNoteUseCase, G as GetAccountsForCausalsCommand, j as GetAccountsForCausalsProviderPort, k as GetAccountsForCausalsUseCase, L as ListCausalsCatalogUseCase, R as ReverseCreditNoteCommand, l as ReverseCreditNoteProviderPort, m as ReverseCreditNoteResult, n as ReverseCreditNoteUseCase, o as ReverseDebitNoteCommand, p as ReverseDebitNoteProviderPort, q as ReverseDebitNoteResult, r as ReverseDebitNoteUseCase, S as StartCausalFlowCommand, s as StartCausalFlowProviderPort, t as StartCausalFlowResult, u as StartCausalFlowUseCase } from '../ListCausalsCatalog.usecase-CRqqCgMg.js';
 
 interface SuccessResponseOptions {
     client?: string;
@@ -1878,7 +1878,6 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         transactionId: z.ZodString;
         transactionIdReverse: z.ZodString;
         transactionReferenceReverse: z.ZodString;
-        transactionReference: z.ZodOptional<z.ZodString>;
         causal: z.ZodString;
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
@@ -1892,7 +1891,6 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     }, {
         amount: string;
         concept: string;
@@ -1903,7 +1901,6 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     }>;
     debtor: z.ZodObject<{
         account: z.ZodString;
@@ -1962,7 +1959,6 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     };
     debtor: {
         identification: string;
@@ -1991,7 +1987,6 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     };
     debtor: {
         identification: string;
@@ -2020,7 +2015,6 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         transactionId: z.ZodString;
         transactionIdReverse: z.ZodString;
         transactionReferenceReverse: z.ZodString;
-        transactionReference: z.ZodOptional<z.ZodString>;
         causal: z.ZodString;
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
@@ -2034,7 +2028,6 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     }, {
         amount: string;
         concept: string;
@@ -2045,7 +2038,6 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     }>;
     debtor: z.ZodObject<{
         account: z.ZodString;
@@ -2104,7 +2096,6 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     };
     debtor: {
         identification: string;
@@ -2133,7 +2124,6 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
-        transactionReference?: string | undefined;
     };
     debtor: {
         identification: string;

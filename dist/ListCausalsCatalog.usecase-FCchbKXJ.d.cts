@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface StartCausalFlowCommand {
     providerAcronym: string;
@@ -168,7 +168,6 @@ interface ReverseDebitNoteCommand {
         transactionId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
-        transactionReference?: string;
         causal: string;
         amount: string;
         concept: string;
@@ -223,7 +222,6 @@ interface ReverseCreditNoteCommand {
         transactionId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
-        transactionReference?: string;
         causal: string;
         amount: string;
         concept: string;
