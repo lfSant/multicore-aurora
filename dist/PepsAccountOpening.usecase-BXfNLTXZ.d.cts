@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -431,6 +431,7 @@ interface LaborInfoItem {
     laborRelationCode: string;
     professionCode: string;
     economicActivityCode: string;
+    otherEconomicActivityCode?: string;
     workplaceName: string;
     jobPositionCode: string;
     workStartDate: string;
