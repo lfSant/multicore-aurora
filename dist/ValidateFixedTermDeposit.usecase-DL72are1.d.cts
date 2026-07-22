@@ -17,6 +17,7 @@ interface TimeDeposit {
     amount: string;
     collectionInterestBalance: string;
     calculationInterestBalance: string;
+    requestDate: string;
 }
 
 interface ConsolidatedTimeDepositsProviderPort {
@@ -48,6 +49,13 @@ interface DepositMovement {
     causal: string;
     office: string;
     user: string;
+    code: string;
+    depositType: string;
+    transactionCode: string;
+    reasonCode: string;
+    officeCode: string;
+    platform: string;
+    platformCode: string;
 }
 
 interface DepositMovementsProviderPort {
@@ -103,6 +111,10 @@ interface CalculateDpfValuesCommand {
     clientIdentification: string;
     clientName: string;
     username: string;
+    clientNumber: string;
+    depositTypeCode: string;
+    currency: string;
+    interestPaymentMode: string;
 }
 
 interface DpfPaymentSchedule {
@@ -127,6 +139,7 @@ interface DpfCalculation {
     netInterestAmount?: string;
     totalPayoutAmount: string;
     paymentSchedule?: DpfPaymentSchedule[];
+    nominalRate: number;
 }
 
 interface DpfCalculationProviderPort {
@@ -156,6 +169,9 @@ interface CreateDpfCommand {
     clientIdentification: string;
     clientName: string;
     username: string;
+    clientNumber: number;
+    cancellationTypeCode: string;
+    netRateValue: number;
 }
 
 interface DpfCreation {
@@ -331,4 +347,190 @@ declare class SaveSelfCertificationDataUseCase {
     execute(cmd: SaveSelfCertificationDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<SaveSelfCertificationDataResult>>;
 }
 
-export { type AddressCity as A, type BirthCity as B, type CalculateDpfValuesCommand as C, type DepositMovement as D, type ProvinceCatalog as E, type FiscalResidenceList as F, type GetConsolidatedTimeDepositsCommand as G, type SaveSelfCertificationDataProviderPort as H, type SaveSelfCertificationDataResult as I, SaveSelfCertificationDataUseCase as J, type SelfCertificationData as K, ListDpfProductsCatalogUseCase as L, type SelfCertificationDataProviderPort as M, type SelfCertificationDataResult as N, SelfCertificationDataUseCase as O, type PersonIdentification as P, type ResidenceAddress as R, type SaveSelfCertificationDataCommand as S, type TimeDeposit as T, type AddressCountry as a, type AddressProvince as b, type BirthCountry as c, CalculateDpfValuesUseCase as d, type CityCatalog as e, type ConsolidatedTimeDepositsProviderPort as f, type CountryCatalog as g, type CountryOfResidenceList as h, type CreateDpfCommand as i, type CreateDpfProviderPort as j, CreateDpfUseCase as k, type DepositMovementsProviderPort as l, type DpfCalculation as m, type DpfCalculationProviderPort as n, type DpfCreation as o, type DpfPaymentSchedule as p, type DpfProductCatalog as q, type DpfProductsCatalogProviderPort as r, type DpfReceipt as s, type DpfReceiptProviderPort as t, GetConsolidatedTimeDepositsUseCase as u, type GetDepositMovementsCommand as v, GetDepositMovementsUseCase as w, type GetDpfReceiptCommand as x, GetDpfReceiptUseCase as y, type GetSelfCertificationDataCommand as z };
+interface DepositTypeCatalogItem {
+    code: string;
+    name: string;
+    allowsPeriodicInterestPayment: boolean;
+    additionalInformation: string;
+}
+
+interface DepositTypeCatalogProviderPort {
+    getDepositTypeCatalog(http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DepositTypeCatalogItem[]>>;
+}
+
+declare class GetDepositTypeCatalogUseCase {
+    private readonly provider;
+    constructor(provider: DepositTypeCatalogProviderPort);
+    execute(http: ProviderCallConfig): Promise<CanonicalResponse<DepositTypeCatalogItem[]>>;
+}
+
+interface GetDepositTypePresumptiveRequirementsCommand {
+    depositTypeCode: string;
+}
+
+interface DepositTypePaymentPeriod {
+    code: string;
+    name: string;
+    numberOfDays: number;
+}
+interface DepositTypePresumptiveRequirements {
+    capitalComponentSequential: number;
+    paymentPeriods: DepositTypePaymentPeriod[];
+}
+
+interface DepositTypePresumptiveRequirementsProviderPort {
+    getDepositTypePresumptiveRequirements(cmd: GetDepositTypePresumptiveRequirementsCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DepositTypePresumptiveRequirements>>;
+}
+
+declare class GetDepositTypePresumptiveRequirementsUseCase {
+    private readonly provider;
+    constructor(provider: DepositTypePresumptiveRequirementsProviderPort);
+    execute(cmd: GetDepositTypePresumptiveRequirementsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DepositTypePresumptiveRequirements>>;
+}
+
+interface GetDepositCancellationTypesCommand {
+    depositTypeCode: string;
+}
+
+interface DepositCancellationType {
+    code: string;
+    name: string;
+    additionalInformation: string;
+}
+interface DepositCancellationTypes {
+    cancellationTypes: DepositCancellationType[];
+}
+
+interface DepositCancellationTypesProviderPort {
+    getDepositCancellationTypes(cmd: GetDepositCancellationTypesCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DepositCancellationTypes>>;
+}
+
+declare class GetDepositCancellationTypesUseCase {
+    private readonly provider;
+    constructor(provider: DepositCancellationTypesProviderPort);
+    execute(cmd: GetDepositCancellationTypesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DepositCancellationTypes>>;
+}
+
+interface GetFixedTermDepositCurrentRatesCommand {
+    depositTypeCode: string;
+    currency: string;
+}
+
+interface FixedTermDepositCurrentRate {
+    depositTypeCode: string;
+    currency: string;
+    termInDaysMin: number;
+    termInDaysMax: number;
+    amountMin: number;
+    amountMax: number;
+    nominalRate: number;
+    effectiveAnnualRate: number;
+    validFrom: string;
+    validTo: string;
+}
+
+interface FixedTermDepositCurrentRatesProviderPort {
+    getFixedTermDepositCurrentRates(cmd: GetFixedTermDepositCurrentRatesCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<FixedTermDepositCurrentRate[]>>;
+}
+
+declare class GetFixedTermDepositCurrentRatesUseCase {
+    private readonly provider;
+    constructor(provider: FixedTermDepositCurrentRatesProviderPort);
+    execute(cmd: GetFixedTermDepositCurrentRatesCommand, http: ProviderCallConfig): Promise<CanonicalResponse<FixedTermDepositCurrentRate[]>>;
+}
+
+interface GetDepositAdditionalInformationCommand {
+    depositNumber: string;
+}
+
+interface DepositComponent {
+    sequential: number;
+    name: string;
+    balance: number;
+}
+interface DepositScheduleItem {
+    period: number;
+    dateMs: number;
+    interestAmount: string;
+    taxAmount: string;
+    netPaymentAmount: string;
+    accumulatedAmount: string;
+}
+interface DepositAdditionalInformation {
+    depositNumber: string;
+    branchName: string;
+    productName: string;
+    nominalRate: number;
+    rateVariance: number;
+    termInDays: number;
+    effectiveAnnualRate: number;
+    endorsed: string;
+    taxWithholding: number;
+    maturityAmount: number;
+    components: DepositComponent[];
+    schedule: DepositScheduleItem[];
+}
+
+interface DepositAdditionalInformationProviderPort {
+    getDepositAdditionalInformation(cmd: GetDepositAdditionalInformationCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<DepositAdditionalInformation>>;
+}
+
+declare class GetDepositAdditionalInformationUseCase {
+    private readonly provider;
+    constructor(provider: DepositAdditionalInformationProviderPort);
+    execute(cmd: GetDepositAdditionalInformationCommand, http: ProviderCallConfig): Promise<CanonicalResponse<DepositAdditionalInformation>>;
+}
+
+interface ValidateFixedTermDepositCommand {
+    depositNumber: string;
+    identificationNumber: string;
+    date: string;
+}
+
+interface FixedTermDepositValidation {
+    clientNumber: number;
+    partner?: string;
+    depositNumber: string | null;
+    depositType: string | null;
+    depositTypeCode: string | null;
+    capital: number;
+    interest: number;
+    financialReturns: number;
+    totalValue: number;
+    termInDays: number;
+    rate: number;
+    status: string | null;
+    statusCode: string | null;
+    date: string | null;
+    expiryDate: string | null;
+}
+
+interface FixedTermDepositValidationProviderPort {
+    validateFixedTermDeposit(cmd: ValidateFixedTermDepositCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<FixedTermDepositValidation>>;
+}
+
+declare class ValidateFixedTermDepositUseCase {
+    private readonly provider;
+    constructor(provider: FixedTermDepositValidationProviderPort);
+    execute(cmd: ValidateFixedTermDepositCommand, http: ProviderCallConfig): Promise<CanonicalResponse<FixedTermDepositValidation>>;
+}
+
+export { GetDpfReceiptUseCase as $, type AddressCity as A, type BirthCity as B, type CalculateDpfValuesCommand as C, type DepositAdditionalInformation as D, type DpfCreation as E, type DpfPaymentSchedule as F, type DpfProductCatalog as G, type DpfProductsCatalogProviderPort as H, type DpfReceipt as I, type DpfReceiptProviderPort as J, type FiscalResidenceList as K, type FixedTermDepositCurrentRate as L, type FixedTermDepositCurrentRatesProviderPort as M, type FixedTermDepositValidation as N, type FixedTermDepositValidationProviderPort as O, type GetConsolidatedTimeDepositsCommand as P, GetConsolidatedTimeDepositsUseCase as Q, type GetDepositAdditionalInformationCommand as R, GetDepositAdditionalInformationUseCase as S, type GetDepositCancellationTypesCommand as T, GetDepositCancellationTypesUseCase as U, type GetDepositMovementsCommand as V, GetDepositMovementsUseCase as W, GetDepositTypeCatalogUseCase as X, type GetDepositTypePresumptiveRequirementsCommand as Y, GetDepositTypePresumptiveRequirementsUseCase as Z, type GetDpfReceiptCommand as _, type AddressCountry as a, type GetFixedTermDepositCurrentRatesCommand as a0, GetFixedTermDepositCurrentRatesUseCase as a1, type GetSelfCertificationDataCommand as a2, ListDpfProductsCatalogUseCase as a3, type PersonIdentification as a4, type ProvinceCatalog as a5, type ResidenceAddress as a6, type SaveSelfCertificationDataCommand as a7, type SaveSelfCertificationDataProviderPort as a8, type SaveSelfCertificationDataResult as a9, SaveSelfCertificationDataUseCase as aa, type SelfCertificationData as ab, type SelfCertificationDataProviderPort as ac, type SelfCertificationDataResult as ad, SelfCertificationDataUseCase as ae, type TimeDeposit as af, type ValidateFixedTermDepositCommand as ag, ValidateFixedTermDepositUseCase as ah, type AddressProvince as b, type BirthCountry as c, CalculateDpfValuesUseCase as d, type CityCatalog as e, type ConsolidatedTimeDepositsProviderPort as f, type CountryCatalog as g, type CountryOfResidenceList as h, type CreateDpfCommand as i, type CreateDpfProviderPort as j, CreateDpfUseCase as k, type DepositAdditionalInformationProviderPort as l, type DepositCancellationType as m, type DepositCancellationTypes as n, type DepositCancellationTypesProviderPort as o, type DepositComponent as p, type DepositMovement as q, type DepositMovementsProviderPort as r, type DepositScheduleItem as s, type DepositTypeCatalogItem as t, type DepositTypeCatalogProviderPort as u, type DepositTypePaymentPeriod as v, type DepositTypePresumptiveRequirements as w, type DepositTypePresumptiveRequirementsProviderPort as x, type DpfCalculation as y, type DpfCalculationProviderPort as z };
