@@ -1,6 +1,6 @@
 {
   "name": "lib-multicore-aurora",
-  "version": "3.0.97",
+  "version": "3.0.98",
   "description": "Libreria TypeScript para la gestión de múltiples conexiones de manera dinamica a los cores de las cooperativas",
   "author": "Luis Fernando Santacruz",
   "email": "lf.santacruz@outlook.es",

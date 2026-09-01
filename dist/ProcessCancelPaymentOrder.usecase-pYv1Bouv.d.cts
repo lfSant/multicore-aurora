@@ -323,6 +323,7 @@ interface LoanInstallment {
     daysOverdue?: number;
     lifeInsurance?: string;
     other: string;
+    welfareSavings?: string;
     loanBalance: string;
     totalInstallment: string;
 }
