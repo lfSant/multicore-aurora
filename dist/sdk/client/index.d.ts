@@ -1,5 +1,5 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
-import { o as GetClientProfileUseCase, n as GetClientProfileCommand, f as ClientProfile, C as CheckClientActiveCommand, e as ClientActiveStatus, b as CheckClientActiveUseCase, m as GetClientProfileByNumberUseCase, l as GetClientProfileByNumberCommand, g as ClientProfileByNumber, k as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, c as CivilRegistryData, A as AcceptTermsCommand, T as TermsAcceptance, a as AcceptTermsUseCase } from '../../AcceptTerms.usecase-oxDDWLqB.js';
+import { q as GetClientProfileUseCase, p as GetClientProfileCommand, h as ClientProfile, C as CheckClientActiveCommand, e as ClientActiveStatus, b as CheckClientActiveUseCase, o as GetClientProfileByNumberUseCase, n as GetClientProfileByNumberCommand, i as ClientProfileByNumber, m as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, c as CivilRegistryData, A as AcceptTermsCommand, T as TermsAcceptance, a as AcceptTermsUseCase, r as RegisterUserChannelUseCase, R as RegisterUserChannelCommand, f as ClientChannelRegistration } from '../../RegisterUserChannel.usecase-DXyOQHqC.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
 import '../../CoreRequestContext-C5PImHcm.js';
@@ -39,4 +39,11 @@ declare function acceptTerms(command: AcceptTermsCommand, http: ProviderCallConf
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<TermsAcceptance>>;
 
-export { acceptTerms, checkClientStatus, createAcceptTermsUseCase, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber };
+declare function createRegisterUserChannelUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): RegisterUserChannelUseCase;
+declare function registerUserChannel(command: RegisterUserChannelCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<ClientChannelRegistration>>;
+
+export { acceptTerms, checkClientStatus, createAcceptTermsUseCase, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, createRegisterUserChannelUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber, registerUserChannel };

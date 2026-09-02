@@ -178,4 +178,30 @@ declare class AcceptTermsUseCase {
     execute(cmd: AcceptTermsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<TermsAcceptance>>;
 }
 
-export { type AcceptTermsCommand as A, type CheckClientActiveCommand as C, type GetCivilRegistryDataCommand as G, type TermsAcceptance as T, AcceptTermsUseCase as a, CheckClientActiveUseCase as b, type CivilRegistryData as c, type CivilRegistryDataProviderPort as d, type ClientActiveStatus as e, type ClientProfile as f, type ClientProfileByNumber as g, type ClientProfileByNumberProviderPort as h, type ClientProfileProviderPort as i, type ClientStatusProviderPort as j, GetCivilRegistryDataUseCase as k, type GetClientProfileByNumberCommand as l, GetClientProfileByNumberUseCase as m, type GetClientProfileCommand as n, GetClientProfileUseCase as o, type TermsAcceptanceProviderPort as p };
+interface RegisterUserChannelCommand {
+    clientIdentification: string;
+    email: string;
+    mobilePhone: string;
+    clientUsername: string;
+    context?: CoreRequestContext;
+}
+
+interface ClientChannelRegistration {
+    clientId: string;
+    clientIdentification: string;
+}
+
+interface ClientChannelRegistrationProviderPort {
+    registerUserChannel(cmd: RegisterUserChannelCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<ClientChannelRegistration>>;
+}
+
+declare class RegisterUserChannelUseCase {
+    private readonly provider;
+    constructor(provider: ClientChannelRegistrationProviderPort);
+    execute(cmd: RegisterUserChannelCommand, http: ProviderCallConfig): Promise<CanonicalResponse<ClientChannelRegistration>>;
+}
+
+export { type AcceptTermsCommand as A, type CheckClientActiveCommand as C, type GetCivilRegistryDataCommand as G, type RegisterUserChannelCommand as R, type TermsAcceptance as T, AcceptTermsUseCase as a, CheckClientActiveUseCase as b, type CivilRegistryData as c, type CivilRegistryDataProviderPort as d, type ClientActiveStatus as e, type ClientChannelRegistration as f, type ClientChannelRegistrationProviderPort as g, type ClientProfile as h, type ClientProfileByNumber as i, type ClientProfileByNumberProviderPort as j, type ClientProfileProviderPort as k, type ClientStatusProviderPort as l, GetCivilRegistryDataUseCase as m, type GetClientProfileByNumberCommand as n, GetClientProfileByNumberUseCase as o, type GetClientProfileCommand as p, GetClientProfileUseCase as q, RegisterUserChannelUseCase as r, type TermsAcceptanceProviderPort as s };
