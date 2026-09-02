@@ -1,5 +1,6 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { C as CoreRequestContext } from './CoreRequestContext-C5PImHcm.cjs';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;
@@ -95,8 +96,11 @@ interface ListAccountsCommand {
 interface Account {
     accountNumber: string;
     accountType: string;
+    accountTypeCode?: string;
     status: string;
+    statusCode?: string;
     currency: string;
+    currencyCode?: string;
     officeName?: string;
     openDate?: string;
     signatureType?: string;
@@ -107,6 +111,7 @@ interface Account {
     otherBalance?: string;
     pledgedBalance?: string;
     operationalTransactionsAllowed?: boolean | null;
+    sequential?: number;
     productCategory: 'ACCOUNT';
     extras?: Record<string, any>;
 }
@@ -145,6 +150,7 @@ declare class GetAccountByNumberUseCase {
 interface GetConsolidatedAccountsCommand {
     clientNumber: number | string;
     clientIdentification?: string;
+    context?: CoreRequestContext;
 }
 
 interface ConsolidatedAccountsProviderPort {

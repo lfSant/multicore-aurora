@@ -19,7 +19,7 @@ import '../CoreRequestContext-C5PImHcm.cjs';
 import '../ResetUser.usecase-DMgnwCva.cjs';
 import '../GetCardDeliveryInfo.usecase-DJO6f-Xz.cjs';
 import '../ListCustomerProducts.usecase-D5ChTElV.cjs';
-import '../PepsAccountOpening.usecase-BXfNLTXZ.cjs';
+import '../PepsAccountOpening.usecase-BBaNyzpx.cjs';
 import '../CreateExternalTransfer.usecase-joBihw2Z.cjs';
 import '../ValidateFixedTermDeposit.usecase-DL72are1.cjs';
 import '../CreatePaymentOwnCard.usecase-DWxQ_cUr.cjs';
