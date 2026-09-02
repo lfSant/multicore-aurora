@@ -14,7 +14,7 @@ export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidated
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.js';
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createReverseCreditNoteUseCase, createReverseDebitNoteUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, reverseCreditNote, reverseDebitNote, startCausalFlow } from './causal/index.js';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.js';
-import '../RegisterUserChannel.usecase-DXyOQHqC.js';
+import '../RegisterUserChannel.usecase-CpVmpZYO.js';
 import '../CoreRequestContext-C5PImHcm.js';
 import '../ResetUser.usecase-BbdiyNYi.js';
 import '../GetCardDeliveryInfo.usecase-DAsSmWIG.js';

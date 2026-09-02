@@ -2,7 +2,7 @@ import { a as CoreRawPayload, C as CanonicalResponse } from '../types-DZJuEFLS.j
 export { P as ProviderResult } from '../types-DZJuEFLS.js';
 export { H as HttpResponse, P as ProviderCallConfig } from '../http-CRaj6wih.js';
 import { ZodError, z } from 'zod';
-export { A as AcceptTermsCommand, a as AcceptTermsUseCase, C as CheckClientActiveCommand, b as CheckClientActiveUseCase, c as CivilRegistryData, d as CivilRegistryDataProviderPort, e as ClientActiveStatus, f as ClientChannelRegistration, g as ClientChannelRegistrationProviderPort, h as ClientProfile, i as ClientProfileByNumber, j as ClientProfileByNumberProviderPort, k as ClientProfileProviderPort, l as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, m as GetCivilRegistryDataUseCase, n as GetClientProfileByNumberCommand, o as GetClientProfileByNumberUseCase, p as GetClientProfileCommand, q as GetClientProfileUseCase, R as RegisterUserChannelCommand, r as RegisterUserChannelUseCase, T as TermsAcceptance, s as TermsAcceptanceProviderPort } from '../RegisterUserChannel.usecase-DXyOQHqC.js';
+export { A as AcceptTermsCommand, a as AcceptTermsUseCase, C as CheckClientActiveCommand, b as CheckClientActiveUseCase, c as CivilRegistryData, d as CivilRegistryDataProviderPort, e as ClientActiveStatus, f as ClientChannelRegistration, g as ClientChannelRegistrationProviderPort, h as ClientProfile, i as ClientProfileByNumber, j as ClientProfileByNumberProviderPort, k as ClientProfileProviderPort, l as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, m as GetCivilRegistryDataUseCase, n as GetClientProfileByNumberCommand, o as GetClientProfileByNumberUseCase, p as GetClientProfileCommand, q as GetClientProfileUseCase, R as RegisterUserChannelCommand, r as RegisterUserChannelUseCase, T as TermsAcceptance, s as TermsAcceptanceProviderPort } from '../RegisterUserChannel.usecase-CpVmpZYO.js';
 export { C as CoreRequestContext } from '../CoreRequestContext-C5PImHcm.js';
 export { B as Branch, C as CardDeliveryInfo, a as CardDeliveryInfoProviderPort, b as CardDeliveryInfoSubmission, c as CardDeliveryInfoSubmissionProviderPort, d as CardDeliveryLocation, e as CardDeliveryLocationCatalogProviderPort, f as CardName, g as CatalogCardNamesProviderPort, h as CatalogFitItem, i as CatalogFitProviderPort, j as Channel, k as City, l as Country, m as Currency, E as EconomicActivity, n as EconomicActivityCatalogProviderPort, o as EducationTypes, p as EducationTypesProviderPort, q as EducationTypesUseCase, F as FinancialProductCatalogItem, r as FinancialProductCatalogs, s as FinancialProductCatalogsProviderPort, G as GetCardDeliveryInfoCommand, t as GetCardDeliveryInfoUseCase, u as GetCardDeliveryLocationCatalogCommand, v as GetCardDeliveryLocationCatalogUseCase, w as GetCatalogCardNamesCommand, x as GetCatalogCardNamesUseCase, y as GetCatalogFitCommand, z as GetCatalogFitUseCase, A as GetEconomicActivityCatalogUseCase, D as GetFinancialProductCatalogsCommand, H as GetFinancialProductCatalogsUseCase, I as GetInstitutionCatalogsCommand, J as GetInstitutionCatalogsUseCase, K as GetLaborPositionCatalogUseCase, L as GetOtherEconomicActivityCatalogUseCase, M as GetPersonCatalogsCommand, N as GetPersonCatalogsUseCase, O as GetPurposeCatalogUseCase, P as InstitutionCatalogs, Q as InstitutionCatalogsProviderPort, R as LaborPosition, S as LaborPositionCatalogProviderPort, T as MaritalStatus, U as MaritalStatusProviderPort, V as MaritalStatusUseCase, W as Office, X as Origin, Y as OtherEconomicActivityCatalogProviderPort, Z as PaymentServiceConcepts, _ as PaymentServiceConceptsProviderPort, $ as PaymentServiceConceptsUseCase, a0 as PersonCatalogItem, a1 as PersonCatalogs, a2 as PersonCatalogsProviderPort, a3 as ProfessionTypes, a4 as ProfessionTypesProviderPort, a5 as ProfessionTypesUseCase, a6 as Province, a7 as PurposeCatalogItem, a8 as PurposeCatalogProviderPort, a9 as SubmitCardDeliveryInfoCommand, aa as SubmitCardDeliveryInfoUseCase } from '../GetCardDeliveryInfo.usecase-DAsSmWIG.js';
 export { A as AuthLogin, a as AuthLoginCommand, b as AuthLoginProviderPort, c as AuthLoginUseCase, d as AuthPrecheckCommand, e as AuthPrecheckProviderPort, f as AuthPrecheckStatus, g as AuthPrecheckUseCase, B as BlockUser, h as BlockUserCommand, i as BlockUserProviderPort, j as BlockUserUseCase, C as ChangePassword, k as ChangePasswordCommand, l as ChangePasswordProviderPort, m as ChangePasswordUseCase, L as LoginCoreCommand, n as LoginCoreProviderPort, o as LoginCoreResult, p as LoginCoreUseCase, R as RegisterCredentials, q as RegisterCredentialsCommand, r as RegisterCredentialsProviderPort, s as RegisterCredentialsUseCase, t as ResetPassword, u as ResetPasswordCommand, v as ResetPasswordProviderPort, w as ResetPasswordUseCase, x as ResetUser, y as ResetUserCommand, z as ResetUserProviderPort, D as ResetUserUseCase, U as UnblockUser, E as UnblockUserCommand, F as UnblockUserProviderPort, G as UnblockUserUseCase, V as ValidateUsername, H as ValidateUsernameCommand, I as ValidateUsernameProviderPort, J as ValidateUsernameUseCase } from '../ResetUser.usecase-BbdiyNYi.js';
@@ -92,6 +92,7 @@ declare const dateTimeISO8601Schema: (fieldName: string, required?: boolean) => 
 
 declare const GetClientProfileCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
+    typeIdentification: z.ZodOptional<z.ZodString>;
     context: z.ZodOptional<z.ZodObject<{
         userClient: z.ZodOptional<z.ZodString>;
         terminal: z.ZodOptional<z.ZodString>;
@@ -131,6 +132,7 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
+    typeIdentification?: string | undefined;
     context?: {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -146,6 +148,7 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
     } | undefined;
 }, {
     clientIdentification: string;
+    typeIdentification?: string | undefined;
     context?: {
         userClient?: string | undefined;
         terminal?: string | undefined;
