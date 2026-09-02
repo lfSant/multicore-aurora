@@ -1,7 +1,8 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.cjs';
-import { c as ListCustomerProductsUseCase, L as ListCustomerProductsCommand, C as ConsolidatedBuckets } from '../../ListCustomerProducts.usecase-rkGzRwoR.cjs';
+import { c as ListCustomerProductsUseCase, L as ListCustomerProductsCommand, C as ConsolidatedBuckets } from '../../ListCustomerProducts.usecase-D5ChTElV.cjs';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.cjs';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.cjs';
+import '../../CoreRequestContext-C5PImHcm.cjs';
 
 declare function getConsolidatedProductsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): ListCustomerProductsUseCase;
 declare function listConsolidatedProducts(command: ListCustomerProductsCommand, http: ProviderCallConfig, opts: {

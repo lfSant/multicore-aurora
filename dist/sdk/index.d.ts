@@ -1,8 +1,8 @@
 import { Pool } from 'mysql2/promise';
 import { Redis } from 'ioredis';
-export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.js';
+export { acceptTerms, checkClientStatus, createAcceptTermsUseCase, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber } from './client/index.js';
 export { authLogin, authPrecheck, blockUser, changePassword, createAuthLoginUseCase, createAuthPrecheckUseCase, createBlockUserUseCase, createChangePasswordUseCase, createLoginCoreUseCase, createRegisterCredentialsUseCase, createResetPasswordUseCase, createResetUserUseCase, createUnblockUserUseCase, createValidateUsernameUseCase, loginCore, registerCredentials, resetPassword, resetUser, unblockUser, validateUsername } from './auth/index.js';
-export { catalogFilter, createCardDeliveryLocationCatalogUseCase, createCatalogCardNamesUseCase, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createGetCardDeliveryInfoUseCase, createLaborPositionCatalogUseCase, createOtherEconomicActivityCatalogUseCase, createPurposeCatalogUseCase, createSubmitCardDeliveryInfoUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getCardDeliveryInfo, getCardDeliveryLocationCatalog, getCatalogCardNames, getEconomicActivityCatalog, getLaborPositionCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts, getPurposeCatalog, submitCardDeliveryInfo } from './catalog/index.js';
+export { catalogFilter, createCardDeliveryLocationCatalogUseCase, createCatalogCardNamesUseCase, createCatalogFilterUseCase, createEconomicActivityCatalogUseCase, createGetCardDeliveryInfoUseCase, createGetFinancialProductCatalogsUseCase, createGetInstitutionCatalogsUseCase, createGetPersonCatalogsUseCase, createLaborPositionCatalogUseCase, createOtherEconomicActivityCatalogUseCase, createPurposeCatalogUseCase, createSubmitCardDeliveryInfoUseCase, findEducationTypesUseCase, findMaritalStatusUseCase, findPaymentServiceConceptsUseCase, findProfessionalTypesUseCase, getCardDeliveryInfo, getCardDeliveryLocationCatalog, getCatalogCardNames, getEconomicActivityCatalog, getFinancialProductCatalogs, getInstitutionCatalogs, getLaborPositionCatalog, getListEducationTypes, getListMaritalStatus, getListProfessionalTypes, getOtherEconomicActivityCatalog, getPaymentServiceConcepts, getPersonCatalogs, getPurposeCatalog, submitCardDeliveryInfo } from './catalog/index.js';
 export { getConsolidatedProductsUseCase, listConsolidatedProducts } from './product/index.js';
 import { A as AdapterFactoryOptions } from '../factories-Hv_6KkfJ.js';
 import { P as ProviderCallConfig } from '../http-CRaj6wih.js';
@@ -14,10 +14,11 @@ export { calculateDpfValues, createCalculateDpfValuesUseCase, createConsolidated
 export { createPaymentOwnCardUseCase, createPaymentReversalsUseCase, createPaymentServiceQueryUseCase, createProcessPaymentReversalUseCase, createProcessPaymentServiceUseCase, getPaymentReversals, getPaymentServiceQuery, processPaymentOwnCard, processPaymentReversal, processPaymentService } from './payment/index.js';
 export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCreditNote, createDebitNote, createGetAccountsForCausalsUseCase, createReverseCreditNoteUseCase, createReverseDebitNoteUseCase, createStartCausalFlowUseCase, getAccountsForCausals, getListCausalsCatalogUseCase, listCausalsCatalog, reverseCreditNote, reverseDebitNote, startCausalFlow } from './causal/index.js';
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.js';
-import '../GetCivilRegistryData.usecase-BZ-gwHEV.js';
+import '../AcceptTerms.usecase-oxDDWLqB.js';
+import '../CoreRequestContext-C5PImHcm.js';
 import '../ResetUser.usecase-BbdiyNYi.js';
-import '../GetCardDeliveryInfo.usecase-BvkpXwX8.js';
-import '../ListCustomerProducts.usecase-BD9vnCy6.js';
+import '../GetCardDeliveryInfo.usecase-DAsSmWIG.js';
+import '../ListCustomerProducts.usecase-C1TdaOzP.js';
 import '../PepsAccountOpening.usecase-a4qJ1vti.js';
 import '../CreateExternalTransfer.usecase-DhAfF6Sr.js';
 import '../ValidateFixedTermDeposit.usecase-YVOwyxvC.js';

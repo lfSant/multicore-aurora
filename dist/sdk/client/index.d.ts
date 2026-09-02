@@ -1,7 +1,8 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
-import { n as GetClientProfileUseCase, m as GetClientProfileCommand, e as ClientProfile, C as CheckClientActiveCommand, d as ClientActiveStatus, a as CheckClientActiveUseCase, l as GetClientProfileByNumberUseCase, k as GetClientProfileByNumberCommand, f as ClientProfileByNumber, j as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, b as CivilRegistryData } from '../../GetCivilRegistryData.usecase-BZ-gwHEV.js';
+import { o as GetClientProfileUseCase, n as GetClientProfileCommand, f as ClientProfile, C as CheckClientActiveCommand, e as ClientActiveStatus, b as CheckClientActiveUseCase, m as GetClientProfileByNumberUseCase, l as GetClientProfileByNumberCommand, g as ClientProfileByNumber, k as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, c as CivilRegistryData, A as AcceptTermsCommand, T as TermsAcceptance, a as AcceptTermsUseCase } from '../../AcceptTerms.usecase-oxDDWLqB.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
+import '../../CoreRequestContext-C5PImHcm.js';
 
 declare function createClientProfileUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientProfileUseCase;
 declare function getClientProfile(command: GetClientProfileCommand, http: ProviderCallConfig, opts: {
@@ -31,4 +32,11 @@ declare function getCivilRegistryData(command: GetCivilRegistryDataCommand, http
     adapterOptions?: AdapterFactoryOptions;
 }): Promise<CanonicalResponse<CivilRegistryData>>;
 
-export { checkClientStatus, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber };
+declare function createAcceptTermsUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): AcceptTermsUseCase;
+declare function acceptTerms(command: AcceptTermsCommand, http: ProviderCallConfig, opts: {
+    provider: string;
+    operation?: string;
+    adapterOptions?: AdapterFactoryOptions;
+}): Promise<CanonicalResponse<TermsAcceptance>>;
+
+export { acceptTerms, checkClientStatus, createAcceptTermsUseCase, createClientProfileByNumberUseCase, createClientProfileUseCase, createClientStatusUseCase, createGetCivilRegistryDataUseCase, getCivilRegistryData, getClientProfile, getClientProfileByNumber };

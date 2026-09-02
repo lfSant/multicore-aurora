@@ -2,10 +2,11 @@ import { a as CoreRawPayload, C as CanonicalResponse } from '../types-DZJuEFLS.j
 export { P as ProviderResult } from '../types-DZJuEFLS.js';
 export { H as HttpResponse, P as ProviderCallConfig } from '../http-CRaj6wih.js';
 import { ZodError, z } from 'zod';
-export { C as CheckClientActiveCommand, a as CheckClientActiveUseCase, b as CivilRegistryData, c as CivilRegistryDataProviderPort, d as ClientActiveStatus, e as ClientProfile, f as ClientProfileByNumber, g as ClientProfileByNumberProviderPort, h as ClientProfileProviderPort, i as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, j as GetCivilRegistryDataUseCase, k as GetClientProfileByNumberCommand, l as GetClientProfileByNumberUseCase, m as GetClientProfileCommand, n as GetClientProfileUseCase } from '../GetCivilRegistryData.usecase-BZ-gwHEV.js';
+export { A as AcceptTermsCommand, a as AcceptTermsUseCase, C as CheckClientActiveCommand, b as CheckClientActiveUseCase, c as CivilRegistryData, d as CivilRegistryDataProviderPort, e as ClientActiveStatus, f as ClientProfile, g as ClientProfileByNumber, h as ClientProfileByNumberProviderPort, i as ClientProfileProviderPort, j as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, k as GetCivilRegistryDataUseCase, l as GetClientProfileByNumberCommand, m as GetClientProfileByNumberUseCase, n as GetClientProfileCommand, o as GetClientProfileUseCase, T as TermsAcceptance, p as TermsAcceptanceProviderPort } from '../AcceptTerms.usecase-oxDDWLqB.js';
+export { C as CoreRequestContext } from '../CoreRequestContext-C5PImHcm.js';
+export { B as Branch, C as CardDeliveryInfo, a as CardDeliveryInfoProviderPort, b as CardDeliveryInfoSubmission, c as CardDeliveryInfoSubmissionProviderPort, d as CardDeliveryLocation, e as CardDeliveryLocationCatalogProviderPort, f as CardName, g as CatalogCardNamesProviderPort, h as CatalogFitItem, i as CatalogFitProviderPort, j as Channel, k as City, l as Country, m as Currency, E as EconomicActivity, n as EconomicActivityCatalogProviderPort, o as EducationTypes, p as EducationTypesProviderPort, q as EducationTypesUseCase, F as FinancialProductCatalogItem, r as FinancialProductCatalogs, s as FinancialProductCatalogsProviderPort, G as GetCardDeliveryInfoCommand, t as GetCardDeliveryInfoUseCase, u as GetCardDeliveryLocationCatalogCommand, v as GetCardDeliveryLocationCatalogUseCase, w as GetCatalogCardNamesCommand, x as GetCatalogCardNamesUseCase, y as GetCatalogFitCommand, z as GetCatalogFitUseCase, A as GetEconomicActivityCatalogUseCase, D as GetFinancialProductCatalogsCommand, H as GetFinancialProductCatalogsUseCase, I as GetInstitutionCatalogsCommand, J as GetInstitutionCatalogsUseCase, K as GetLaborPositionCatalogUseCase, L as GetOtherEconomicActivityCatalogUseCase, M as GetPersonCatalogsCommand, N as GetPersonCatalogsUseCase, O as GetPurposeCatalogUseCase, P as InstitutionCatalogs, Q as InstitutionCatalogsProviderPort, R as LaborPosition, S as LaborPositionCatalogProviderPort, T as MaritalStatus, U as MaritalStatusProviderPort, V as MaritalStatusUseCase, W as Office, X as Origin, Y as OtherEconomicActivityCatalogProviderPort, Z as PaymentServiceConcepts, _ as PaymentServiceConceptsProviderPort, $ as PaymentServiceConceptsUseCase, a0 as PersonCatalogItem, a1 as PersonCatalogs, a2 as PersonCatalogsProviderPort, a3 as ProfessionTypes, a4 as ProfessionTypesProviderPort, a5 as ProfessionTypesUseCase, a6 as Province, a7 as PurposeCatalogItem, a8 as PurposeCatalogProviderPort, a9 as SubmitCardDeliveryInfoCommand, aa as SubmitCardDeliveryInfoUseCase } from '../GetCardDeliveryInfo.usecase-DAsSmWIG.js';
 export { A as AuthLogin, a as AuthLoginCommand, b as AuthLoginProviderPort, c as AuthLoginUseCase, d as AuthPrecheckCommand, e as AuthPrecheckProviderPort, f as AuthPrecheckStatus, g as AuthPrecheckUseCase, B as BlockUser, h as BlockUserCommand, i as BlockUserProviderPort, j as BlockUserUseCase, C as ChangePassword, k as ChangePasswordCommand, l as ChangePasswordProviderPort, m as ChangePasswordUseCase, L as LoginCoreCommand, n as LoginCoreProviderPort, o as LoginCoreResult, p as LoginCoreUseCase, R as RegisterCredentials, q as RegisterCredentialsCommand, r as RegisterCredentialsProviderPort, s as RegisterCredentialsUseCase, t as ResetPassword, u as ResetPasswordCommand, v as ResetPasswordProviderPort, w as ResetPasswordUseCase, x as ResetUser, y as ResetUserCommand, z as ResetUserProviderPort, D as ResetUserUseCase, U as UnblockUser, E as UnblockUserCommand, F as UnblockUserProviderPort, G as UnblockUserUseCase, V as ValidateUsername, H as ValidateUsernameCommand, I as ValidateUsernameProviderPort, J as ValidateUsernameUseCase } from '../ResetUser.usecase-BbdiyNYi.js';
-export { C as CardDeliveryInfo, a as CardDeliveryInfoProviderPort, b as CardDeliveryInfoSubmission, c as CardDeliveryInfoSubmissionProviderPort, d as CardDeliveryLocation, e as CardDeliveryLocationCatalogProviderPort, f as CardName, g as CatalogCardNamesProviderPort, h as CatalogFitItem, i as CatalogFitProviderPort, E as EconomicActivity, j as EconomicActivityCatalogProviderPort, k as EducationTypes, l as EducationTypesProviderPort, m as EducationTypesUseCase, G as GetCardDeliveryInfoCommand, n as GetCardDeliveryInfoUseCase, o as GetCardDeliveryLocationCatalogCommand, p as GetCardDeliveryLocationCatalogUseCase, q as GetCatalogCardNamesCommand, r as GetCatalogCardNamesUseCase, s as GetCatalogFitCommand, t as GetCatalogFitUseCase, u as GetEconomicActivityCatalogUseCase, v as GetLaborPositionCatalogUseCase, w as GetOtherEconomicActivityCatalogUseCase, x as GetPurposeCatalogUseCase, L as LaborPosition, y as LaborPositionCatalogProviderPort, M as MaritalStatus, z as MaritalStatusProviderPort, A as MaritalStatusUseCase, O as OtherEconomicActivityCatalogProviderPort, P as PaymentServiceConcepts, B as PaymentServiceConceptsProviderPort, D as PaymentServiceConceptsUseCase, F as ProfessionTypes, H as ProfessionTypesProviderPort, I as ProfessionTypesUseCase, J as PurposeCatalogItem, K as PurposeCatalogProviderPort, S as SubmitCardDeliveryInfoCommand, N as SubmitCardDeliveryInfoUseCase } from '../GetCardDeliveryInfo.usecase-BvkpXwX8.js';
-export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-BD9vnCy6.js';
+export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-C1TdaOzP.js';
 export { B as BlockCardCommand, a as BlockCardProviderPort, b as BlockCardResult, c as BlockCardUseCase, C as CalculateDeferredResult, d as CalculateDeferredValueUseCase, e as CalculateDeferredValuesCommand, f as CalculateDeferredValuesProviderPort, g as CancelPaymentOrderCommand, h as CancelPaymentOrderProviderPort, i as CancelPaymentOrderResult, j as Card, k as CardData, l as CardDataProviderPort, m as CardMovementsResult, n as CardStatementResult, o as ChangeCardPinCommand, p as ChangeCardPinProviderPort, q as ChangeCardPinResult, r as ChangeCardPinUseCase, s as ClientCardsProviderPort, t as ClientLoan, u as ClientLoansProviderPort, D as DeferredCardResult, G as GenerateCardPinCommand, v as GenerateCardPinProviderPort, w as GenerateCardPinResult, x as GenerateCardPinUseCase, y as GetCardDataCommand, z as GetCardDataUseCase, A as GetCardMovementsCommand, E as GetCardMovementsProviderPort, F as GetCardMovementsUseCase, H as GetCardStatementCommand, I as GetCardStatementProviderPort, J as GetCardStatementUseCase, K as GetClientCardsCommand, L as GetClientCardsUseCase, M as GetClientLoansCommand, N as GetClientLoansUseCase, O as GetDeferredCardCommand, P as GetDeferredCardProviderPort, Q as GetDeferredCardUseCase, R as GetLoanAdditionalInfoCommand, S as GetLoanAdditionalInfoUseCase, T as GetLoanAmortizationTableCommand, U as GetLoanAmortizationTableUseCase, V as GetPaymentOrdersCommand, W as GetPaymentOrdersProviderPort, X as LoanAdditionalInfo, Y as LoanAdditionalInfoProviderPort, Z as LoanAmortizationTable, _ as LoanAmortizationTableProviderPort, $ as LoanInstallment, a0 as Movements, a1 as PaidInstallment, a2 as PaymentOrdersResult, a3 as PaymentOrdersUseCase, a4 as ProcessCancelPaymentOrderUseCase, a5 as ProcessCashAdvanceCommand, a6 as ProcessCashAdvanceProviderPort, a7 as ProcessCashAdvanceResult, a8 as ProcessCashAdvanceUseCase, a9 as ProcessDeferredBillingCommand, aa as ProcessDeferredBillingProviderPort, ab as ProcessDeferredBillingResult, ac as ProcessDeferredBillingUseCase, ad as SavePaymentOrderCommand, ae as SavePaymentOrderProviderPort, af as SavePaymentOrderResult, ag as SavePaymetOrderUseCase, ah as SendEmailCommand, ai as SendEmailProviderPort, aj as SendEmailResult, ak as SendEmailUseCase, al as SendSmsByIdentificationCommand, am as SendSmsByIdentificationProviderPort, an as SendSmsByIdentificationResult, ao as SendSmsByIdentificationUseCase, ap as SendSmsByPhoneCommand, aq as SendSmsByPhoneProviderPort, ar as SendSmsByPhoneUseCase, as as ValidateCardPinCommand, at as ValidateCardPinProviderPort, au as ValidateCardPinResult, av as ValidateCardPinUseCase, aw as movements, ax as paymentOrder } from '../ProcessCancelPaymentOrder.usecase-DabEgrOz.js';
 export { A as Account, a as AccountCreationValidation, b as AccountCreationValidationProviderPort, c as AccountMovement, d as AccountMovementsProviderPort, e as AccountPlusCreation, f as AccountPlusCreationProviderPort, g as AccountPlusDocuments, h as AccountPlusDocumentsProviderPort, i as AccountPlusValidation, j as AccountPlusValidationProviderPort, k as AccountSigner, l as AccountSignersInfo, m as AccountSignersProviderPort, B as BankReferenceItem, n as BasicInformationSubmission, o as BasicInformationSubmissionProviderPort, p as BirthInfo, C as CargoData, q as ClientAccountByNumberProviderPort, r as ClientAccountsProviderPort, s as ConsolidatedAccountsProviderPort, t as ConsolidatedAccountsUseCase, u as CreateAccountPlusCommand, v as CreateAccountPlusUseCase, w as CreateElectronicAccountCommand, x as CreateElectronicAccountUseCase, D as DocumentValidation, y as DocumentValidationProviderPort, E as EconomicInfoItem, z as ElectronicAccount, F as ElectronicAccountDocuments, G as ElectronicAccountDocumentsProviderPort, H as ElectronicAccountProviderPort, I as FiscalResidence, J as FiscalResidenceData, K as FiscalResidenceItem, L as FiscalResidenceProviderPort, M as FiscalResidenceQueryProviderPort, N as FiscalResidenceSubmission, O as GenerateAccountPlusDocumentsPdfCommand, P as GenerateAccountPlusDocumentsPdfUseCase, Q as GenerateElectronicAccountDocumentsPdfCommand, R as GenerateElectronicAccountDocumentsPdfUseCase, S as GetAccountByNumberCommand, T as GetAccountByNumberUseCase, U as GetAccountMovementsCommand, V as GetAccountSignersCommand, W as GetAccountSignersUseCase, X as GetConsolidatedAccountsCommand, Y as GetFiscalResidenceCommand, Z as GetFiscalResidenceUseCase, _ as LaborInfoItem, $ as LaborInformationSubmission, a0 as LaborInformationSubmissionProviderPort, a1 as ListAccountMovementsUseCase, a2 as ListAccountsCommand, a3 as ListAccountsUseCase, a4 as Nationality, a5 as PepsAccountOpening, a6 as PepsAccountOpeningCommand, a7 as PepsAccountOpeningProviderPort, a8 as PepsAccountOpeningUseCase, a9 as PepsData, aa as PepsInformationProviderPort, ab as PepsInformationSubmission, ac as PersonalReferenceItem, ad as ReferenceDataSubmission, ae as ReferenceDataSubmissionProviderPort, af as ResidenceInfo, ag as SubmitBasicInformationCommand, ah as SubmitBasicInformationUseCase, ai as SubmitFiscalResidenceCommand, aj as SubmitFiscalResidenceUseCase, ak as SubmitLaborInformationCommand, al as SubmitLaborInformationUseCase, am as SubmitPepsInformationCommand, an as SubmitPepsInformationUseCase, ao as SubmitReferenceDataCommand, ap as SubmitReferenceDataUseCase, aq as UploadedDocumentItem, ar as ValidateCreateAccountCommand, as as ValidateCreateAccountPlusCommand, at as ValidateCreateAccountPlusUseCase, au as ValidateCreateAccountUseCase, av as ValidateDocumentCommand, aw as ValidateDocumentUseCase } from '../PepsAccountOpening.usecase-a4qJ1vti.js';
 export { C as ContractStatusUpdate, a as ContractStatusUpdateProviderPort, G as GetUserBeneficiariesCommand, b as GetUserBeneficiariesProviderPort, c as GetUserBeneficiariesUseCase, d as GetUserDataCommand, e as GetUserDataProviderPort, f as GetUserDataUseCase, S as SecurityQuestion, U as UpdateContractStatusCommand, g as UpdateContractStatusUseCase, h as UserAccountData, i as UserBeneficiaryResult, j as UserContactData, k as UserDataResult, l as UserPersonalData, m as UserSecurityData } from '../GetUserBeneficiaries.usecase-BC9xjelQ.js';
@@ -91,20 +92,480 @@ declare const dateTimeISO8601Schema: (fieldName: string, required?: boolean) => 
 
 declare const GetClientProfileCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }, {
     clientIdentification: string;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }>;
 type GetClientProfileCommandParsed = z.infer<typeof GetClientProfileCommandSchema>;
 
 declare const CheckClientActiveCommandSchema: z.ZodObject<{
     clientIdentification: z.ZodString;
+    email: z.ZodOptional<z.ZodString>;
+    mobilePhone: z.ZodOptional<z.ZodString>;
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+    email?: string | undefined;
+    mobilePhone?: string | undefined;
 }, {
     clientIdentification: string;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+    email?: string | undefined;
+    mobilePhone?: string | undefined;
 }>;
+type CheckClientActiveCommandParsed = z.infer<typeof CheckClientActiveCommandSchema>;
+
+declare const CoreRequestContextSchema: z.ZodObject<{
+    userClient: z.ZodOptional<z.ZodString>;
+    terminal: z.ZodOptional<z.ZodString>;
+    sessionId: z.ZodOptional<z.ZodString>;
+    channel: z.ZodOptional<z.ZodString>;
+    origin: z.ZodOptional<z.ZodString>;
+    channelTime: z.ZodOptional<z.ZodString>;
+    ip: z.ZodOptional<z.ZodString>;
+    platform: z.ZodOptional<z.ZodString>;
+    deviceId: z.ZodOptional<z.ZodString>;
+    token: z.ZodOptional<z.ZodString>;
+    userId: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    userClient?: string | undefined;
+    terminal?: string | undefined;
+    sessionId?: string | undefined;
+    channel?: string | undefined;
+    origin?: string | undefined;
+    channelTime?: string | undefined;
+    ip?: string | undefined;
+    platform?: string | undefined;
+    deviceId?: string | undefined;
+    token?: string | undefined;
+    userId?: string | undefined;
+}, {
+    userClient?: string | undefined;
+    terminal?: string | undefined;
+    sessionId?: string | undefined;
+    channel?: string | undefined;
+    origin?: string | undefined;
+    channelTime?: string | undefined;
+    ip?: string | undefined;
+    platform?: string | undefined;
+    deviceId?: string | undefined;
+    token?: string | undefined;
+    userId?: string | undefined;
+}>;
+type CoreRequestContextParsed = z.infer<typeof CoreRequestContextSchema>;
+
+declare const AcceptTermsCommandSchema: z.ZodObject<{
+    clientIdentification: z.ZodString;
+    clientUsername: z.ZodString;
+    acceptsTerms: z.ZodLiteral<true>;
+    acceptsDataProtection: z.ZodLiteral<true>;
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
+}, "strip", z.ZodTypeAny, {
+    clientIdentification: string;
+    clientUsername: string;
+    acceptsTerms: true;
+    acceptsDataProtection: true;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}, {
+    clientIdentification: string;
+    clientUsername: string;
+    acceptsTerms: true;
+    acceptsDataProtection: true;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}>;
+type AcceptTermsCommandParsed = z.infer<typeof AcceptTermsCommandSchema>;
+
+declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
+}, "strip", z.ZodTypeAny, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}>;
+type GetPersonCatalogsCommandParsed = z.infer<typeof GetPersonCatalogsCommandSchema>;
+
+declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
+}, "strip", z.ZodTypeAny, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}>;
+type GetInstitutionCatalogsCommandParsed = z.infer<typeof GetInstitutionCatalogsCommandSchema>;
+
+declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
+}, "strip", z.ZodTypeAny, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}, {
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
+}>;
+type GetFinancialProductCatalogsCommandParsed = z.infer<typeof GetFinancialProductCatalogsCommandSchema>;
 
 declare const AuthPrecheckCommandSchema: z.ZodObject<{
     username: z.ZodString;
@@ -162,10 +623,73 @@ type GetCivilRegistryDataCommandParsed = z.infer<typeof GetCivilRegistryDataComm
 
 declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
     clientNumber: z.ZodNumber;
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     clientNumber: number;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }, {
     clientNumber: number;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }>;
 type GetClientProfileByNumberCommandParsed = z.infer<typeof GetClientProfileByNumberCommandSchema>;
 
@@ -228,10 +752,73 @@ type GetCatalogCardNamesCommandParsed = z.infer<typeof GetCatalogCardNamesComman
 
 declare const ListCustomerProductsCommandSchema: z.ZodObject<{
     clientNumber: z.ZodUnion<[z.ZodString, z.ZodNumber]>;
+    context: z.ZodOptional<z.ZodObject<{
+        userClient: z.ZodOptional<z.ZodString>;
+        terminal: z.ZodOptional<z.ZodString>;
+        sessionId: z.ZodOptional<z.ZodString>;
+        channel: z.ZodOptional<z.ZodString>;
+        origin: z.ZodOptional<z.ZodString>;
+        channelTime: z.ZodOptional<z.ZodString>;
+        ip: z.ZodOptional<z.ZodString>;
+        platform: z.ZodOptional<z.ZodString>;
+        deviceId: z.ZodOptional<z.ZodString>;
+        token: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }, {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    }>>;
 }, "strip", z.ZodTypeAny, {
     clientNumber: string | number;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }, {
     clientNumber: string | number;
+    context?: {
+        userClient?: string | undefined;
+        terminal?: string | undefined;
+        sessionId?: string | undefined;
+        channel?: string | undefined;
+        origin?: string | undefined;
+        channelTime?: string | undefined;
+        ip?: string | undefined;
+        platform?: string | undefined;
+        deviceId?: string | undefined;
+        token?: string | undefined;
+        userId?: string | undefined;
+    } | undefined;
 }>;
 type ListCustomerProductsCommandParsed = z.infer<typeof ListCustomerProductsCommandSchema>;
 
@@ -355,18 +942,18 @@ declare const CreateAccountPlusCommandSchema: z.ZodObject<{
     creationDateMs: z.ZodNumber;
     username: z.ZodString;
 }, "strip", z.ZodTypeAny, {
+    platform: string;
     clientIdentification: string;
     username: string;
     clientCoreCode: string;
-    platform: string;
     device: string;
     reference: string;
     creationDateMs: number;
 }, {
+    platform: string;
     clientIdentification: string;
     username: string;
     clientCoreCode: string;
-    platform: string;
     device: string;
     reference: string;
     creationDateMs: number;
@@ -383,8 +970,8 @@ declare const CreateElectronicAccountCommandSchema: z.ZodEffects<z.ZodObject<{
     username: z.ZodOptional<z.ZodString>;
     clientIdentificationType: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    clientIdentification: string;
     platform: string;
+    clientIdentification: string;
     device: string;
     reference: string;
     creationDate: string;
@@ -392,8 +979,8 @@ declare const CreateElectronicAccountCommandSchema: z.ZodEffects<z.ZodObject<{
     clientCoreCode?: string | undefined;
     clientIdentificationType?: string | undefined;
 }, {
-    clientIdentification: string;
     platform: string;
+    clientIdentification: string;
     device: string;
     reference: string;
     creationDate: string;
@@ -401,8 +988,8 @@ declare const CreateElectronicAccountCommandSchema: z.ZodEffects<z.ZodObject<{
     clientCoreCode?: string | undefined;
     clientIdentificationType?: string | undefined;
 }>, {
-    clientIdentification: string;
     platform: string;
+    clientIdentification: string;
     device: string;
     reference: string;
     creationDate: string;
@@ -410,8 +997,8 @@ declare const CreateElectronicAccountCommandSchema: z.ZodEffects<z.ZodObject<{
     clientCoreCode?: string | undefined;
     clientIdentificationType?: string | undefined;
 }, {
-    clientIdentification: string;
     platform: string;
+    clientIdentification: string;
     device: string;
     reference: string;
     creationDate: string;
@@ -1173,8 +1760,8 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     institutionSequential: string;
     accountTypeCode: string;
     date?: string | undefined;
-    clientNumber?: string | undefined;
     platform?: string | undefined;
+    clientNumber?: string | undefined;
     platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
@@ -1193,8 +1780,8 @@ declare const ExternalTransferCommandSchema: z.ZodObject<{
     institutionSequential: string;
     accountTypeCode: string;
     date?: string | undefined;
-    clientNumber?: string | undefined;
     platform?: string | undefined;
+    clientNumber?: string | undefined;
     platformCode?: string | undefined;
     ipTransaction?: string | undefined;
     identifierDevice?: string | undefined;
@@ -1440,9 +2027,9 @@ declare const GetPaymentServiceQueryCommandSchema: z.ZodEffects<z.ZodObject<{
     serviceNumber: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     date: string;
+    platform?: string | undefined;
     clientNumber?: number | undefined;
     identifier?: string | undefined;
-    platform?: string | undefined;
     device?: string | undefined;
     reference?: string | undefined;
     parameters?: Record<string, any> | undefined;
@@ -1451,9 +2038,9 @@ declare const GetPaymentServiceQueryCommandSchema: z.ZodEffects<z.ZodObject<{
     serviceNumber?: string | undefined;
 }, {
     date: string;
+    platform?: string | undefined;
     clientNumber?: number | undefined;
     identifier?: string | undefined;
-    platform?: string | undefined;
     device?: string | undefined;
     reference?: string | undefined;
     parameters?: Record<string, any> | undefined;
@@ -1462,9 +2049,9 @@ declare const GetPaymentServiceQueryCommandSchema: z.ZodEffects<z.ZodObject<{
     serviceNumber?: string | undefined;
 }>, {
     date: string;
+    platform?: string | undefined;
     clientNumber?: number | undefined;
     identifier?: string | undefined;
-    platform?: string | undefined;
     device?: string | undefined;
     reference?: string | undefined;
     parameters?: Record<string, any> | undefined;
@@ -1473,9 +2060,9 @@ declare const GetPaymentServiceQueryCommandSchema: z.ZodEffects<z.ZodObject<{
     serviceNumber?: string | undefined;
 }, {
     date: string;
+    platform?: string | undefined;
     clientNumber?: number | undefined;
     identifier?: string | undefined;
-    platform?: string | undefined;
     device?: string | undefined;
     reference?: string | undefined;
     parameters?: Record<string, any> | undefined;
@@ -1505,8 +2092,8 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     referenceNumber: string;
     amountToPay: string;
-    identifier?: string | undefined;
     platform?: string | undefined;
+    identifier?: string | undefined;
     device?: string | undefined;
     parameters?: Record<string, any> | undefined;
     companyId?: string | undefined;
@@ -1519,8 +2106,8 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     referenceNumber: string;
     amountToPay: string;
-    identifier?: string | undefined;
     platform?: string | undefined;
+    identifier?: string | undefined;
     device?: string | undefined;
     parameters?: Record<string, any> | undefined;
     companyId?: string | undefined;
@@ -1533,8 +2120,8 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     referenceNumber: string;
     amountToPay: string;
-    identifier?: string | undefined;
     platform?: string | undefined;
+    identifier?: string | undefined;
     device?: string | undefined;
     parameters?: Record<string, any> | undefined;
     companyId?: string | undefined;
@@ -1547,8 +2134,8 @@ declare const ProcessPaymentServiceCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     referenceNumber: string;
     amountToPay: string;
-    identifier?: string | undefined;
     platform?: string | undefined;
+    identifier?: string | undefined;
     device?: string | undefined;
     parameters?: Record<string, any> | undefined;
     companyId?: string | undefined;
@@ -1602,8 +2189,8 @@ declare const StartCausalFlowCommandSchema: z.ZodObject<{
     transactionIdentifier: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     date: string;
-    providerAcronym: string;
     channel: string;
+    providerAcronym: string;
     deviceIp: string;
     country: string;
     latitude: number;
@@ -1614,8 +2201,8 @@ declare const StartCausalFlowCommandSchema: z.ZodObject<{
     observation?: string | undefined;
 }, {
     date: string;
-    providerAcronym: string;
     channel: string;
+    providerAcronym: string;
     deviceIp: string;
     country: string;
     latitude: number;
@@ -1652,19 +2239,19 @@ declare const CreateDebitNoteCommandSchema: z.ZodObject<{
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     }, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     }>;
@@ -1716,11 +2303,11 @@ declare const CreateDebitNoteCommandSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     };
@@ -1742,11 +2329,11 @@ declare const CreateDebitNoteCommandSchema: z.ZodObject<{
     };
 }, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     };
@@ -1779,19 +2366,19 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     }, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     }>;
@@ -1843,11 +2430,11 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     };
@@ -1869,11 +2456,11 @@ declare const CreateCreditNoteCommandSchema: z.ZodObject<{
     };
 }, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         platform?: string | undefined;
     };
@@ -1908,21 +2495,21 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
     }, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -1976,11 +2563,11 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -2004,11 +2591,11 @@ declare const ReverseDebitNoteCommandSchema: z.ZodObject<{
     };
 }, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -2045,21 +2632,21 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
         amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
         concept: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
         platform?: string | undefined;
     }, {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -2113,11 +2700,11 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -2141,11 +2728,11 @@ declare const ReverseCreditNoteCommandSchema: z.ZodObject<{
     };
 }, {
     transaction: {
+        channel: string;
         amount: string;
         concept: string;
         causal: string;
         transactionId: string;
-        channel: string;
         clientRequestId: string;
         transactionIdReverse: string;
         transactionReferenceReverse: string;
@@ -2203,12 +2790,12 @@ declare const GetUserBeneficiariesCommandSchema: z.ZodObject<{
     password: z.ZodOptional<z.ZodString>;
     channel: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    username: string;
     channel: string;
+    username: string;
     password?: string | undefined;
 }, {
-    username: string;
     channel: string;
+    username: string;
     password?: string | undefined;
 }>;
 type GetUserBeneficiariesCommandParsed = z.infer<typeof GetUserBeneficiariesCommandSchema>;
@@ -2225,9 +2812,9 @@ declare const PaymentOwnCardCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     accountNumber: string;
@@ -2235,9 +2822,9 @@ declare const PaymentOwnCardCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
 }, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     accountNumber: string;
@@ -2245,9 +2832,9 @@ declare const PaymentOwnCardCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
 }>, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     accountNumber: string;
@@ -2255,9 +2842,9 @@ declare const PaymentOwnCardCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
 }, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     accountNumber: string;
@@ -2310,9 +2897,9 @@ declare const ProcessDeferredBillingCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     amount: string;
@@ -2322,9 +2909,9 @@ declare const ProcessDeferredBillingCommandSchema: z.ZodEffects<z.ZodObject<{
     cvv: string;
 }, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     amount: string;
@@ -2334,9 +2921,9 @@ declare const ProcessDeferredBillingCommandSchema: z.ZodEffects<z.ZodObject<{
     cvv: string;
 }>, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     amount: string;
@@ -2346,9 +2933,9 @@ declare const ProcessDeferredBillingCommandSchema: z.ZodEffects<z.ZodObject<{
     cvv: string;
 }, {
     date: string;
+    platform: string;
     clientNumber: string;
     cardCode: string;
-    platform: string;
     device: string;
     reference: string;
     amount: string;
@@ -2375,8 +2962,8 @@ declare const ProcessCashAdvanceCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     date: string;
-    cardCode: string;
     platform: string;
+    cardCode: string;
     device: string;
     reference: string;
     destinationAccountNumber: string;
@@ -2389,8 +2976,8 @@ declare const ProcessCashAdvanceCommandSchema: z.ZodEffects<z.ZodObject<{
     cardholderName: string;
 }, {
     date: string;
-    cardCode: string;
     platform: string;
+    cardCode: string;
     device: string;
     reference: string;
     destinationAccountNumber: string;
@@ -2403,8 +2990,8 @@ declare const ProcessCashAdvanceCommandSchema: z.ZodEffects<z.ZodObject<{
     cardholderName: string;
 }>, {
     date: string;
-    cardCode: string;
     platform: string;
+    cardCode: string;
     device: string;
     reference: string;
     destinationAccountNumber: string;
@@ -2417,8 +3004,8 @@ declare const ProcessCashAdvanceCommandSchema: z.ZodEffects<z.ZodObject<{
     cardholderName: string;
 }, {
     date: string;
-    cardCode: string;
     platform: string;
+    cardCode: string;
     device: string;
     reference: string;
     destinationAccountNumber: string;
@@ -2534,8 +3121,10 @@ declare const SavePaymentOrderCommandSchema: z.ZodEffects<z.ZodObject<{
     amount: z.ZodEffects<z.ZodEffects<z.ZodString, string, string>, string, string>;
 }, "strip", z.ZodTypeAny, {
     date: string;
-    identification: string;
     platform: string;
+    token: string;
+    email: string;
+    identification: string;
     device: string;
     reference: string;
     accountNumberOrigin: string;
@@ -2543,12 +3132,12 @@ declare const SavePaymentOrderCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     clientName: string;
     phoneNumber: string;
-    email: string;
-    token: string;
 }, {
     date: string;
-    identification: string;
     platform: string;
+    token: string;
+    email: string;
+    identification: string;
     device: string;
     reference: string;
     accountNumberOrigin: string;
@@ -2556,12 +3145,12 @@ declare const SavePaymentOrderCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     clientName: string;
     phoneNumber: string;
-    email: string;
-    token: string;
 }>, {
     date: string;
-    identification: string;
     platform: string;
+    token: string;
+    email: string;
+    identification: string;
     device: string;
     reference: string;
     accountNumberOrigin: string;
@@ -2569,12 +3158,12 @@ declare const SavePaymentOrderCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     clientName: string;
     phoneNumber: string;
-    email: string;
-    token: string;
 }, {
     date: string;
-    identification: string;
     platform: string;
+    token: string;
+    email: string;
+    identification: string;
     device: string;
     reference: string;
     accountNumberOrigin: string;
@@ -2582,8 +3171,6 @@ declare const SavePaymentOrderCommandSchema: z.ZodEffects<z.ZodObject<{
     concept: string;
     clientName: string;
     phoneNumber: string;
-    email: string;
-    token: string;
 }>;
 type SavePaymentOrderParsed = z.infer<typeof SavePaymentOrderCommandSchema>;
 
@@ -2772,4 +3359,4 @@ declare const ValidateFixedTermDepositCommandSchema: z.ZodObject<{
 }>;
 type ValidateFixedTermDepositCommandParsed = z.infer<typeof ValidateFixedTermDepositCommandSchema>;
 
-export { type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, type BlockCardCommandParsed, BlockCardCommandSchema, type BlockUserCommandParsed, BlockUserCommandSchema, CacheError, type CalculateDeferredValuesCommandParsed, CalculateDeferredValuesCommandSchema, type CalculateDpfValuesCommandParsed, CalculateDpfValuesCommandSchema, type CancelPaymentOrderParsed, CancelPaymentOrderSchema, CanonicalResponse, type ChangeCardPinCommandParsed, ChangeCardPinCommandSchema, type ChangePasswordCommandParsed, ChangePasswordCommandSchema, CheckClientActiveCommandSchema, CoreRawPayload, type CreateAccountPlusCommandParsed, CreateAccountPlusCommandSchema, type CreateCreditNoteCommandParsed, CreateCreditNoteCommandSchema, type CreateDebitNoteCommandParsed, CreateDebitNoteCommandSchema, type CreateDpfCommandParsed, CreateDpfCommandSchema, type CreateElectronicAccountCommandParsed, CreateElectronicAccountCommandSchema, DatabaseError, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GenerateAccountPlusDocumentsPdfCommandParsed, GenerateAccountPlusDocumentsPdfCommandSchema, type GenerateCardPinCommandParsed, GenerateCardPinCommandSchema, type GenerateElectronicAccountDocumentsPdfCommandParsed, GenerateElectronicAccountDocumentsPdfCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetCardDataCommandParsed, GetCardDataCommandSchema, type GetCardDeliveryInfoCommandParsed, GetCardDeliveryInfoCommandSchema, type GetCardDeliveryLocationCatalogCommandParsed, GetCardDeliveryLocationCatalogCommandSchema, type GetCardMovementsCommandParsed, GetCardMovementsCommandSchema, type GetCardStatementCommandParsed, GetCardStatementCommandSchema, type GetCatalogCardNamesCommandParsed, GetCatalogCardNamesCommandSchema, type GetCatalogFitCommandParsed, GetCatalogFitCommandSchema, type GetCivilRegistryDataCommandParsed, GetCivilRegistryDataCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, type GetDeferredCardCommandParsed, GetDeferredCardCommandSchema, type GetDepositAdditionalInformationCommandParsed, GetDepositAdditionalInformationCommandSchema, type GetDepositCancellationTypesCommandParsed, GetDepositCancellationTypesCommandSchema, GetDepositMovementsSchema, type GetDepositTypePresumptiveRequirementsCommandParsed, GetDepositTypePresumptiveRequirementsCommandSchema, type GetDpfReceiptCommandParsed, GetDpfReceiptCommandSchema, type GetFiscalResidenceCommandParsed, GetFiscalResidenceCommandSchema, type GetFixedTermDepositCurrentRatesCommandParsed, GetFixedTermDepositCurrentRatesCommandSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentOrdersParsed, GetPaymentOrdersSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetSelfCertificationDataCommandParsed, GetSelfCertificationDataCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, NetworkError, PaymentOwnCardCommandSchema, type PaymentOwnCardParsed, type PepsAccountOpeningCommandParsed, PepsAccountOpeningCommandSchema, type ProcessCashAdvanceCommandParsed, ProcessCashAdvanceCommandSchema, type ProcessDeferredBillingCommandParsed, ProcessDeferredBillingCommandSchema, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type RegisterCredentialsCommandParsed, RegisterCredentialsCommandSchema, type ResetPasswordCommandParsed, ResetPasswordCommandSchema, type ResetUserCommandParsed, ResetUserCommandSchema, type ReverseCreditNoteCommandParsed, ReverseCreditNoteCommandSchema, type ReverseDebitNoteCommandParsed, ReverseDebitNoteCommandSchema, SavePaymentOrderCommandSchema, type SavePaymentOrderParsed, type SaveSelfCertificationDataCommandParsed, SaveSelfCertificationDataCommandSchema, type SendEmailCommandParsed, SendEmailCommandSchema, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartCausalFlowCommandParsed, StartCausalFlowCommandSchema, type SubmitBasicInformationCommandParsed, SubmitBasicInformationCommandSchema, type SubmitCardDeliveryInfoCommandParsed, SubmitCardDeliveryInfoCommandSchema, type SubmitFiscalResidenceCommandParsed, SubmitFiscalResidenceCommandSchema, type SubmitLaborInformationCommandParsed, SubmitLaborInformationCommandSchema, type SubmitPepsInformationCommandParsed, SubmitPepsInformationCommandSchema, type SubmitReferenceDataCommandParsed, SubmitReferenceDataCommandSchema, type UnblockUserCommandParsed, UnblockUserCommandSchema, type UpdateContractStatusCommandParsed, UpdateContractStatusCommandSchema, type ValidateCardPinCommandParsed, ValidateCardPinCommandSchema, type ValidateCreateAccountCommandParsed, ValidateCreateAccountCommandSchema, type ValidateCreateAccountPlusCommandParsed, ValidateCreateAccountPlusCommandSchema, type ValidateDocumentCommandParsed, ValidateDocumentCommandSchema, type ValidateFixedTermDepositCommandParsed, ValidateFixedTermDepositCommandSchema, type ValidateUsernameCommandParsed, ValidateUsernameCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISO8601Schema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };
+export { type AcceptTermsCommandParsed, AcceptTermsCommandSchema, type AuthLoginCommandParsed, AuthLoginCommandSchema, type AuthPrecheckCommandParsed, AuthPrecheckCommandSchema, type BlockCardCommandParsed, BlockCardCommandSchema, type BlockUserCommandParsed, BlockUserCommandSchema, CacheError, type CalculateDeferredValuesCommandParsed, CalculateDeferredValuesCommandSchema, type CalculateDpfValuesCommandParsed, CalculateDpfValuesCommandSchema, type CancelPaymentOrderParsed, CancelPaymentOrderSchema, CanonicalResponse, type ChangeCardPinCommandParsed, ChangeCardPinCommandSchema, type ChangePasswordCommandParsed, ChangePasswordCommandSchema, type CheckClientActiveCommandParsed, CheckClientActiveCommandSchema, CoreRawPayload, type CoreRequestContextParsed, CoreRequestContextSchema, type CreateAccountPlusCommandParsed, CreateAccountPlusCommandSchema, type CreateCreditNoteCommandParsed, CreateCreditNoteCommandSchema, type CreateDebitNoteCommandParsed, CreateDebitNoteCommandSchema, type CreateDpfCommandParsed, CreateDpfCommandSchema, type CreateElectronicAccountCommandParsed, CreateElectronicAccountCommandSchema, DatabaseError, type ErrorMessages, type ExternalTransferCommandParsed, ExternalTransferCommandSchema, type GenerateAccountPlusDocumentsPdfCommandParsed, GenerateAccountPlusDocumentsPdfCommandSchema, type GenerateCardPinCommandParsed, GenerateCardPinCommandSchema, type GenerateElectronicAccountDocumentsPdfCommandParsed, GenerateElectronicAccountDocumentsPdfCommandSchema, type GetAccountByNumberCommandParsed, GetAccountByNumberCommandSchema, type GetAccountMovementsCommandParsed, GetAccountMovementsCommandSchema, GetAccountSignersCommandSchema, type GetAccountsForCausalsCommandParsed, GetAccountsForCausalsCommandSchema, type GetCardDataCommandParsed, GetCardDataCommandSchema, type GetCardDeliveryInfoCommandParsed, GetCardDeliveryInfoCommandSchema, type GetCardDeliveryLocationCatalogCommandParsed, GetCardDeliveryLocationCatalogCommandSchema, type GetCardMovementsCommandParsed, GetCardMovementsCommandSchema, type GetCardStatementCommandParsed, GetCardStatementCommandSchema, type GetCatalogCardNamesCommandParsed, GetCatalogCardNamesCommandSchema, type GetCatalogFitCommandParsed, GetCatalogFitCommandSchema, type GetCivilRegistryDataCommandParsed, GetCivilRegistryDataCommandSchema, type GetClientCardsCommandParsed, GetClientCardsCommandSchema, GetClientLoansCommandSchema, type GetClientProfileByNumberCommandParsed, GetClientProfileByNumberCommandSchema, type GetClientProfileCommandParsed, GetClientProfileCommandSchema, type GetConsolidatedAccountsCommandParsed, GetConsolidatedAccountsCommandSchema, GetConsolidatedTimeDepositsSchema, type GetDeferredCardCommandParsed, GetDeferredCardCommandSchema, type GetDepositAdditionalInformationCommandParsed, GetDepositAdditionalInformationCommandSchema, type GetDepositCancellationTypesCommandParsed, GetDepositCancellationTypesCommandSchema, GetDepositMovementsSchema, type GetDepositTypePresumptiveRequirementsCommandParsed, GetDepositTypePresumptiveRequirementsCommandSchema, type GetDpfReceiptCommandParsed, GetDpfReceiptCommandSchema, type GetFinancialProductCatalogsCommandParsed, GetFinancialProductCatalogsCommandSchema, type GetFiscalResidenceCommandParsed, GetFiscalResidenceCommandSchema, type GetFixedTermDepositCurrentRatesCommandParsed, GetFixedTermDepositCurrentRatesCommandSchema, type GetInstitutionCatalogsCommandParsed, GetInstitutionCatalogsCommandSchema, GetLoanAdditionalInfoSchema, GetLoanAmortizationTableSchema, type GetPaymentOrdersParsed, GetPaymentOrdersSchema, type GetPaymentReversalsCommandParsed, GetPaymentReversalsCommandSchema, type GetPaymentServiceQueryCommandParsed, GetPaymentServiceQueryCommandSchema, type GetPersonCatalogsCommandParsed, GetPersonCatalogsCommandSchema, type GetSelfCertificationDataCommandParsed, GetSelfCertificationDataCommandSchema, type GetUserBeneficiariesCommandParsed, GetUserBeneficiariesCommandSchema, type GetUserDataCommandParsed, GetUserDataCommandSchema, type InternalTransferCommandParsed, InternalTransferCommandSchema, type ListAccountsCommandParsed, ListAccountsCommandSchema, type ListCustomerProductsCommandParsed, ListCustomerProductsCommandSchema, type LoginCoreCommandParsed, LoginCoreCommandSchema, MappingConfigError, NetworkError, PaymentOwnCardCommandSchema, type PaymentOwnCardParsed, type PepsAccountOpeningCommandParsed, PepsAccountOpeningCommandSchema, type ProcessCashAdvanceCommandParsed, ProcessCashAdvanceCommandSchema, type ProcessDeferredBillingCommandParsed, ProcessDeferredBillingCommandSchema, type ProcessPaymentReversalCommandParsed, ProcessPaymentReversalCommandSchema, type ProcessPaymentServiceCommandParsed, ProcessPaymentServiceCommandSchema, ProviderHttpError, type RegisterCredentialsCommandParsed, RegisterCredentialsCommandSchema, type ResetPasswordCommandParsed, ResetPasswordCommandSchema, type ResetUserCommandParsed, ResetUserCommandSchema, type ReverseCreditNoteCommandParsed, ReverseCreditNoteCommandSchema, type ReverseDebitNoteCommandParsed, ReverseDebitNoteCommandSchema, SavePaymentOrderCommandSchema, type SavePaymentOrderParsed, type SaveSelfCertificationDataCommandParsed, SaveSelfCertificationDataCommandSchema, type SendEmailCommandParsed, SendEmailCommandSchema, type SendSmsByIdentificationCommandParsed, SendSmsByIdentificationCommandSchema, type SendSmsByPhoneCommandParsed, SendSmsByPhoneCommandSchema, type StartCausalFlowCommandParsed, StartCausalFlowCommandSchema, type SubmitBasicInformationCommandParsed, SubmitBasicInformationCommandSchema, type SubmitCardDeliveryInfoCommandParsed, SubmitCardDeliveryInfoCommandSchema, type SubmitFiscalResidenceCommandParsed, SubmitFiscalResidenceCommandSchema, type SubmitLaborInformationCommandParsed, SubmitLaborInformationCommandSchema, type SubmitPepsInformationCommandParsed, SubmitPepsInformationCommandSchema, type SubmitReferenceDataCommandParsed, SubmitReferenceDataCommandSchema, type UnblockUserCommandParsed, UnblockUserCommandSchema, type UpdateContractStatusCommandParsed, UpdateContractStatusCommandSchema, type ValidateCardPinCommandParsed, ValidateCardPinCommandSchema, type ValidateCreateAccountCommandParsed, ValidateCreateAccountCommandSchema, type ValidateCreateAccountPlusCommandParsed, ValidateCreateAccountPlusCommandSchema, type ValidateDocumentCommandParsed, ValidateDocumentCommandSchema, type ValidateFixedTermDepositCommandParsed, ValidateFixedTermDepositCommandSchema, type ValidateUsernameCommandParsed, ValidateUsernameCommandSchema, dateOnlyISOSchema, dateTimeDDMMYYYYSchema, dateTimeISO8601Schema, dateTimeISOSchema, errorResponse, formatZodErrors, handleUseCaseError, isValidDateComponentsDDMMYYYY, isValidDateComponentsISO, isValidDateOnlyISO, parseDateOnlyISO, parseDateTimeDDMMYYYY, parseDateTimeISO, successResponse };

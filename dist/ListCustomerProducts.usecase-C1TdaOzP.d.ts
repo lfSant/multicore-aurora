@@ -1,8 +1,10 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { C as CoreRequestContext } from './CoreRequestContext-C5PImHcm.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface ListCustomerProductsCommand {
     clientNumber: number | string;
+    context?: CoreRequestContext;
 }
 
 type ProductCategory = 'ACCOUNT' | 'TIME_DEPOSIT' | 'LOAN' | 'CREDIT_CARD';
@@ -10,7 +12,9 @@ interface ConsolidatedProduct {
     productCategory: ProductCategory;
     accountNumber?: string;
     accountType?: string;
+    accountTypeCode?: string;
     currency?: string;
+    currencyCode?: string;
     holdBalance?: string;
     blockedBalance?: string;
     otherBalance?: string;
@@ -19,15 +23,19 @@ interface ConsolidatedProduct {
     availableBalance?: string;
     operationalTransactionsAllowed?: boolean;
     status?: string;
+    statusCode?: string;
     signatureType?: string;
-    currencyCode?: string;
+    linkedDebitCards?: any[];
     id?: string | number;
     code?: string;
     depositType?: string;
+    depositTypeCode?: string;
     maturityDate?: string;
     amount?: string;
     interestCollected?: string;
+    interestToCollect?: string;
     frequency?: string | null;
+    frequencyCode?: string;
     financialYield?: string;
     rate?: string;
     termDays?: number;
@@ -39,27 +47,40 @@ interface ConsolidatedProduct {
     branchTDName?: string;
     loanCode?: string;
     loanType?: string;
+    creditTypeCode?: string;
+    productCode?: string;
     currentBalance?: string;
     payoffAmount?: string;
     nextDueDate?: string;
     relationshipType?: string;
+    creditRelationCode?: string;
     originalAmount?: string;
     creationDate?: string;
     daysPastDue?: number;
     loanStatus?: string;
     loanStatusDescription?: string;
     numberOfInstallments?: number;
+    installmentAmount?: string;
     interestRate?: string;
+    legalCost?: string;
+    notifications?: string;
+    collectionManagement?: string;
     branchCode?: string;
     branchName?: string;
     creditCardDescription?: string;
     creditCardNumber?: string;
+    cardholderName?: string;
+    brand?: string;
     creditCardLimit?: string;
     creditCardBalance?: string;
     creditCardAvailable?: string;
     creditCardMinimumPayment?: string;
     creditCardCutOffDate?: string;
     creditCardPaymentDate?: string;
+    paymentDueDate?: string;
+    expirationDate?: string;
+    statementBalance?: string;
+    totalPayment?: string;
     creditCardStatus?: string;
     creditCardCoreCode?: string;
     creditCardProductCode?: string;

@@ -1,8 +1,10 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
+import { C as CoreRequestContext } from './CoreRequestContext-C5PImHcm.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
 
 interface GetClientProfileCommand {
     clientIdentification: string;
+    context?: CoreRequestContext;
 }
 
 interface ClientProfile {
@@ -45,6 +47,9 @@ declare class GetClientProfileUseCase {
 
 interface CheckClientActiveCommand {
     clientIdentification: string;
+    email?: string;
+    mobilePhone?: string;
+    context?: CoreRequestContext;
 }
 
 interface ClientActiveStatus {
@@ -66,6 +71,7 @@ declare class CheckClientActiveUseCase {
 
 interface GetClientProfileByNumberCommand {
     clientNumber: number;
+    context?: CoreRequestContext;
 }
 
 interface ClientProfileByNumber {
@@ -147,4 +153,29 @@ declare class GetCivilRegistryDataUseCase {
     execute(cmd: GetCivilRegistryDataCommand, http: ProviderCallConfig): Promise<CanonicalResponse<CivilRegistryData>>;
 }
 
-export { type CheckClientActiveCommand as C, type GetCivilRegistryDataCommand as G, CheckClientActiveUseCase as a, type CivilRegistryData as b, type CivilRegistryDataProviderPort as c, type ClientActiveStatus as d, type ClientProfile as e, type ClientProfileByNumber as f, type ClientProfileByNumberProviderPort as g, type ClientProfileProviderPort as h, type ClientStatusProviderPort as i, GetCivilRegistryDataUseCase as j, type GetClientProfileByNumberCommand as k, GetClientProfileByNumberUseCase as l, type GetClientProfileCommand as m, GetClientProfileUseCase as n };
+interface AcceptTermsCommand {
+    clientIdentification: string;
+    clientUsername: string;
+    acceptsTerms: true;
+    acceptsDataProtection: true;
+    context?: CoreRequestContext;
+}
+
+interface TermsAcceptance {
+    transactionStatus: boolean;
+}
+
+interface TermsAcceptanceProviderPort {
+    acceptTerms(cmd: AcceptTermsCommand, http: ProviderCallConfig, options?: {
+        tenant?: string;
+        environment?: string;
+    }): Promise<ProviderResult<TermsAcceptance>>;
+}
+
+declare class AcceptTermsUseCase {
+    private readonly provider;
+    constructor(provider: TermsAcceptanceProviderPort);
+    execute(cmd: AcceptTermsCommand, http: ProviderCallConfig): Promise<CanonicalResponse<TermsAcceptance>>;
+}
+
+export { type AcceptTermsCommand as A, type CheckClientActiveCommand as C, type GetCivilRegistryDataCommand as G, type TermsAcceptance as T, AcceptTermsUseCase as a, CheckClientActiveUseCase as b, type CivilRegistryData as c, type CivilRegistryDataProviderPort as d, type ClientActiveStatus as e, type ClientProfile as f, type ClientProfileByNumber as g, type ClientProfileByNumberProviderPort as h, type ClientProfileProviderPort as i, type ClientStatusProviderPort as j, GetCivilRegistryDataUseCase as k, type GetClientProfileByNumberCommand as l, GetClientProfileByNumberUseCase as m, type GetClientProfileCommand as n, GetClientProfileUseCase as o, type TermsAcceptanceProviderPort as p };
