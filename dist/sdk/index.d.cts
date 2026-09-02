@@ -36,7 +36,7 @@ declare function setRedisClient(client: Redis): void;
 declare function getRedisClient(): Redis;
 declare function shutdown(): Promise<void>;
 
-type ProviderKey = 'dy-23' | 'dy-29' | 'dy-mu' | 'dy-vg' | 'dy-09' | 'dy-lc';
+type ProviderKey = 'dy-23' | 'dy-29' | 'dy-mu' | 'dy-vg' | 'dy-09' | 'dy-lc' | 'dy-ad';
 interface InitOptions {
     mysqlPool?: Pool;
     redisClient?: Redis;
