@@ -2,13 +2,13 @@ import { a as CoreRawPayload, C as CanonicalResponse } from '../types-DZJuEFLS.c
 export { P as ProviderResult } from '../types-DZJuEFLS.cjs';
 export { H as HttpResponse, P as ProviderCallConfig } from '../http-CRaj6wih.cjs';
 import { ZodError, z } from 'zod';
-export { A as AcceptTermsCommand, a as AcceptTermsUseCase, C as CheckClientActiveCommand, b as CheckClientActiveUseCase, c as CivilRegistryData, d as CivilRegistryDataProviderPort, e as ClientActiveStatus, f as ClientChannelRegistration, g as ClientChannelRegistrationProviderPort, h as ClientProfile, i as ClientProfileByNumber, j as ClientProfileByNumberProviderPort, k as ClientProfileProviderPort, l as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, m as GetCivilRegistryDataUseCase, n as GetClientProfileByNumberCommand, o as GetClientProfileByNumberUseCase, p as GetClientProfileCommand, q as GetClientProfileUseCase, R as RegisterUserChannelCommand, r as RegisterUserChannelUseCase, T as TermsAcceptance, s as TermsAcceptanceProviderPort } from '../RegisterUserChannel.usecase-DimsMrVc.cjs';
-export { C as CoreRequestContext } from '../CoreRequestContext-C5PImHcm.cjs';
-export { B as Branch, C as CardDeliveryInfo, a as CardDeliveryInfoProviderPort, b as CardDeliveryInfoSubmission, c as CardDeliveryInfoSubmissionProviderPort, d as CardDeliveryLocation, e as CardDeliveryLocationCatalogProviderPort, f as CardName, g as CatalogCardNamesProviderPort, h as CatalogFitItem, i as CatalogFitProviderPort, j as Channel, k as City, l as Country, m as Currency, E as EconomicActivity, n as EconomicActivityCatalogProviderPort, o as EducationTypes, p as EducationTypesProviderPort, q as EducationTypesUseCase, F as FinancialProductCatalogItem, r as FinancialProductCatalogs, s as FinancialProductCatalogsProviderPort, G as GetCardDeliveryInfoCommand, t as GetCardDeliveryInfoUseCase, u as GetCardDeliveryLocationCatalogCommand, v as GetCardDeliveryLocationCatalogUseCase, w as GetCatalogCardNamesCommand, x as GetCatalogCardNamesUseCase, y as GetCatalogFitCommand, z as GetCatalogFitUseCase, A as GetEconomicActivityCatalogUseCase, D as GetFinancialProductCatalogsCommand, H as GetFinancialProductCatalogsUseCase, I as GetInstitutionCatalogsCommand, J as GetInstitutionCatalogsUseCase, K as GetLaborPositionCatalogUseCase, L as GetOtherEconomicActivityCatalogUseCase, M as GetPersonCatalogsCommand, N as GetPersonCatalogsUseCase, O as GetPurposeCatalogUseCase, P as InstitutionCatalogs, Q as InstitutionCatalogsProviderPort, R as LaborPosition, S as LaborPositionCatalogProviderPort, T as MaritalStatus, U as MaritalStatusProviderPort, V as MaritalStatusUseCase, W as Office, X as Origin, Y as OtherEconomicActivityCatalogProviderPort, Z as PaymentServiceConcepts, _ as PaymentServiceConceptsProviderPort, $ as PaymentServiceConceptsUseCase, a0 as PersonCatalogItem, a1 as PersonCatalogs, a2 as PersonCatalogsProviderPort, a3 as ProfessionTypes, a4 as ProfessionTypesProviderPort, a5 as ProfessionTypesUseCase, a6 as Province, a7 as PurposeCatalogItem, a8 as PurposeCatalogProviderPort, a9 as SubmitCardDeliveryInfoCommand, aa as SubmitCardDeliveryInfoUseCase } from '../GetCardDeliveryInfo.usecase-DJO6f-Xz.cjs';
+export { A as AcceptTermsCommand, a as AcceptTermsUseCase, C as CheckClientActiveCommand, b as CheckClientActiveUseCase, c as CivilRegistryData, d as CivilRegistryDataProviderPort, e as ClientActiveStatus, f as ClientChannelRegistration, g as ClientChannelRegistrationProviderPort, h as ClientProfile, i as ClientProfileByNumber, j as ClientProfileByNumberProviderPort, k as ClientProfileProviderPort, l as ClientStatusProviderPort, G as GetCivilRegistryDataCommand, m as GetCivilRegistryDataUseCase, n as GetClientProfileByNumberCommand, o as GetClientProfileByNumberUseCase, p as GetClientProfileCommand, q as GetClientProfileUseCase, R as RegisterUserChannelCommand, r as RegisterUserChannelUseCase, T as TermsAcceptance, s as TermsAcceptanceProviderPort } from '../RegisterUserChannel.usecase-DCCjy-XO.cjs';
+export { C as CoreRequestContext } from '../CoreRequestContext-C_H146tZ.cjs';
+export { B as Branch, C as CardDeliveryInfo, a as CardDeliveryInfoProviderPort, b as CardDeliveryInfoSubmission, c as CardDeliveryInfoSubmissionProviderPort, d as CardDeliveryLocation, e as CardDeliveryLocationCatalogProviderPort, f as CardName, g as CatalogCardNamesProviderPort, h as CatalogFitItem, i as CatalogFitProviderPort, j as Channel, k as City, l as Country, m as Currency, E as EconomicActivity, n as EconomicActivityCatalogProviderPort, o as EducationTypes, p as EducationTypesProviderPort, q as EducationTypesUseCase, F as FinancialProductCatalogItem, r as FinancialProductCatalogs, s as FinancialProductCatalogsProviderPort, G as GetCardDeliveryInfoCommand, t as GetCardDeliveryInfoUseCase, u as GetCardDeliveryLocationCatalogCommand, v as GetCardDeliveryLocationCatalogUseCase, w as GetCatalogCardNamesCommand, x as GetCatalogCardNamesUseCase, y as GetCatalogFitCommand, z as GetCatalogFitUseCase, A as GetEconomicActivityCatalogUseCase, D as GetFinancialProductCatalogsCommand, H as GetFinancialProductCatalogsUseCase, I as GetInstitutionCatalogsCommand, J as GetInstitutionCatalogsUseCase, K as GetLaborPositionCatalogUseCase, L as GetOtherEconomicActivityCatalogUseCase, M as GetPersonCatalogsCommand, N as GetPersonCatalogsUseCase, O as GetPurposeCatalogUseCase, P as InstitutionCatalogs, Q as InstitutionCatalogsProviderPort, R as LaborPosition, S as LaborPositionCatalogProviderPort, T as MaritalStatus, U as MaritalStatusProviderPort, V as MaritalStatusUseCase, W as Office, X as Origin, Y as OtherEconomicActivityCatalogProviderPort, Z as PaymentServiceConcepts, _ as PaymentServiceConceptsProviderPort, $ as PaymentServiceConceptsUseCase, a0 as PersonCatalogItem, a1 as PersonCatalogs, a2 as PersonCatalogsProviderPort, a3 as ProfessionTypes, a4 as ProfessionTypesProviderPort, a5 as ProfessionTypesUseCase, a6 as Province, a7 as PurposeCatalogItem, a8 as PurposeCatalogProviderPort, a9 as SubmitCardDeliveryInfoCommand, aa as SubmitCardDeliveryInfoUseCase } from '../GetCardDeliveryInfo.usecase-D3TwFKrE.cjs';
 export { A as AuthLogin, a as AuthLoginCommand, b as AuthLoginProviderPort, c as AuthLoginUseCase, d as AuthPrecheckCommand, e as AuthPrecheckProviderPort, f as AuthPrecheckStatus, g as AuthPrecheckUseCase, B as BlockUser, h as BlockUserCommand, i as BlockUserProviderPort, j as BlockUserUseCase, C as ChangePassword, k as ChangePasswordCommand, l as ChangePasswordProviderPort, m as ChangePasswordUseCase, L as LoginCoreCommand, n as LoginCoreProviderPort, o as LoginCoreResult, p as LoginCoreUseCase, R as RegisterCredentials, q as RegisterCredentialsCommand, r as RegisterCredentialsProviderPort, s as RegisterCredentialsUseCase, t as ResetPassword, u as ResetPasswordCommand, v as ResetPasswordProviderPort, w as ResetPasswordUseCase, x as ResetUser, y as ResetUserCommand, z as ResetUserProviderPort, D as ResetUserUseCase, U as UnblockUser, E as UnblockUserCommand, F as UnblockUserProviderPort, G as UnblockUserUseCase, V as ValidateUsername, H as ValidateUsernameCommand, I as ValidateUsernameProviderPort, J as ValidateUsernameUseCase } from '../ResetUser.usecase-DMgnwCva.cjs';
-export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-D5ChTElV.cjs';
+export { C as ConsolidatedBuckets, a as ConsolidatedProduct, b as ConsolidatedProductsProviderPort, L as ListCustomerProductsCommand, c as ListCustomerProductsUseCase, P as ProductCategory } from '../ListCustomerProducts.usecase-DRxTl7aM.cjs';
 export { B as BlockCardCommand, a as BlockCardProviderPort, b as BlockCardResult, c as BlockCardUseCase, C as CalculateDeferredResult, d as CalculateDeferredValueUseCase, e as CalculateDeferredValuesCommand, f as CalculateDeferredValuesProviderPort, g as CancelPaymentOrderCommand, h as CancelPaymentOrderProviderPort, i as CancelPaymentOrderResult, j as Card, k as CardData, l as CardDataProviderPort, m as CardMovementsResult, n as CardStatementResult, o as ChangeCardPinCommand, p as ChangeCardPinProviderPort, q as ChangeCardPinResult, r as ChangeCardPinUseCase, s as ClientCardsProviderPort, t as ClientLoan, u as ClientLoansProviderPort, D as DeferredCardResult, G as GenerateCardPinCommand, v as GenerateCardPinProviderPort, w as GenerateCardPinResult, x as GenerateCardPinUseCase, y as GetCardDataCommand, z as GetCardDataUseCase, A as GetCardMovementsCommand, E as GetCardMovementsProviderPort, F as GetCardMovementsUseCase, H as GetCardStatementCommand, I as GetCardStatementProviderPort, J as GetCardStatementUseCase, K as GetClientCardsCommand, L as GetClientCardsUseCase, M as GetClientLoansCommand, N as GetClientLoansUseCase, O as GetDeferredCardCommand, P as GetDeferredCardProviderPort, Q as GetDeferredCardUseCase, R as GetLoanAdditionalInfoCommand, S as GetLoanAdditionalInfoUseCase, T as GetLoanAmortizationTableCommand, U as GetLoanAmortizationTableUseCase, V as GetPaymentOrdersCommand, W as GetPaymentOrdersProviderPort, X as LoanAdditionalInfo, Y as LoanAdditionalInfoProviderPort, Z as LoanAmortizationTable, _ as LoanAmortizationTableProviderPort, $ as LoanInstallment, a0 as Movements, a1 as PaidInstallment, a2 as PaymentOrdersResult, a3 as PaymentOrdersUseCase, a4 as ProcessCancelPaymentOrderUseCase, a5 as ProcessCashAdvanceCommand, a6 as ProcessCashAdvanceProviderPort, a7 as ProcessCashAdvanceResult, a8 as ProcessCashAdvanceUseCase, a9 as ProcessDeferredBillingCommand, aa as ProcessDeferredBillingProviderPort, ab as ProcessDeferredBillingResult, ac as ProcessDeferredBillingUseCase, ad as SavePaymentOrderCommand, ae as SavePaymentOrderProviderPort, af as SavePaymentOrderResult, ag as SavePaymetOrderUseCase, ah as SendEmailCommand, ai as SendEmailProviderPort, aj as SendEmailResult, ak as SendEmailUseCase, al as SendSmsByIdentificationCommand, am as SendSmsByIdentificationProviderPort, an as SendSmsByIdentificationResult, ao as SendSmsByIdentificationUseCase, ap as SendSmsByPhoneCommand, aq as SendSmsByPhoneProviderPort, ar as SendSmsByPhoneUseCase, as as ValidateCardPinCommand, at as ValidateCardPinProviderPort, au as ValidateCardPinResult, av as ValidateCardPinUseCase, aw as movements, ax as paymentOrder } from '../ProcessCancelPaymentOrder.usecase-pYv1Bouv.cjs';
-export { A as Account, a as AccountCreationValidation, b as AccountCreationValidationProviderPort, c as AccountMovement, d as AccountMovementsProviderPort, e as AccountPlusCreation, f as AccountPlusCreationProviderPort, g as AccountPlusDocuments, h as AccountPlusDocumentsProviderPort, i as AccountPlusValidation, j as AccountPlusValidationProviderPort, k as AccountSigner, l as AccountSignersInfo, m as AccountSignersProviderPort, B as BankReferenceItem, n as BasicInformationSubmission, o as BasicInformationSubmissionProviderPort, p as BirthInfo, C as CargoData, q as ClientAccountByNumberProviderPort, r as ClientAccountsProviderPort, s as ConsolidatedAccountsProviderPort, t as ConsolidatedAccountsUseCase, u as CreateAccountPlusCommand, v as CreateAccountPlusUseCase, w as CreateElectronicAccountCommand, x as CreateElectronicAccountUseCase, D as DocumentValidation, y as DocumentValidationProviderPort, E as EconomicInfoItem, z as ElectronicAccount, F as ElectronicAccountDocuments, G as ElectronicAccountDocumentsProviderPort, H as ElectronicAccountProviderPort, I as FiscalResidence, J as FiscalResidenceData, K as FiscalResidenceItem, L as FiscalResidenceProviderPort, M as FiscalResidenceQueryProviderPort, N as FiscalResidenceSubmission, O as GenerateAccountPlusDocumentsPdfCommand, P as GenerateAccountPlusDocumentsPdfUseCase, Q as GenerateElectronicAccountDocumentsPdfCommand, R as GenerateElectronicAccountDocumentsPdfUseCase, S as GetAccountByNumberCommand, T as GetAccountByNumberUseCase, U as GetAccountMovementsCommand, V as GetAccountSignersCommand, W as GetAccountSignersUseCase, X as GetConsolidatedAccountsCommand, Y as GetFiscalResidenceCommand, Z as GetFiscalResidenceUseCase, _ as LaborInfoItem, $ as LaborInformationSubmission, a0 as LaborInformationSubmissionProviderPort, a1 as ListAccountMovementsUseCase, a2 as ListAccountsCommand, a3 as ListAccountsUseCase, a4 as Nationality, a5 as PepsAccountOpening, a6 as PepsAccountOpeningCommand, a7 as PepsAccountOpeningProviderPort, a8 as PepsAccountOpeningUseCase, a9 as PepsData, aa as PepsInformationProviderPort, ab as PepsInformationSubmission, ac as PersonalReferenceItem, ad as ReferenceDataSubmission, ae as ReferenceDataSubmissionProviderPort, af as ResidenceInfo, ag as SubmitBasicInformationCommand, ah as SubmitBasicInformationUseCase, ai as SubmitFiscalResidenceCommand, aj as SubmitFiscalResidenceUseCase, ak as SubmitLaborInformationCommand, al as SubmitLaborInformationUseCase, am as SubmitPepsInformationCommand, an as SubmitPepsInformationUseCase, ao as SubmitReferenceDataCommand, ap as SubmitReferenceDataUseCase, aq as UploadedDocumentItem, ar as ValidateCreateAccountCommand, as as ValidateCreateAccountPlusCommand, at as ValidateCreateAccountPlusUseCase, au as ValidateCreateAccountUseCase, av as ValidateDocumentCommand, aw as ValidateDocumentUseCase } from '../PepsAccountOpening.usecase-BBaNyzpx.cjs';
+export { A as Account, a as AccountCreationValidation, b as AccountCreationValidationProviderPort, c as AccountMovement, d as AccountMovementsProviderPort, e as AccountPlusCreation, f as AccountPlusCreationProviderPort, g as AccountPlusDocuments, h as AccountPlusDocumentsProviderPort, i as AccountPlusValidation, j as AccountPlusValidationProviderPort, k as AccountSigner, l as AccountSignersInfo, m as AccountSignersProviderPort, B as BankReferenceItem, n as BasicInformationSubmission, o as BasicInformationSubmissionProviderPort, p as BirthInfo, C as CargoData, q as ClientAccountByNumberProviderPort, r as ClientAccountsProviderPort, s as ConsolidatedAccountsProviderPort, t as ConsolidatedAccountsUseCase, u as CreateAccountPlusCommand, v as CreateAccountPlusUseCase, w as CreateElectronicAccountCommand, x as CreateElectronicAccountUseCase, D as DocumentValidation, y as DocumentValidationProviderPort, E as EconomicInfoItem, z as ElectronicAccount, F as ElectronicAccountDocuments, G as ElectronicAccountDocumentsProviderPort, H as ElectronicAccountProviderPort, I as FiscalResidence, J as FiscalResidenceData, K as FiscalResidenceItem, L as FiscalResidenceProviderPort, M as FiscalResidenceQueryProviderPort, N as FiscalResidenceSubmission, O as GenerateAccountPlusDocumentsPdfCommand, P as GenerateAccountPlusDocumentsPdfUseCase, Q as GenerateElectronicAccountDocumentsPdfCommand, R as GenerateElectronicAccountDocumentsPdfUseCase, S as GetAccountByNumberCommand, T as GetAccountByNumberUseCase, U as GetAccountMovementsCommand, V as GetAccountSignersCommand, W as GetAccountSignersUseCase, X as GetConsolidatedAccountsCommand, Y as GetFiscalResidenceCommand, Z as GetFiscalResidenceUseCase, _ as LaborInfoItem, $ as LaborInformationSubmission, a0 as LaborInformationSubmissionProviderPort, a1 as ListAccountMovementsUseCase, a2 as ListAccountsCommand, a3 as ListAccountsUseCase, a4 as Nationality, a5 as PepsAccountOpening, a6 as PepsAccountOpeningCommand, a7 as PepsAccountOpeningProviderPort, a8 as PepsAccountOpeningUseCase, a9 as PepsData, aa as PepsInformationProviderPort, ab as PepsInformationSubmission, ac as PersonalReferenceItem, ad as ReferenceDataSubmission, ae as ReferenceDataSubmissionProviderPort, af as ResidenceInfo, ag as SubmitBasicInformationCommand, ah as SubmitBasicInformationUseCase, ai as SubmitFiscalResidenceCommand, aj as SubmitFiscalResidenceUseCase, ak as SubmitLaborInformationCommand, al as SubmitLaborInformationUseCase, am as SubmitPepsInformationCommand, an as SubmitPepsInformationUseCase, ao as SubmitReferenceDataCommand, ap as SubmitReferenceDataUseCase, aq as UploadedDocumentItem, ar as ValidateCreateAccountCommand, as as ValidateCreateAccountPlusCommand, at as ValidateCreateAccountPlusUseCase, au as ValidateCreateAccountUseCase, av as ValidateDocumentCommand, aw as ValidateDocumentUseCase } from '../PepsAccountOpening.usecase-Dfsfcj1m.cjs';
 export { C as ContractStatusUpdate, a as ContractStatusUpdateProviderPort, G as GetUserBeneficiariesCommand, b as GetUserBeneficiariesProviderPort, c as GetUserBeneficiariesUseCase, d as GetUserDataCommand, e as GetUserDataProviderPort, f as GetUserDataUseCase, S as SecurityQuestion, U as UpdateContractStatusCommand, g as UpdateContractStatusUseCase, h as UserAccountData, i as UserBeneficiaryResult, j as UserContactData, k as UserDataResult, l as UserPersonalData, m as UserSecurityData } from '../GetUserBeneficiaries.usecase-E-ztJhp1.cjs';
 export { C as CreateExternalTransferUseCase, a as CreateInternalTransferUseCase, E as ExternalTransferCommand, b as ExternalTransferProviderPort, c as ExternalTransferResult, I as InternalTransferCommand, d as InternalTransferProviderPort, e as InternalTransferResult, f as ItemTransferInitialCharge, L as ListTransferInitialChargeProductsUseCase, T as TransferInitialChargeBuckets, g as TransferInitialChargeCategory, h as TransferInitialChargeProviderPort } from '../CreateExternalTransfer.usecase-joBihw2Z.cjs';
 export { A as AddressCity, a as AddressCountry, b as AddressProvince, B as BirthCity, c as BirthCountry, C as CalculateDpfValuesCommand, d as CalculateDpfValuesUseCase, e as CityCatalog, f as ConsolidatedTimeDepositsProviderPort, g as CountryCatalog, h as CountryOfResidenceList, i as CreateDpfCommand, j as CreateDpfProviderPort, k as CreateDpfUseCase, D as DepositAdditionalInformation, l as DepositAdditionalInformationProviderPort, m as DepositCancellationType, n as DepositCancellationTypes, o as DepositCancellationTypesProviderPort, p as DepositComponent, q as DepositMovement, r as DepositMovementsProviderPort, s as DepositScheduleItem, t as DepositTypeCatalogItem, u as DepositTypeCatalogProviderPort, v as DepositTypePaymentPeriod, w as DepositTypePresumptiveRequirements, x as DepositTypePresumptiveRequirementsProviderPort, y as DpfCalculation, z as DpfCalculationProviderPort, E as DpfCreation, F as DpfPaymentSchedule, G as DpfProductCatalog, H as DpfProductsCatalogProviderPort, I as DpfReceipt, J as DpfReceiptProviderPort, K as FiscalResidenceList, L as FixedTermDepositCurrentRate, M as FixedTermDepositCurrentRatesProviderPort, N as FixedTermDepositValidation, O as FixedTermDepositValidationProviderPort, P as GetConsolidatedTimeDepositsCommand, Q as GetConsolidatedTimeDepositsUseCase, R as GetDepositAdditionalInformationCommand, S as GetDepositAdditionalInformationUseCase, T as GetDepositCancellationTypesCommand, U as GetDepositCancellationTypesUseCase, V as GetDepositMovementsCommand, W as GetDepositMovementsUseCase, X as GetDepositTypeCatalogUseCase, Y as GetDepositTypePresumptiveRequirementsCommand, Z as GetDepositTypePresumptiveRequirementsUseCase, _ as GetDpfReceiptCommand, $ as GetDpfReceiptUseCase, a0 as GetFixedTermDepositCurrentRatesCommand, a1 as GetFixedTermDepositCurrentRatesUseCase, a2 as GetSelfCertificationDataCommand, a3 as ListDpfProductsCatalogUseCase, a4 as PersonIdentification, a5 as ProvinceCatalog, a6 as ResidenceAddress, a7 as SaveSelfCertificationDataCommand, a8 as SaveSelfCertificationDataProviderPort, a9 as SaveSelfCertificationDataResult, aa as SaveSelfCertificationDataUseCase, ab as SelfCertificationData, ac as SelfCertificationDataProviderPort, ad as SelfCertificationDataResult, ae as SelfCertificationDataUseCase, af as TimeDeposit, ag as ValidateFixedTermDepositCommand, ah as ValidateFixedTermDepositUseCase } from '../ValidateFixedTermDeposit.usecase-DL72are1.cjs';
@@ -105,6 +105,9 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -117,6 +120,9 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -129,6 +135,9 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
@@ -145,6 +154,9 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     clientIdentification: string;
@@ -161,6 +173,9 @@ declare const GetClientProfileCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetClientProfileCommandParsed = z.infer<typeof GetClientProfileCommandSchema>;
@@ -181,6 +196,9 @@ declare const CheckClientActiveCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -193,6 +211,9 @@ declare const CheckClientActiveCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -205,9 +226,13 @@ declare const CheckClientActiveCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
+    email?: string | undefined;
     context?: {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -220,11 +245,14 @@ declare const CheckClientActiveCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
-    email?: string | undefined;
     mobilePhone?: string | undefined;
 }, {
     clientIdentification: string;
+    email?: string | undefined;
     context?: {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -237,8 +265,10 @@ declare const CheckClientActiveCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
-    email?: string | undefined;
     mobilePhone?: string | undefined;
 }>;
 type CheckClientActiveCommandParsed = z.infer<typeof CheckClientActiveCommandSchema>;
@@ -255,6 +285,9 @@ declare const CoreRequestContextSchema: z.ZodObject<{
     deviceId: z.ZodOptional<z.ZodString>;
     token: z.ZodOptional<z.ZodString>;
     userId: z.ZodOptional<z.ZodString>;
+    clientNumber: z.ZodOptional<z.ZodString>;
+    phone: z.ZodOptional<z.ZodString>;
+    email: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     userClient?: string | undefined;
     terminal?: string | undefined;
@@ -267,6 +300,9 @@ declare const CoreRequestContextSchema: z.ZodObject<{
     deviceId?: string | undefined;
     token?: string | undefined;
     userId?: string | undefined;
+    clientNumber?: string | undefined;
+    phone?: string | undefined;
+    email?: string | undefined;
 }, {
     userClient?: string | undefined;
     terminal?: string | undefined;
@@ -279,6 +315,9 @@ declare const CoreRequestContextSchema: z.ZodObject<{
     deviceId?: string | undefined;
     token?: string | undefined;
     userId?: string | undefined;
+    clientNumber?: string | undefined;
+    phone?: string | undefined;
+    email?: string | undefined;
 }>;
 type CoreRequestContextParsed = z.infer<typeof CoreRequestContextSchema>;
 
@@ -299,6 +338,9 @@ declare const AcceptTermsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -311,6 +353,9 @@ declare const AcceptTermsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -323,6 +368,9 @@ declare const AcceptTermsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientIdentification: string;
@@ -341,6 +389,9 @@ declare const AcceptTermsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     clientIdentification: string;
@@ -359,6 +410,9 @@ declare const AcceptTermsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type AcceptTermsCommandParsed = z.infer<typeof AcceptTermsCommandSchema>;
@@ -380,6 +434,9 @@ declare const RegisterUserChannelCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -392,6 +449,9 @@ declare const RegisterUserChannelCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -404,10 +464,13 @@ declare const RegisterUserChannelCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    clientIdentification: string;
     email: string;
+    clientIdentification: string;
     mobilePhone: string;
     clientUsername: string;
     context?: {
@@ -422,10 +485,13 @@ declare const RegisterUserChannelCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
-    clientIdentification: string;
     email: string;
+    clientIdentification: string;
     mobilePhone: string;
     clientUsername: string;
     context?: {
@@ -440,6 +506,9 @@ declare const RegisterUserChannelCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type RegisterUserChannelCommandParsed = z.infer<typeof RegisterUserChannelCommandSchema>;
@@ -457,6 +526,9 @@ declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -469,6 +541,9 @@ declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -481,6 +556,9 @@ declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     context?: {
@@ -495,6 +573,9 @@ declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     context?: {
@@ -509,6 +590,9 @@ declare const GetPersonCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetPersonCatalogsCommandParsed = z.infer<typeof GetPersonCatalogsCommandSchema>;
@@ -526,6 +610,9 @@ declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -538,6 +625,9 @@ declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -550,6 +640,9 @@ declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     context?: {
@@ -564,6 +657,9 @@ declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     context?: {
@@ -578,6 +674,9 @@ declare const GetInstitutionCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetInstitutionCatalogsCommandParsed = z.infer<typeof GetInstitutionCatalogsCommandSchema>;
@@ -595,6 +694,9 @@ declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -607,6 +709,9 @@ declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -619,6 +724,9 @@ declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     context?: {
@@ -633,6 +741,9 @@ declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     context?: {
@@ -647,6 +758,9 @@ declare const GetFinancialProductCatalogsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetFinancialProductCatalogsCommandParsed = z.infer<typeof GetFinancialProductCatalogsCommandSchema>;
@@ -719,6 +833,9 @@ declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -731,6 +848,9 @@ declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -743,6 +863,9 @@ declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientNumber: number;
@@ -758,6 +881,9 @@ declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     clientNumber: number;
@@ -773,6 +899,9 @@ declare const GetClientProfileByNumberCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetClientProfileByNumberCommandParsed = z.infer<typeof GetClientProfileByNumberCommandSchema>;
@@ -848,6 +977,9 @@ declare const ListCustomerProductsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -860,6 +992,9 @@ declare const ListCustomerProductsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -872,6 +1007,9 @@ declare const ListCustomerProductsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientNumber: string | number;
@@ -887,6 +1025,9 @@ declare const ListCustomerProductsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     clientNumber: string | number;
@@ -902,6 +1043,9 @@ declare const ListCustomerProductsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type ListCustomerProductsCommandParsed = z.infer<typeof ListCustomerProductsCommandSchema>;
@@ -1131,6 +1275,9 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
         deviceId: z.ZodOptional<z.ZodString>;
         token: z.ZodOptional<z.ZodString>;
         userId: z.ZodOptional<z.ZodString>;
+        clientNumber: z.ZodOptional<z.ZodString>;
+        phone: z.ZodOptional<z.ZodString>;
+        email: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -1143,6 +1290,9 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }, {
         userClient?: string | undefined;
         terminal?: string | undefined;
@@ -1155,6 +1305,9 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
     clientNumber: string | number;
@@ -1171,6 +1324,9 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }, {
     clientNumber: string | number;
@@ -1187,6 +1343,9 @@ declare const GetConsolidatedAccountsCommandSchema: z.ZodObject<{
         deviceId?: string | undefined;
         token?: string | undefined;
         userId?: string | undefined;
+        clientNumber?: string | undefined;
+        phone?: string | undefined;
+        email?: string | undefined;
     } | undefined;
 }>;
 type GetConsolidatedAccountsCommandParsed = z.infer<typeof GetConsolidatedAccountsCommandSchema>;
@@ -1997,8 +2156,8 @@ declare const CalculateDpfValuesCommandSchema: z.ZodObject<{
     currency: z.ZodString;
     interestPaymentMode: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    clientIdentification: string;
     clientNumber: string;
+    clientIdentification: string;
     username: string;
     productCode: number;
     transactionPlatform: string;
@@ -2013,8 +2172,8 @@ declare const CalculateDpfValuesCommandSchema: z.ZodObject<{
     currency: string;
     interestPaymentMode: string;
 }, {
-    clientIdentification: string;
     clientNumber: string;
+    clientIdentification: string;
     username: string;
     productCode: number;
     transactionPlatform: string;
@@ -2049,8 +2208,8 @@ declare const CreateDpfCommandSchema: z.ZodObject<{
     cancellationTypeCode: z.ZodString;
     netRateValue: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
-    clientIdentification: string;
     clientNumber: number;
+    clientIdentification: string;
     username: string;
     accountNumber: string;
     productCode: number;
@@ -2066,8 +2225,8 @@ declare const CreateDpfCommandSchema: z.ZodObject<{
     cancellationTypeCode: string;
     netRateValue: number;
 }, {
-    clientIdentification: string;
     clientNumber: number;
+    clientIdentification: string;
     username: string;
     accountNumber: string;
     productCode: number;

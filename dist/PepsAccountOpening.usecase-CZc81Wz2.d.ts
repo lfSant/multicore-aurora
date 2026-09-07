@@ -1,6 +1,6 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
-import { C as CoreRequestContext } from './CoreRequestContext-C5PImHcm.cjs';
+import { P as ProviderCallConfig } from './http-CRaj6wih.js';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { C as CoreRequestContext } from './CoreRequestContext-C_H146tZ.js';
 
 interface GetFiscalResidenceCommand {
     clientIdentification: string;

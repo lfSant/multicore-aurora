@@ -1,8 +1,8 @@
 import { A as AdapterFactoryOptions } from '../../factories-Hv_6KkfJ.js';
-import { q as GetClientProfileUseCase, p as GetClientProfileCommand, h as ClientProfile, C as CheckClientActiveCommand, e as ClientActiveStatus, b as CheckClientActiveUseCase, o as GetClientProfileByNumberUseCase, n as GetClientProfileByNumberCommand, i as ClientProfileByNumber, m as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, c as CivilRegistryData, A as AcceptTermsCommand, T as TermsAcceptance, a as AcceptTermsUseCase, r as RegisterUserChannelUseCase, R as RegisterUserChannelCommand, f as ClientChannelRegistration } from '../../RegisterUserChannel.usecase-CpVmpZYO.js';
+import { q as GetClientProfileUseCase, p as GetClientProfileCommand, h as ClientProfile, C as CheckClientActiveCommand, e as ClientActiveStatus, b as CheckClientActiveUseCase, o as GetClientProfileByNumberUseCase, n as GetClientProfileByNumberCommand, i as ClientProfileByNumber, m as GetCivilRegistryDataUseCase, G as GetCivilRegistryDataCommand, c as CivilRegistryData, A as AcceptTermsCommand, T as TermsAcceptance, a as AcceptTermsUseCase, r as RegisterUserChannelUseCase, R as RegisterUserChannelCommand, f as ClientChannelRegistration } from '../../RegisterUserChannel.usecase-gljpAxUS.js';
 import { P as ProviderCallConfig } from '../../http-CRaj6wih.js';
 import { C as CanonicalResponse } from '../../types-DZJuEFLS.js';
-import '../../CoreRequestContext-C5PImHcm.js';
+import '../../CoreRequestContext-C_H146tZ.js';
 
 declare function createClientProfileUseCase(providerKey: string, operationKey?: string, adapterOptions?: AdapterFactoryOptions): GetClientProfileUseCase;
 declare function getClientProfile(command: GetClientProfileCommand, http: ProviderCallConfig, opts: {

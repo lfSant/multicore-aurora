@@ -10,6 +10,9 @@ interface CoreRequestContext {
     deviceId?: string;
     token?: string;
     userId?: string;
+    clientNumber?: string;
+    phone?: string;
+    email?: string;
 }
 
 export type { CoreRequestContext as C };
