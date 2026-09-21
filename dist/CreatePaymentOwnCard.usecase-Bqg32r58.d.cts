@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface GetPaymentServiceQueryCommand {
     referenceNumber?: string;
@@ -23,6 +23,7 @@ interface PaymentServiceQueryItemResult {
 }
 interface PaymentServiceQueryResult {
     returnedData?: string;
+    debtDetails?: Record<string, any>;
     items: PaymentServiceQueryItemResult[];
     transactionId: string;
     identification: string;

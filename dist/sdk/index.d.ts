@@ -22,7 +22,7 @@ import '../ListCustomerProducts.usecase-CZhSzfFO.js';
 import '../PepsAccountOpening.usecase-CZc81Wz2.js';
 import '../CreateExternalTransfer.usecase-DhAfF6Sr.js';
 import '../ValidateFixedTermDeposit.usecase-YVOwyxvC.js';
-import '../CreatePaymentOwnCard.usecase-CXMxSW4V.js';
+import '../CreatePaymentOwnCard.usecase-BnrLra7d.js';
 import '../ListCausalsCatalog.usecase-CRqqCgMg.js';
 import '../GetUserBeneficiaries.usecase-BC9xjelQ.js';
 
