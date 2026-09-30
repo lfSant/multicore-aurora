@@ -1,5 +1,5 @@
-import { P as ProviderCallConfig } from './http-CRaj6wih.js';
-import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.js';
+import { P as ProviderCallConfig } from './http-CRaj6wih.cjs';
+import { P as ProviderResult, C as CanonicalResponse } from './types-DZJuEFLS.cjs';
 
 interface AuthPrecheckCommand {
     username: string;
@@ -214,7 +214,7 @@ declare class RegisterCredentialsUseCase {
 interface ResetUserCommand {
     clientNumber: string;
     newUsername: string;
-    newPassword: string;
+    newPassword?: string;
 }
 
 interface ResetUser {

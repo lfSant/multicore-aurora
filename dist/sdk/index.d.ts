@@ -16,7 +16,7 @@ export { createCreateCreditNoteUseCase, createCreateDebitNoteUseCase, createCred
 export { createGetUserBeneficiariesUseCase, createGetUserDataUseCase, createUpdateContractStatusUseCase, getUserBeneficiaries, getUserData, updateContractStatus } from './user/index.js';
 import '../RegisterUserChannel.usecase-gljpAxUS.js';
 import '../CoreRequestContext-C_H146tZ.js';
-import '../ResetUser.usecase-BbdiyNYi.js';
+import '../ResetUser.usecase-zREAdABG.js';
 import '../GetCardDeliveryInfo.usecase-xJKTIcjv.js';
 import '../ListCustomerProducts.usecase-CZhSzfFO.js';
 import '../PepsAccountOpening.usecase-CZc81Wz2.js';
