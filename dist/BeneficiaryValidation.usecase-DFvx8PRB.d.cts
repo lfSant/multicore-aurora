@@ -43,6 +43,8 @@ interface InternalTransferCommand {
     identifierDevice?: string;
     codeReference?: string;
     subType?: string;
+    originIdentification?: string;
+    destinationIdentification?: string;
 }
 
 interface InternalTransferResult {

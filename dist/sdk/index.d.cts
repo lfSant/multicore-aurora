@@ -20,10 +20,10 @@ import '../ResetUser.usecase-BynL2Cmg.cjs';
 import '../GetCardDeliveryInfo.usecase-D3TwFKrE.cjs';
 import '../ListCustomerProducts.usecase-DRxTl7aM.cjs';
 import '../PepsAccountOpening.usecase-Dfsfcj1m.cjs';
-import '../BeneficiaryValidation.usecase-D5pbZsI4.cjs';
+import '../BeneficiaryValidation.usecase-DFvx8PRB.cjs';
 import '../ValidateFixedTermDeposit.usecase-DL72are1.cjs';
 import '../CreatePaymentOwnCard.usecase-Bqg32r58.cjs';
-import '../ListCausalsCatalog.usecase-FCchbKXJ.cjs';
+import '../ListCausalsCatalog.usecase-CGOYfxW4.cjs';
 import '../GetUserBeneficiaries.usecase-E-ztJhp1.cjs';
 
 declare function hasMySqlPool(): boolean;
