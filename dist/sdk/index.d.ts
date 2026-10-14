@@ -23,7 +23,7 @@ import '../PepsAccountOpening.usecase-CZc81Wz2.js';
 import '../BeneficiaryValidation.usecase-BLHhRZOG.js';
 import '../ValidateFixedTermDeposit.usecase-YVOwyxvC.js';
 import '../CreatePaymentOwnCard.usecase-BnrLra7d.js';
-import '../ListCausalsCatalog.usecase-BdyRK_D8.js';
+import '../ListCausalsCatalog.usecase-D3VlKksq.js';
 import '../GetUserBeneficiaries.usecase-BC9xjelQ.js';
 
 declare function hasMySqlPool(): boolean;

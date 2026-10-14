@@ -71,6 +71,7 @@ interface CreateDebitNoteCommand {
         concept: string;
         referenceIdentifier?: string;
         referenceTarget?: string;
+        referenceType?: string;
     };
     debtor: {
         account: string;
@@ -123,6 +124,7 @@ interface CreateCreditNoteCommand {
         concept: string;
         referenceIdentifier?: string;
         referenceTarget?: string;
+        referenceType?: string;
     };
     debtor: {
         account: string;
@@ -177,6 +179,7 @@ interface ReverseDebitNoteCommand {
         concept: string;
         referenceIdentifier?: string;
         referenceTarget?: string;
+        referenceType?: string;
     };
     debtor: {
         account: string;
@@ -233,6 +236,7 @@ interface ReverseCreditNoteCommand {
         concept: string;
         referenceIdentifier?: string;
         referenceTarget?: string;
+        referenceType?: string;
     };
     debtor: {
         account: string;
